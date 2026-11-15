@@ -13,6 +13,7 @@ from snippetcheck.mutate import BREAKING, NEUTRAL, run
 from snippetcheck.report import page_calls, scan
 from snippetcheck.spec import operations
 
+# Codes that mean no operation matched at all, so the endpoint itself is in doubt.
 MISSING_OPERATION = ("unknown_path", "method_not_allowed")
 
 
@@ -147,7 +148,7 @@ def experiment(data: str | Path = DATA, study: str | Path = STUDY) -> tuple[dict
         **_ledger_metrics(ledger_rows, days),
         **_mutation_metrics(mutation_rows),
     }
-    return {name: metrics[name] for name in sorted(metrics)}, {"calls": rows, "ledger": ledger_rows, "mutations": mutation_rows}
+    return metrics, {"calls": rows, "ledger": ledger_rows, "mutations": mutation_rows}
 
 
 def _write(path: Path, value: dict) -> None:

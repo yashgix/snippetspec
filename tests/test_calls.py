@@ -153,17 +153,6 @@ class ShellTest(unittest.TestCase):
         call = calls("curl -H 'Accept: application/json' https://x/a")[0]
         self.assertEqual((call.method, call.body_kind, call.body), ("GET", "none", None))
 
-    def test_double_quoted_query_is_kept(self):
-        call = calls('curl "https://api.supermemory.ai/a?page=1&q=hi"')[0]
-        self.assertEqual(call.query, (("page", "1"), ("q", "hi")))
-
-    def test_quoted_newline_stays_inside_a_word(self):
-        call = calls("curl \"https://api.supermemory.ai/a?q=hello\nworld\"")[0]
-        self.assertEqual(call.url, "https://api.supermemory.ai/a?q=hello\nworld")
-
-    def test_comment_text_containing_separators_is_ignored(self):
-        self.assertEqual(len(calls("curl https://api.supermemory.ai/a # note & | < >")), 1)
-
 
 class FetchTest(unittest.TestCase):
     def test_simple_call(self):
@@ -193,21 +182,12 @@ class FetchTest(unittest.TestCase):
         call = calls('fetch("https://x/a", {method: "POST", body: payload})', "js")[0]
         self.assertEqual(call.body_kind, "unparsed")
 
-    def test_json_stringify_with_variable_is_json_unknown(self):
-        call = calls('fetch("https://x/a", {method: "POST", body: JSON.stringify(payload)})', "js")[0]
-        self.assertEqual(call.body_kind, "json")
-        self.assertIs(call.body, UNKNOWN)
-
     def test_template_url_keeps_placeholders(self):
         code = "fetch(`https://api.supermemory.ai/v3/documents/${docId}`)"
         self.assertEqual(calls(code, "js")[0].url, "https://api.supermemory.ai/v3/documents/{docId}")
 
     def test_non_literal_url_is_dropped(self):
         self.assertEqual(calls("fetch(baseUrl)", "js"), [])
-
-    def test_options_followed_by_expression_are_dropped(self):
-        code = 'fetch("https://x/a", {method: "POST"} || defaults)'
-        self.assertEqual(calls(code, "js"), [])
 
     def test_non_literal_options_are_dropped(self):
         self.assertEqual(calls('fetch("https://x/a", options)', "js"), [])

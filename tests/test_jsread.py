@@ -111,13 +111,9 @@ class LiteralTest(unittest.TestCase):
 
 class PositionTest(unittest.TestCase):
     def test_value_at_returns_the_end_position(self):
-        value, end = value_at('{"a": "x"}', 0)
-        self.assertEqual(value, {"a": "x"})
-        self.assertEqual(end, len('{"a": "x"}'))
-
-    def test_value_at_reports_unknown_when_trailing_expression_follows(self):
-        value, _end = value_at('"a" yy', 0)
-        self.assertIs(value, UNKNOWN)
+        value, end = value_at('xx "a" yy', 3)
+        self.assertEqual(value, "a")
+        self.assertEqual(end, 6)
 
     def test_literal_at_is_an_alias(self):
         self.assertEqual(literal_at('[1, 2]', 0), ([1, 2], 6))

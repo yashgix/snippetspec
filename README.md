@@ -3,26 +3,24 @@
 Checks every HTTP call in a docs site's code examples against the site's OpenAPI spec: offline, with no API calls
 and no model.
 
-It reads MDX pages, finds the curl commands, JavaScript `fetch` calls and Python `requests`/`httpx` calls inside each
-code example, matches each call to a spec operation by method and path template, and then checks what the example
-actually sends: path values, query parameters, and the request body's field names, required fields, types and enum
-values. Every call gets a verdict with the exact problems behind it, in a shape that can sit next to a docs code
-example record and gate a docs build: `python -m snippetcheck` exits non-zero as soon as one example contradicts the
-spec.
+It reads MDX pages the way Margin's extractor groups them, finds the curl commands, JavaScript `fetch` calls and
+Python `requests`/`httpx` calls inside each code example, matches each call to a spec operation by method and path
+template, and then checks what the example actually sends: path values, query parameters, and the request body's
+field names, required fields, types and enum values. Every call gets a verdict with the exact problems behind it,
+in a shape that can sit next to a docs code example record and gate a docs build: `python -m snippetcheck` exits
+non-zero as soon as one example contradicts the spec.
 
 ## Why this exists
 
-Supermemory's own docs history shows the failure shape plainly:
+Margin's public code-example extractor (https://github.com/maniculehq/margin/blob/main/src/ingest/code-examples.ts) says `runnable` is \"deliberately NOT emitted (it would be an unvalidated author claim)\".
 
-- [commit 1af9dbc](https://github.com/supermemoryai/supermemory/commit/1af9dbc) says the old docs "described a route
-  that has never existed";
-- docs PR #1811 ([commit 2197c04](https://github.com/supermemoryai/supermemory/commit/2197c04)) reports that a
-  namespace-move example sent `moveTo` in a body the route ignores, "so following the docs permanently deleted the
-  namespace".
+Supermemory's own docs history shows a failure of this shape, in its own words: one commit (short sha `1af9dbc`)
+says the old docs \"described a route that has never existed\", and a docs PR (#1811) reports that a namespace-move
+example sent `moveTo` in a body the route ignores, \"so following the docs permanently deleted the namespace\".
 
 So: from the published spec alone, can every HTTP call in a docs site be checked automatically, and would that have
-caught the drift bugs the docs team later fixed? This milestone answers with three measurements, and states its limits
-rather than modelling them away.
+caught the drift bugs the docs team later fixed? This milestone answers with three measurements, and it states its
+limits rather than modelling them away.
 
 ## What it measures
 
@@ -47,8 +45,8 @@ the block between the two markers. No result number in this file is typed by han
 
 ## Running it
 
-The Makefile calls the system `python3`. Run it inside the `ml-py314` environment (Python 3.14), or with any Python
-3.14 interpreter on `PATH`.
+The Makefile calls the system `python3`. Run it inside the `ml-py314` environment (Python 3.14), or with any
+Python 3.14 interpreter on `PATH`.
 
 ```bash
 make test         # unit tests: python3 -m unittest discover -s tests
@@ -95,9 +93,9 @@ only changed prose, and bugs that would need the live API to confirm, are exclud
 carries `introduced`/`buggy`/`fixed` commits, the page, the expected problem `code` and `where`, and a quote from
 the commit.
 
-Replay scans the single page at each of those commits (`data/history/<sha>/<page>`) and asks whether the case's
-exact `(method, operation, code, where)` is present at the buggy commit and absent at the fixed one. `operation` may
-be `null`, which is how the cases about a route that never existed are written down.
+Replay scans the single page at each of those commits (`data/history/<sha>/<page>`, ten pages in all) and asks
+whether the case's exact `(method, operation, code, where)` is present at the buggy commit and absent at the fixed
+one. `operation` may be `null`, which is how the cases about a route that never existed are written down.
 
 ## Limits, stated plainly
 
@@ -110,14 +108,15 @@ be `null`, which is how the cases about a route that never existed are written d
   not mean the example would work — only that it does not contradict the spec.
 - **Value semantics are out of reach.** A filter expression passed as a JSON string, a nested object whose shape the
   spec leaves open, an SDK call's options: all invisible or unchecked here.
-- **The ledger is replayed against today's spec**, not the spec of each case's own day.
+- **The ledger is replayed against today's spec**, not the spec of each case's own day (one spec snapshot per
+  version is pinned).
 
 ### Honesty about the numbers
 
 The ledger cases were found while exploring the docs history with an early version of this checker; the selection
-rule was written down afterwards. The 15 cases come from 5 fix commits, mostly bugs introduced by one migration
-commit (`672defc`) and of one kind (options sent as query parameters instead of a JSON body). So `ledger_recall`
-shows these problems are real and catchable — it is not an accuracy or recall estimate for the checker.
+rule was written down afterwards. The cases come from a handful of fix commits, most of them bugs introduced by one
+migration commit and of one kind (options sent as query parameters instead of a JSON body). So the ledger's recall
+shows that these problems are real and catchable — it is not an accuracy or recall estimate for the checker.
 
 The seeded-drift numbers measure sensitivity, not discovery: the mutations are derived from what each example
 sends, so the checker reacting to each one is a property of the construction. What the neutral changes add is the

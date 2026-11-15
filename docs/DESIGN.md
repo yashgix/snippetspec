@@ -58,8 +58,7 @@ value.
 
 curl blocks are split with `shlex` (posix, comments) after unquoted separators are turned into command breaks,
 because one block often holds several commands; backslash-newline is joined first, since that is the formatting the
-docs actually use. Separators inside single quotes, double quotes, escaped characters, and comments are preserved or
-ignored correctly, so a quoted URL with `&` or a comment containing `|` does not split a command.
+docs actually use.
 
 Option handling is a table, not a grammar: long options with an argument, a set of short letters that take one, and
 letter-by-letter reading of groups (`-sSL` is `-s -S -L`, `-XPOST` is `-X POST`). Anything unrecognised consumes
@@ -89,11 +88,8 @@ arithmetic expression, an object with a spread — is UNKNOWN. A literal followe
 UNKNOWN too: it is not the value it looks like. Comments are skipped everywhere, because fragments carry them.
 
 Keeping property spans as well as values is what makes `JSON.stringify(...)` readable: the option's raw text is
-inspected for that exact prefix and its argument then read as a literal. A JSON.stringify expression is accepted
-only when it is complete, so a body such as `JSON.stringify({a: 1}) || fallback` falls through to `unparsed`.
-
-The options object is used only when it is a complete object expression; `{method: "POST"} || defaults` makes the
-fetch options non-literal and drops the call.
+inspected for that exact prefix and its argument then read as a literal. Without spans, `body: JSON.stringify({q})`
+would be indistinguishable from `body: payload`.
 
 ### Python
 
@@ -151,9 +147,8 @@ Bodies:
   list endpoints document as 'no filters'. Treating that as an error would flag correct examples.
 - Content type is checked before shape: a JSON body sent to a form-only operation is a `content_type` problem, not
   a pile of field findings.
-- JSON bodies are validated from the schema's root, so field locations read `$.field` rather than `body.field`.
-- Form bodies are name-checked only and use the same root-style locations as object properties. Their values are
-  strings by construction, and the specs describe them as strings in a form anyway.
+- Form bodies are name-checked only. Their values are strings by construction, and the specs describe them as
+  strings in a form anyway.
 
 ### Placeholders
 
@@ -224,25 +219,29 @@ from `study/ledger.json` alone.
 occurrences, so one wrong example repeated on three pages is one finding. Paths lose the query string, because a
 problem should not change identity when an example's page number does.
 
-`experiment.py` returns metrics with sorted keys and writes JSON with sorted keys, one-space indent and a trailing
-newline, creating parent folders, so two runs over the same pinned data are byte-identical and a diff under
-`results/` means a real change. Ratios go through one helper (six places, `0.0` for an empty denominator) so the
-file does not change shape when a set is empty.
+`experiment.py` writes JSON with sorted keys, one-space indent and a trailing newline, creating parent folders, so
+two runs over the same pinned data are byte-identical and a diff under `results/` means a real change. Ratios go
+through one helper (six places, `0.0` for an empty denominator) so the file does not change shape when a set is
+empty.
 
 `demo.py` owns presentation only: it prints the report from `results/details.json`, or rewrites the README's results
 block from `results/metrics.json`. Rendering fails loudly unless each marker appears exactly once and in order — a
 silently half-rewritten README is worse than a failed build. No number is ever typed by hand into the README, which
 is the reason the block exists at all.
 
-## A possible integration with Margin's ingest (a hypothesis)
+## Plugging into Margin's ingest (a hypothesis)
 
-One possible integration is to attach three fields to each extracted code example: `validated` (`true`, `false`, or
-absent when no call was found or the call could not be read), `operation`, and `problems`. This is a hypothesis
-about the kind of ingest step Margin could add; it is not a description of Margin's current code or behavior.
+Margin's code-example extractor emits records with a language, the source and some options, and deliberately does
+not emit `runnable`, because an author's claim would be unvalidated. What this tool produces maps onto that
+record directly: for each extracted example, the calls it found, their page and line, tool, method and URL, the
+matched spec operation, a verdict, and the problems as code-and-location pairs.
 
-The third state is the interesting one: it separates 'checked and wrong' from 'not checkable', which is the
-distinction a bare `runnable` flag cannot draw. The visible surface could then be a badge next to the snippet plus
-a CI gate on mismatches.
+An ingest step could run the same check and attach three fields: `validated` (`true`, `false`, or absent when no
+call was found or the call could not be read), `operation`, and `problems`. That third state is the interesting one:
+it separates 'checked and wrong' from 'not checkable', which is the distinction a bare `runnable` flag cannot draw.
+The visible surface could then be as small as a badge next to the snippet plus a CI gate on mismatches.
+
+This is a hypothesis about how such a pipeline could use the tool, not a description of any existing one.
 
 ## What is deliberately not done
 
