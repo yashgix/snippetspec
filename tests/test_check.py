@@ -339,7 +339,7 @@ class BodyTest(unittest.TestCase):
         result = check(
             pinned_specs(), method="POST", url="https://api.supermemory.ai/items", body_kind="json", body={"size": 3}
         )
-        self.assertEqual(result["problems"], [("missing_field", "body.name")])
+        self.assertEqual(result["problems"], [("missing_field", "$.name")])
 
     def test_json_body_value_is_checked(self):
         result = check(
@@ -349,7 +349,7 @@ class BodyTest(unittest.TestCase):
             body_kind="json",
             body={"name": "x", "size": "big"},
         )
-        self.assertEqual(result["problems"], [("type", "body.size")])
+        self.assertEqual(result["problems"], [("type", "$.size")])
 
     def test_json_body_to_a_form_operation_is_a_content_type_problem(self):
         result = check(
@@ -367,7 +367,7 @@ class BodyTest(unittest.TestCase):
         result = check(
             pinned_specs(), method="POST", url="https://api.supermemory.ai/uploads", body_kind="form", body={"note": "x"}
         )
-        self.assertEqual(result["problems"], [("missing_field", "body.file")])
+        self.assertEqual(result["problems"], [("missing_field", "$.file")])
 
     def test_form_body_reports_undocumented_field(self):
         result = check(
@@ -377,7 +377,7 @@ class BodyTest(unittest.TestCase):
             body_kind="form",
             body={"file": "x", "extra": "y"},
         )
-        self.assertEqual(result["problems"], [("undocumented_field", "body.extra")])
+        self.assertEqual(result["problems"], [("undocumented_field", "$.extra")])
 
     def test_form_body_accepts_unknown_field_values(self):
         result = check(
