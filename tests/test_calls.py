@@ -178,6 +178,10 @@ class ShellRobustnessTest(unittest.TestCase):
         [call] = calls("curl https://api.supermemory.ai/v3/x --data-urlencode 'q=a b'")
         self.assertEqual((call.body_kind, call.body), ("form", {"q": "a b"}))
 
+    def test_trailing_backslash_at_the_end_of_a_block_is_ignored(self):
+        [call] = calls("curl https://api.supermemory.ai/v3/x \\\n  -H 'A: b' \\")
+        self.assertEqual(call.url, "https://api.supermemory.ai/v3/x")
+
     def test_one_bad_command_does_not_drop_the_block(self):
         code = "curl https://api.supermemory.ai/a 'oops\ncurl https://api.supermemory.ai/b"
         self.assertEqual(calls(code), [])

@@ -98,7 +98,7 @@ _SHORT_OPTION = {"X": "request", "H": "header", "d": "data", "F": "form", "G": "
 
 def _shell(code):
     """The curl calls of a shell block in source order, and its curl commands that could not be read."""
-    text = code.replace("\\\n", " ")
+    text = re.sub(r"\\\s*$", "", code.replace("\\\n", " "))
     calls, unparsed = [], []
     for command in _commands(text):
         words = _words(command)
