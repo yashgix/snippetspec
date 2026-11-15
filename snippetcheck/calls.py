@@ -359,10 +359,45 @@ _FETCH = re.compile(r"(?<![\w.$])fetch\s*\(")
 _MISSING = object()
 
 
+def _executable(code):
+    """The code with comments and string contents blanked out, same length, so fetch( is found only in real code."""
+    masked = list(code)
+    index, size = 0, len(code)
+    while index < size:
+        if code.startswith("//", index) or code.startswith("/*", index):
+            end = _comment_end(code, index)
+        elif code[index] in "'\"`":
+            end = _string_end(code, index)
+        else:
+            index += 1
+            continue
+        masked[index:end] = [char if char == "\n" else " " for char in code[index:end]]
+        index = end
+    return "".join(masked)
+
+
+def _comment_end(code, index):
+    """The index just after the comment starting at index; an unclosed comment runs to the end."""
+    line = code.startswith("//", index)
+    end = code.find("\n" if line else "*/", index + 2)
+    if end < 0:
+        return len(code)
+    return end if line else end + 2
+
+
+def _string_end(code, index):
+    """The index just after the string literal starting at index; an unclosed string runs to the end."""
+    quote = code[index]
+    end = index + 1
+    while end < len(code) and code[end] != quote:
+        end += 2 if code[end] == "\\" else 1
+    return min(end + 1, len(code))
+
+
 def _javascript(code):
     """Every fetch(...) call of a JavaScript block, in source order."""
     calls = []
-    for found in _FETCH.finditer(code):
+    for found in _FETCH.finditer(_executable(code)):
         try:
             call = _fetch_call(code, found.end())
         except Exception:  # one unreadable call must not hide the rest of the block

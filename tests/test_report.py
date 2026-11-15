@@ -79,7 +79,8 @@ class ScanTest(unittest.TestCase):
         self.assertEqual(second["problems"], [["unknown_path", "/nope"]])
 
     def test_explicit_text_plain_curl_to_a_json_operation_is_a_mismatch(self):
-        text = "```bash\ncurl -X POST https://api.supermemory.ai/items -H 'Content-Type: text/plain' -d '{\"a\": 1}'\n```\n"
+        command = "curl -X POST https://api.supermemory.ai/items -H 'Content-Type: text/plain' -d '{}'"
+        text = f"```bash\n{command}\n```\n"
         [row] = scan(page(text), simple_spec())["calls"]
         self.assertEqual((row["verdict"], row["problems"]), ("mismatch", [["content_type", "body:text/plain"]]))
 

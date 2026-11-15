@@ -207,6 +207,25 @@ class MediaTest(unittest.TestCase):
         self.assertEqual(calls(code, "js")[0].media, "text/plain")
 
 
+class FetchLocatingTest(unittest.TestCase):
+    URL = "https://api.supermemory.ai/nope"
+
+    def test_commented_out_fetch_is_not_a_call(self):
+        self.assertEqual(calls(f'// fetch("{self.URL}")\n/* fetch("{self.URL}") */', "js"), [])
+
+    def test_fetch_inside_a_string_or_template_is_not_a_call(self):
+        code = f"""const a = 'fetch("{self.URL}")'; const b = `fetch("{self.URL}")`; const c = "fetch('{self.URL}')";"""
+        self.assertEqual(calls(code, "js"), [])
+
+    def test_real_fetch_after_comments_and_strings_is_found(self):
+        code = f'// fetch("x")\nconst s = "// not a comment";\n/* c */ fetch("{self.URL}")'
+        self.assertEqual([call.url for call in calls(code, "js")], [self.URL])
+
+    def test_string_with_an_escaped_quote_does_not_end_early(self):
+        code = f"""const s = 'it\\'s fetch("{self.URL}")';"""
+        self.assertEqual(calls(code, "js"), [])
+
+
 class FetchTest(unittest.TestCase):
     def test_simple_call(self):
         call = calls('fetch("https://api.supermemory.ai/v3/search")', "javascript")[0]
