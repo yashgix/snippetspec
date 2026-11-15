@@ -489,8 +489,10 @@ def _python_call(node):
     url = _string(url_node)
     if url is None:
         return None
-    kind, body = _python_body(node)
-    return _call("requests", method, url, kind, body, _python_query(node))
+    client = owner.id
+    kind, body = _python_body(node, client)
+    media = _media(_literal(headers)) if (headers := _argument(node, "headers", None)) is not None else None
+    return _call("requests", method, url, kind, body, _python_query(node, client), media)
 
 
 def _argument(node, name, position):
@@ -503,8 +505,8 @@ def _argument(node, name, position):
     return None
 
 
-def _python_query(node):
-    """The extra query pairs a params= dict literal sends."""
+def _python_query(node, client):
+    """The extra query pairs a params= dict literal sends, serialized the way the client does."""
     params = _argument(node, "params", None)
     if not isinstance(params, ast.Dict):
         return ()
@@ -512,26 +514,39 @@ def _python_query(node):
     for key, value in zip(params.keys, params.values, strict=True):
         name = _string(key) if key is not None else None
         if name is not None:
-            pairs.append((name, _query_text(value)))
+            pairs.extend((name, text) for text in _query_values(_literal(value), client))
     return tuple(pairs)
 
 
-def _query_text(node):
-    """A params value as query text; an unreadable one becomes {?}."""
-    value = _literal(node)
-    return "{?}" if value is UNKNOWN else str(value)
+def _query_values(value, client):
+    """The query texts one params value becomes: a list repeats the name, None is dropped by requests only."""
+    if value is UNKNOWN:
+        return ["{?}"]
+    if isinstance(value, list):
+        return [text for item in value for text in _query_values(item, client)]
+    if value is None:
+        return [] if client == "requests" else [""]
+    if isinstance(value, bool) and client == "httpx":
+        return ["true" if value else "false"]
+    return [str(value)]
 
 
-def _python_body(node):
-    """The body kind and value a requests/httpx call sends."""
+def _python_body(node, client):
+    """The body kind and value a requests/httpx call sends.
+
+    Both clients send files, then data, and only fall back to json when those are empty. httpx also has content=,
+    which wins over everything. See requests.models.PreparedRequest.prepare_body and httpx._content.encode_request.
+    """
+    if client == "httpx" and _argument(node, "content", None) is not None:
+        return "unparsed", None
+    for name in ("files", "data"):
+        payload = _argument(node, name, None)
+        value = UNKNOWN if payload is None else _literal(payload)
+        if payload is not None and (value is UNKNOWN or value):
+            return ("form", value) if isinstance(value, dict) else ("unparsed", None)
     payload = _argument(node, "json", None)
     if payload is not None:
         return "json", _literal(payload)
-    for name in ("data", "files"):
-        payload = _argument(node, name, None)
-        if payload is not None:
-            value = _literal(payload)
-            return ("form", value) if isinstance(value, dict) else ("unparsed", None)
     return "none", None
 
 

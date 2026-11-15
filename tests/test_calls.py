@@ -299,6 +299,47 @@ class FetchSpreadTest(unittest.TestCase):
         self.assertEqual((call.body_kind, call.body), ("json", UNKNOWN))
 
 
+class PythonClientTest(unittest.TestCase):
+    URL = "https://api.supermemory.ai/v3/documents"
+
+    def py(self, code):
+        return calls(code, "python")[0]
+
+    def test_data_wins_over_json(self):
+        call = self.py(f"requests.post('{self.URL}', data={{'bad': 'x'}}, json={{'content': 'hi'}})")
+        self.assertEqual((call.body_kind, call.body), ("form", {"bad": "x"}))
+
+    def test_files_win_over_json_and_empty_data_falls_back_to_json(self):
+        self.assertEqual(self.py(f"requests.post('{self.URL}', files={{'f': f}}, json={{}})").body_kind, "form")
+        call = self.py(f"httpx.post('{self.URL}', data={{}}, json={{'content': 'hi'}})")
+        self.assertEqual((call.body_kind, call.body), ("json", {"content": "hi"}))
+
+    def test_httpx_content_wins_over_everything(self):
+        self.assertEqual(self.py(f"httpx.post('{self.URL}', content=b'x', json={{'a': 1}})").body_kind, "unparsed")
+        self.assertEqual(self.py(f"requests.post('{self.URL}', content=b'x', json={{'a': 1}})").body_kind, "json")
+
+    def test_string_data_is_a_raw_body(self):
+        self.assertEqual(self.py(f"requests.post('{self.URL}', data='{{}}')").body_kind, "unparsed")
+
+    def test_list_params_repeat_the_name(self):
+        call = self.py(f"requests.get('{self.URL}', params={{'ids': [1, 2], 'q': 'a'}})")
+        self.assertEqual(call.query, (("ids", "1"), ("ids", "2"), ("q", "a")))
+
+    def test_none_param_is_dropped_by_requests_and_empty_in_httpx(self):
+        self.assertEqual(self.py(f"requests.get('{self.URL}', params={{'a': None, 'b': 1}})").query, (("b", "1"),))
+        self.assertEqual(
+            self.py(f"httpx.get('{self.URL}', params={{'a': None, 'b': 1}})").query, (("a", ""), ("b", "1"))
+        )
+
+    def test_bool_param_text_differs_by_client(self):
+        self.assertEqual(self.py(f"requests.get('{self.URL}', params={{'on': True}})").query, (("on", "True"),))
+        self.assertEqual(self.py(f"httpx.get('{self.URL}', params={{'on': True}})").query, (("on", "true"),))
+
+    def test_headers_dict_sets_the_media_type(self):
+        call = self.py(f"requests.post('{self.URL}', headers={{'Content-Type': 'text/plain'}}, data='x')")
+        self.assertEqual(call.media, "text/plain")
+
+
 class PythonTest(unittest.TestCase):
     def test_get_with_params(self):
         code = 'requests.get("https://api.supermemory.ai/v3/documents/list", params={"page": 1})'

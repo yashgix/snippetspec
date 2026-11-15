@@ -98,7 +98,7 @@ and column for source ordering. Only `requests` and `httpx` by name are accepted
 conversation and guessing is not the job.
 
 `params={...}` with a dict literal adds query pairs (`{?}` when a value is not a literal), which is how most of
-these examples write query parameters. `json=` wins over `data=`/`files=`, matching requests' own precedence.
+these examples write query parameters. `files=` and then `data=` win over `json=`, which is used only when both are empty, as in requests (`PreparedRequest.prepare_body`) and httpx (`encode_request`); httpx's `content=` wins over all. List values repeat the parameter name. A `None` value is dropped by requests and sent empty by httpx, and a `True` is `True` in requests and `true` in httpx.
 
 F-string URLs keep their placeholders as `{source}` via `ast.unparse`, so `/documents/{doc_id}` matches the template
 `/documents/{id}`. That is also why placeholders are later allowed to satisfy any schema.
