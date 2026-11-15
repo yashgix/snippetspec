@@ -154,6 +154,17 @@ class ShellTest(unittest.TestCase):
         self.assertEqual((call.method, call.body_kind, call.body), ("GET", "none", None))
 
 
+class DoubleQuoteTest(unittest.TestCase):
+    def test_separators_inside_double_quotes_do_not_split(self):
+        url = "https://api.supermemory.ai/v3/search?q=a&limit=3"
+        [call] = calls(f'curl "{url}"')
+        self.assertEqual(call.query, (("q", "a"), ("limit", "3")))
+
+    def test_newline_and_escaped_quote_inside_double_quotes(self):
+        [call] = calls('curl -X POST https://api.supermemory.ai/v3/x -d "{\\"a\\":\n \\"b\\"}"')
+        self.assertEqual((call.body_kind, call.body), ("json", {"a": "b"}))
+
+
 class FetchTest(unittest.TestCase):
     def test_simple_call(self):
         call = calls('fetch("https://api.supermemory.ai/v3/search")', "javascript")[0]

@@ -112,8 +112,12 @@ def _commands(text):
     index, size = 0, len(text)
     while index < size:
         char = text[index]
-        if quote == "'":
-            if char == "'":
+        if quote:
+            if char == "\\" and quote == '"' and index + 1 < size:
+                current.append(text[index : index + 2])
+                index += 2
+                continue
+            if char == quote:
                 quote = ""
             current.append(char)
         elif char == "\\" and index + 1 < size:
