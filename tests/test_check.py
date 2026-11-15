@@ -11,13 +11,13 @@ def spec(paths=None, schemas=None):
     return {"paths": paths or {}, "components": {"schemas": schemas or {}}}
 
 
-def call(method="GET", url="https://api.supermemory.ai/x", query=(), body_kind="none", body=None):
+def call(method="GET", url="https://api.supermemory.ai/x", query=(), body_kind="none", body=None, media=None):
     query = tuple(query) or tuple(parse_qsl(urlsplit(url).query, keep_blank_values=True))
-    return Call("curl", method, url, query, body_kind, body)
+    return Call("curl", method, url, query, body_kind, body, media)
 
 
-def check(specs, method="GET", url="https://api.supermemory.ai/x", query=(), body_kind="none", body=None):
-    return check_call(specs, operations(list(specs.items())), call(method, url, query, body_kind, body))
+def check(specs, method="GET", url="https://api.supermemory.ai/x", query=(), body_kind="none", body=None, media=None):
+    return check_call(specs, operations(list(specs.items())), call(method, url, query, body_kind, body, media))
 
 
 def item_schemas():
@@ -281,6 +281,24 @@ class PathTest(unittest.TestCase):
     def test_undeclared_path_parameter_is_not_checked(self):
         paths = {"/x/{id}": {"get": {}}}
         self.assertEqual(check({"v5": spec(paths)}, url="https://api.supermemory.ai/x/abc")["problems"], [])
+
+
+class MediaTypeTest(unittest.TestCase):
+    URL = "https://api.supermemory.ai/items"
+
+    def test_explicit_text_plain_to_a_json_operation_is_a_content_type_problem(self):
+        result = check(pinned_specs(), "POST", self.URL, body_kind="json", body={"name": "n"}, media="text/plain")
+        self.assertEqual(result["problems"], [("content_type", "body:text/plain")])
+
+    def test_explicit_json_media_type_is_validated_as_json(self):
+        result = check(pinned_specs(), "POST", self.URL, body_kind="json", body={"size": 1}, media="application/json")
+        self.assertEqual(result["problems"], [("missing_field", "$.name")])
+
+    def test_json_suffix_media_type_counts_as_json(self):
+        result = check(
+            pinned_specs(), "POST", self.URL, body_kind="json", body={"name": "n"}, media="application/vnd.x+json"
+        )
+        self.assertEqual(result["problems"], [])
 
 
 class QueryTest(unittest.TestCase):

@@ -246,13 +246,13 @@ def _body_problems(spec: dict, operation: Operation, call: Call) -> list[tuple[s
         if call.body_kind == "json" and call.body == {}:
             return []
         return [("unexpected_body", "body")]
-    media, missing = _media_type(schemas, call.body_kind)
+    media, missing = _media_type(schemas, call.body_kind, call.media)
     if media is None:
         return [missing]
     schema = deref(spec, schemas[media])
-    if call.body_kind == "form":
+    if media in FORM_TYPES:
         return _form_problems(schema, call.body)
-    if call.body_kind == "json":
+    if media == JSON and call.body_kind == "json":
         return validate(spec, schema, call.body)
     return []
 
@@ -263,8 +263,14 @@ def _body_required(operation: Operation) -> bool:
     return isinstance(body, dict) and body.get("required") is True
 
 
-def _media_type(schemas: dict, kind: str) -> tuple[str | None, tuple[str, str] | None]:
-    """The media type a body kind may use, or None and the problem to report instead."""
+def _media_type(schemas: dict, kind: str, explicit: str | None) -> tuple[str | None, tuple[str, str] | None]:
+    """The media type a body may use, or None and the problem to report instead.
+
+    An explicit Content-Type header must be one the operation declares; otherwise the body's shape decides.
+    """
+    if explicit:
+        explicit = JSON if explicit.endswith("+json") and JSON in schemas else explicit
+        return (explicit, None) if explicit in schemas else (None, ("content_type", f"body:{explicit}"))
     if kind == "form":
         for name in FORM_TYPES:
             if name in schemas:

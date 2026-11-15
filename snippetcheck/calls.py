@@ -29,6 +29,7 @@ class Call:
     query: tuple[tuple[str, str], ...]
     body_kind: str
     body: object
+    media: str | None = None  # the Content-Type the example sets explicitly, lowercase without parameters
 
 
 def find_calls(example: Example) -> list[Call]:
@@ -48,7 +49,21 @@ def unparsed_commands(example: Example) -> list[str]:
     return _shell(example.code)[1] if example.language.lower() in SHELL else []
 
 
-def _call(tool, method, url, body_kind="none", body=None, extra=()):
+def _media(headers):
+    """The explicit Content-Type of a list of "Name: value" headers or a {name: value} mapping, else None."""
+    if isinstance(headers, dict):
+        pairs = headers.items()
+    elif isinstance(headers, list):
+        pairs = (header.partition(":")[::2] for header in headers if isinstance(header, str))
+    else:
+        return None
+    for name, value in pairs:
+        if str(name).strip().lower() == "content-type" and isinstance(value, str):
+            return value.split(";")[0].strip().lower() or None
+    return None
+
+
+def _call(tool, method, url, body_kind="none", body=None, extra=(), media=None):
     """A call for an absolute http(s) URL with a host, else None."""
     try:
         parts = urlsplit(url)
@@ -57,7 +72,7 @@ def _call(tool, method, url, body_kind="none", body=None, extra=()):
     if parts.scheme not in ("http", "https") or not parts.hostname:
         return None
     query = tuple(parse_qsl(parts.query, keep_blank_values=True)) + tuple(extra)
-    return Call(tool, method.upper(), url, query, body_kind, body)
+    return Call(tool, method.upper(), url, query, body_kind, body, media)
 
 
 # --- curl -------------------------------------------------------------------
@@ -301,7 +316,8 @@ def _curl_call(state):
     else:
         method = "GET"
     kind, body = _curl_body(state, data)
-    return _call("curl", method, url, kind, body)
+    media = _media(state["headers"]) or ("application/json" if state["json"] else None)
+    return _call("curl", method, url, kind, body, media=media)
 
 
 def _curl_body(state, data):
@@ -372,7 +388,7 @@ def _fetch_call(text, index):
     if not isinstance(method, str):
         return None
     kind, body = _fetch_body(text, position, options)
-    return _call("fetch", method, url, kind, body)
+    return _call("fetch", method, url, kind, body, media=_media(options.get("headers", {})))
 
 
 def _fetch_body(text, position, options):

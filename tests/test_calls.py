@@ -193,6 +193,20 @@ class ShellRobustnessTest(unittest.TestCase):
         self.assertEqual(unparsed_commands(example(code)), ["$ curl https://api.supermemory.ai/b 'oops"])
 
 
+class MediaTest(unittest.TestCase):
+    def test_curl_header_sets_the_media_type_without_parameters(self):
+        [call] = calls("curl -X POST https://x.test/a -H 'content-type: Text/Plain; charset=utf-8' -d '{}'")
+        self.assertEqual(call.media, "text/plain")
+
+    def test_curl_json_option_implies_json_and_no_header_means_none(self):
+        self.assertEqual(calls("curl https://x.test/a --json '{}'")[0].media, "application/json")
+        self.assertIsNone(calls("curl https://x.test/a -d '{}'")[0].media)
+
+    def test_fetch_headers_object_sets_the_media_type(self):
+        code = "fetch('https://x.test/a', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: '{}' })"
+        self.assertEqual(calls(code, "js")[0].media, "text/plain")
+
+
 class FetchTest(unittest.TestCase):
     def test_simple_call(self):
         call = calls('fetch("https://api.supermemory.ai/v3/search")', "javascript")[0]
