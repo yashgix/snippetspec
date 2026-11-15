@@ -2,6 +2,7 @@
 
 test:
 	python3 -m unittest discover -s tests
+	python3 -m unittest discover -s tests/acceptance
 
 lint:
 	ruff check . && ruff format --check .
