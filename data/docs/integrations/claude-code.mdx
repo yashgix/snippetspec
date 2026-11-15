@@ -1,0 +1,155 @@
+---
+title: "Claude Code"
+sidebarTitle: "Claude Code"
+description: "Supermemory plugin for Claude Code. Keeps memory across coding sessions."
+icon: "/images/claude-code-icon.svg"
+---
+
+<img
+  src="/images/claude-code-supermemory.png"
+  alt="Claude Code + Supermemory"
+  className="rounded-lg"
+/>
+
+[supermemory](https://github.com/supermemoryai/claude-supermemory) is a Claude Code plugin that gives your AI persistent memory across sessions. Your agent remembers what you worked on — across sessions, across projects.
+
+<Tip>
+**Prefer to keep everything on your machine?** This plugin works with [self-hosted Supermemory](/self-hosting/overview) — run `npx supermemory local`, then set `baseUrl` in project config (or point your install at your local API) and use the API key printed on first boot.
+</Tip>
+
+## Install the plugin
+
+> **Requires Node.js 18+** on your PATH — the memory hooks run as Node scripts.
+
+```bash
+# Add the plugin marketplace
+/plugin marketplace add supermemoryai/claude-supermemory
+
+# Install the plugin
+/plugin install supermemory
+```
+
+<Note>
+**Migrating from the old `claude-supermemory` plugin name?** It was renamed to `supermemory` and will not update in place:
+
+```bash
+/plugin marketplace update supermemory-plugins
+/plugin install supermemory@supermemory-plugins
+# Only if the old plugin is still installed:
+/plugin uninstall claude-supermemory@supermemory-plugins
+```
+</Note>
+
+## Authenticate
+
+Start a Claude Code session and the plugin opens a browser login, then saves the key to `~/.supermemory-claude/credentials.json`.
+
+Or create a Supermemory API key from the [API Keys](https://console.supermemory.ai/keys) page in the console and add it to your shell profile:
+
+<Tabs>
+  <Tab title="macOS / Linux (zsh)">
+    ```bash
+    echo 'export SUPERMEMORY_CC_API_KEY="sm_..."' >> ~/.zshrc
+    source ~/.zshrc
+    ```
+  </Tab>
+  <Tab title="macOS / Linux (bash)">
+    ```bash
+    echo 'export SUPERMEMORY_CC_API_KEY="sm_..."' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+  </Tab>
+  <Tab title="Windows (PowerShell)">
+    ```powershell
+    [System.Environment]::SetEnvironmentVariable("SUPERMEMORY_CC_API_KEY", "sm_...", "User")
+    ```
+    Restart your terminal after running this.
+  </Tab>
+</Tabs>
+
+## How it works
+
+Once installed, the plugin runs automatically:
+
+- **Session context** — At session start, profile facts for this project are loaded into context.
+- **Direct recall** — Before Claude sees each substantive prompt, the hook searches Supermemory and injects fresh matches. Set `recallDirective` to switch to advisory mode, where Claude decides when to search.
+- **Auto-capture** — After each Claude response (the Stop hook), conversation content added since the last save is captured in the background.
+- **Shared repo memory** — Captures go to one repository container shared with the Codex, OpenCode, and Cursor plugins, tagged with `sm_scope: personal` metadata.
+- **MCP tools** — The hosted Supermemory MCP tools (`search_memory`, `add_memory`, and more) use the same credentials. `search_memory` and the legacy camelCase read tools (`listMemories`, `listDocuments`, `getDocument`, `listSpaces`, `whoAmI`) are approved automatically; other tools, including `list_memories`, `list_documents`, `get_document` and `get_profile`, still ask for approval. For deeper history, Claude can also use the `context-gatherer` agent.
+
+## Commands
+
+| Command | Description |
+| --- | --- |
+| `/supermemory:index` | Index codebase architecture, conventions, and how to run it into the project container |
+| `/supermemory:status` | Show authentication status, API and MCP reachability, and the active project container |
+
+## Configuration
+
+### Environment variables
+
+```bash
+SUPERMEMORY_CC_API_KEY=sm_...        # Optional: browser login is used when unset
+SUPERMEMORY_API_URL=...              # Optional: override the REST API base URL
+SUPERMEMORY_REPO_TAG=...             # Optional: override the project container
+SUPERMEMORY_ISOLATE_WORKTREES=true   # Optional: key the container on the worktree path
+SUPERMEMORY_DEBUG=true               # Optional: enable debug logging
+```
+
+### Global settings
+
+Create `~/.supermemory-claude/settings.json`:
+
+```json
+{
+  "maxProfileItems": 5,
+  "signalExtraction": true,
+  "signalKeywords": ["remember", "architecture", "decision", "bug", "fix"],
+  "signalTurnsBefore": 3,
+  "includeTools": ["Edit", "Write"]
+}
+```
+
+| Option | Description |
+| --- | --- |
+| `maxProfileItems` | Max memories in context (default: 5) |
+| `recallDirective` | Override the built-in reasoned-recall instruction |
+| `signalExtraction` | Only capture important turns (default: false) |
+| `signalKeywords` | Keywords that trigger capture |
+| `signalTurnsBefore` | Context turns before a signal (default: 3) |
+| `includeTools` | Tools to explicitly capture |
+
+### Project config
+
+Per-repo overrides in `.claude/.supermemory-claude/config.json`. Create the file manually:
+
+```json
+{
+  "apiKey": "sm_...",
+  "baseUrl": "https://api.supermemory.ai",
+  "namespace": "my-team-project",
+  "signalExtraction": true
+}
+```
+
+| Option | Description |
+| --- | --- |
+| `apiKey` | Project-specific API key |
+| `baseUrl` | Supermemory API URL (use for self-hosted) |
+| `apiVersion` | `v5` or `legacy`. The hosted API uses v5; custom `baseUrl` values default to `legacy`. Set `v5` to use v5 with a self-hosted server 0.0.9 or newer |
+| `namespace` | Override the project container. Takes precedence over `repoContainerTag` |
+| `repoContainerTag` | Override the project container (checked before `SUPERMEMORY_REPO_TAG`) |
+
+API key precedence is `SUPERMEMORY_CC_API_KEY`, project `apiKey`, then `~/.supermemory-claude/credentials.json`.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="GitHub repository" icon="/images/github-icon.svg" href="https://github.com/supermemoryai/claude-supermemory">
+    Source code, issues, and detailed README.
+  </Card>
+
+  <Card title="Cursor plugin" icon="/images/cursor-logo.svg" href="/integrations/cursor">
+    Memory for your Cursor chats.
+  </Card>
+</CardGroup>
