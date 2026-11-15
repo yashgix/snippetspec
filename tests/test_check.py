@@ -1,4 +1,5 @@
 import unittest
+from urllib.parse import parse_qsl, urlsplit
 
 from snippetcheck.calls import Call
 from snippetcheck.check import check_call, is_placeholder, validate
@@ -11,7 +12,8 @@ def spec(paths=None, schemas=None):
 
 
 def call(method="GET", url="https://api.supermemory.ai/x", query=(), body_kind="none", body=None):
-    return Call("curl", method, url, tuple(query), body_kind, body)
+    query = tuple(query) or tuple(parse_qsl(urlsplit(url).query, keep_blank_values=True))
+    return Call("curl", method, url, query, body_kind, body)
 
 
 def check(specs, method="GET", url="https://api.supermemory.ai/x", query=(), body_kind="none", body=None):
@@ -353,7 +355,11 @@ class BodyTest(unittest.TestCase):
 
     def test_json_body_to_a_form_operation_is_a_content_type_problem(self):
         result = check(
-            pinned_specs(), method="POST", url="https://api.supermemory.ai/uploads", body_kind="json", body={"file": "x"}
+            pinned_specs(),
+            method="POST",
+            url="https://api.supermemory.ai/uploads",
+            body_kind="json",
+            body={"file": "x"},
         )
         self.assertEqual(result["problems"], [("content_type", "body:json")])
 
@@ -365,7 +371,11 @@ class BodyTest(unittest.TestCase):
 
     def test_form_body_checks_names_only(self):
         result = check(
-            pinned_specs(), method="POST", url="https://api.supermemory.ai/uploads", body_kind="form", body={"note": "x"}
+            pinned_specs(),
+            method="POST",
+            url="https://api.supermemory.ai/uploads",
+            body_kind="form",
+            body={"note": "x"},
         )
         self.assertEqual(result["problems"], [("missing_field", "$.file")])
 
@@ -381,7 +391,11 @@ class BodyTest(unittest.TestCase):
 
     def test_form_body_accepts_unknown_field_values(self):
         result = check(
-            pinned_specs(), method="POST", url="https://api.supermemory.ai/uploads", body_kind="form", body={"file": UNKNOWN}
+            pinned_specs(),
+            method="POST",
+            url="https://api.supermemory.ai/uploads",
+            body_kind="form",
+            body={"file": UNKNOWN},
         )
         self.assertEqual(result["problems"], [])
 
@@ -391,7 +405,9 @@ class BodyTest(unittest.TestCase):
 
     def test_unparsed_body_to_a_json_operation_passes(self):
         self.assertEqual(
-            check(pinned_specs(), method="POST", url="https://api.supermemory.ai/items", body_kind="unparsed")["problems"],
+            check(pinned_specs(), method="POST", url="https://api.supermemory.ai/items", body_kind="unparsed")[
+                "problems"
+            ],
             [],
         )
 
@@ -436,16 +452,18 @@ class ParameterTextTest(unittest.TestCase):
         self.assertEqual(self.problems({"type": "integer"}, "https://api.supermemory.ai/x?v=${N}"), [])
 
     def test_type_list_passes_on_any_member(self):
-        schema = {"type": ["integer", "null"]}
-        self.assertEqual(self.problems(schema, "https://api.supermemory.ai/x?v=null"), [])
+        schema = {"type": ["integer", "boolean"]}
+        self.assertEqual(self.problems(schema, "https://api.supermemory.ai/x?v=true"), [])
         self.assertEqual(self.problems(schema, "https://api.supermemory.ai/x?v=z"), [("type", "query:v")])
 
     def test_parameter_schema_ref(self):
-        paths = {"/x": {"get": {"parameters": [{"name": "v", "in": "query", "schema": {"$ref": "#/components/schemas/Count"}}]}}}
+        paths = {
+            "/x": {
+                "get": {"parameters": [{"name": "v", "in": "query", "schema": {"$ref": "#/components/schemas/Count"}}]}
+            }
+        }
         specs = {"v5": spec(paths, {"Count": {"type": "integer"}})}
-        self.assertEqual(
-            check(specs, url="https://api.supermemory.ai/x?v=abc")["problems"], [("type", "query:v")]
-        )
+        self.assertEqual(check(specs, url="https://api.supermemory.ai/x?v=abc")["problems"], [("type", "query:v")])
 
 
 if __name__ == "__main__":

@@ -41,8 +41,12 @@ class MetricsTest(unittest.TestCase):
         for kind in BREAKING:
             self.assertEqual(METRICS[f"mutation_{kind}_cases"], METRICS[f"mutation_{kind}_caught"], kind)
         self.assertEqual(METRICS["mutation_neutral_flagged"], 0)
-        self.assertEqual(sum(METRICS[f"mutation_{kind}_cases"] for kind in BREAKING), METRICS["mutation_breaking_cases"])
-        self.assertEqual(len(DETAILS["mutations"]), METRICS["mutation_breaking_cases"] + METRICS["mutation_neutral_cases"])
+        self.assertEqual(
+            sum(METRICS[f"mutation_{kind}_cases"] for kind in BREAKING), METRICS["mutation_breaking_cases"]
+        )
+        self.assertEqual(
+            len(DETAILS["mutations"]), METRICS["mutation_breaking_cases"] + METRICS["mutation_neutral_cases"]
+        )
 
 
 class MainTest(unittest.TestCase):
@@ -51,7 +55,9 @@ class MainTest(unittest.TestCase):
             out = Path(folder) / "results" / "metrics.json"
             self.assertEqual(main(["--out", str(out)]), 0)
             self.assertEqual(json.loads(out.read_text()), METRICS)
-            self.assertEqual(set(json.loads((out.parent / "details.json").read_text())), {"calls", "ledger", "mutations"})
+            self.assertEqual(
+                set(json.loads((out.parent / "details.json").read_text())), {"calls", "ledger", "mutations"}
+            )
 
 
 if __name__ == "__main__":

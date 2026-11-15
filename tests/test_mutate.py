@@ -11,7 +11,12 @@ def spec() -> dict:
             "/items/{id}": {
                 "get": {
                     "parameters": [
-                        {"name": "id", "in": "path", "required": True, "schema": {"type": "string", "enum": ["a", "b"]}},
+                        {
+                            "name": "id",
+                            "in": "path",
+                            "required": True,
+                            "schema": {"type": "string", "enum": ["a", "b"]},
+                        },
                         {"name": "mode", "in": "query", "schema": {"type": "string", "enum": ["fast", "slow"]}},
                         {"name": "limit", "in": "query", "schema": {"type": "integer"}},
                     ]
@@ -42,9 +47,7 @@ def spec() -> dict:
 
 
 def operation(model: dict, method: str, template: str):
-    return next(
-        item for item in operations([("v5", model)]) if item.method == method and item.template == template
-    )
+    return next(item for item in operations([("v5", model)]) if item.method == method and item.template == template)
 
 
 def call(method: str, url: str, query=(), body_kind="none", body=None) -> Call:

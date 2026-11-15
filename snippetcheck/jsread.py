@@ -84,7 +84,7 @@ def _read_escape(text: str, index: int) -> tuple[str, int]:
                 digits = text[index + 2 : end]
                 try:
                     return chr(int(digits, 16)), end + 1
-                except (ValueError, OverflowError):
+                except ValueError, OverflowError:
                     pass
             return "u", index + 1
         digits = text[index + 1 : index + 5]

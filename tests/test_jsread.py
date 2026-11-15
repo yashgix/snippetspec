@@ -111,12 +111,17 @@ class LiteralTest(unittest.TestCase):
 
 class PositionTest(unittest.TestCase):
     def test_value_at_returns_the_end_position(self):
-        value, end = value_at('xx "a" yy', 3)
+        value, end = value_at('xx "a", yy', 3)
         self.assertEqual(value, "a")
         self.assertEqual(end, 6)
 
+    def test_literal_followed_by_an_operator_is_not_a_literal(self):
+        value, end = value_at('xx "a" + b', 3)
+        self.assertIs(value, UNKNOWN)
+        self.assertEqual(end, 6)
+
     def test_literal_at_is_an_alias(self):
-        self.assertEqual(literal_at('[1, 2]', 0), ([1, 2], 6))
+        self.assertEqual(literal_at("[1, 2]", 0), ([1, 2], 6))
 
     def test_non_literal_value_ends_after_the_token(self):
         value, end = value_at("foo bar", 0)

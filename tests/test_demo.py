@@ -30,8 +30,8 @@ class TableTest(unittest.TestCase):
 
     def test_values_are_written_as_text(self):
         values = metrics()
-        values["ledger_days_open"] = [3, 4]
-        self.assertIn("| ledger_days_open | [3, 4] |", table(values))
+        values["ledger_recall"] = 0.5
+        self.assertIn("| ledger_recall | 0.5 |", table(values))
 
 
 class RenderTest(unittest.TestCase):

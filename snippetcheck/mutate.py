@@ -7,7 +7,6 @@ from urllib.parse import unquote, urlsplit
 
 from snippetcheck.calls import Call
 from snippetcheck.check import check_call
-from snippetcheck.jsread import UNKNOWN
 from snippetcheck.spec import Operation, body_schemas, deref, operations, params, segments
 
 BREAKING = {

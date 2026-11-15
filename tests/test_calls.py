@@ -172,7 +172,9 @@ class FetchTest(unittest.TestCase):
         self.assertEqual((call.body_kind, call.body), ("none", None))
 
     def test_options_and_json_stringify_body(self):
-        code = 'fetch("https://api.supermemory.ai/ns/user/search", {method: "POST", body: JSON.stringify({query: "hi"})})'
+        code = (
+            'fetch("https://api.supermemory.ai/ns/user/search", {method: "POST", body: JSON.stringify({query: "hi"})})'
+        )
         call = calls(code, "typescript")[0]
         self.assertEqual(call.method, "POST")
         self.assertEqual((call.body_kind, call.body), ("json", {"query": "hi"}))
@@ -213,7 +215,9 @@ class FetchTest(unittest.TestCase):
 
 class FetchSpreadTest(unittest.TestCase):
     def test_stringified_object_with_spread_is_json_of_unknown_value(self):
-        [call] = calls("fetch('https://api.supermemory.ai/e', { method: 'PUT', body: JSON.stringify({ ...rest, a: 1 }) })", "js")
+        [call] = calls(
+            "fetch('https://api.supermemory.ai/e', { method: 'PUT', body: JSON.stringify({ ...rest, a: 1 }) })", "js"
+        )
         self.assertEqual((call.body_kind, call.body), ("json", UNKNOWN))
 
 

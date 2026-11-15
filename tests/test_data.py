@@ -8,9 +8,7 @@ METHODS = ("get", "post", "put", "patch", "delete")
 
 
 def operation_count(spec):
-    return sum(
-        1 for path_item in spec.get("paths", {}).values() for method in METHODS if method in path_item
-    )
+    return sum(1 for path_item in spec.get("paths", {}).values() for method in METHODS if method in path_item)
 
 
 class PathsTest(unittest.TestCase):

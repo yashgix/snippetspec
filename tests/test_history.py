@@ -13,9 +13,7 @@ def specs():
         "v5": {
             "paths": {
                 "/items": {"get": {}},
-                "/items/{id}": {
-                    "get": {"parameters": [{"name": "id", "in": "path", "schema": {"type": "integer"}}]}
-                },
+                "/items/{id}": {"get": {"parameters": [{"name": "id", "in": "path", "schema": {"type": "integer"}}]}},
             }
         }
     }

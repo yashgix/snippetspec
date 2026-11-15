@@ -360,7 +360,7 @@ def _python(code):
     """Every requests/httpx call of a Python block, in source order."""
     try:
         tree = ast.parse(code)
-    except (SyntaxError, ValueError):
+    except SyntaxError, ValueError:
         return []
     found = []
     for node in ast.walk(tree):

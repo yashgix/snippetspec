@@ -60,8 +60,7 @@ def _report(result: dict) -> None:
         if row["verdict"] != "ok":
             print(_line(row))
     print(
-        f"{len(result['calls'])} calls: {counts['ok']} ok, "
-        f"{counts['partial']} partial, {counts['mismatch']} mismatch"
+        f"{len(result['calls'])} calls: {counts['ok']} ok, {counts['partial']} partial, {counts['mismatch']} mismatch"
     )
 
 
