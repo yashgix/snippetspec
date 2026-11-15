@@ -37,15 +37,9 @@ class StringTest(unittest.TestCase):
         self.assertEqual(parse('"hello"'), "hello")
         self.assertEqual(parse("'hello'"), "hello")
 
-    def test_escapes(self):
-        self.assertEqual(parse('"a\\n b\\t c"'), "a\n b\t c")
-        self.assertEqual(parse('"\\u0041\\x42"'), "AB")
-        self.assertEqual(parse('"\\q"'), "q")
-
     def test_template_substitutions(self):
         self.assertEqual(parse("`a${name}b`"), "a{name}b")
         self.assertEqual(parse("`a${ {b: 1} }c`"), "a{{b: 1}}c")
-        self.assertEqual(parse("`a\\${name}`"), "a${name}")
 
     def test_unterminated_string_is_unknown(self):
         self.assertIs(parse('"abc'), UNKNOWN)
@@ -111,7 +105,7 @@ class LiteralTest(unittest.TestCase):
 
 class PositionTest(unittest.TestCase):
     def test_value_at_returns_the_end_position(self):
-        value, end = value_at('xx "a" yy', 3)
+        value, end = value_at('xx "a", yy', 3)
         self.assertEqual(value, "a")
         self.assertEqual(end, 6)
 

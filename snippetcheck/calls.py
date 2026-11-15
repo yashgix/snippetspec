@@ -57,7 +57,7 @@ def _call(tool, method, url, body_kind="none", body=None, extra=()):
 
 # --- curl -------------------------------------------------------------------
 
-_SEPARATORS = frozenset(";&|<>\n")
+_SEPARATORS = frozenset(";&|<>" + chr(10))
 _LONG_ARGUMENT = {
     "request",
     "header",
@@ -92,7 +92,7 @@ _SHORT_OPTION = {"X": "request", "H": "header", "d": "data", "F": "form", "G": "
 
 def _shell(code):
     """Every curl call of a shell block, in source order."""
-    text = code.replace("\\\n", " ")
+    text = code.replace(chr(92) + chr(10), " ")
     calls = []
     for command in _commands(text):
         words = _words(command)
@@ -105,23 +105,44 @@ def _shell(code):
 
 
 def _commands(text):
-    """Shell text split into commands at unquoted separators; quoted newlines stay put."""
+    """Shell text split at unquoted separators, with quotes and comments respected."""
     commands = []
     current = []
     quote = ""
+    comment = False
     index, size = 0, len(text)
     while index < size:
         char = text[index]
+        if comment:
+            if char == chr(10):
+                commands.append("".join(current))
+                current = []
+                comment = False
+            else:
+                current.append(char)
+            index += 1
+            continue
         if quote == "'":
             if char == "'":
                 quote = ""
             current.append(char)
-        elif char == "\\" and index + 1 < size:
+        elif quote == '"':
+            if char == chr(92) and index + 1 < size:
+                current.append(text[index : index + 2])
+                index += 2
+                continue
+            if char == '"':
+                quote = ""
+            current.append(char)
+        elif char == chr(92) and index + 1 < size:
             current.append(text[index : index + 2])
             index += 2
             continue
         elif char in "'\"":
             quote = char
+            current.append(char)
+        elif char == "#" and (not current or current[-1].isspace()):
+            comment = True
             current.append(char)
         elif char in _SEPARATORS:
             commands.append("".join(current))
@@ -302,17 +323,27 @@ def _javascript(code):
     return calls
 
 
+def _arguments_end(text, index):
+    """Whether only whitespace, an optional trailing comma and ')' follow an argument."""
+    position = skip(text, index)
+    if position < len(text) and text[position] == ",":
+        position = skip(text, position + 1)
+    return position < len(text) and text[position] == ")"
+
+
 def _fetch_call(text, index):
     """The call one fetch(...) makes, or None when its arguments are not literals."""
     url, end = value_at(text, index)
     if not isinstance(url, str):
         return None
     position = skip(text, end)
-    if position >= len(text) or text[position] != ",":
+    if position >= len(text) or text[position] not in ",)":
+        return None
+    if text[position] == ")":
         return _call("fetch", "GET", url)
     position = skip(text, position + 1)
     options, _end = read_object(text, position)
-    if not isinstance(options, dict):
+    if not isinstance(options, dict) or not _arguments_end(text, _end):
         return None
     method = options.get("method", "GET")
     if not isinstance(method, str):
@@ -330,7 +361,7 @@ def _fetch_body(text, position, options):
         return "none", None
     inner = _stringify(property_source(text, position, "body") or "")
     if inner is not _MISSING:
-        return ("json", inner) if inner is not UNKNOWN else ("unparsed", None)
+        return "json", inner
     if isinstance(value, str):
         try:
             return "json", json.loads(value)
@@ -346,7 +377,13 @@ def _stringify(source):
     position = skip(source, len("JSON.stringify"))
     if position >= len(source) or source[position] != "(":
         return _MISSING
-    return value_at(source, position + 1)[0]
+    value, end = value_at(source, position + 1)
+    position = skip(source, end)
+    if position >= len(source) or source[position] != ")":
+        return _MISSING
+    if skip(source, position + 1) != len(source):
+        return _MISSING
+    return value
 
 
 # --- requests / httpx -------------------------------------------------------

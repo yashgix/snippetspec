@@ -148,13 +148,13 @@ def experiment(data: str | Path = DATA, study: str | Path = STUDY) -> tuple[dict
         **_ledger_metrics(ledger_rows, days),
         **_mutation_metrics(mutation_rows),
     }
-    return metrics, {"calls": rows, "ledger": ledger_rows, "mutations": mutation_rows}
+    return dict(sorted(metrics.items())), {"calls": rows, "ledger": ledger_rows, "mutations": mutation_rows}
 
 
 def _write(path: Path, value: dict) -> None:
     """Write JSON with sorted keys, one-space indent and a trailing newline, creating the folder."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(value, indent=1, sort_keys=True) + chr(10), encoding="utf-8")
 
 
 def main(argv: list[str] | None = None) -> int:

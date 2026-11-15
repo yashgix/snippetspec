@@ -33,10 +33,10 @@ class PageCallsTest(unittest.TestCase):
             "```\n"
         )
         found = page_calls({"a.mdx": text})
-        self.assertEqual([call.url for _example, _index, call in found], [
-            "https://api.supermemory.ai/items",
-            "https://api.supermemory.ai/other",
-        ])
+        self.assertEqual(
+            [call.url for _example, _index, call in found],
+            ["https://api.supermemory.ai/items", "https://api.supermemory.ai/other"],
+        )
         self.assertEqual([index for _example, index, _call in found], [0, 0])
 
     def test_index_counts_only_matching_calls_within_an_example(self):
