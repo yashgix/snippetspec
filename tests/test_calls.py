@@ -207,6 +207,23 @@ class MediaTest(unittest.TestCase):
         self.assertEqual(calls(code, "js")[0].media, "text/plain")
 
 
+class CurlUrlsTest(unittest.TestCase):
+    def test_every_url_of_one_command_is_a_call(self):
+        found = calls("curl https://api.supermemory.ai/a https://api.supermemory.ai/b")
+        self.assertEqual([call.url for call in found], ["https://api.supermemory.ai/a", "https://api.supermemory.ai/b"])
+
+    def test_url_option_and_positional_url_both_count(self):
+        found = calls("curl --url https://api.supermemory.ai/a https://api.supermemory.ai/b")
+        self.assertEqual([call.url for call in found], ["https://api.supermemory.ai/a", "https://api.supermemory.ai/b"])
+
+    def test_urls_share_method_and_body(self):
+        found = calls("curl -X POST https://x.test/a https://x.test/b -d '{\"k\": 1}'")
+        self.assertEqual([(call.method, call.body) for call in found], [("POST", {"k": 1})] * 2)
+
+    def test_a_command_without_a_url_gives_no_call(self):
+        self.assertEqual(calls("curl -s -X POST"), [])
+
+
 class FetchLocatingTest(unittest.TestCase):
     URL = "https://api.supermemory.ai/nope"
 

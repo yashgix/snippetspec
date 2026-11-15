@@ -121,9 +121,7 @@ def _shell(code):
             if _starts_curl(command):
                 unparsed.append(command.strip())
             continue
-        call = _curl(words)
-        if call is not None:
-            calls.append(call)
+        calls.extend(_curl(words))
     return calls, unparsed
 
 
@@ -199,11 +197,11 @@ def _words(command):
 
 
 def _curl(words):
-    """The call one curl command makes, or None when it is not a curl command."""
+    """The calls one curl command makes, none when it is not a curl command."""
     if words and words[0] == "$":
         words = words[1:]
     if not words or words[0].lstrip("$") != "curl":
-        return None
+        return []
     state = {
         "method": None,
         "get": False,
@@ -212,8 +210,7 @@ def _curl(words):
         "headers": [],
         "data": [],
         "forms": [],
-        "url": None,
-        "positional": None,
+        "urls": [],
     }
     index = 1
     while index < len(words):
@@ -223,10 +220,9 @@ def _curl(words):
         elif word.startswith("-") and len(word) > 1:
             index = _short_option(state, words, index)
         else:
-            if state["positional"] is None:
-                state["positional"] = word
+            state["urls"].append(word)
             index += 1
-    return _curl_call(state)
+    return _curl_calls(state)
 
 
 def _assign(state, name, value=""):
@@ -236,7 +232,7 @@ def _assign(state, name, value=""):
     elif name == "header":
         state["headers"].append(value)
     elif name == "url":
-        state["url"] = value
+        state["urls"].append(value)
     elif name == "json":
         state["json"] = True
         state["data"].append(value)
@@ -298,26 +294,26 @@ def _short_option(state, words, index):
     return index + 1
 
 
-def _curl_call(state):
-    """The Call a parsed curl command makes, or None when it names no URL."""
-    url = state["url"] or state["positional"]
-    if url is None:
-        return None
+def _curl_calls(state):
+    """One Call per URL a parsed curl command names, all sharing its method, body and headers."""
     data = "&".join(state["data"])
     if state["get"]:
         extra = parse_qsl(data, keep_blank_values=True) if data else ()
-        return _call("curl", state["method"] or "GET", url, extra=extra)
-    if state["method"]:
-        method = state["method"]
-    elif state["head"]:
-        method = "HEAD"
-    elif state["data"] or state["forms"]:
-        method = "POST"
+        method, kind, body, media = state["method"] or "GET", "none", None, None
     else:
-        method = "GET"
-    kind, body = _curl_body(state, data)
-    media = _media(state["headers"]) or ("application/json" if state["json"] else None)
-    return _call("curl", method, url, kind, body, media=media)
+        extra = ()
+        method = state["method"] or _curl_method(state)
+        kind, body = _curl_body(state, data)
+        media = _media(state["headers"]) or ("application/json" if state["json"] else None)
+    calls = (_call("curl", method, url, kind, body, extra, media) for url in state["urls"])
+    return [call for call in calls if call is not None]
+
+
+def _curl_method(state):
+    """The method curl uses when -X is absent."""
+    if state["head"]:
+        return "HEAD"
+    return "POST" if state["data"] or state["forms"] else "GET"
 
 
 def _curl_body(state, data):
