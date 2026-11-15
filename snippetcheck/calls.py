@@ -7,7 +7,7 @@ import json
 import re
 import shlex
 from dataclasses import dataclass
-from urllib.parse import parse_qsl, urlsplit
+from urllib.parse import parse_qsl, quote_plus, urlsplit
 
 from snippetcheck.jsread import UNKNOWN, property_source, read_object, skip, value_at
 from snippetcheck.mdx import Example
@@ -35,12 +35,17 @@ def find_calls(example: Example) -> list[Call]:
     """Every http(s) call an example makes, in source order."""
     language = example.language.lower()
     if language in SHELL:
-        return _shell(example.code)
+        return _shell(example.code)[0]
     if language in JAVASCRIPT:
         return _javascript(example.code)
     if language in PYTHON:
         return _python(example.code)
     return []
+
+
+def unparsed_commands(example: Example) -> list[str]:
+    """The curl commands of a shell example whose quoting could not be read, so they gave no call."""
+    return _shell(example.code)[1] if example.language.lower() in SHELL else []
 
 
 def _call(tool, method, url, body_kind="none", body=None, extra=()):
@@ -66,6 +71,7 @@ _LONG_ARGUMENT = {
     "data-raw",
     "data-binary",
     "data-ascii",
+    "data-urlencode",
     "json",
     "form",
     "form-string",
@@ -91,17 +97,24 @@ _SHORT_OPTION = {"X": "request", "H": "header", "d": "data", "F": "form", "G": "
 
 
 def _shell(code):
-    """Every curl call of a shell block, in source order."""
+    """The curl calls of a shell block in source order, and its curl commands that could not be read."""
     text = code.replace("\\\n", " ")
-    calls = []
+    calls, unparsed = [], []
     for command in _commands(text):
         words = _words(command)
         if words is None:
-            return []
+            if _starts_curl(command):
+                unparsed.append(command.strip())
+            continue
         call = _curl(words)
         if call is not None:
             calls.append(call)
-    return calls
+    return calls, unparsed
+
+
+def _starts_curl(command):
+    """Whether a command line begins with curl, after an optional prompt."""
+    return re.match(r"\s*(\$\s+)?\$?curl\b", command) is not None
 
 
 def _commands(text):
@@ -124,6 +137,10 @@ def _commands(text):
             current.append(text[index : index + 2])
             index += 2
             continue
+        elif char == "$" and text.startswith("$'", index):
+            string, index = _ansi_c_string(text, index + 2)
+            current.append(shlex.quote(string))
+            continue
         elif char in "'\"":
             quote = char
             current.append(char)
@@ -135,6 +152,27 @@ def _commands(text):
         index += 1
     commands.append("".join(current))
     return commands
+
+
+_ESCAPES = {"n": "\n", "t": "\t", "r": "\r", "\\": "\\", "'": "'", '"': '"'}
+_ESCAPE = re.compile(r"\\(x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|.)", re.DOTALL)
+
+
+def _ansi_c_string(text, index):
+    """Read the body of a $'...' string starting at index; return its decoded text and the index after it."""
+    end = index
+    while end < len(text) and text[end] != "'":
+        end += 2 if text[end] == "\\" else 1
+    body = text[index:end]
+    return _ESCAPE.sub(_decode_escape, body), end + 1
+
+
+def _decode_escape(found):
+    """One backslash escape of an ANSI-C string; an unknown escape stays as written."""
+    code = found.group(1)
+    if code[0] in "xu" and len(code) > 1:
+        return chr(int(code[1:], 16))
+    return _ESCAPES.get(code, found.group(0))
 
 
 def _words(command):
@@ -189,12 +227,24 @@ def _assign(state, name, value=""):
         state["data"].append(value)
     elif name in ("data", "data-raw", "data-binary", "data-ascii"):
         state["data"].append(value)
+    elif name == "data-urlencode":
+        state["data"].append(_urlencoded(value))
     elif name in ("form", "form-string"):
         state["forms"].append(value)
     elif name == "get":
         state["get"] = True
     elif name == "head":
         state["head"] = True
+
+
+def _urlencoded(value):
+    """curl --data-urlencode: "name=content" or "content" with the content percent-encoded; @file is unknown."""
+    name, equals, content = value.partition("=")
+    if not equals:
+        return quote_plus(name)
+    if content.startswith("@"):
+        return f"{name}={{?}}"
+    return f"{name}={quote_plus(content)}" if name else quote_plus(content)
 
 
 def _long_option(state, words, index):

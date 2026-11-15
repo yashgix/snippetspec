@@ -78,6 +78,11 @@ class ScanTest(unittest.TestCase):
         self.assertEqual(second["verdict"], "mismatch")
         self.assertEqual(second["problems"], [["unknown_path", "/nope"]])
 
+    def test_unreadable_curl_commands_are_counted(self):
+        text = "```bash\ncurl https://api.supermemory.ai/items\n$ curl https://api.supermemory.ai/items 'oops\n```\n"
+        result = scan(page(text), simple_spec())
+        self.assertEqual((len(result["calls"]), result["unparsed"]), (1, 1))
+
     def test_row_fields_are_present(self):
         result = scan(page("```bash\ncurl https://api.supermemory.ai/items\n```\n"), simple_spec())
         row = result["calls"][0]

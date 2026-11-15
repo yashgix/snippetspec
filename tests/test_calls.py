@@ -1,7 +1,7 @@
 import unittest
 from dataclasses import FrozenInstanceError
 
-from snippetcheck.calls import Call, find_calls
+from snippetcheck.calls import Call, find_calls, unparsed_commands
 from snippetcheck.jsread import UNKNOWN
 from snippetcheck.mdx import Example
 
@@ -163,6 +163,30 @@ class DoubleQuoteTest(unittest.TestCase):
     def test_newline_and_escaped_quote_inside_double_quotes(self):
         [call] = calls('curl -X POST https://api.supermemory.ai/v3/x -d "{\\"a\\":\n \\"b\\"}"')
         self.assertEqual((call.body_kind, call.body), ("json", {"a": "b"}))
+
+
+class ShellRobustnessTest(unittest.TestCase):
+    def test_ansi_c_string_is_decoded(self):
+        [call] = calls('curl -X POST https://api.supermemory.ai/v3/x -d $\'{"a": "b\\\\nc", "q": "it\\\'s"}\'')
+        self.assertEqual(call.body, {"a": "b\nc", "q": "it's"})
+
+    def test_get_with_data_urlencode_becomes_query(self):
+        [call] = calls("curl -G https://api.supermemory.ai/v3/x --data-urlencode 'q=a b&c' --data-urlencode limit=3")
+        self.assertEqual(call.query, (("q", "a b&c"), ("limit", "3")))
+
+    def test_post_with_data_urlencode_is_a_form_body(self):
+        [call] = calls("curl https://api.supermemory.ai/v3/x --data-urlencode 'q=a b'")
+        self.assertEqual((call.body_kind, call.body), ("form", {"q": "a b"}))
+
+    def test_one_bad_command_does_not_drop_the_block(self):
+        code = "curl https://api.supermemory.ai/a 'oops\ncurl https://api.supermemory.ai/b"
+        self.assertEqual(calls(code), [])
+        code = "curl https://api.supermemory.ai/a\ncurl https://api.supermemory.ai/b 'oops"
+        self.assertEqual([call.url for call in calls(code)], ["https://api.supermemory.ai/a"])
+
+    def test_bad_curl_command_is_reported_as_unparsed(self):
+        code = "curl https://api.supermemory.ai/a\n$ curl https://api.supermemory.ai/b 'oops"
+        self.assertEqual(unparsed_commands(example(code)), ["$ curl https://api.supermemory.ai/b 'oops"])
 
 
 class FetchTest(unittest.TestCase):

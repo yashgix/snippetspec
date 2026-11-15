@@ -62,6 +62,8 @@ def _report(result: dict) -> None:
     print(
         f"{len(result['calls'])} calls: {counts['ok']} ok, {counts['partial']} partial, {counts['mismatch']} mismatch"
     )
+    if result["unparsed"]:
+        print(f"{result['unparsed']} curl commands could not be read (quoting error)")
 
 
 def main(argv: list[str] | None = None) -> int:

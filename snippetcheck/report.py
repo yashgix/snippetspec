@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from urllib.parse import urlsplit
 
-from snippetcheck.calls import Call, find_calls
+from snippetcheck.calls import Call, find_calls, unparsed_commands
 from snippetcheck.check import check_call
 from snippetcheck.data import HOST
 from snippetcheck.jsread import UNKNOWN
@@ -34,17 +34,19 @@ def page_calls(pages: dict[str, str], host: str = HOST) -> list[tuple[Example, i
     return found
 
 
-def _counts(pages: dict[str, str], host: str) -> tuple[int, int]:
-    """The number of examples and the number of calls to a host other than host."""
+def _counts(pages: dict[str, str], host: str) -> tuple[int, int, int]:
+    """The number of examples, of calls to a host other than host, and of curl commands that could not be read."""
     examples = 0
     other_host = 0
+    unparsed = 0
     for page, text in pages.items():
         for example in extract(text, page):
             examples += 1
+            unparsed += len(unparsed_commands(example))
             for call in find_calls(example):
                 if _host(call.url) != host:
                     other_host += 1
-    return examples, other_host
+    return examples, other_host, unparsed
 
 
 def _contains_unknown(value: object) -> bool:
@@ -67,7 +69,7 @@ def _partial(call: Call) -> bool:
 
 def scan(pages: dict[str, str], specs: dict, host: str = HOST) -> dict:
     """Check every call to host in every page against the operations the specs declare."""
-    examples, other_host = _counts(pages, host)
+    examples, other_host, unparsed = _counts(pages, host)
     ops = operations(list(specs.items()))
     rows = []
     for example, index, call in page_calls(pages, host):
@@ -94,4 +96,4 @@ def scan(pages: dict[str, str], specs: dict, host: str = HOST) -> dict:
                 "problems": problems,
             }
         )
-    return {"pages": len(pages), "examples": examples, "other_host": other_host, "calls": rows}
+    return {"pages": len(pages), "examples": examples, "other_host": other_host, "unparsed": unparsed, "calls": rows}
