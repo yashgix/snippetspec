@@ -1,4 +1,5 @@
 import unittest
+from urllib.parse import parse_qsl, urlsplit
 
 from snippetcheck.calls import Call
 from snippetcheck.check import check_call, is_placeholder, validate
@@ -11,7 +12,8 @@ def spec(paths=None, schemas=None):
 
 
 def call(method="GET", url="https://api.supermemory.ai/x", query=(), body_kind="none", body=None):
-    return Call("curl", method, url, tuple(query), body_kind, body)
+    url_query = parse_qsl(urlsplit(url).query, keep_blank_values=True)
+    return Call("curl", method, url, tuple(url_query) + tuple(query), body_kind, body)
 
 
 def check(specs, method="GET", url="https://api.supermemory.ai/x", query=(), body_kind="none", body=None):
@@ -339,7 +341,7 @@ class BodyTest(unittest.TestCase):
         result = check(
             pinned_specs(), method="POST", url="https://api.supermemory.ai/items", body_kind="json", body={"size": 3}
         )
-        self.assertEqual(result["problems"], [("missing_field", "body.name")])
+        self.assertEqual(result["problems"], [("missing_field", "$.name")])
 
     def test_json_body_value_is_checked(self):
         result = check(
@@ -349,7 +351,7 @@ class BodyTest(unittest.TestCase):
             body_kind="json",
             body={"name": "x", "size": "big"},
         )
-        self.assertEqual(result["problems"], [("type", "body.size")])
+        self.assertEqual(result["problems"], [("type", "$.size")])
 
     def test_json_body_to_a_form_operation_is_a_content_type_problem(self):
         result = check(
@@ -367,7 +369,7 @@ class BodyTest(unittest.TestCase):
         result = check(
             pinned_specs(), method="POST", url="https://api.supermemory.ai/uploads", body_kind="form", body={"note": "x"}
         )
-        self.assertEqual(result["problems"], [("missing_field", "body.file")])
+        self.assertEqual(result["problems"], [("missing_field", "$.file")])
 
     def test_form_body_reports_undocumented_field(self):
         result = check(
@@ -377,7 +379,7 @@ class BodyTest(unittest.TestCase):
             body_kind="form",
             body={"file": "x", "extra": "y"},
         )
-        self.assertEqual(result["problems"], [("undocumented_field", "body.extra")])
+        self.assertEqual(result["problems"], [("undocumented_field", "$.extra")])
 
     def test_form_body_accepts_unknown_field_values(self):
         result = check(
@@ -435,10 +437,14 @@ class ParameterTextTest(unittest.TestCase):
     def test_placeholder_passes(self):
         self.assertEqual(self.problems({"type": "integer"}, "https://api.supermemory.ai/x?v=${N}"), [])
 
-    def test_type_list_passes_on_any_member(self):
-        schema = {"type": ["integer", "null"]}
-        self.assertEqual(self.problems(schema, "https://api.supermemory.ai/x?v=null"), [])
+    def test_type_list_checks_constrained_types(self):
+        schema = {"type": ["integer", "boolean"]}
+        self.assertEqual(self.problems(schema, "https://api.supermemory.ai/x?v=1"), [])
         self.assertEqual(self.problems(schema, "https://api.supermemory.ai/x?v=z"), [("type", "query:v")])
+
+    def test_type_list_with_null_accepts_text(self):
+        schema = {"type": ["integer", "null"]}
+        self.assertEqual(self.problems(schema, "https://api.supermemory.ai/x?v=z"), [])
 
     def test_parameter_schema_ref(self):
         paths = {"/x": {"get": {"parameters": [{"name": "v", "in": "query", "schema": {"$ref": "#/components/schemas/Count"}}]}}}

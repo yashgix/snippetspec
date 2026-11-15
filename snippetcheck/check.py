@@ -253,7 +253,7 @@ def _body_problems(spec: dict, operation: Operation, call: Call) -> list[tuple[s
     if call.body_kind == "form":
         return _form_problems(schema, call.body)
     if call.body_kind == "json":
-        return validate(spec, schema, call.body, "body")
+        return validate(spec, schema, call.body)
     return []
 
 
@@ -286,9 +286,9 @@ def _form_problems(schema: object, body: object) -> list[tuple[str, str]]:
     problems = []
     for name in required if isinstance(required, list) else []:
         if name not in body:
-            problems.append(("missing_field", f"body.{name}"))
+            problems.append(("missing_field", f"$.{name}"))
     additional = schema.get("additionalProperties")
     for name in body:
         if name not in properties and additional is not True and not isinstance(additional, dict):
-            problems.append(("undocumented_field", f"body.{name}"))
+            problems.append(("undocumented_field", f"$.{name}"))
     return problems

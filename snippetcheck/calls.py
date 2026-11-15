@@ -109,25 +109,67 @@ def _commands(text):
     commands = []
     current = []
     quote = ""
+    in_comment = False
+    previous = None
     index, size = 0, len(text)
     while index < size:
         char = text[index]
+        if in_comment:
+            if char == "\n":
+                commands.append("".join(current))
+                current = []
+                in_comment = False
+                previous = None
+            index += 1
+            continue
         if quote == "'":
+            current.append(char)
+            previous = char
             if char == "'":
                 quote = ""
-            current.append(char)
-        elif char == "\\" and index + 1 < size:
-            current.append(text[index : index + 2])
-            index += 2
+            index += 1
             continue
-        elif char in "'\"":
+        if quote == '"':
+            if char == "\\" and index + 1 < size and text[index + 1] in ('"', "\\", "$", "`", "\n"):
+                current.append(char)
+                current.append(text[index + 1])
+                previous = text[index + 1]
+                index += 2
+                continue
+            current.append(char)
+            previous = char
+            if char == '"':
+                quote = ""
+            index += 1
+            continue
+        if char == "\\":
+            current.append(char)
+            if index + 1 < size:
+                current.append(text[index + 1])
+                previous = text[index + 1]
+                index += 2
+            else:
+                previous = char
+                index += 1
+            continue
+        if char in "'\"":
             quote = char
             current.append(char)
-        elif char in _SEPARATORS:
+            previous = char
+            index += 1
+            continue
+        if char == "#" and (previous is None or previous.isspace() or previous in _SEPARATORS):
+            in_comment = True
+            index += 1
+            continue
+        if char in _SEPARATORS:
             commands.append("".join(current))
             current = []
-        else:
-            current.append(char)
+            previous = None
+            index += 1
+            continue
+        current.append(char)
+        previous = char
         index += 1
     commands.append("".join(current))
     return commands
@@ -295,7 +337,7 @@ def _javascript(code):
     for found in _FETCH.finditer(code):
         try:
             call = _fetch_call(code, found.end())
-        except Exception:  # one unreadable call must not hide the rest of the block
+        except Exception:
             call = None
         if call is not None:
             calls.append(call)
@@ -311,8 +353,11 @@ def _fetch_call(text, index):
     if position >= len(text) or text[position] != ",":
         return _call("fetch", "GET", url)
     position = skip(text, position + 1)
-    options, _end = read_object(text, position)
+    options, end = read_object(text, position)
     if not isinstance(options, dict):
+        return None
+    after = skip(text, end)
+    if after >= len(text) or text[after] != ")":
         return None
     method = options.get("method", "GET")
     if not isinstance(method, str):
@@ -330,7 +375,7 @@ def _fetch_body(text, position, options):
         return "none", None
     inner = _stringify(property_source(text, position, "body") or "")
     if inner is not _MISSING:
-        return ("json", inner) if inner is not UNKNOWN else ("unparsed", None)
+        return "json", inner
     if isinstance(value, str):
         try:
             return "json", json.loads(value)
@@ -340,13 +385,20 @@ def _fetch_body(text, position, options):
 
 
 def _stringify(source):
-    """The literal inside JSON.stringify(...), UNKNOWN for a non-literal, else _MISSING."""
+    """The literal inside a complete JSON.stringify(...) expression, _MISSING when not one."""
     if not source.startswith("JSON.stringify"):
         return _MISSING
     position = skip(source, len("JSON.stringify"))
     if position >= len(source) or source[position] != "(":
         return _MISSING
-    return value_at(source, position + 1)[0]
+    value, end = value_at(source, position + 1)
+    after = skip(source, end)
+    if after >= len(source) or source[after] != ")":
+        return _MISSING
+    tail = skip(source, after + 1)
+    if tail < len(source):
+        return _MISSING
+    return value
 
 
 # --- requests / httpx -------------------------------------------------------
