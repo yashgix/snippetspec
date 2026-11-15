@@ -148,7 +148,7 @@ def experiment(data: str | Path = DATA, study: str | Path = STUDY) -> tuple[dict
         **_ledger_metrics(ledger_rows, days),
         **_mutation_metrics(mutation_rows),
     }
-    return metrics, {"calls": rows, "ledger": ledger_rows, "mutations": mutation_rows}
+    return dict(sorted(metrics.items())), {"calls": rows, "ledger": ledger_rows, "mutations": mutation_rows}
 
 
 def _write(path: Path, value: dict) -> None:
