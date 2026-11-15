@@ -66,6 +66,7 @@ The Makefile calls the system `python3`. Run it inside the `ml-py314` environmen
 Python 3.14 interpreter on `PATH`.
 
 ```bash
+make holdout      # python3 -m snippetcheck.holdout, writes results/holdout.json
 make test         # own tests (tests/) and v1 acceptance tests (tests/acceptance/)
 make lint         # ruff check + format check
 make data-check   # sha256 of every pinned file against data/MANIFEST.json
@@ -127,6 +128,53 @@ one. `operation` may be `null`, which is how the cases about a route that never 
   spec leaves open, an SDK call's options: all invisible or unchecked here.
 - **The ledger is replayed against today's spec**, not the spec of each case's own day (one spec snapshot per
   version is pinned).
+
+### Hold-out: another API's docs
+
+The three measurements above all use Supermemory, the data the checker was built on. To see how it does elsewhere,
+`data/holdout/` pins Meilisearch's published OpenAPI spec and its docs code samples (both MIT, fetched by
+`tools/fetch_holdout.py` with sha256 checksums, the docs at a commit from the same month as the spec).
+`make holdout` runs two measurements and writes `results/holdout.json`:
+
+1. **Clean docs.** Every curl sample as published, with the docs' `MEILISEARCH_URL` placeholder given a host.
+2. **Hand-broken examples.** 24 cases in `study/holdout_cases.json`, each one documented change to one real sample
+   (a misspelled route, a wrong method, a renamed field, a number written as a word, a body on a route that takes
+   none). The list and its expected problems were written from the spec before the checker was run on any of them,
+   and its sha256 is pinned in `study/holdout_cases.sha256`. A case counts as caught only when the expected problem
+   appears in the broken page and not in the original.
+
+<!-- snippetcheck:holdout -->
+| hold-out metric | value |
+|---|---|
+| pages | 245 |
+| calls | 216 |
+| calls_mismatch | 114 |
+| unparsed_commands | 2 |
+| cases | 24 |
+| caught | 24 |
+| recall, body-field | 5 of 5 |
+| recall, body-type | 4 of 4 |
+| recall, method | 3 of 3 |
+| recall, placement | 2 of 2 |
+| recall, query | 5 of 5 |
+| recall, route | 5 of 5 |
+<!-- /snippetcheck:holdout -->
+
+How to read it:
+
+- **Recall on the hand-broken cases is high, but it is the same kind of test as the seeded drift.** One change to one
+  field is easy to see for a checker that knows the spec. It shows the checker works on a second API, not that it finds
+  real mistakes in the wild. No real, later-fixed Meilisearch docs bugs were collected in this milestone.
+- **Many clean samples are flagged, and in the groups I read the flags are the spec disagreeing with docs that work.** Meilisearch's
+  spec is generated from code and is stricter or different from the API in repeating ways: it lists many fields,
+  query parameters and request bodies as required that the samples (and the API) leave out, names some fields in
+  snake case where the samples use camel case, gives a plain-string body a `text/plain` type, lists ranking rules
+  capitalised, and expects repeated query parameters where the samples use comma lists. The checker is following the
+  spec as written, and nothing was tuned on this data. For a docs team the lesson is that a spec like this would make
+  the checker noisy until its required lists are fixed. I did not confirm any of this against a live server.
+- **What it did find that is real.** Two samples have an unclosed quote in their curl command, so no shell can run them
+  (`code_samples_get_all_tasks_paginating_1.mdx` and `_2`). The scan reports these as unreadable commands rather than
+  skipping them silently. One sample posts to `documents/delete-batch`, which the spec does not list (the checker reads the last segment as a document id and reports a method mismatch).
 
 ### Honesty about the numbers
 

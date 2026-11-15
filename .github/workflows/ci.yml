@@ -15,3 +15,4 @@ jobs:
       - run: make test
       - run: make data-check
       - run: make experiment
+      - run: make holdout

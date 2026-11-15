@@ -11,6 +11,9 @@ from snippetcheck.metrics import findings
 RESULTS = ROOT / "results"
 START = "<!-- snippetcheck:results -->"
 END = "<!-- /snippetcheck:results -->"
+HOLDOUT_START = "<!-- snippetcheck:holdout -->"
+HOLDOUT_END = "<!-- /snippetcheck:holdout -->"
+HOLDOUT_COLUMNS = ("pages", "calls", "calls_mismatch", "unparsed_commands", "cases", "caught")
 COLUMNS = (
     "pages",
     "examples",
@@ -40,15 +43,36 @@ def table(metrics: dict) -> str:
     return "\n".join(lines)
 
 
-def render(readme: str, metrics: dict) -> str:
-    """Replace the text between the results markers, keeping both markers on their own lines."""
-    if readme.count(START) != 1 or readme.count(END) != 1:
+def _replace_block(text: str, start_marker: str, end_marker: str, body: str) -> str:
+    """Replace the text between two markers, keeping both markers on their own lines."""
+    if text.count(start_marker) != 1 or text.count(end_marker) != 1:
         raise ValueError("README needs exactly one snippetcheck results block")
-    start = readme.index(START)
-    end = readme.index(END)
+    start = text.index(start_marker)
+    end = text.index(end_marker)
     if end < start:
         raise ValueError("README results block ends before it starts")
-    return f"{readme[: start + len(START)]}\n{table(metrics)}\n{readme[end:]}"
+    return f"{text[: start + len(start_marker)]}\n{body}\n{text[end:]}"
+
+
+def render(readme: str, metrics: dict) -> str:
+    """Replace the text between the results markers."""
+    return _replace_block(readme, START, END, table(metrics))
+
+
+def holdout_table(summary: dict) -> str:
+    """The hold-out block body: calls, flagged clean calls, and recall by kind of change."""
+    lines = ["| hold-out metric | value |", "|---|---|"]
+    for name in HOLDOUT_COLUMNS:
+        lines.append(f"| {name} | {summary[name]} |")
+    lines.extend(
+        f"| recall, {kind} | {counts['caught']} of {counts['cases']} |" for kind, counts in summary["by_kind"].items()
+    )
+    return "\n".join(lines)
+
+
+def render_holdout(readme: str, summary: dict) -> str:
+    """Replace the text between the hold-out markers."""
+    return _replace_block(readme, HOLDOUT_START, HOLDOUT_END, holdout_table(summary))
 
 
 def _report(metrics: dict, details: dict) -> None:
@@ -73,6 +97,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="demo.py", description="Show the checker's report or render the README.")
     parser.add_argument("--metrics", type=Path, default=RESULTS / "metrics.json", metavar="PATH")
     parser.add_argument("--details", type=Path, default=RESULTS / "details.json", metavar="PATH")
+    parser.add_argument("--holdout", type=Path, default=RESULTS / "holdout.json", metavar="PATH")
     parser.add_argument("--readme", type=Path, metavar="PATH", help="README whose results block is rewritten")
     parser.add_argument("--out", type=Path, metavar="PATH", help="file to write; defaults to --readme")
     args = parser.parse_args(argv)
@@ -81,7 +106,10 @@ def main(argv: list[str] | None = None) -> int:
         _report(metrics, load_json(args.details))
         return 0
     out = args.out or args.readme
-    out.write_text(render(args.readme.read_text(encoding="utf-8"), metrics), encoding="utf-8")
+    text = render(args.readme.read_text(encoding="utf-8"), metrics)
+    if HOLDOUT_START in text and args.holdout.is_file():
+        text = render_holdout(text, load_json(args.holdout))
+    out.write_text(text, encoding="utf-8")
     return 0
 
 

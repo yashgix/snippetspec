@@ -5,7 +5,7 @@ import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
 
-from demo import COLUMNS, main, render, table
+from demo import COLUMNS, HOLDOUT_COLUMNS, holdout_table, main, render, render_holdout, table
 
 PAGE = "# Title\n\n<!-- snippetcheck:results -->\nold row\n<!-- /snippetcheck:results -->\n\ntail\n"
 
@@ -32,6 +32,23 @@ class TableTest(unittest.TestCase):
         values = metrics()
         values["ledger_recall"] = 0.5
         self.assertIn("| ledger_recall | 0.5 |", table(values))
+
+
+class HoldoutTableTest(unittest.TestCase):
+    def test_block_lists_counts_and_recall_by_kind(self):
+        summary = dict.fromkeys(HOLDOUT_COLUMNS, 2)
+        summary["by_kind"] = {"route": {"cases": 3, "caught": 2}}
+        lines = holdout_table(summary).splitlines()
+        self.assertEqual(lines[2], "| pages | 2 |")
+        self.assertEqual(lines[-1], "| recall, route | 2 of 3 |")
+
+    def test_block_is_replaced_between_its_own_markers(self):
+        page = "a\n<!-- snippetcheck:holdout -->\nstale\n<!-- /snippetcheck:holdout -->\nb\n"
+        summary = dict.fromkeys(HOLDOUT_COLUMNS, 1)
+        summary["by_kind"] = {}
+        rendered = render_holdout(page, summary)
+        self.assertNotIn("stale", rendered)
+        self.assertTrue(rendered.endswith("<!-- /snippetcheck:holdout -->\nb\n"))
 
 
 class RenderTest(unittest.TestCase):

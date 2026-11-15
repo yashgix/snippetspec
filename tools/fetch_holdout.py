@@ -76,7 +76,9 @@ def main():
     args = parser.parse_args()
     if args.build:
         files = fetch(planned())
-        note = "Both repositories are MIT licensed (see spec/LICENSE and docs/LICENSE). Pinned to commits from June 2025."
+        note = (
+            "Both repositories are MIT licensed (see spec/LICENSE and docs/LICENSE). Pinned to commits from June 2025."
+        )
         MANIFEST.write_text(json.dumps({"note": note, "files": files}, indent=1, sort_keys=True) + "\n")
     manifest = json.loads(MANIFEST.read_text())
     if not (args.verify or args.build):
