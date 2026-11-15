@@ -211,6 +211,12 @@ class FetchTest(unittest.TestCase):
         self.assertEqual([call.url for call in calls(code, "js")], ["https://x/c"])
 
 
+class FetchSpreadTest(unittest.TestCase):
+    def test_stringified_object_with_spread_is_json_of_unknown_value(self):
+        [call] = calls("fetch('https://api.supermemory.ai/e', { method: 'PUT', body: JSON.stringify({ ...rest, a: 1 }) })", "js")
+        self.assertEqual((call.body_kind, call.body), ("json", UNKNOWN))
+
+
 class PythonTest(unittest.TestCase):
     def test_get_with_params(self):
         code = 'requests.get("https://api.supermemory.ai/v3/documents/list", params={"page": 1})'

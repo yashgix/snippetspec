@@ -334,7 +334,7 @@ def _fetch_body(text, position, options):
         return "none", None
     inner = _stringify(property_source(text, position, "body") or "")
     if inner is not _MISSING:
-        return ("json", inner) if inner is not UNKNOWN else ("unparsed", None)
+        return "json", inner
     if isinstance(value, str):
         try:
             return "json", json.loads(value)
