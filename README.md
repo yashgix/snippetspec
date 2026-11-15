@@ -12,11 +12,11 @@ non-zero as soon as one example contradicts the spec.
 
 ## Why this exists
 
-Margin's public code-example extractor (https://github.com/maniculehq/margin/blob/main/src/ingest/code-examples.ts) says `runnable` is \"deliberately NOT emitted (it would be an unvalidated author claim)\".
+Margin's public code-example extractor (https://github.com/maniculehq/margin/blob/main/src/ingest/code-examples.ts) says `runnable` is "deliberately NOT emitted (it would be an unvalidated author claim)".
 
 Supermemory's own docs history shows a failure of this shape, in its own words: one commit (short sha `1af9dbc`)
-says the old docs \"described a route that has never existed\", and a docs PR (#1811) reports that a namespace-move
-example sent `moveTo` in a body the route ignores, \"so following the docs permanently deleted the namespace\".
+says the old docs "described a route that has never existed", and a docs PR (#1811) reports that a namespace-move
+example sent `moveTo` in a body the route ignores, "so following the docs permanently deleted the namespace".
 
 So: from the published spec alone, can every HTTP call in a docs site be checked automatically, and would that have
 caught the drift bugs the docs team later fixed? This milestone answers with three measurements, and it states its
@@ -37,7 +37,24 @@ limits rather than modelling them away.
 <!-- snippetcheck:results -->
 | metric | value |
 |---|---|
-| not generated yet | run `make experiment && make readme` |
+| pages | 147 |
+| examples | 1018 |
+| examples_http | 117 |
+| calls | 148 |
+| calls_mismatch | 24 |
+| findings | 11 |
+| triage_spec_gap | 10 |
+| triage_unconfirmed | 1 |
+| triage_false_positive | 0 |
+| ledger_cases | 15 |
+| ledger_caught | 15 |
+| ledger_recall | 1.0 |
+| mutation_breaking_cases | 308 |
+| mutation_breaking_caught | 308 |
+| mutation_neutral_cases | 99 |
+| mutation_neutral_flagged | 0 |
+| spec_operations | 75 |
+| spec_operations_with_example | 26 |
 <!-- /snippetcheck:results -->
 
 That table is generated: `experiment.py` writes `results/metrics.json`, then `demo.py --readme README.md` replaces
@@ -49,7 +66,7 @@ The Makefile calls the system `python3`. Run it inside the `ml-py314` environmen
 Python 3.14 interpreter on `PATH`.
 
 ```bash
-make test         # unit tests: python3 -m unittest discover -s tests
+make test         # own tests (tests/) and v1 acceptance tests (tests/acceptance/)
 make lint         # ruff check + format check
 make data-check   # sha256 of every pinned file against data/MANIFEST.json
 make experiment   # python3 experiment.py --out results/metrics.json
@@ -118,8 +135,12 @@ rule was written down afterwards. The cases come from a handful of fix commits, 
 migration commit and of one kind (options sent as query parameters instead of a JSON body). So the ledger's recall
 shows that these problems are real and catchable — it is not an accuracy or recall estimate for the checker.
 
-The seeded-drift numbers measure sensitivity, not discovery: the mutations are derived from what each example
-sends, so the checker reacting to each one is a property of the construction. What the neutral changes add is the
+Of the 15 ledger cases, 12 are the same bug class (`undocumented_param`, options sent as query parameters, counted
+from `study/ledger.json`), so the ledger does not show breadth.
+
+The seeded-drift score is near-tautological: the mutations are derived from what each example sends, so the checker
+flagging every breaking one (and none of the neutral ones) is a property of the construction. It shows sensitivity,
+not discovery, and it is not evidence of accuracy on real mistakes. What the neutral changes add is the
 other half — that changes which should not break an example produce no finding.
 
 ## Data and licenses

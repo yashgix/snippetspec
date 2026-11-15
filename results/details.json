@@ -1,0 +1,4840 @@
+{
+ "calls": [
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 18,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "page": "authentication.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/search",
+   "verdict": "ok"
+  },
+  {
+   "group": null,
+   "index": 0,
+   "language": "bash",
+   "line": 69,
+   "method": "POST",
+   "operation": null,
+   "page": "authentication.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/auth/scoped-key"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/auth/scoped-key",
+   "verdict": "mismatch"
+  },
+  {
+   "group": null,
+   "index": 0,
+   "language": "bash",
+   "line": 114,
+   "method": "DELETE",
+   "operation": null,
+   "page": "authentication.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/auth/scoped-key/KEY_ID"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/auth/scoped-key/KEY_ID",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 50,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "concepts/container-tags.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_alex/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 1,
+   "language": "bash",
+   "line": 50,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "page": "concepts/container-tags.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_alex/search",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 186,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}",
+   "page": "concepts/container-tags.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/project_research",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 1,
+   "language": "bash",
+   "line": 186,
+   "method": "GET",
+   "operation": "v5:GET /namespaces",
+   "page": "concepts/container-tags.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/namespaces",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 2,
+   "language": "bash",
+   "line": 186,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}",
+   "page": "concepts/container-tags.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/project_research_old?moveTo=project_research",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 63,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "concepts/how-it-works.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 1,
+   "language": "bash",
+   "line": 63,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "page": "concepts/how-it-works.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/search",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 58,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "concepts/rules.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/test/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 88,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "page": "concepts/rules.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/test/search",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 164,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "concepts/rules.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/dhravya/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 208,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "concepts/rules.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-supermemory/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 0,
+   "language": "bash",
+   "line": 254,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "page": "concepts/rules.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-supermemory/search",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 55,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "concepts/super-rag.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/docs_kb/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 58,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/github.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 146,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/github.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}?include=picker&returnUrl=https%3A%2F%2Fyourapp.com%2Fsettings%2Fintegrations",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 1,
+   "language": "bash",
+   "line": 146,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}",
+   "page": "connectors/github.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 236,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/github.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 284,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors",
+   "page": "connectors/github.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 0,
+   "language": "bash",
+   "line": 322,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}",
+   "page": "connectors/github.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}",
+   "verdict": "ok"
+  },
+  {
+   "group": 5,
+   "index": 0,
+   "language": "bash",
+   "line": 367,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/github.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}",
+   "verdict": "ok"
+  },
+  {
+   "group": 5,
+   "index": 1,
+   "language": "bash",
+   "line": 367,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/github.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}?deleteDocuments=false",
+   "verdict": "ok"
+  },
+  {
+   "group": 6,
+   "index": 0,
+   "language": "bash",
+   "line": 409,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync",
+   "page": "connectors/github.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}/sync",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 58,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/gmail.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 121,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/gmail.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 1,
+   "language": "bash",
+   "line": 121,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "connectors/gmail.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/list/documents",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 218,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors",
+   "page": "connectors/gmail.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 250,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/gmail.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 1,
+   "language": "bash",
+   "line": 250,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/gmail.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?deleteDocuments=false",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 0,
+   "language": "bash",
+   "line": 291,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync",
+   "page": "connectors/gmail.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA/sync",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 68,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/google-drive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 114,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/google-drive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=picker&returnUrl=https%3A%2F%2Fyourapp.com%2Fsettings%2Fintegrations",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 137,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}",
+   "page": "connectors/google-drive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 183,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/google-drive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 1,
+   "language": "bash",
+   "line": 183,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "connectors/google-drive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/list/documents",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 0,
+   "language": "bash",
+   "line": 249,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors",
+   "page": "connectors/google-drive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 5,
+   "index": 0,
+   "language": "bash",
+   "line": 298,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/google-drive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 5,
+   "index": 1,
+   "language": "bash",
+   "line": 298,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/google-drive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?deleteDocuments=false",
+   "verdict": "ok"
+  },
+  {
+   "group": 6,
+   "index": 0,
+   "language": "bash",
+   "line": 339,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync",
+   "page": "connectors/google-drive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA/sync",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 75,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/granola.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 162,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/granola.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 183,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/granola.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 210,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync",
+   "page": "connectors/granola.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors/PTzGiUYei7pgzg5buzZHgA/sync",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 54,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/managing-resources.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}?include=picker&returnUrl=https%3A%2F%2Fyourapp.com%2Fsettings%2Fintegrations",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 127,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}",
+   "page": "connectors/managing-resources.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 248,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/managing-resources.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 1,
+   "language": "bash",
+   "line": 248,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/managing-resources.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}?include=picker",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 2,
+   "language": "bash",
+   "line": 248,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}",
+   "page": "connectors/managing-resources.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/{connectorId}",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 51,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/notion.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 108,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/notion.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 1,
+   "language": "bash",
+   "line": 108,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "connectors/notion.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/list/documents",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 164,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync",
+   "page": "connectors/notion.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA/sync",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 230,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/notion.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 1,
+   "language": "bash",
+   "line": 230,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/notion.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?deleteDocuments=false",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 68,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/onedrive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 121,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/onedrive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 1,
+   "language": "bash",
+   "line": 121,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "connectors/onedrive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/list/documents",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 184,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync",
+   "page": "connectors/onedrive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA/sync",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 216,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/onedrive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 1,
+   "language": "bash",
+   "line": 216,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/onedrive.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?deleteDocuments=false",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 105,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/overview.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 183,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/overview.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 1,
+   "language": "bash",
+   "line": 183,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "connectors/overview.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/list/documents",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 288,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors",
+   "page": "connectors/overview.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 1,
+   "language": "bash",
+   "line": 288,
+   "method": "GET",
+   "operation": "v5:GET /connectors",
+   "page": "connectors/overview.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 329,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync",
+   "page": "connectors/overview.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors/PTzGiUYei7pgzg5buzZHgA/sync",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 0,
+   "language": "bash",
+   "line": 353,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}",
+   "page": "connectors/overview.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 5,
+   "index": 0,
+   "language": "bash",
+   "line": 405,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/overview.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 5,
+   "index": 1,
+   "language": "bash",
+   "line": 405,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/overview.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?deleteDocuments=false",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 62,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/s3.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 195,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/s3.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 211,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/s3.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 233,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync",
+   "page": "connectors/s3.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/org-123/connectors/PTzGiUYei7pgzg5buzZHgA/sync",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 62,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors",
+   "page": "connectors/troubleshooting.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 1,
+   "language": "bash",
+   "line": 62,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/troubleshooting.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 2,
+   "language": "bash",
+   "line": 62,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "connectors/troubleshooting.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/list/documents",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 64,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "connectors/web-crawler.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 133,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}",
+   "page": "connectors/web-crawler.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?include=syncs",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 1,
+   "language": "bash",
+   "line": 133,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "connectors/web-crawler.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/list/documents",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 206,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync",
+   "page": "connectors/web-crawler.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA/sync",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 248,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/connectors",
+   "page": "connectors/web-crawler.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 0,
+   "language": "bash",
+   "line": 296,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/web-crawler.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 1,
+   "language": "bash",
+   "line": 296,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}",
+   "page": "connectors/web-crawler.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user-123/connectors/PTzGiUYei7pgzg5buzZHgA?deleteDocuments=false",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 51,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "ingestion/add-memories.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 168,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document/file",
+   "page": "ingestion/add-memories.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/document/file",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 350,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "ingestion/add-memories.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 91,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document/batch",
+   "page": "ingestion/batch-ingest-historical-data.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/historical_import/document/batch",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 152,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/document/{id}",
+   "page": "ingestion/batch-ingest-historical-data.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/historical_import/document/msg_001",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 35,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "ingestion/document-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/list/documents?limit=10",
+   "verdict": "ok"
+  },
+  {
+   "group": null,
+   "index": 0,
+   "language": "bash",
+   "line": 98,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "ingestion/document-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/list/documents?limit=10",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 175,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/document/{id}",
+   "page": "ingestion/document-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/document/doc_abc123?include=chunks&include=memories",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 253,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}/document/{id}",
+   "page": "ingestion/document-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/document/doc_abc123",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 304,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/document",
+   "page": "ingestion/document-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 1,
+   "language": "bash",
+   "line": 304,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}",
+   "page": "ingestion/document-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 0,
+   "language": "bash",
+   "line": 350,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "ingestion/document-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/list/documents?limit=100",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "typescript",
+   "line": 85,
+   "method": "POST",
+   "operation": null,
+   "page": "integrations/memory-graph.mdx",
+   "problems": [
+    [
+     "method_not_allowed",
+     "DELETE,GET,PATCH"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/documents/documents",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "typescript",
+   "line": 116,
+   "method": "POST",
+   "operation": null,
+   "page": "integrations/memory-graph.mdx",
+   "problems": [
+    [
+     "method_not_allowed",
+     "DELETE,GET,PATCH"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/documents/documents",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "javascript",
+   "line": 142,
+   "method": "POST",
+   "operation": null,
+   "page": "integrations/memory-graph.mdx",
+   "problems": [
+    [
+     "method_not_allowed",
+     "DELETE,GET,PATCH"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/documents/documents",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "typescript",
+   "line": 44,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/analytics.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/analytics/usage"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/analytics/usage?period=24h",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "python",
+   "line": 55,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/analytics.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/analytics/usage"
+    ]
+   ],
+   "tool": "requests",
+   "url": "https://api.supermemory.ai/v3/analytics/usage",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 69,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/analytics.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/analytics/usage"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/v3/analytics/usage?from=2024-01-01T00:00:00Z&to=2024-01-31T23:59:59Z",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "typescript",
+   "line": 140,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/analytics.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/analytics/errors"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/analytics/errors?period=24h",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "python",
+   "line": 151,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/analytics.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/analytics/errors"
+    ]
+   ],
+   "tool": "requests",
+   "url": "https://api.supermemory.ai/v3/analytics/errors?period=24h",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 161,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/analytics.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/analytics/errors"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/v3/analytics/errors?period=7d",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "typescript",
+   "line": 233,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/analytics.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/analytics/logs"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/analytics/logs?period=24h",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "python",
+   "line": 243,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/analytics.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/analytics/logs"
+    ]
+   ],
+   "tool": "requests",
+   "url": "https://api.supermemory.ai/v3/analytics/logs",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 256,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/analytics.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/analytics/logs"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/v3/analytics/logs?period=24h&limit=50",
+   "verdict": "mismatch"
+  },
+  {
+   "group": null,
+   "index": 0,
+   "language": "bash",
+   "line": 235,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/billing.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/auth/billing"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/v3/auth/billing",
+   "verdict": "mismatch"
+  },
+  {
+   "group": null,
+   "index": 0,
+   "language": "bash",
+   "line": 269,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/billing.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/auth/billing/usage"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/v3/auth/billing/usage",
+   "verdict": "mismatch"
+  },
+  {
+   "group": null,
+   "index": 0,
+   "language": "bash",
+   "line": 280,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/billing.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/auth/billing/usage-events"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/v3/auth/billing/usage-events",
+   "verdict": "mismatch"
+  },
+  {
+   "group": null,
+   "index": 0,
+   "language": "typescript",
+   "line": 308,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/billing.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/auth/billing"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/auth/billing",
+   "verdict": "mismatch"
+  },
+  {
+   "group": null,
+   "index": 1,
+   "language": "typescript",
+   "line": 308,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/billing.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/auth/billing/usage"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/auth/billing/usage",
+   "verdict": "mismatch"
+  },
+  {
+   "group": null,
+   "index": 2,
+   "language": "typescript",
+   "line": 308,
+   "method": "GET",
+   "operation": null,
+   "page": "overview/billing.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/auth/billing/usage-events"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/auth/billing/usage-events",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 99,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "quickstart.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_4f8a/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 167,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "quickstart.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_4f8a/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 219,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/document/{id}",
+   "page": "quickstart.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_4f8a/document/DOC_ID",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 0,
+   "language": "bash",
+   "line": 260,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "page": "quickstart.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_4f8a/search",
+   "verdict": "ok"
+  },
+  {
+   "group": 5,
+   "index": 0,
+   "language": "bash",
+   "line": 311,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "page": "quickstart.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_4f8a/search",
+   "verdict": "ok"
+  },
+  {
+   "group": 6,
+   "index": 0,
+   "language": "bash",
+   "line": 370,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/profile",
+   "page": "quickstart.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_4f8a/profile",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 31,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "recall/memory-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 62,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/memories",
+   "page": "recall/memory-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/memories",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 124,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/memories/semantic",
+   "page": "recall/memory-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/memories/semantic",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 1,
+   "language": "bash",
+   "line": 124,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/memories",
+   "page": "recall/memory-operations.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/memories",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "typescript",
+   "line": 50,
+   "method": "GET",
+   "operation": null,
+   "page": "recall/memory-review.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/container-tags/user_123/inferred"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/container-tags/user_123/inferred",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 60,
+   "method": "GET",
+   "operation": null,
+   "page": "recall/memory-review.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/container-tags/user_123/inferred"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/v3/container-tags/user_123/inferred",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "typescript",
+   "line": 120,
+   "method": "POST",
+   "operation": null,
+   "page": "recall/memory-review.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/container-tags/user_123/inferred/mem_abc123/review"
+    ]
+   ],
+   "tool": "fetch",
+   "url": "https://api.supermemory.ai/v3/container-tags/user_123/inferred/mem_abc123/review",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 138,
+   "method": "POST",
+   "operation": null,
+   "page": "recall/memory-review.mdx",
+   "problems": [
+    [
+     "unknown_path",
+     "/v3/container-tags/user_123/inferred/mem_abc123/review"
+    ]
+   ],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/v3/container-tags/user_123/inferred/mem_abc123/review",
+   "verdict": "mismatch"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 56,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "page": "recall/search.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/search",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 48,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/profile",
+   "page": "recall/user-profiles.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/profile",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 159,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/profile",
+   "page": "recall/user-profiles.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/profile",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 36,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/profile",
+   "page": "user-profiles/buckets.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/profile",
+   "verdict": "ok"
+  },
+  {
+   "group": 1,
+   "index": 0,
+   "language": "bash",
+   "line": 80,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/profile/buckets",
+   "page": "user-profiles/buckets.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/profile/buckets",
+   "verdict": "ok"
+  },
+  {
+   "group": 2,
+   "index": 0,
+   "language": "bash",
+   "line": 123,
+   "method": "PUT",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets",
+   "page": "user-profiles/buckets.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_alex/profile/buckets",
+   "verdict": "ok"
+  },
+  {
+   "group": 3,
+   "index": 0,
+   "language": "bash",
+   "line": 148,
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}/profile/buckets",
+   "page": "user-profiles/buckets.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_alex/profile/buckets",
+   "verdict": "ok"
+  },
+  {
+   "group": 4,
+   "index": 0,
+   "language": "bash",
+   "line": 217,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}",
+   "page": "user-profiles/buckets.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_alex",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 42,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/connectors",
+   "page": "v5/api-reference/connectors.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_123/connectors",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 33,
+   "method": "GET",
+   "operation": "v5:GET /ns/{namespace}/document/{id}",
+   "page": "v5/api-reference/content-management.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_1/document/conv_1?include=chunks&include=memories",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 1,
+   "language": "bash",
+   "line": 33,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/list/{type}",
+   "page": "v5/api-reference/content-management.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_1/list/documents?page=1&limit=50&sort=createdAt&order=desc",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 29,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "page": "v5/api-reference/ingest.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_1/document",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 33,
+   "method": "GET",
+   "operation": "v5:GET /namespaces",
+   "page": "v5/api-reference/namespaces.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/namespaces",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 1,
+   "language": "bash",
+   "line": 33,
+   "method": "PATCH",
+   "operation": "v5:PATCH /ns/{namespace}",
+   "page": "v5/api-reference/namespaces.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/project_alpha",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 22,
+   "method": "GET",
+   "operation": "v5:GET /organization",
+   "page": "v5/api-reference/organization.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/organization",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 1,
+   "language": "bash",
+   "line": 22,
+   "method": "PATCH",
+   "operation": "v5:PATCH /organization",
+   "page": "v5/api-reference/organization.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/organization",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 24,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/profile",
+   "page": "v5/api-reference/profiles.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_1/profile",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 1,
+   "language": "bash",
+   "line": 24,
+   "method": "PUT",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets",
+   "page": "v5/api-reference/profiles.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_1/profile/buckets",
+   "verdict": "ok"
+  },
+  {
+   "group": 0,
+   "index": 0,
+   "language": "bash",
+   "line": 24,
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "page": "v5/api-reference/search.mdx",
+   "problems": [],
+   "tool": "curl",
+   "url": "https://api.supermemory.ai/ns/user_1/search",
+   "verdict": "ok"
+  }
+ ],
+ "ledger": [
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "s3-config-shape",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "forget-route-never-existed",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "quickstart-dreaming-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "quickstart-tasktype-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "quickstart-searchmode-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "quickstart-limit-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "rules-tasktype-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "rules-searchmode-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "super-rag-tasktype-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "search-searchmode-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "search-limit-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "how-it-works-dreaming-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "memory-operations-dreaming-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "ingest-reference-dreaming-query",
+   "introduced_detected": true
+  },
+  {
+   "caught": true,
+   "cleared": true,
+   "detected": true,
+   "id": "namespace-move-body",
+   "introduced_detected": true
+  }
+ ],
+ "mutations": [
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:supportingContext",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /namespaces"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:moveTo",
+   "operation": "v5:DELETE /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:dreaming",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:dreaming=instant",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:taskType",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:taskType=superrag",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:searchMode",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:searchMode=hybrid",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:supportingContext",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:metadata",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:group",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:searchMode",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:filter",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:searchMode=chunks",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:taskType",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:taskType=superrag",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:returnUrl",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:selection",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:selection",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:deleteDocuments",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:deleteDocuments",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:returnUrl",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:selection",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:deleteDocuments",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:returnUrl",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:selection",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:selection",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:deleteDocuments",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:deleteDocuments",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /connectors"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:GET /connectors"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:documentLimit",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:deleteDocuments",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:filter",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors/{id}/sync"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:GET /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:deleteDocuments",
+   "operation": "v5:DELETE /ns/{namespace}/connectors/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:metadata",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document/file"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:file",
+   "operation": "v5:POST /ns/{namespace}/document/file"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:metadata",
+   "operation": "v5:POST /ns/{namespace}/document/file"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document/file"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document/file"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document/file"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:metadata",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:group",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document/batch"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:documents",
+   "operation": "v5:POST /ns/{namespace}/document/batch"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document/batch"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document/batch"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document/batch"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:limit",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:include",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:limit",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:PATCH /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:metadata",
+   "operation": "v5:PATCH /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:PATCH /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:ids",
+   "operation": "v5:DELETE /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:DELETE /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:DELETE /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:limit",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:id",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:metadata",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:dreaming",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:dreaming=instant",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:id",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:metadata",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:taskType",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:taskType=superrag",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:searchMode",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:limit",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:searchMode=chunks",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:searchMode",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:include",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:limit",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:searchMode=memories",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:id",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:metadata",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:dreaming",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:dreaming=instant",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/memories"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:ids",
+   "operation": "v5:DELETE /ns/{namespace}/memories"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:DELETE /ns/{namespace}/memories"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:DELETE /ns/{namespace}/memories"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/memories/semantic"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:DELETE /ns/{namespace}/memories/semantic"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:dryRun",
+   "operation": "v5:DELETE /ns/{namespace}/memories/semantic"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:DELETE /ns/{namespace}/memories/semantic"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:DELETE /ns/{namespace}/memories/semantic"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/memories"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:ids",
+   "operation": "v5:DELETE /ns/{namespace}/memories"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:DELETE /ns/{namespace}/memories"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:DELETE /ns/{namespace}/memories"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:searchMode",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:limit",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:searchMode=hybrid",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:filter",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:buckets",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:buckets",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:DELETE /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:buckets",
+   "operation": "v5:DELETE /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:DELETE /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:DELETE /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:supportingContext",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/connectors"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:include",
+   "operation": "v5:GET /ns/{namespace}/document/{id}"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:path:type=documents",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:query:sort=createdAt",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:query:order=desc",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:page",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:limit",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:sort",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "undocumented_param"
+   ],
+   "mutation": "rename_param:order",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/list/{type}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:content",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:id",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:metadata",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:dreaming",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "enum"
+   ],
+   "mutation": "drop_enum_value:body:dreaming=instant",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/document"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /namespaces"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:supportingContext",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /ns/{namespace}"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:GET /organization"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PATCH /organization"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:organizationalContext",
+   "operation": "v5:PATCH /organization"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PATCH /organization"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PATCH /organization"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/profile"
+  },
+  {
+   "codes": [
+    "method_not_allowed"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:buckets",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:PUT /ns/{namespace}/profile/buckets"
+  },
+  {
+   "codes": [
+    "unknown_path"
+   ],
+   "mutation": "remove_operation",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field",
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:query",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "undocumented_field"
+   ],
+   "mutation": "rename_field:limit",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [
+    "missing_field"
+   ],
+   "mutation": "add_required",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_optional",
+   "operation": "v5:POST /ns/{namespace}/search"
+  },
+  {
+   "codes": [],
+   "mutation": "add_enum_value",
+   "operation": "v5:POST /ns/{namespace}/search"
+  }
+ ]
+}
