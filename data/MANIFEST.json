@@ -1,0 +1,1652 @@
+{
+ "fetched": "2026-11-14",
+ "files": {
+  "docs/LICENSE": {
+   "bytes": 1068,
+   "redactions": 0,
+   "sha256": "9ce388a89cce6a2dc109579d044f7f16e1397d8ee6fdb1f3bd3b980d365a07ae",
+   "source": "docs",
+   "upstream_bytes": 1068,
+   "upstream_sha256": "9ce388a89cce6a2dc109579d044f7f16e1397d8ee6fdb1f3bd3b980d365a07ae",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/LICENSE"
+  },
+  "docs/agents-and-mcp.mdx": {
+   "bytes": 8590,
+   "redactions": 0,
+   "sha256": "b58bd608047a07a175a1206500e165f69f476378e1e785c84d946963f74794dd",
+   "source": "docs",
+   "upstream_bytes": 8590,
+   "upstream_sha256": "b58bd608047a07a175a1206500e165f69f476378e1e785c84d946963f74794dd",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/agents-and-mcp.mdx"
+  },
+  "docs/api-reference/connections.mdx": {
+   "bytes": 654,
+   "redactions": 0,
+   "sha256": "6782dad3f7fa8d2d6bf7f4c9ac021682808e0bab7afd9a563b0bd4873e0a6b5a",
+   "source": "docs",
+   "upstream_bytes": 654,
+   "upstream_sha256": "6782dad3f7fa8d2d6bf7f4c9ac021682808e0bab7afd9a563b0bd4873e0a6b5a",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/api-reference/connections.mdx"
+  },
+  "docs/api-reference/container-tags.mdx": {
+   "bytes": 1021,
+   "redactions": 0,
+   "sha256": "53b0bfc3f00d633ae34681c4d88903d031155632aa820296b607987b83e3b2b1",
+   "source": "docs",
+   "upstream_bytes": 1021,
+   "upstream_sha256": "53b0bfc3f00d633ae34681c4d88903d031155632aa820296b607987b83e3b2b1",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/api-reference/container-tags.mdx"
+  },
+  "docs/api-reference/documents.mdx": {
+   "bytes": 910,
+   "redactions": 0,
+   "sha256": "3bb5d85b8b650cdbd725ca866ea74d9d07e80bb8fa8911bb4873997fc1b2cf48",
+   "source": "docs",
+   "upstream_bytes": 910,
+   "upstream_sha256": "3bb5d85b8b650cdbd725ca866ea74d9d07e80bb8fa8911bb4873997fc1b2cf48",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/api-reference/documents.mdx"
+  },
+  "docs/api-reference/ingest.mdx": {
+   "bytes": 850,
+   "redactions": 0,
+   "sha256": "f66077677a3207f66e0812d7ef94d7cbe550f63ba2bf2b8ec8e75e5b31870f4b",
+   "source": "docs",
+   "upstream_bytes": 850,
+   "upstream_sha256": "f66077677a3207f66e0812d7ef94d7cbe550f63ba2bf2b8ec8e75e5b31870f4b",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/api-reference/ingest.mdx"
+  },
+  "docs/api-reference/memories.mdx": {
+   "bytes": 789,
+   "redactions": 0,
+   "sha256": "530d44b15e33df25a80050d59bd7d0ec57f56b8b1fea865515c9856fb07e180d",
+   "source": "docs",
+   "upstream_bytes": 789,
+   "upstream_sha256": "530d44b15e33df25a80050d59bd7d0ec57f56b8b1fea865515c9856fb07e180d",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/api-reference/memories.mdx"
+  },
+  "docs/api-reference/overview.mdx": {
+   "bytes": 2945,
+   "redactions": 0,
+   "sha256": "387ee1668f33c04658d17db045afbaf0cbaf25b4d0c0cd52f6ae264fa5a5b1fa",
+   "source": "docs",
+   "upstream_bytes": 2945,
+   "upstream_sha256": "387ee1668f33c04658d17db045afbaf0cbaf25b4d0c0cd52f6ae264fa5a5b1fa",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/api-reference/overview.mdx"
+  },
+  "docs/api-reference/profiles.mdx": {
+   "bytes": 571,
+   "redactions": 0,
+   "sha256": "db749ad2e2a503a53a4babe537c70fa53f4e55bad275cf92f0c390d86a84c7ce",
+   "source": "docs",
+   "upstream_bytes": 571,
+   "upstream_sha256": "db749ad2e2a503a53a4babe537c70fa53f4e55bad275cf92f0c390d86a84c7ce",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/api-reference/profiles.mdx"
+  },
+  "docs/api-reference/search.mdx": {
+   "bytes": 875,
+   "redactions": 0,
+   "sha256": "e1a21cbcdb036da348a4c48815fd2b515d29b435a02662232052c9d3f3036e61",
+   "source": "docs",
+   "upstream_bytes": 875,
+   "upstream_sha256": "e1a21cbcdb036da348a4c48815fd2b515d29b435a02662232052c9d3f3036e61",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/api-reference/search.mdx"
+  },
+  "docs/api-reference/settings.mdx": {
+   "bytes": 559,
+   "redactions": 0,
+   "sha256": "2115d5bccc2b64e7bfd4b947492d591412e9ce34c6aaa5234716bc7eecc6e7a4",
+   "source": "docs",
+   "upstream_bytes": 559,
+   "upstream_sha256": "2115d5bccc2b64e7bfd4b947492d591412e9ce34c6aaa5234716bc7eecc6e7a4",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/api-reference/settings.mdx"
+  },
+  "docs/authentication.mdx": {
+   "bytes": 4502,
+   "redactions": 0,
+   "sha256": "1c36d8fb3c951a280163bca1c414e074a1651a1b73f8fc58cea5296406a7764c",
+   "source": "docs",
+   "upstream_bytes": 4502,
+   "upstream_sha256": "1c36d8fb3c951a280163bca1c414e074a1651a1b73f8fc58cea5296406a7764c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/authentication.mdx"
+  },
+  "docs/concepts/container-tags.mdx": {
+   "bytes": 9842,
+   "redactions": 0,
+   "sha256": "4ab7679d2103dca54f3d1e6bbc4017504d7e06e48e61ed76f2832dd1625872ac",
+   "source": "docs",
+   "upstream_bytes": 9842,
+   "upstream_sha256": "4ab7679d2103dca54f3d1e6bbc4017504d7e06e48e61ed76f2832dd1625872ac",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/container-tags.mdx"
+  },
+  "docs/concepts/content-types.mdx": {
+   "bytes": 7170,
+   "redactions": 0,
+   "sha256": "ab470c9c2a4c41b974165a1c2f80f96ab5974f55e61aa4b5c40afeba3bac3a61",
+   "source": "docs",
+   "upstream_bytes": 7170,
+   "upstream_sha256": "ab470c9c2a4c41b974165a1c2f80f96ab5974f55e61aa4b5c40afeba3bac3a61",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/content-types.mdx"
+  },
+  "docs/concepts/customization.mdx": {
+   "bytes": 7532,
+   "redactions": 0,
+   "sha256": "ff47a98785ba73a2bf65b4cd7246938bab7d8c3d48860f4cdf602084ed354b73",
+   "source": "docs",
+   "upstream_bytes": 7532,
+   "upstream_sha256": "ff47a98785ba73a2bf65b4cd7246938bab7d8c3d48860f4cdf602084ed354b73",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/customization.mdx"
+  },
+  "docs/concepts/filtering.mdx": {
+   "bytes": 10704,
+   "redactions": 0,
+   "sha256": "9923f40b01afd6bf569727ca7d6c71e44fa1c673a77adc36282a6f2dfef5e3ba",
+   "source": "docs",
+   "upstream_bytes": 10704,
+   "upstream_sha256": "9923f40b01afd6bf569727ca7d6c71e44fa1c673a77adc36282a6f2dfef5e3ba",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/filtering.mdx"
+  },
+  "docs/concepts/graph-memory.mdx": {
+   "bytes": 8160,
+   "redactions": 0,
+   "sha256": "c668bdb55552954eaccb55e63e2ba4ca13b41f80fddb909dcffce39544073979",
+   "source": "docs",
+   "upstream_bytes": 8160,
+   "upstream_sha256": "c668bdb55552954eaccb55e63e2ba4ca13b41f80fddb909dcffce39544073979",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/graph-memory.mdx"
+  },
+  "docs/concepts/how-it-works.mdx": {
+   "bytes": 8137,
+   "redactions": 0,
+   "sha256": "6b9da37cb31163cd790f32477056245ab9998881b0f60f60f8ff861884e6258e",
+   "source": "docs",
+   "upstream_bytes": 8137,
+   "upstream_sha256": "6b9da37cb31163cd790f32477056245ab9998881b0f60f60f8ff861884e6258e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/how-it-works.mdx"
+  },
+  "docs/concepts/memory-vs-rag.mdx": {
+   "bytes": 7694,
+   "redactions": 0,
+   "sha256": "75441fd01fc58c97329a118ce8ddd064665a28a8c30dd92138b305c34933e255",
+   "source": "docs",
+   "upstream_bytes": 7694,
+   "upstream_sha256": "75441fd01fc58c97329a118ce8ddd064665a28a8c30dd92138b305c34933e255",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/memory-vs-rag.mdx"
+  },
+  "docs/concepts/multi-tenancy-examples.mdx": {
+   "bytes": 4038,
+   "redactions": 0,
+   "sha256": "eaeeee9c45065261c7ae4645340c06cc2365e327c7b47672ac08834968acdf75",
+   "source": "docs",
+   "upstream_bytes": 4038,
+   "upstream_sha256": "eaeeee9c45065261c7ae4645340c06cc2365e327c7b47672ac08834968acdf75",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/multi-tenancy-examples.mdx"
+  },
+  "docs/concepts/multi-tenancy.mdx": {
+   "bytes": 5450,
+   "redactions": 0,
+   "sha256": "b931e3439a13e9cdd4cb7b87d9a49a0d66e4160101e115894cf20a60c916e12c",
+   "source": "docs",
+   "upstream_bytes": 5450,
+   "upstream_sha256": "b931e3439a13e9cdd4cb7b87d9a49a0d66e4160101e115894cf20a60c916e12c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/multi-tenancy.mdx"
+  },
+  "docs/concepts/rules.mdx": {
+   "bytes": 11644,
+   "redactions": 0,
+   "sha256": "35634495500b6277cf0e75f72a6c4fe3aee11308dcf7de5d23317693a7318050",
+   "source": "docs",
+   "upstream_bytes": 11644,
+   "upstream_sha256": "35634495500b6277cf0e75f72a6c4fe3aee11308dcf7de5d23317693a7318050",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/rules.mdx"
+  },
+  "docs/concepts/super-rag.mdx": {
+   "bytes": 8406,
+   "redactions": 0,
+   "sha256": "d84b0d1f4ad432fddb0489ef6a5785bdf6bc19dec4a9775043b133fc54f70655",
+   "source": "docs",
+   "upstream_bytes": 8406,
+   "upstream_sha256": "d84b0d1f4ad432fddb0489ef6a5785bdf6bc19dec4a9775043b133fc54f70655",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/super-rag.mdx"
+  },
+  "docs/concepts/user-profiles.mdx": {
+   "bytes": 10024,
+   "redactions": 0,
+   "sha256": "eb0c6d5ceec4f9d8586ac88570fe16f12ec575a50eb18f4220a69d18efbcaa29",
+   "source": "docs",
+   "upstream_bytes": 10024,
+   "upstream_sha256": "eb0c6d5ceec4f9d8586ac88570fe16f12ec575a50eb18f4220a69d18efbcaa29",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/concepts/user-profiles.mdx"
+  },
+  "docs/connectors/github.mdx": {
+   "bytes": 14946,
+   "redactions": 0,
+   "sha256": "90b0b0da96761b23f250d9315c2c2cc853e740e979eed3d981e4c20c73815d6c",
+   "source": "docs",
+   "upstream_bytes": 14946,
+   "upstream_sha256": "90b0b0da96761b23f250d9315c2c2cc853e740e979eed3d981e4c20c73815d6c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/github.mdx"
+  },
+  "docs/connectors/gmail.mdx": {
+   "bytes": 12989,
+   "redactions": 0,
+   "sha256": "66f132599c0896304e5889f4d8e9db9c1a148c12ecf55c3745df06906d8acea5",
+   "source": "docs",
+   "upstream_bytes": 12989,
+   "upstream_sha256": "66f132599c0896304e5889f4d8e9db9c1a148c12ecf55c3745df06906d8acea5",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/gmail.mdx"
+  },
+  "docs/connectors/google-drive.mdx": {
+   "bytes": 12395,
+   "redactions": 0,
+   "sha256": "8349d24bc7d83351a47be5ad0dfac3ff37935b3f4b3265f043d84061c537debe",
+   "source": "docs",
+   "upstream_bytes": 12395,
+   "upstream_sha256": "8349d24bc7d83351a47be5ad0dfac3ff37935b3f4b3265f043d84061c537debe",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/google-drive.mdx"
+  },
+  "docs/connectors/granola.mdx": {
+   "bytes": 7384,
+   "redactions": 0,
+   "sha256": "c540fa46af66c03980f34dfa5e87102b5a9b4a9ecb2a0881b1dff287c13e2f07",
+   "source": "docs",
+   "upstream_bytes": 7384,
+   "upstream_sha256": "c540fa46af66c03980f34dfa5e87102b5a9b4a9ecb2a0881b1dff287c13e2f07",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/granola.mdx"
+  },
+  "docs/connectors/managing-resources.mdx": {
+   "bytes": 8659,
+   "redactions": 0,
+   "sha256": "cf24919dfc0847c8d53968c532be1636baf3f6b517a3792b72a994263a6cb25c",
+   "source": "docs",
+   "upstream_bytes": 8659,
+   "upstream_sha256": "cf24919dfc0847c8d53968c532be1636baf3f6b517a3792b72a994263a6cb25c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/managing-resources.mdx"
+  },
+  "docs/connectors/notion.mdx": {
+   "bytes": 12081,
+   "redactions": 0,
+   "sha256": "1baf0e44610761fe27c3b62c4c7a479db3700899f00a90ec2818339ed1371c38",
+   "source": "docs",
+   "upstream_bytes": 12081,
+   "upstream_sha256": "1baf0e44610761fe27c3b62c4c7a479db3700899f00a90ec2818339ed1371c38",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/notion.mdx"
+  },
+  "docs/connectors/onedrive.mdx": {
+   "bytes": 9785,
+   "redactions": 0,
+   "sha256": "547716aaa310e8c6bb4a9281338449fac7525dfc044df67c9f5b014792dbcf99",
+   "source": "docs",
+   "upstream_bytes": 9785,
+   "upstream_sha256": "547716aaa310e8c6bb4a9281338449fac7525dfc044df67c9f5b014792dbcf99",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/onedrive.mdx"
+  },
+  "docs/connectors/overview.mdx": {
+   "bytes": 16285,
+   "redactions": 0,
+   "sha256": "9d5e2a4fc17352ec1d726ad8706509ab38790d0fb5c7634f219f47096735095e",
+   "source": "docs",
+   "upstream_bytes": 16285,
+   "upstream_sha256": "9d5e2a4fc17352ec1d726ad8706509ab38790d0fb5c7634f219f47096735095e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/overview.mdx"
+  },
+  "docs/connectors/s3.mdx": {
+   "bytes": 8844,
+   "redactions": 1,
+   "sha256": "a5526284292ec672e0287fc4e652755b1897c10053a7744fddb20d3e32411d60",
+   "source": "docs",
+   "upstream_bytes": 8852,
+   "upstream_sha256": "88096c2c39abfffb41c99c06785b8e0a6ac99617373ba80bc04b5b6fb468d66c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/s3.mdx"
+  },
+  "docs/connectors/troubleshooting.mdx": {
+   "bytes": 8741,
+   "redactions": 0,
+   "sha256": "e810ab6ac2441177f0540b5349bc174a12443ff73edfff4c9aaf8d044f9eb089",
+   "source": "docs",
+   "upstream_bytes": 8741,
+   "upstream_sha256": "e810ab6ac2441177f0540b5349bc174a12443ff73edfff4c9aaf8d044f9eb089",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/troubleshooting.mdx"
+  },
+  "docs/connectors/web-crawler.mdx": {
+   "bytes": 11179,
+   "redactions": 0,
+   "sha256": "f9e57874436b66008326494457b50799e7c007dd77ab35042341073355f49c02",
+   "source": "docs",
+   "upstream_bytes": 11179,
+   "upstream_sha256": "f9e57874436b66008326494457b50799e7c007dd77ab35042341073355f49c02",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/connectors/web-crawler.mdx"
+  },
+  "docs/docs.json": {
+   "bytes": 32465,
+   "redactions": 0,
+   "sha256": "d9812199e8266e19e0c713e1e13c813a322ba3ced0eda824f217979d8b594c18",
+   "source": "docs",
+   "upstream_bytes": 32465,
+   "upstream_sha256": "d9812199e8266e19e0c713e1e13c813a322ba3ced0eda824f217979d8b594c18",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/docs.json"
+  },
+  "docs/index.mdx": {
+   "bytes": 6107,
+   "redactions": 0,
+   "sha256": "61056d49ff3d0a46a1a1ca0e3d17654de2f5c0d18bfcffc8e3772f85474498ec",
+   "source": "docs",
+   "upstream_bytes": 6107,
+   "upstream_sha256": "61056d49ff3d0a46a1a1ca0e3d17654de2f5c0d18bfcffc8e3772f85474498ec",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/index.mdx"
+  },
+  "docs/ingestion/add-memories.mdx": {
+   "bytes": 16903,
+   "redactions": 0,
+   "sha256": "09e4d76a1b3ec409b58f4a1c82031f24dca3bc4fd2fddf972f1dc8353de04f8e",
+   "source": "docs",
+   "upstream_bytes": 16903,
+   "upstream_sha256": "09e4d76a1b3ec409b58f4a1c82031f24dca3bc4fd2fddf972f1dc8353de04f8e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/ingestion/add-memories.mdx"
+  },
+  "docs/ingestion/batch-ingest-historical-data.mdx": {
+   "bytes": 5249,
+   "redactions": 0,
+   "sha256": "834843d9c503ee4d6d23dca2d06cd3055804737c284b53ad8db6fb4bf7dbf799",
+   "source": "docs",
+   "upstream_bytes": 5249,
+   "upstream_sha256": "834843d9c503ee4d6d23dca2d06cd3055804737c284b53ad8db6fb4bf7dbf799",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/ingestion/batch-ingest-historical-data.mdx"
+  },
+  "docs/ingestion/document-operations.mdx": {
+   "bytes": 12670,
+   "redactions": 0,
+   "sha256": "fe819568e5d45e39609e9f2e96cdfb65911f3e32d96edc3705dcf073ea734c47",
+   "source": "docs",
+   "upstream_bytes": 12670,
+   "upstream_sha256": "fe819568e5d45e39609e9f2e96cdfb65911f3e32d96edc3705dcf073ea734c47",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/ingestion/document-operations.mdx"
+  },
+  "docs/integrations/agent-framework.mdx": {
+   "bytes": 12673,
+   "redactions": 2,
+   "sha256": "1369d950a537ca03d007321ec7f2992ae7fd59a04f20f5ec6f52014b85f91270",
+   "source": "docs",
+   "upstream_bytes": 12710,
+   "upstream_sha256": "4e860275a39d14d23aeaced7f5d8ad91d4731c02d43ae793656e34c2f441809e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/agent-framework.mdx"
+  },
+  "docs/integrations/agno.mdx": {
+   "bytes": 10004,
+   "redactions": 2,
+   "sha256": "c2efc86ad2139cb1e3bafcf5d5e6bfd141656b3a33832051f22ff1f1799ce69b",
+   "source": "docs",
+   "upstream_bytes": 10041,
+   "upstream_sha256": "7de2f1a61341d3b0e37501696edfa3ac3e39a1674eea28bf610dd0d6edafd88a",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/agno.mdx"
+  },
+  "docs/integrations/ai-sdk.mdx": {
+   "bytes": 6806,
+   "redactions": 0,
+   "sha256": "eeb24500f5d1cbfe932cb5d36cfda3156383ed84e22f76d43d44d22278d1672c",
+   "source": "docs",
+   "upstream_bytes": 6806,
+   "upstream_sha256": "eeb24500f5d1cbfe932cb5d36cfda3156383ed84e22f76d43d44d22278d1672c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/ai-sdk.mdx"
+  },
+  "docs/integrations/cartesia.mdx": {
+   "bytes": 12422,
+   "redactions": 1,
+   "sha256": "6fa703c316cdbfc6b35c6f946ae690f052e2e9afc45be6a53018e3cf4bc30fb8",
+   "source": "docs",
+   "upstream_bytes": 12443,
+   "upstream_sha256": "7715bf4d7ed5d52bb1dca53cc9509fa11cdc604dbe66c2c2d5ce4a33c3609793",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/cartesia.mdx"
+  },
+  "docs/integrations/claude-code.mdx": {
+   "bytes": 6034,
+   "redactions": 0,
+   "sha256": "817fa5a79369c77dbad415261ae21fb724f0b4c0f1089c4130d6b985befbc82f",
+   "source": "docs",
+   "upstream_bytes": 6034,
+   "upstream_sha256": "817fa5a79369c77dbad415261ae21fb724f0b4c0f1089c4130d6b985befbc82f",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/claude-code.mdx"
+  },
+  "docs/integrations/claude-memory.mdx": {
+   "bytes": 7424,
+   "redactions": 2,
+   "sha256": "1aba7b3205bea58be30a6ec41675f8d5321199e22ff1bd0918c96ab278b08154",
+   "source": "docs",
+   "upstream_bytes": 7456,
+   "upstream_sha256": "ec9656613ba5e09e3588880403b01d31d04f6dcdeecb671c90b3b9324adc2e91",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/claude-memory.mdx"
+  },
+  "docs/integrations/codex.mdx": {
+   "bytes": 6658,
+   "redactions": 0,
+   "sha256": "04065fe0bef7359d0e0b335de9233e2c0dbcc2367dcb326bdfefc910eb93cdaf",
+   "source": "docs",
+   "upstream_bytes": 6658,
+   "upstream_sha256": "04065fe0bef7359d0e0b335de9233e2c0dbcc2367dcb326bdfefc910eb93cdaf",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/codex.mdx"
+  },
+  "docs/integrations/convex.mdx": {
+   "bytes": 5507,
+   "redactions": 0,
+   "sha256": "9a79011faa05b76ece8839e27e66f7c4e9a1fb408d0458a3097b45fecf9c0469",
+   "source": "docs",
+   "upstream_bytes": 5507,
+   "upstream_sha256": "9a79011faa05b76ece8839e27e66f7c4e9a1fb408d0458a3097b45fecf9c0469",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/convex.mdx"
+  },
+  "docs/integrations/crewai.mdx": {
+   "bytes": 9667,
+   "redactions": 2,
+   "sha256": "c34a642834d17a9ab9f67a0ed0ff027c3613b257b80e3d3b208f104b14b29735",
+   "source": "docs",
+   "upstream_bytes": 9704,
+   "upstream_sha256": "7c401708d44bb55e597a3aeb353f76b2d1cc48675d12bd28ef0269dde6bc1ce0",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/crewai.mdx"
+  },
+  "docs/integrations/cursor.mdx": {
+   "bytes": 9019,
+   "redactions": 0,
+   "sha256": "6c71f6ae259f45d50c134ae56dbf90223a14dd0b9731b07da70ac871fb6e5247",
+   "source": "docs",
+   "upstream_bytes": 9019,
+   "upstream_sha256": "6c71f6ae259f45d50c134ae56dbf90223a14dd0b9731b07da70ac871fb6e5247",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/cursor.mdx"
+  },
+  "docs/integrations/eve.mdx": {
+   "bytes": 7987,
+   "redactions": 0,
+   "sha256": "d19b056ea601c5feb791c5112e45bb94e897d4b873ee3b605351d851134a224d",
+   "source": "docs",
+   "upstream_bytes": 7987,
+   "upstream_sha256": "d19b056ea601c5feb791c5112e45bb94e897d4b873ee3b605351d851134a224d",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/eve.mdx"
+  },
+  "docs/integrations/grok-bot.mdx": {
+   "bytes": 1957,
+   "redactions": 0,
+   "sha256": "0c78f5a8c9bd1011fb1e93ad64b967eddbd91caa28f487c7d637f13fcd8dd054",
+   "source": "docs",
+   "upstream_bytes": 1957,
+   "upstream_sha256": "0c78f5a8c9bd1011fb1e93ad64b967eddbd91caa28f487c7d637f13fcd8dd054",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/grok-bot.mdx"
+  },
+  "docs/integrations/hermes.mdx": {
+   "bytes": 8218,
+   "redactions": 0,
+   "sha256": "4fc704e1344f5726f3c9a2a1cb53d11ab62422749d0e56fd18510a8b1fa0c89c",
+   "source": "docs",
+   "upstream_bytes": 8218,
+   "upstream_sha256": "4fc704e1344f5726f3c9a2a1cb53d11ab62422749d0e56fd18510a8b1fa0c89c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/hermes.mdx"
+  },
+  "docs/integrations/langchain.mdx": {
+   "bytes": 11195,
+   "redactions": 2,
+   "sha256": "f1a5b33abe518ee2816255916b12550243ea812513c9dc0bb91e59c8822b6a12",
+   "source": "docs",
+   "upstream_bytes": 11232,
+   "upstream_sha256": "bb89cd761644ac93e0691b14f4a29fbb85c932ff777f5d087d9ef04ab8c07841",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/langchain.mdx"
+  },
+  "docs/integrations/langgraph.mdx": {
+   "bytes": 12077,
+   "redactions": 2,
+   "sha256": "6c9ea42e4de6b83a27bde701bcf58a8acf50f5a145b67168043329af69ecc7bd",
+   "source": "docs",
+   "upstream_bytes": 12114,
+   "upstream_sha256": "03037b6f8591f49b4d7e9c5a3172e5bef76b9f8d53797c29eb4e106fe99b77c3",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/langgraph.mdx"
+  },
+  "docs/integrations/livekit.mdx": {
+   "bytes": 9360,
+   "redactions": 1,
+   "sha256": "80a1882f3ec671966dad2a267f71957aafec113f0873819a4c0fe2969acb1790",
+   "source": "docs",
+   "upstream_bytes": 9381,
+   "upstream_sha256": "a631495c813b6a844915f6815d13e6d40884e80cb6bf386a01cf5d39057c5d3c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/livekit.mdx"
+  },
+  "docs/integrations/mastra.mdx": {
+   "bytes": 13068,
+   "redactions": 1,
+   "sha256": "a1669fdcdf28c28b1cde542816f25b8e50d11ce116fe9fe04e6287438f2b2ab3",
+   "source": "docs",
+   "upstream_bytes": 13085,
+   "upstream_sha256": "3db9d51a6a596d9e9dd8a230f4eeb6cc1938cc66f249b2124a4b702b76452e67",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/mastra.mdx"
+  },
+  "docs/integrations/memory-graph.mdx": {
+   "bytes": 11434,
+   "redactions": 0,
+   "sha256": "e1e3fafceba1a7319ae2ed1fc8c4cf12ccb1a71089caabe17d5c7ea35e174024",
+   "source": "docs",
+   "upstream_bytes": 11434,
+   "upstream_sha256": "e1e3fafceba1a7319ae2ed1fc8c4cf12ccb1a71089caabe17d5c7ea35e174024",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/memory-graph.mdx"
+  },
+  "docs/integrations/muse-code.mdx": {
+   "bytes": 5069,
+   "redactions": 0,
+   "sha256": "e062c03b97b37262a2604f913cca4a372176a39cfa63949777265ce7ea33c246",
+   "source": "docs",
+   "upstream_bytes": 5069,
+   "upstream_sha256": "e062c03b97b37262a2604f913cca4a372176a39cfa63949777265ce7ea33c246",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/muse-code.mdx"
+  },
+  "docs/integrations/n8n.mdx": {
+   "bytes": 3639,
+   "redactions": 0,
+   "sha256": "94d11a20fd1bdf01b9043b4505d8caef3bd7c43dafbd7d7a491f4fc4b19b59f2",
+   "source": "docs",
+   "upstream_bytes": 3639,
+   "upstream_sha256": "94d11a20fd1bdf01b9043b4505d8caef3bd7c43dafbd7d7a491f4fc4b19b59f2",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/n8n.mdx"
+  },
+  "docs/integrations/openai-agents-sdk.mdx": {
+   "bytes": 11639,
+   "redactions": 2,
+   "sha256": "0efb9ec4c886f4721051f3df76fc2eff5a15d4f461f0f83e833cc69e3dd67b60",
+   "source": "docs",
+   "upstream_bytes": 11676,
+   "upstream_sha256": "0c63fc2097996411eb7af99c0371364ac1a880678495b77a1ed441274468a712",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/openai-agents-sdk.mdx"
+  },
+  "docs/integrations/openai.mdx": {
+   "bytes": 16618,
+   "redactions": 4,
+   "sha256": "d09286d2eacb10405cf58b8d87ff142752c81f8eed73c2df4c0d664898ae4e3a",
+   "source": "docs",
+   "upstream_bytes": 16676,
+   "upstream_sha256": "12126d5f79e00266ad43207bad1ddf1352f1f2ec34ec277b3d68536c89244294",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/openai.mdx"
+  },
+  "docs/integrations/openclaw.mdx": {
+   "bytes": 13040,
+   "redactions": 0,
+   "sha256": "467f3acc8d87e378ff22dc945df19dc28fbbe35b5f66ef70295708e9ac8bdb6d",
+   "source": "docs",
+   "upstream_bytes": 13040,
+   "upstream_sha256": "467f3acc8d87e378ff22dc945df19dc28fbbe35b5f66ef70295708e9ac8bdb6d",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/openclaw.mdx"
+  },
+  "docs/integrations/opencode.mdx": {
+   "bytes": 6360,
+   "redactions": 0,
+   "sha256": "c5ab617bfd7e4236993a85953b8dae70fe761e760f514e3caa46e04b0b8a2fca",
+   "source": "docs",
+   "upstream_bytes": 6360,
+   "upstream_sha256": "c5ab617bfd7e4236993a85953b8dae70fe761e760f514e3caa46e04b0b8a2fca",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/opencode.mdx"
+  },
+  "docs/integrations/pipecat.mdx": {
+   "bytes": 9496,
+   "redactions": 1,
+   "sha256": "e66709de2a38c5e34606bb97cf32397e030005d2b103408640cf4bd411ee6a63",
+   "source": "docs",
+   "upstream_bytes": 9517,
+   "upstream_sha256": "627fa5241ef80425407cfb993e300b7155b17411c603fda23816392e11bdcf5b",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/pipecat.mdx"
+  },
+  "docs/integrations/supermemory-sdk.mdx": {
+   "bytes": 13062,
+   "redactions": 0,
+   "sha256": "d7d2f9878c18c1c46083abfb33c178a90f87062dd8f3a8f47d3e681cc8d7e97b",
+   "source": "docs",
+   "upstream_bytes": 13062,
+   "upstream_sha256": "d7d2f9878c18c1c46083abfb33c178a90f87062dd8f3a8f47d3e681cc8d7e97b",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/supermemory-sdk.mdx"
+  },
+  "docs/integrations/viasocket.mdx": {
+   "bytes": 3306,
+   "redactions": 0,
+   "sha256": "dcf45f3e438246547ffd985504bf56f986bf88419e2b14e38d1bfd0df712c3b7",
+   "source": "docs",
+   "upstream_bytes": 3306,
+   "upstream_sha256": "dcf45f3e438246547ffd985504bf56f986bf88419e2b14e38d1bfd0df712c3b7",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/viasocket.mdx"
+  },
+  "docs/integrations/voltagent.mdx": {
+   "bytes": 7083,
+   "redactions": 1,
+   "sha256": "e410da726e54b5afd001f504dcef2623a2f1d240b9b286e5e4be3c5a57815a24",
+   "source": "docs",
+   "upstream_bytes": 7104,
+   "upstream_sha256": "2748905aa22c17cad338cd7d41691377412d1f1f029710af46817d62ab393e9c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/voltagent.mdx"
+  },
+  "docs/integrations/zapier.mdx": {
+   "bytes": 2216,
+   "redactions": 0,
+   "sha256": "27293cd1884ee68626c5dd3631043e97769180e64986417bea4d06c82b02cfbd",
+   "source": "docs",
+   "upstream_bytes": 2216,
+   "upstream_sha256": "27293cd1884ee68626c5dd3631043e97769180e64986417bea4d06c82b02cfbd",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/integrations/zapier.mdx"
+  },
+  "docs/invite-team-members.mdx": {
+   "bytes": 3666,
+   "redactions": 0,
+   "sha256": "1ef66aff5d90c1a1e350fc6b6fc5980f0d3d873f3916bf72fa10c73eed7f309f",
+   "source": "docs",
+   "upstream_bytes": 3666,
+   "upstream_sha256": "1ef66aff5d90c1a1e350fc6b6fc5980f0d3d873f3916bf72fa10c73eed7f309f",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/invite-team-members.mdx"
+  },
+  "docs/memorybench/extend-benchmark.mdx": {
+   "bytes": 3983,
+   "redactions": 0,
+   "sha256": "f0ff886574086ea57b2c8072061d0e2118cd5aa11487d7c392540784c57f787c",
+   "source": "docs",
+   "upstream_bytes": 3983,
+   "upstream_sha256": "f0ff886574086ea57b2c8072061d0e2118cd5aa11487d7c392540784c57f787c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/memorybench/extend-benchmark.mdx"
+  },
+  "docs/memorybench/extend-provider.mdx": {
+   "bytes": 4844,
+   "redactions": 0,
+   "sha256": "153079cbd51ec63323f87e0c4fc3b787383db4c7d00212a18fc042314fb8d33f",
+   "source": "docs",
+   "upstream_bytes": 4844,
+   "upstream_sha256": "153079cbd51ec63323f87e0c4fc3b787383db4c7d00212a18fc042314fb8d33f",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/memorybench/extend-provider.mdx"
+  },
+  "docs/memorybench/memscore.mdx": {
+   "bytes": 4347,
+   "redactions": 0,
+   "sha256": "65766c67029e9a5f2960cee51f7dfb812d623811adbd1650ae4ff121bff7dfb0",
+   "source": "docs",
+   "upstream_bytes": 4347,
+   "upstream_sha256": "65766c67029e9a5f2960cee51f7dfb812d623811adbd1650ae4ff121bff7dfb0",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/memorybench/memscore.mdx"
+  },
+  "docs/memorybench/overview.mdx": {
+   "bytes": 4536,
+   "redactions": 0,
+   "sha256": "32e5fbf9ccbd7c8f76f9d1adf928fc1542e1f869fde7b85a580fdc3c70c956d1",
+   "source": "docs",
+   "upstream_bytes": 4536,
+   "upstream_sha256": "32e5fbf9ccbd7c8f76f9d1adf928fc1542e1f869fde7b85a580fdc3c70c956d1",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/memorybench/overview.mdx"
+  },
+  "docs/migration/api-v5-document-reads.mdx": {
+   "bytes": 448,
+   "redactions": 0,
+   "sha256": "bfc899b72fad58411b432fd3081bbc55a7424d36b30e2dfec35e882190c7ee06",
+   "source": "docs",
+   "upstream_bytes": 448,
+   "upstream_sha256": "bfc899b72fad58411b432fd3081bbc55a7424d36b30e2dfec35e882190c7ee06",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-document-reads.mdx"
+  },
+  "docs/migration/api-v5-document-updates.mdx": {
+   "bytes": 437,
+   "redactions": 0,
+   "sha256": "5ebc61d3e7f454506dfcfb267b34f1f3fb73f24276f8fab0f3419905d4493144",
+   "source": "docs",
+   "upstream_bytes": 437,
+   "upstream_sha256": "5ebc61d3e7f454506dfcfb267b34f1f3fb73f24276f8fab0f3419905d4493144",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-document-updates.mdx"
+  },
+  "docs/migration/api-v5-document-writes.mdx": {
+   "bytes": 447,
+   "redactions": 0,
+   "sha256": "bf8e59a2e59cda9fd1fb1f242ccf0fc3fc02d353960fc8cc2e1b5a1de1e649b0",
+   "source": "docs",
+   "upstream_bytes": 447,
+   "upstream_sha256": "bf8e59a2e59cda9fd1fb1f242ccf0fc3fc02d353960fc8cc2e1b5a1de1e649b0",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-document-writes.mdx"
+  },
+  "docs/migration/api-v5-filters.mdx": {
+   "bytes": 408,
+   "redactions": 0,
+   "sha256": "f18430e438ef72f09a70910e77694bb6ad8652384e0c546d499cc6033eed9cda",
+   "source": "docs",
+   "upstream_bytes": 408,
+   "upstream_sha256": "f18430e438ef72f09a70910e77694bb6ad8652384e0c546d499cc6033eed9cda",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-filters.mdx"
+  },
+  "docs/migration/api-v5-memory-forgetting.mdx": {
+   "bytes": 439,
+   "redactions": 0,
+   "sha256": "caf1d6d1cc869509ab1d32fc4f878b32b714c4c1896d60b053c979067fd55328",
+   "source": "docs",
+   "upstream_bytes": 439,
+   "upstream_sha256": "caf1d6d1cc869509ab1d32fc4f878b32b714c4c1896d60b053c979067fd55328",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-memory-forgetting.mdx"
+  },
+  "docs/migration/api-v5-organization.mdx": {
+   "bytes": 429,
+   "redactions": 0,
+   "sha256": "a110ff7fd7935c60f4135e29ca7146b47459b2360f58d000a8396d4dd271833d",
+   "source": "docs",
+   "upstream_bytes": 429,
+   "upstream_sha256": "a110ff7fd7935c60f4135e29ca7146b47459b2360f58d000a8396d4dd271833d",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-organization.mdx"
+  },
+  "docs/migration/api-v5-profiles.mdx": {
+   "bytes": 422,
+   "redactions": 0,
+   "sha256": "3d6efa765210ca3bf8307dea63a88aa4753a36841bd912b2d4d78649c572bd6a",
+   "source": "docs",
+   "upstream_bytes": 422,
+   "upstream_sha256": "3d6efa765210ca3bf8307dea63a88aa4753a36841bd912b2d4d78649c572bd6a",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-profiles.mdx"
+  },
+  "docs/migration/api-v5-recall.mdx": {
+   "bytes": 394,
+   "redactions": 0,
+   "sha256": "2aff47a01b780200b783b8e94ece46f87f5fc8c431bb70eef36a5e7d7886b7df",
+   "source": "docs",
+   "upstream_bytes": 394,
+   "upstream_sha256": "2aff47a01b780200b783b8e94ece46f87f5fc8c431bb70eef36a5e7d7886b7df",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-recall.mdx"
+  },
+  "docs/migration/api-v5-rollout.mdx": {
+   "bytes": 426,
+   "redactions": 0,
+   "sha256": "297c55785df32a34cd2ad81a72655dbedede244f0239fef72478072611517e72",
+   "source": "docs",
+   "upstream_bytes": 426,
+   "upstream_sha256": "297c55785df32a34cd2ad81a72655dbedede244f0239fef72478072611517e72",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-rollout.mdx"
+  },
+  "docs/migration/api-v5-settings.mdx": {
+   "bytes": 405,
+   "redactions": 0,
+   "sha256": "74e13fca4c57a18cc895cf39120575e394b8d7941d3d3e664461afb76841c208",
+   "source": "docs",
+   "upstream_bytes": 405,
+   "upstream_sha256": "74e13fca4c57a18cc895cf39120575e394b8d7941d3d3e664461afb76841c208",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5-settings.mdx"
+  },
+  "docs/migration/api-v5.mdx": {
+   "bytes": 1483,
+   "redactions": 0,
+   "sha256": "34c276c65a3b178acc9421a54b9e0c7119c44a9466d54a12ba890262faa17886",
+   "source": "docs",
+   "upstream_bytes": 1483,
+   "upstream_sha256": "34c276c65a3b178acc9421a54b9e0c7119c44a9466d54a12ba890262faa17886",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/api-v5.mdx"
+  },
+  "docs/migration/from-mem0.mdx": {
+   "bytes": 6076,
+   "redactions": 0,
+   "sha256": "e0da06dd731b9536054e5c7349e62bab759a690548035ea14a77d841eb71cc69",
+   "source": "docs",
+   "upstream_bytes": 6076,
+   "upstream_sha256": "e0da06dd731b9536054e5c7349e62bab759a690548035ea14a77d841eb71cc69",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/from-mem0.mdx"
+  },
+  "docs/migration/from-zep.mdx": {
+   "bytes": 8863,
+   "redactions": 0,
+   "sha256": "3260bdea1631c996aff20fabf5ba635f5cd6a44b71e78148a6cca4fa21f4b230",
+   "source": "docs",
+   "upstream_bytes": 8863,
+   "upstream_sha256": "3260bdea1631c996aff20fabf5ba635f5cd6a44b71e78148a6cca4fa21f4b230",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/from-zep.mdx"
+  },
+  "docs/migration/tools-v2-upgrade.mdx": {
+   "bytes": 6614,
+   "redactions": 0,
+   "sha256": "5d70e5fc6dd3282b4af51fa4717e995f1784f475c3c00f2f1a1d02ab44b40d17",
+   "source": "docs",
+   "upstream_bytes": 6614,
+   "upstream_sha256": "5d70e5fc6dd3282b4af51fa4717e995f1784f475c3c00f2f1a1d02ab44b40d17",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/tools-v2-upgrade.mdx"
+  },
+  "docs/migration/tools-v3-upgrade.mdx": {
+   "bytes": 3070,
+   "redactions": 0,
+   "sha256": "e7deb05f9e11e1313bf47ef2e0b18c4a4679c42cbf46e3e552be5988c5598439",
+   "source": "docs",
+   "upstream_bytes": 3070,
+   "upstream_sha256": "e7deb05f9e11e1313bf47ef2e0b18c4a4679c42cbf46e3e552be5988c5598439",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/migration/tools-v3-upgrade.mdx"
+  },
+  "docs/overview/analytics.mdx": {
+   "bytes": 7032,
+   "redactions": 0,
+   "sha256": "5003abea0026132da168f3b74ad4bb38976359f981e6e5cf783e6669535a055d",
+   "source": "docs",
+   "upstream_bytes": 7032,
+   "upstream_sha256": "5003abea0026132da168f3b74ad4bb38976359f981e6e5cf783e6669535a055d",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/overview/analytics.mdx"
+  },
+  "docs/overview/billing.mdx": {
+   "bytes": 16176,
+   "redactions": 0,
+   "sha256": "117e81c7791e9508433ba8124fbe1bbf23de46208c164fd4b62d5deb0c5aa57c",
+   "source": "docs",
+   "upstream_bytes": 16176,
+   "upstream_sha256": "117e81c7791e9508433ba8124fbe1bbf23de46208c164fd4b62d5deb0c5aa57c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/overview/billing.mdx"
+  },
+  "docs/overview/comparison.mdx": {
+   "bytes": 11685,
+   "redactions": 0,
+   "sha256": "2a63e4c92e090f57603b797c03417dd8525d0e812db1649751e41023acb8e953",
+   "source": "docs",
+   "upstream_bytes": 11685,
+   "upstream_sha256": "2a63e4c92e090f57603b797c03417dd8525d0e812db1649751e41023acb8e953",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/overview/comparison.mdx"
+  },
+  "docs/overview/security.mdx": {
+   "bytes": 5104,
+   "redactions": 0,
+   "sha256": "b30df9261503d5e66fec207cee317f5a1720c68f89d02c9086ee8d1345c86b80",
+   "source": "docs",
+   "upstream_bytes": 5104,
+   "upstream_sha256": "b30df9261503d5e66fec207cee317f5a1720c68f89d02c9086ee8d1345c86b80",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/overview/security.mdx"
+  },
+  "docs/overview/use-cases.mdx": {
+   "bytes": 3182,
+   "redactions": 0,
+   "sha256": "bca81e0d1cd3c96c3c648318385ce3c797e56beddd99793b990d1504b5f2a0ce",
+   "source": "docs",
+   "upstream_bytes": 3182,
+   "upstream_sha256": "bca81e0d1cd3c96c3c648318385ce3c797e56beddd99793b990d1504b5f2a0ce",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/overview/use-cases.mdx"
+  },
+  "docs/overview/what-is-supermemory.mdx": {
+   "bytes": 13367,
+   "redactions": 0,
+   "sha256": "b6f9c865631e3b31c6d8010d33fa492c0db0144770f4785fbb0a06fbf0219c2e",
+   "source": "docs",
+   "upstream_bytes": 13367,
+   "upstream_sha256": "b6f9c865631e3b31c6d8010d33fa492c0db0144770f4785fbb0a06fbf0219c2e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/overview/what-is-supermemory.mdx"
+  },
+  "docs/quickstart.mdx": {
+   "bytes": 19870,
+   "redactions": 0,
+   "sha256": "3ee8ec844a6e0acabd050e9585e58b076128af0ed62b88a37080c5f0305d4103",
+   "source": "docs",
+   "upstream_bytes": 19870,
+   "upstream_sha256": "3ee8ec844a6e0acabd050e9585e58b076128af0ed62b88a37080c5f0305d4103",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/quickstart.mdx"
+  },
+  "docs/recall/memory-operations.mdx": {
+   "bytes": 6919,
+   "redactions": 0,
+   "sha256": "b9b9a6d39297b45e32ff06931d358d1a856f518555411fb68d782a4f479d6e11",
+   "source": "docs",
+   "upstream_bytes": 6919,
+   "upstream_sha256": "b9b9a6d39297b45e32ff06931d358d1a856f518555411fb68d782a4f479d6e11",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/recall/memory-operations.mdx"
+  },
+  "docs/recall/memory-review.mdx": {
+   "bytes": 9377,
+   "redactions": 0,
+   "sha256": "984568986b3b96e4d833368a4cf6f2d18b085e240280d4958737a0a3db68e60d",
+   "source": "docs",
+   "upstream_bytes": 9377,
+   "upstream_sha256": "984568986b3b96e4d833368a4cf6f2d18b085e240280d4958737a0a3db68e60d",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/recall/memory-review.mdx"
+  },
+  "docs/recall/search.mdx": {
+   "bytes": 8753,
+   "redactions": 0,
+   "sha256": "854d5e3c74b8294952884fdcc63a9f0dfd82d659d201f576b5ed3c08ede639b2",
+   "source": "docs",
+   "upstream_bytes": 8753,
+   "upstream_sha256": "854d5e3c74b8294952884fdcc63a9f0dfd82d659d201f576b5ed3c08ede639b2",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/recall/search.mdx"
+  },
+  "docs/recall/user-profiles.mdx": {
+   "bytes": 10179,
+   "redactions": 0,
+   "sha256": "23c3e1c7fedfc3a36bc52a111ef34282d4a7883dbfcbc18c5c34ee57f3676fe8",
+   "source": "docs",
+   "upstream_bytes": 10179,
+   "upstream_sha256": "23c3e1c7fedfc3a36bc52a111ef34282d4a7883dbfcbc18c5c34ee57f3676fe8",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/recall/user-profiles.mdx"
+  },
+  "docs/self-hosting/configuration.mdx": {
+   "bytes": 9900,
+   "redactions": 0,
+   "sha256": "a907a79bfb2415c652ec4fc7ff34ac7440101eebbadde75f26cd9b5ff3fa14fc",
+   "source": "docs",
+   "upstream_bytes": 9900,
+   "upstream_sha256": "a907a79bfb2415c652ec4fc7ff34ac7440101eebbadde75f26cd9b5ff3fa14fc",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/self-hosting/configuration.mdx"
+  },
+  "docs/self-hosting/docker.mdx": {
+   "bytes": 5283,
+   "redactions": 1,
+   "sha256": "abea0bb71fa752faed1ba5f4051e615a905de1cf60aaaaee45d01d486f30a00e",
+   "source": "docs",
+   "upstream_bytes": 5304,
+   "upstream_sha256": "a97993749069fc63a9a23a6f37a43a95e74cbaf6a64daecdf194f8966f2e651a",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/self-hosting/docker.mdx"
+  },
+  "docs/self-hosting/embeddings.mdx": {
+   "bytes": 8708,
+   "redactions": 0,
+   "sha256": "e9b83964c40f13b0fe0b25a0ed7cda4e8c3cf41f675fef919b11e4fb976703c6",
+   "source": "docs",
+   "upstream_bytes": 8708,
+   "upstream_sha256": "e9b83964c40f13b0fe0b25a0ed7cda4e8c3cf41f675fef919b11e4fb976703c6",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/self-hosting/embeddings.mdx"
+  },
+  "docs/self-hosting/local-vs-enterprise.mdx": {
+   "bytes": 3793,
+   "redactions": 0,
+   "sha256": "4613b59c9aa50788f426cafad8183c09368833ba8907126e6a996b2b9eb84f9c",
+   "source": "docs",
+   "upstream_bytes": 3793,
+   "upstream_sha256": "4613b59c9aa50788f426cafad8183c09368833ba8907126e6a996b2b9eb84f9c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/self-hosting/local-vs-enterprise.mdx"
+  },
+  "docs/self-hosting/overview.mdx": {
+   "bytes": 5377,
+   "redactions": 0,
+   "sha256": "1327ea918641130674cb978d191dcbe5cbafcf4696b4b34f3295d4d68302e7db",
+   "source": "docs",
+   "upstream_bytes": 5377,
+   "upstream_sha256": "1327ea918641130674cb978d191dcbe5cbafcf4696b4b34f3295d4d68302e7db",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/self-hosting/overview.mdx"
+  },
+  "docs/self-hosting/providers.mdx": {
+   "bytes": 2158,
+   "redactions": 2,
+   "sha256": "43ce129a6d9683947929818cf090ab6783f63f577e3ac6a24ca919fba4caaa61",
+   "source": "docs",
+   "upstream_bytes": 2171,
+   "upstream_sha256": "e58d05cbbfe8398c113eb17fdbd0079dec9a9c48cc4481c43e56d4b4ff4ffec3",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/self-hosting/providers.mdx"
+  },
+  "docs/self-hosting/quickstart.mdx": {
+   "bytes": 6962,
+   "redactions": 0,
+   "sha256": "fed74a14de256a532ccba616ad0ea3a05a076e7869a355a1760346ec8e041f55",
+   "source": "docs",
+   "upstream_bytes": 6962,
+   "upstream_sha256": "fed74a14de256a532ccba616ad0ea3a05a076e7869a355a1760346ec8e041f55",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/self-hosting/quickstart.mdx"
+  },
+  "docs/smfs/bash-tool-python.mdx": {
+   "bytes": 8685,
+   "redactions": 0,
+   "sha256": "0378028ce546ae2c5e83bf01166a13de426c5ecfd7dfe50f49c7fa33b86d0ccf",
+   "source": "docs",
+   "upstream_bytes": 8685,
+   "upstream_sha256": "0378028ce546ae2c5e83bf01166a13de426c5ecfd7dfe50f49c7fa33b86d0ccf",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/bash-tool-python.mdx"
+  },
+  "docs/smfs/bash-tool.mdx": {
+   "bytes": 5988,
+   "redactions": 0,
+   "sha256": "3e8d57f7705fec3d8b7fb02db692d918b03191b78ec3928c1a3310e14688d5c7",
+   "source": "docs",
+   "upstream_bytes": 5988,
+   "upstream_sha256": "3e8d57f7705fec3d8b7fb02db692d918b03191b78ec3928c1a3310e14688d5c7",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/bash-tool.mdx"
+  },
+  "docs/smfs/examples.mdx": {
+   "bytes": 1710,
+   "redactions": 0,
+   "sha256": "2ce3d6bf2273c8125ee5c6cfd38c223d2420ba36a819cad58c9fd859432416ec",
+   "source": "docs",
+   "upstream_bytes": 1710,
+   "upstream_sha256": "2ce3d6bf2273c8125ee5c6cfd38c223d2420ba36a819cad58c9fd859432416ec",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/examples.mdx"
+  },
+  "docs/smfs/install.mdx": {
+   "bytes": 1818,
+   "redactions": 0,
+   "sha256": "c744540331a194e3fef7c7f97ad5007e639883fb885150bce5b573d4c2cc56ca",
+   "source": "docs",
+   "upstream_bytes": 1818,
+   "upstream_sha256": "c744540331a194e3fef7c7f97ad5007e639883fb885150bce5b573d4c2cc56ca",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/install.mdx"
+  },
+  "docs/smfs/mount.mdx": {
+   "bytes": 10823,
+   "redactions": 0,
+   "sha256": "38cc2ccff16b2fcd2f8e7b1c29fe451f310fb5e85cbcd8777cc266da28816edd",
+   "source": "docs",
+   "upstream_bytes": 10823,
+   "upstream_sha256": "38cc2ccff16b2fcd2f8e7b1c29fe451f310fb5e85cbcd8777cc266da28816edd",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/mount.mdx"
+  },
+  "docs/smfs/overview.mdx": {
+   "bytes": 3844,
+   "redactions": 0,
+   "sha256": "a96b8be379bbee18d2c736b297cc425859fef6255ebe99a93d63493cd140e13b",
+   "source": "docs",
+   "upstream_bytes": 3844,
+   "upstream_sha256": "a96b8be379bbee18d2c736b297cc425859fef6255ebe99a93d63493cd140e13b",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/overview.mdx"
+  },
+  "docs/smfs/providers/cloudflare.mdx": {
+   "bytes": 9291,
+   "redactions": 0,
+   "sha256": "cc391981a498242524a485c14ef6b867438c4fe0bdf0fdab2ae47caaa50d0d94",
+   "source": "docs",
+   "upstream_bytes": 9291,
+   "upstream_sha256": "cc391981a498242524a485c14ef6b867438c4fe0bdf0fdab2ae47caaa50d0d94",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/providers/cloudflare.mdx"
+  },
+  "docs/smfs/providers/daytona.mdx": {
+   "bytes": 8507,
+   "redactions": 0,
+   "sha256": "62deb91e21f8ca93a8b5f876a6a0457f29e15fc664657710fd766cd3bc930cbc",
+   "source": "docs",
+   "upstream_bytes": 8507,
+   "upstream_sha256": "62deb91e21f8ca93a8b5f876a6a0457f29e15fc664657710fd766cd3bc930cbc",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/providers/daytona.mdx"
+  },
+  "docs/smfs/providers/e2b.mdx": {
+   "bytes": 7948,
+   "redactions": 0,
+   "sha256": "9a1072226607f8df96235f3808d409086fb43fc8a4e13342c7424bcc7cf6d0bb",
+   "source": "docs",
+   "upstream_bytes": 7948,
+   "upstream_sha256": "9a1072226607f8df96235f3808d409086fb43fc8a4e13342c7424bcc7cf6d0bb",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/providers/e2b.mdx"
+  },
+  "docs/smfs/providers/vercel.mdx": {
+   "bytes": 5321,
+   "redactions": 0,
+   "sha256": "dd2827f1be71f0471b5d2effd2ddf977d148a3d9876494fa8c642a0d9c59e3c4",
+   "source": "docs",
+   "upstream_bytes": 5321,
+   "upstream_sha256": "dd2827f1be71f0471b5d2effd2ddf977d148a3d9876494fa8c642a0d9c59e3c4",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/smfs/providers/vercel.mdx"
+  },
+  "docs/snippets/api-v5-agent-prompt.mdx": {
+   "bytes": 1357,
+   "redactions": 0,
+   "sha256": "6203f54fcc35f9b2d2f81b319e954992a613bcb63a63f180eea6ca7422f4786f",
+   "source": "docs",
+   "upstream_bytes": 1357,
+   "upstream_sha256": "6203f54fcc35f9b2d2f81b319e954992a613bcb63a63f180eea6ca7422f4786f",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-agent-prompt.mdx"
+  },
+  "docs/snippets/api-v5-completion.mdx": {
+   "bytes": 671,
+   "redactions": 0,
+   "sha256": "1582af5c5f355f057b4cd91b73567617ed96fc4386de4741bb43a60fa252ccda",
+   "source": "docs",
+   "upstream_bytes": 671,
+   "upstream_sha256": "1582af5c5f355f057b4cd91b73567617ed96fc4386de4741bb43a60fa252ccda",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-completion.mdx"
+  },
+  "docs/snippets/api-v5-content-management.mdx": {
+   "bytes": 6805,
+   "redactions": 0,
+   "sha256": "0f224380610b16162f4ceb7b3d31763fcbabee90e612a487645f8471ac701413",
+   "source": "docs",
+   "upstream_bytes": 6805,
+   "upstream_sha256": "0f224380610b16162f4ceb7b3d31763fcbabee90e612a487645f8471ac701413",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-content-management.mdx"
+  },
+  "docs/snippets/api-v5-document-ingestion.mdx": {
+   "bytes": 4954,
+   "redactions": 0,
+   "sha256": "0c49b485f9ed96142e8b35b81eec31657aedfa5863f2fe07bd7fbec81f25ff36",
+   "source": "docs",
+   "upstream_bytes": 4954,
+   "upstream_sha256": "0c49b485f9ed96142e8b35b81eec31657aedfa5863f2fe07bd7fbec81f25ff36",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-document-ingestion.mdx"
+  },
+  "docs/snippets/api-v5-document-updates.mdx": {
+   "bytes": 4460,
+   "redactions": 0,
+   "sha256": "9cf57c4ea5ca9b045a0ca5deb014553e961e2ba64926f7f90984c0b674ca18a7",
+   "source": "docs",
+   "upstream_bytes": 4460,
+   "upstream_sha256": "9cf57c4ea5ca9b045a0ca5deb014553e961e2ba64926f7f90984c0b674ca18a7",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-document-updates.mdx"
+  },
+  "docs/snippets/api-v5-filters.mdx": {
+   "bytes": 3369,
+   "redactions": 0,
+   "sha256": "c7eda623572ed38f16fe6b665e9dffd6c5bd52bdf90e7997c2e1363fd1be6beb",
+   "source": "docs",
+   "upstream_bytes": 3369,
+   "upstream_sha256": "c7eda623572ed38f16fe6b665e9dffd6c5bd52bdf90e7997c2e1363fd1be6beb",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-filters.mdx"
+  },
+  "docs/snippets/api-v5-memory-forgetting.mdx": {
+   "bytes": 3037,
+   "redactions": 0,
+   "sha256": "c3c59770ff14a64606ea927c3746e65151ea71320f1f6f7c57b9c641fdf831da",
+   "source": "docs",
+   "upstream_bytes": 3037,
+   "upstream_sha256": "c3c59770ff14a64606ea927c3746e65151ea71320f1f6f7c57b9c641fdf831da",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-memory-forgetting.mdx"
+  },
+  "docs/snippets/api-v5-namespaces.mdx": {
+   "bytes": 3912,
+   "redactions": 0,
+   "sha256": "a933d81cbb793ec7a0ae441b56210c93ee2b3aa9d29bcba36f256c7e919fe500",
+   "source": "docs",
+   "upstream_bytes": 3912,
+   "upstream_sha256": "a933d81cbb793ec7a0ae441b56210c93ee2b3aa9d29bcba36f256c7e919fe500",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-namespaces.mdx"
+  },
+  "docs/snippets/api-v5-organization.mdx": {
+   "bytes": 2475,
+   "redactions": 0,
+   "sha256": "1c4bfc44d467029479377bee1a1f22cd022348b476e9c0bfdc0b1280a4778ef5",
+   "source": "docs",
+   "upstream_bytes": 2475,
+   "upstream_sha256": "1c4bfc44d467029479377bee1a1f22cd022348b476e9c0bfdc0b1280a4778ef5",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-organization.mdx"
+  },
+  "docs/snippets/api-v5-overview.mdx": {
+   "bytes": 6742,
+   "redactions": 0,
+   "sha256": "7a71cf40e69ec944e0d3f09fdab8b8562c83a29e872269cba34deeca188c0bce",
+   "source": "docs",
+   "upstream_bytes": 6742,
+   "upstream_sha256": "7a71cf40e69ec944e0d3f09fdab8b8562c83a29e872269cba34deeca188c0bce",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-overview.mdx"
+  },
+  "docs/snippets/api-v5-profiles.mdx": {
+   "bytes": 3675,
+   "redactions": 0,
+   "sha256": "d35c6095c2d3cc646d64112a0a1514c67049ae64325633bfd44c6607c5e69848",
+   "source": "docs",
+   "upstream_bytes": 3675,
+   "upstream_sha256": "d35c6095c2d3cc646d64112a0a1514c67049ae64325633bfd44c6607c5e69848",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-profiles.mdx"
+  },
+  "docs/snippets/api-v5-rollout.mdx": {
+   "bytes": 2868,
+   "redactions": 0,
+   "sha256": "60d18d42dbbe9cc5af2de2da497c74948af7fed548184a2e3cfc867401ed31f0",
+   "source": "docs",
+   "upstream_bytes": 2868,
+   "upstream_sha256": "60d18d42dbbe9cc5af2de2da497c74948af7fed548184a2e3cfc867401ed31f0",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-rollout.mdx"
+  },
+  "docs/snippets/api-v5-sdks.mdx": {
+   "bytes": 5099,
+   "redactions": 0,
+   "sha256": "8c006a0eaa9f437929392b559c47526dfd2a3b0b09cf70bb237e3d4005a9fa6e",
+   "source": "docs",
+   "upstream_bytes": 5099,
+   "upstream_sha256": "8c006a0eaa9f437929392b559c47526dfd2a3b0b09cf70bb237e3d4005a9fa6e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-sdks.mdx"
+  },
+  "docs/snippets/api-v5-search.mdx": {
+   "bytes": 4077,
+   "redactions": 0,
+   "sha256": "dd10359f07ed522a3d179dca9a3152d0ebf27eb754983d6fdba2fd443a2063ee",
+   "source": "docs",
+   "upstream_bytes": 4077,
+   "upstream_sha256": "dd10359f07ed522a3d179dca9a3152d0ebf27eb754983d6fdba2fd443a2063ee",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/api-v5-search.mdx"
+  },
+  "docs/snippets/getting-api-key.mdx": {
+   "bytes": 1246,
+   "redactions": 0,
+   "sha256": "5906d9cb9efba269155d0aa0b9be317b7a0b2cfc713fdea6ce62786813ec77a3",
+   "source": "docs",
+   "upstream_bytes": 1246,
+   "upstream_sha256": "5906d9cb9efba269155d0aa0b9be317b7a0b2cfc713fdea6ce62786813ec77a3",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/getting-api-key.mdx"
+  },
+  "docs/snippets/journey.mdx": {
+   "bytes": 1481,
+   "redactions": 0,
+   "sha256": "fd2649dc2e45e121c7e315a9054d093760563544a39b3eae45aa09712383985c",
+   "source": "docs",
+   "upstream_bytes": 1481,
+   "upstream_sha256": "fd2649dc2e45e121c7e315a9054d093760563544a39b3eae45aa09712383985c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/journey.mdx"
+  },
+  "docs/snippets/migrate-cli.mdx": {
+   "bytes": 114,
+   "redactions": 0,
+   "sha256": "0c7876551c969c532a6496f27587a63d0db5ad87b59236cf788f91d504da099f",
+   "source": "docs",
+   "upstream_bytes": 114,
+   "upstream_sha256": "0c7876551c969c532a6496f27587a63d0db5ad87b59236cf788f91d504da099f",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/migrate-cli.mdx"
+  },
+  "docs/snippets/slack-message.mdx": {
+   "bytes": 13832,
+   "redactions": 0,
+   "sha256": "e11b5a294bf5432b066317c4db5db74b786940b251c89574a2a2d845be812c5e",
+   "source": "docs",
+   "upstream_bytes": 13832,
+   "upstream_sha256": "e11b5a294bf5432b066317c4db5db74b786940b251c89574a2a2d845be812c5e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/snippets/slack-message.mdx"
+  },
+  "docs/supermemory-mcp/chatgpt-web.mdx": {
+   "bytes": 9100,
+   "redactions": 0,
+   "sha256": "8e1bbb192dd36dfb9158869fc53f03e2f73c308b8a3ada2472bfaeff8726be1c",
+   "source": "docs",
+   "upstream_bytes": 9100,
+   "upstream_sha256": "8e1bbb192dd36dfb9158869fc53f03e2f73c308b8a3ada2472bfaeff8726be1c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/supermemory-mcp/chatgpt-web.mdx"
+  },
+  "docs/supermemory-mcp/claude-desktop.mdx": {
+   "bytes": 2019,
+   "redactions": 0,
+   "sha256": "b7f201e156007088ffb7b286e526e702589fe53dc466bb94700806d25f16dc25",
+   "source": "docs",
+   "upstream_bytes": 2019,
+   "upstream_sha256": "b7f201e156007088ffb7b286e526e702589fe53dc466bb94700806d25f16dc25",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/supermemory-mcp/claude-desktop.mdx"
+  },
+  "docs/supermemory-mcp/mcp.mdx": {
+   "bytes": 9534,
+   "redactions": 0,
+   "sha256": "792286e6c23afa805b0b6f24c52d073282a7469c01b9a9675c613ed170bbfcaf",
+   "source": "docs",
+   "upstream_bytes": 9534,
+   "upstream_sha256": "792286e6c23afa805b0b6f24c52d073282a7469c01b9a9675c613ed170bbfcaf",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/supermemory-mcp/mcp.mdx"
+  },
+  "docs/supermemory-mcp/setup.mdx": {
+   "bytes": 2202,
+   "redactions": 0,
+   "sha256": "a360b2938acb86d6851683ccf1e9de2e33063469ce33fcb888900ccb0b10dc3e",
+   "source": "docs",
+   "upstream_bytes": 2202,
+   "upstream_sha256": "a360b2938acb86d6851683ccf1e9de2e33063469ce33fcb888900ccb0b10dc3e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/supermemory-mcp/setup.mdx"
+  },
+  "docs/user-profiles/buckets.mdx": {
+   "bytes": 11314,
+   "redactions": 0,
+   "sha256": "2e4da33bd3ef7df84eda2a93eba9f15c3d6a9278ef85f563a6e55ad0d61782be",
+   "source": "docs",
+   "upstream_bytes": 11314,
+   "upstream_sha256": "2e4da33bd3ef7df84eda2a93eba9f15c3d6a9278ef85f563a6e55ad0d61782be",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/user-profiles/buckets.mdx"
+  },
+  "docs/using-supermemory.mdx": {
+   "bytes": 4144,
+   "redactions": 0,
+   "sha256": "ed7c259b4ccf78a5a22fb1a2da3efca4f876d1e010060c170d7e6a84fc84dd7e",
+   "source": "docs",
+   "upstream_bytes": 4144,
+   "upstream_sha256": "ed7c259b4ccf78a5a22fb1a2da3efca4f876d1e010060c170d7e6a84fc84dd7e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/using-supermemory.mdx"
+  },
+  "docs/v5/api-reference/connectors.mdx": {
+   "bytes": 2668,
+   "redactions": 0,
+   "sha256": "6f27acffb3a0ba40959d0882201e3b130e7b4d10475df9a249a061773a1109e7",
+   "source": "docs",
+   "upstream_bytes": 2668,
+   "upstream_sha256": "6f27acffb3a0ba40959d0882201e3b130e7b4d10475df9a249a061773a1109e7",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/v5/api-reference/connectors.mdx"
+  },
+  "docs/v5/api-reference/content-management.mdx": {
+   "bytes": 2115,
+   "redactions": 0,
+   "sha256": "ed9232176274df130b91384ee7f0792b442f1f1331000a55cda054204389a3cc",
+   "source": "docs",
+   "upstream_bytes": 2115,
+   "upstream_sha256": "ed9232176274df130b91384ee7f0792b442f1f1331000a55cda054204389a3cc",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/v5/api-reference/content-management.mdx"
+  },
+  "docs/v5/api-reference/ingest.mdx": {
+   "bytes": 2132,
+   "redactions": 0,
+   "sha256": "cab43633e0be4354d9e60550f15d7c1ab1eed0623bca414aac16cb264235940e",
+   "source": "docs",
+   "upstream_bytes": 2132,
+   "upstream_sha256": "cab43633e0be4354d9e60550f15d7c1ab1eed0623bca414aac16cb264235940e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/v5/api-reference/ingest.mdx"
+  },
+  "docs/v5/api-reference/namespaces.mdx": {
+   "bytes": 1640,
+   "redactions": 0,
+   "sha256": "dff76957a2e69341e5b17b4d7a748d7034fde5686381f9fafd9119fd9c3f1753",
+   "source": "docs",
+   "upstream_bytes": 1640,
+   "upstream_sha256": "dff76957a2e69341e5b17b4d7a748d7034fde5686381f9fafd9119fd9c3f1753",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/v5/api-reference/namespaces.mdx"
+  },
+  "docs/v5/api-reference/organization.mdx": {
+   "bytes": 1161,
+   "redactions": 0,
+   "sha256": "660f7604df8f8e878fc37ec921a1c3ed23689827cdb71ab2e4665d53029c0654",
+   "source": "docs",
+   "upstream_bytes": 1161,
+   "upstream_sha256": "660f7604df8f8e878fc37ec921a1c3ed23689827cdb71ab2e4665d53029c0654",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/v5/api-reference/organization.mdx"
+  },
+  "docs/v5/api-reference/overview.mdx": {
+   "bytes": 1845,
+   "redactions": 0,
+   "sha256": "02a560f5ba952a1150d220d2c3adebf613f5bfd9cd87804e80d00c8b496f88a9",
+   "source": "docs",
+   "upstream_bytes": 1845,
+   "upstream_sha256": "02a560f5ba952a1150d220d2c3adebf613f5bfd9cd87804e80d00c8b496f88a9",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/v5/api-reference/overview.mdx"
+  },
+  "docs/v5/api-reference/profiles.mdx": {
+   "bytes": 1512,
+   "redactions": 0,
+   "sha256": "11691eb58106390f86a16e7428cbb1aa26688dd1d0ec2da68b944e292171b91d",
+   "source": "docs",
+   "upstream_bytes": 1512,
+   "upstream_sha256": "11691eb58106390f86a16e7428cbb1aa26688dd1d0ec2da68b944e292171b91d",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/v5/api-reference/profiles.mdx"
+  },
+  "docs/v5/api-reference/search.mdx": {
+   "bytes": 1380,
+   "redactions": 0,
+   "sha256": "caf0b8fa73085fc52b40634858a933c33a39ccf180648cfa5f22fa6537ff0ce0",
+   "source": "docs",
+   "upstream_bytes": 1380,
+   "upstream_sha256": "caf0b8fa73085fc52b40634858a933c33a39ccf180648cfa5f22fa6537ff0ce0",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/03d9dd1c0ed35e35dfd57794c5440461d3c74f61/apps/docs/v5/api-reference/search.mdx"
+  },
+  "history/0b50816/connectors/s3.mdx": {
+   "bytes": 7561,
+   "redactions": 1,
+   "sha256": "a0c7fe5ee0b05bb922aa1553c8603482f41b583afaa0860db304fdd988e5c288",
+   "source": "docs",
+   "upstream_bytes": 7569,
+   "upstream_sha256": "6e32ec2870f4b18bbd79cfa677e0950dc0c7a177c29ce61a0b1bae67b0adb364",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/0b5081698cea2d9da6a502b93e56a487610bca5b/apps/docs/connectors/s3.mdx"
+  },
+  "history/1af9dbc/memory-operations.mdx": {
+   "bytes": 11636,
+   "redactions": 0,
+   "sha256": "7bce81c77585315dc9710cc9cc3277dfdb662cca901876649dd45c5dea3b4286",
+   "source": "docs",
+   "upstream_bytes": 11636,
+   "upstream_sha256": "7bce81c77585315dc9710cc9cc3277dfdb662cca901876649dd45c5dea3b4286",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/1af9dbc448783d57171e9c85ce4f56a90987c39d/apps/docs/memory-operations.mdx"
+  },
+  "history/2197c04/concepts/container-tags.mdx": {
+   "bytes": 9842,
+   "redactions": 0,
+   "sha256": "4ab7679d2103dca54f3d1e6bbc4017504d7e06e48e61ed76f2832dd1625872ac",
+   "source": "docs",
+   "upstream_bytes": 9842,
+   "upstream_sha256": "4ab7679d2103dca54f3d1e6bbc4017504d7e06e48e61ed76f2832dd1625872ac",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/2197c04ac12184d56e172f6441f89c12d6bc17c7/apps/docs/concepts/container-tags.mdx"
+  },
+  "history/4347970/concepts/container-tags.mdx": {
+   "bytes": 9533,
+   "redactions": 0,
+   "sha256": "0248db675358ccbc8440f3b629df3e46f07036c45c975974367bc6bef8123ce8",
+   "source": "docs",
+   "upstream_bytes": 9533,
+   "upstream_sha256": "0248db675358ccbc8440f3b629df3e46f07036c45c975974367bc6bef8123ce8",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/4347970d160b70a41dac9f0222cc3ce5a7ac1b3e/apps/docs/concepts/container-tags.mdx"
+  },
+  "history/4347970/concepts/how-it-works.mdx": {
+   "bytes": 8137,
+   "redactions": 0,
+   "sha256": "6b9da37cb31163cd790f32477056245ab9998881b0f60f60f8ff861884e6258e",
+   "source": "docs",
+   "upstream_bytes": 8137,
+   "upstream_sha256": "6b9da37cb31163cd790f32477056245ab9998881b0f60f60f8ff861884e6258e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/4347970d160b70a41dac9f0222cc3ce5a7ac1b3e/apps/docs/concepts/how-it-works.mdx"
+  },
+  "history/4347970/recall/memory-operations.mdx": {
+   "bytes": 6919,
+   "redactions": 0,
+   "sha256": "b9b9a6d39297b45e32ff06931d358d1a856f518555411fb68d782a4f479d6e11",
+   "source": "docs",
+   "upstream_bytes": 6919,
+   "upstream_sha256": "b9b9a6d39297b45e32ff06931d358d1a856f518555411fb68d782a4f479d6e11",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/4347970d160b70a41dac9f0222cc3ce5a7ac1b3e/apps/docs/recall/memory-operations.mdx"
+  },
+  "history/4347970/v5/api-reference/ingest.mdx": {
+   "bytes": 2132,
+   "redactions": 0,
+   "sha256": "cab43633e0be4354d9e60550f15d7c1ab1eed0623bca414aac16cb264235940e",
+   "source": "docs",
+   "upstream_bytes": 2132,
+   "upstream_sha256": "cab43633e0be4354d9e60550f15d7c1ab1eed0623bca414aac16cb264235940e",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/4347970d160b70a41dac9f0222cc3ce5a7ac1b3e/apps/docs/v5/api-reference/ingest.mdx"
+  },
+  "history/4850856/connectors/s3.mdx": {
+   "bytes": 5796,
+   "redactions": 1,
+   "sha256": "e927a5575031ee72b726be5ac54d3d38a0301a314eeb5c208f89029b4c382423",
+   "source": "docs",
+   "upstream_bytes": 5804,
+   "upstream_sha256": "8076b248218436db4994ff561a96c55a6c73d73f02d2d0accd9b9bab41582f8a",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/48508569204893316454d87c44e63a2b5f9e2833/apps/docs/connectors/s3.mdx"
+  },
+  "history/5323f42/concepts/rules.mdx": {
+   "bytes": 11586,
+   "redactions": 0,
+   "sha256": "c724d7ad05bdbf957563571fe190cd14595c35f284600ded62fa7824ee89e3e0",
+   "source": "docs",
+   "upstream_bytes": 11586,
+   "upstream_sha256": "c724d7ad05bdbf957563571fe190cd14595c35f284600ded62fa7824ee89e3e0",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/5323f427d076c7a158a9154867d293b53acc3841/apps/docs/concepts/rules.mdx"
+  },
+  "history/5323f42/concepts/super-rag.mdx": {
+   "bytes": 8576,
+   "redactions": 0,
+   "sha256": "9c02c0a9cebccba4a7a729521de9aee985ab0c08830a5b59a17147060f7fa39c",
+   "source": "docs",
+   "upstream_bytes": 8576,
+   "upstream_sha256": "9c02c0a9cebccba4a7a729521de9aee985ab0c08830a5b59a17147060f7fa39c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/5323f427d076c7a158a9154867d293b53acc3841/apps/docs/concepts/super-rag.mdx"
+  },
+  "history/5323f42/quickstart.mdx": {
+   "bytes": 19523,
+   "redactions": 0,
+   "sha256": "b8babc962e1a24c4559b3689f89caccefabb586dfe856706f42aca83866dac6b",
+   "source": "docs",
+   "upstream_bytes": 19523,
+   "upstream_sha256": "b8babc962e1a24c4559b3689f89caccefabb586dfe856706f42aca83866dac6b",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/5323f427d076c7a158a9154867d293b53acc3841/apps/docs/quickstart.mdx"
+  },
+  "history/5323f42/recall/search.mdx": {
+   "bytes": 8209,
+   "redactions": 0,
+   "sha256": "a19d54bea933cc1eb9db645f01c7cca055c3a475013f720567acccbecddeddb8",
+   "source": "docs",
+   "upstream_bytes": 8209,
+   "upstream_sha256": "a19d54bea933cc1eb9db645f01c7cca055c3a475013f720567acccbecddeddb8",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/5323f427d076c7a158a9154867d293b53acc3841/apps/docs/recall/search.mdx"
+  },
+  "history/62ac31e/connectors/s3.mdx": {
+   "bytes": 5929,
+   "redactions": 1,
+   "sha256": "3900b7c1df4f52753baf10730ac91e5f829cf45149bb491eb641b209da25a697",
+   "source": "docs",
+   "upstream_bytes": 5937,
+   "upstream_sha256": "2f5b18f73b776a6d2586dcd1b0a0ea338c86340002405a53e18478dd93d8a021",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/62ac31ecaa73c7a47a8c9330529dcfa7af938e7d/apps/docs/connectors/s3.mdx"
+  },
+  "history/672defc/concepts/container-tags.mdx": {
+   "bytes": 9533,
+   "redactions": 0,
+   "sha256": "0248db675358ccbc8440f3b629df3e46f07036c45c975974367bc6bef8123ce8",
+   "source": "docs",
+   "upstream_bytes": 9533,
+   "upstream_sha256": "0248db675358ccbc8440f3b629df3e46f07036c45c975974367bc6bef8123ce8",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/672defc08b8617f6fa57e903ae48dd7d7e5661a5/apps/docs/concepts/container-tags.mdx"
+  },
+  "history/672defc/concepts/how-it-works.mdx": {
+   "bytes": 8125,
+   "redactions": 0,
+   "sha256": "ff22660fd0f98f045f010bef5ed91308238467cf8545a312534b14752225ad59",
+   "source": "docs",
+   "upstream_bytes": 8125,
+   "upstream_sha256": "ff22660fd0f98f045f010bef5ed91308238467cf8545a312534b14752225ad59",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/672defc08b8617f6fa57e903ae48dd7d7e5661a5/apps/docs/concepts/how-it-works.mdx"
+  },
+  "history/672defc/concepts/rules.mdx": {
+   "bytes": 11586,
+   "redactions": 0,
+   "sha256": "c724d7ad05bdbf957563571fe190cd14595c35f284600ded62fa7824ee89e3e0",
+   "source": "docs",
+   "upstream_bytes": 11586,
+   "upstream_sha256": "c724d7ad05bdbf957563571fe190cd14595c35f284600ded62fa7824ee89e3e0",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/672defc08b8617f6fa57e903ae48dd7d7e5661a5/apps/docs/concepts/rules.mdx"
+  },
+  "history/672defc/concepts/super-rag.mdx": {
+   "bytes": 8576,
+   "redactions": 0,
+   "sha256": "9c02c0a9cebccba4a7a729521de9aee985ab0c08830a5b59a17147060f7fa39c",
+   "source": "docs",
+   "upstream_bytes": 8576,
+   "upstream_sha256": "9c02c0a9cebccba4a7a729521de9aee985ab0c08830a5b59a17147060f7fa39c",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/672defc08b8617f6fa57e903ae48dd7d7e5661a5/apps/docs/concepts/super-rag.mdx"
+  },
+  "history/672defc/quickstart.mdx": {
+   "bytes": 19448,
+   "redactions": 0,
+   "sha256": "edfdbc305f5854e66512df939066459923c635d858ab7bfe3216a151576333b5",
+   "source": "docs",
+   "upstream_bytes": 19448,
+   "upstream_sha256": "edfdbc305f5854e66512df939066459923c635d858ab7bfe3216a151576333b5",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/672defc08b8617f6fa57e903ae48dd7d7e5661a5/apps/docs/quickstart.mdx"
+  },
+  "history/672defc/recall/memory-operations.mdx": {
+   "bytes": 6615,
+   "redactions": 0,
+   "sha256": "1495cd76eda30c3bec18dd645999bb8f16044960d15382ddc69680e055e4d8c2",
+   "source": "docs",
+   "upstream_bytes": 6615,
+   "upstream_sha256": "1495cd76eda30c3bec18dd645999bb8f16044960d15382ddc69680e055e4d8c2",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/672defc08b8617f6fa57e903ae48dd7d7e5661a5/apps/docs/recall/memory-operations.mdx"
+  },
+  "history/672defc/recall/search.mdx": {
+   "bytes": 8209,
+   "redactions": 0,
+   "sha256": "a19d54bea933cc1eb9db645f01c7cca055c3a475013f720567acccbecddeddb8",
+   "source": "docs",
+   "upstream_bytes": 8209,
+   "upstream_sha256": "a19d54bea933cc1eb9db645f01c7cca055c3a475013f720567acccbecddeddb8",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/672defc08b8617f6fa57e903ae48dd7d7e5661a5/apps/docs/recall/search.mdx"
+  },
+  "history/672defc/v5/api-reference/ingest.mdx": {
+   "bytes": 2128,
+   "redactions": 0,
+   "sha256": "fc3d6c60e589fc10ab01b4f372713a07e7b1da9514ed4f2786ea55e109a9b8e3",
+   "source": "docs",
+   "upstream_bytes": 2128,
+   "upstream_sha256": "fc3d6c60e589fc10ab01b4f372713a07e7b1da9514ed4f2786ea55e109a9b8e3",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/672defc08b8617f6fa57e903ae48dd7d7e5661a5/apps/docs/v5/api-reference/ingest.mdx"
+  },
+  "history/7d1428e/memory-operations.mdx": {
+   "bytes": 6254,
+   "redactions": 0,
+   "sha256": "19d0a1bd9d132ef776a91a9816a5330aec87be34093735b62d91576b5d44935f",
+   "source": "docs",
+   "upstream_bytes": 6254,
+   "upstream_sha256": "19d0a1bd9d132ef776a91a9816a5330aec87be34093735b62d91576b5d44935f",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/7d1428e79781f25f7f369a03b050b6e7b4b0e41f/apps/docs/memory-operations.mdx"
+  },
+  "history/8452a00/concepts/how-it-works.mdx": {
+   "bytes": 8125,
+   "redactions": 0,
+   "sha256": "ff22660fd0f98f045f010bef5ed91308238467cf8545a312534b14752225ad59",
+   "source": "docs",
+   "upstream_bytes": 8125,
+   "upstream_sha256": "ff22660fd0f98f045f010bef5ed91308238467cf8545a312534b14752225ad59",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/8452a0043485e3d911f58981d638cba734ae7e2e/apps/docs/concepts/how-it-works.mdx"
+  },
+  "history/8452a00/recall/memory-operations.mdx": {
+   "bytes": 6615,
+   "redactions": 0,
+   "sha256": "1495cd76eda30c3bec18dd645999bb8f16044960d15382ddc69680e055e4d8c2",
+   "source": "docs",
+   "upstream_bytes": 6615,
+   "upstream_sha256": "1495cd76eda30c3bec18dd645999bb8f16044960d15382ddc69680e055e4d8c2",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/8452a0043485e3d911f58981d638cba734ae7e2e/apps/docs/recall/memory-operations.mdx"
+  },
+  "history/8452a00/v5/api-reference/ingest.mdx": {
+   "bytes": 2128,
+   "redactions": 0,
+   "sha256": "fc3d6c60e589fc10ab01b4f372713a07e7b1da9514ed4f2786ea55e109a9b8e3",
+   "source": "docs",
+   "upstream_bytes": 2128,
+   "upstream_sha256": "fc3d6c60e589fc10ab01b4f372713a07e7b1da9514ed4f2786ea55e109a9b8e3",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/8452a0043485e3d911f58981d638cba734ae7e2e/apps/docs/v5/api-reference/ingest.mdx"
+  },
+  "history/87b361c/memory-operations.mdx": {
+   "bytes": 2642,
+   "redactions": 0,
+   "sha256": "840efeba17efa22eb788b40952724960d8d3b2e31a338eff7985e5af706d7127",
+   "source": "docs",
+   "upstream_bytes": 2642,
+   "upstream_sha256": "840efeba17efa22eb788b40952724960d8d3b2e31a338eff7985e5af706d7127",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/87b361c26bf5fc16049cd2727825891aa14b8e8b/apps/docs/memory-operations.mdx"
+  },
+  "history/ca89d16/concepts/rules.mdx": {
+   "bytes": 11644,
+   "redactions": 0,
+   "sha256": "35634495500b6277cf0e75f72a6c4fe3aee11308dcf7de5d23317693a7318050",
+   "source": "docs",
+   "upstream_bytes": 11644,
+   "upstream_sha256": "35634495500b6277cf0e75f72a6c4fe3aee11308dcf7de5d23317693a7318050",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/ca89d161cc6c1953ac51a3dfe2365b962aa33c10/apps/docs/concepts/rules.mdx"
+  },
+  "history/ca89d16/concepts/super-rag.mdx": {
+   "bytes": 8406,
+   "redactions": 0,
+   "sha256": "d84b0d1f4ad432fddb0489ef6a5785bdf6bc19dec4a9775043b133fc54f70655",
+   "source": "docs",
+   "upstream_bytes": 8406,
+   "upstream_sha256": "d84b0d1f4ad432fddb0489ef6a5785bdf6bc19dec4a9775043b133fc54f70655",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/ca89d161cc6c1953ac51a3dfe2365b962aa33c10/apps/docs/concepts/super-rag.mdx"
+  },
+  "history/ca89d16/quickstart.mdx": {
+   "bytes": 19585,
+   "redactions": 0,
+   "sha256": "3d5bfeaf3ffa6843bd98745b3f40cc10f04e2b32a9fe2e3c03a5536eb054f872",
+   "source": "docs",
+   "upstream_bytes": 19585,
+   "upstream_sha256": "3d5bfeaf3ffa6843bd98745b3f40cc10f04e2b32a9fe2e3c03a5536eb054f872",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/ca89d161cc6c1953ac51a3dfe2365b962aa33c10/apps/docs/quickstart.mdx"
+  },
+  "history/ca89d16/recall/search.mdx": {
+   "bytes": 8753,
+   "redactions": 0,
+   "sha256": "854d5e3c74b8294952884fdcc63a9f0dfd82d659d201f576b5ed3c08ede639b2",
+   "source": "docs",
+   "upstream_bytes": 8753,
+   "upstream_sha256": "854d5e3c74b8294952884fdcc63a9f0dfd82d659d201f576b5ed3c08ede639b2",
+   "url": "https://raw.githubusercontent.com/supermemoryai/supermemory/ca89d161cc6c1953ac51a3dfe2365b962aa33c10/apps/docs/recall/search.mdx"
+  },
+  "openapi/v4.json": {
+   "bytes": 169985,
+   "redactions": 0,
+   "sha256": "c44368028a8f2d194fdedd0d6e52a1cb4bb91a1a07b4ca3ca56142155553ad2c",
+   "source": "openapi-v4",
+   "upstream_bytes": 169985,
+   "upstream_sha256": "c44368028a8f2d194fdedd0d6e52a1cb4bb91a1a07b4ca3ca56142155553ad2c",
+   "url": "https://api.supermemory.ai/v4/openapi"
+  },
+  "openapi/v5.json": {
+   "bytes": 194246,
+   "redactions": 0,
+   "sha256": "1b8169b9a6bc99d370fd9b5a27e008ad39e27189b7b966345c049f2051909fcb",
+   "source": "openapi-v5",
+   "upstream_bytes": 194246,
+   "upstream_sha256": "1b8169b9a6bc99d370fd9b5a27e008ad39e27189b7b966345c049f2051909fcb",
+   "url": "https://api.supermemory.ai/v5/openapi"
+  }
+ },
+ "note": "Pinned copy. docs/: every .mdx page and docs.json of apps/docs in github.com/supermemoryai/supermemory at the commit below, plus the repo LICENSE (MIT). openapi/: the two specs docs.json references, fetched from the live API on the date above; they state no license: analysis only, kept private, never republished. https://api.supermemory.ai/v3/openapi returned the same bytes as v4 on that date. history/<commit>/: earlier versions of some pages from the same repository (MIT), for the docs-fix ledger. Redaction: credential-shaped placeholders in the upstream text (the Arcturus runner's secret pattern, e.g. NAME_API_KEY assignments and AWS's documented example key id) were replaced on the same line by tools/fetch_data.py (NAME=<x>, AKIA-EXAMPLE, <redacted>); upstream_sha256 and redactions record it.",
+ "sources": {
+  "docs": {
+   "commit": "03d9dd1c0ed35e35dfd57794c5440461d3c74f61",
+   "license": "MIT",
+   "license_file": "docs/LICENSE",
+   "path": "apps/docs",
+   "repo": "https://github.com/supermemoryai/supermemory"
+  },
+  "openapi-v4": {
+   "license": "none stated (analysis only)",
+   "url": "https://api.supermemory.ai/v4/openapi"
+  },
+  "openapi-v5": {
+   "license": "none stated (analysis only)",
+   "url": "https://api.supermemory.ai/v5/openapi"
+  }
+ }
+}

@@ -1,0 +1,306 @@
+{
+ "about": "Docs fixes from the supermemoryai/supermemory history. Selection: every commit touching apps/docs between 2025-10-01 and 2026-11-13 whose message contains fix, align or drift (any case; 56 commits), and every HTTP call to api.supermemory.ai on a page that commit changed whose method, URL or body the commit changed or removed (154 calls in 11 commits). Each was read by hand: a case when the commit message names the problem as docs not matching the API, otherwise excluded with the reason. The problem each case should raise is written as the checker reports it; operation null means the path matches no operation.",
+ "commits": {
+  "4850856": {
+   "sha": "48508569204893316454d87c44e63a2b5f9e2833",
+   "date": "2026-01-09",
+   "subject": "docs: add S3 connector documentation (#657)"
+  },
+  "62ac31e": {
+   "sha": "62ac31ecaa73c7a47a8c9330529dcfa7af938e7d",
+   "date": "2026-05-13",
+   "subject": "parent of 0b50816"
+  },
+  "0b50816": {
+   "sha": "0b5081698cea2d9da6a502b93e56a487610bca5b",
+   "date": "2026-05-13",
+   "subject": "docs: fix s3 connector config shape (#941)"
+  },
+  "672defc": {
+   "sha": "672defc08b8617f6fa57e903ae48dd7d7e5661a5",
+   "date": "2026-10-06",
+   "subject": "docs: move SDK snippets to the shipped v5 call shape and finish the namespace rename (#1772)"
+  },
+  "5323f42": {
+   "sha": "5323f427d076c7a158a9154867d293b53acc3841",
+   "date": "2026-10-14",
+   "subject": "parent of ca89d16"
+  },
+  "ca89d16": {
+   "sha": "ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "date": "2026-10-15",
+   "subject": "docs(api): move v5 search and ingest options into the request body (#1808)"
+  },
+  "8452a00": {
+   "sha": "8452a0043485e3d911f58981d638cba734ae7e2e",
+   "date": "2026-10-15",
+   "subject": "parent of 4347970"
+  },
+  "4347970": {
+   "sha": "4347970d160b70a41dac9f0222cc3ce5a7ac1b3e",
+   "date": "2026-10-15",
+   "subject": "docs(api): align v5 ingestion and document operations docs with the API (#1810)"
+  },
+  "2197c04": {
+   "sha": "2197c04ac12184d56e172f6441f89c12d6bc17c7",
+   "date": "2026-10-15",
+   "subject": "docs(api): fix namespace move, scoped keys and SDK call shape in v5 docs (#1811)"
+  },
+  "87b361c": {
+   "sha": "87b361c26bf5fc16049cd2727825891aa14b8e8b",
+   "date": "2026-01-18",
+   "subject": "docs changes (#678)"
+  },
+  "7d1428e": {
+   "sha": "7d1428e79781f25f7f369a03b050b6e7b4b0e41f",
+   "date": "2026-06-29",
+   "subject": "parent of 1af9dbc"
+  },
+  "1af9dbc": {
+   "sha": "1af9dbc448783d57171e9c85ce4f56a90987c39d",
+   "date": "2026-06-29",
+   "subject": "add semantically mass-forget memories endpoint to docs (#1170)"
+  }
+ },
+ "cases": [
+  {
+   "id": "s3-config-shape",
+   "page": "connectors/s3.mdx",
+   "introduced": "4850856",
+   "buggy": "62ac31e",
+   "fixed": "0b50816",
+   "method": "POST",
+   "operation": "v4:POST /v3/connections/{provider}",
+   "code": "undocumented_field",
+   "where": "$.accessKeyId",
+   "source": "https://github.com/supermemoryai/supermemory/commit/0b5081698cea2d9da6a502b93e56a487610bca5b",
+   "quote": "docs: fix s3 connector config shape"
+  },
+  {
+   "id": "forget-route-never-existed",
+   "page": "memory-operations.mdx",
+   "introduced": "87b361c",
+   "buggy": "7d1428e",
+   "fixed": "1af9dbc",
+   "method": "POST",
+   "operation": null,
+   "code": "unknown_path",
+   "where": "/v4/memories/mem_abc123/forget",
+   "source": "https://github.com/supermemoryai/supermemory/commit/1af9dbc448783d57171e9c85ce4f56a90987c39d",
+   "quote": "the previous docs were simply **wrong** and described a route that has never existed"
+  },
+  {
+   "id": "quickstart-dreaming-query",
+   "page": "quickstart.mdx",
+   "introduced": "672defc",
+   "buggy": "5323f42",
+   "fixed": "ca89d16",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "code": "undocumented_param",
+   "where": "query:dreaming",
+   "source": "https://github.com/supermemoryai/supermemory/commit/ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "quote": "ingest examples passed `dreaming`/`taskType` the same way. v5 rejects every query param on these routes with `400`."
+  },
+  {
+   "id": "quickstart-tasktype-query",
+   "page": "quickstart.mdx",
+   "introduced": "672defc",
+   "buggy": "5323f42",
+   "fixed": "ca89d16",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "code": "undocumented_param",
+   "where": "query:taskType",
+   "source": "https://github.com/supermemoryai/supermemory/commit/ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "quote": "ingest examples passed `dreaming`/`taskType` the same way. v5 rejects every query param on these routes with `400`."
+  },
+  {
+   "id": "quickstart-searchmode-query",
+   "page": "quickstart.mdx",
+   "introduced": "672defc",
+   "buggy": "5323f42",
+   "fixed": "ca89d16",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "code": "undocumented_param",
+   "where": "query:searchMode",
+   "source": "https://github.com/supermemoryai/supermemory/commit/ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "quote": "Search examples passed `searchMode`/`limit` as query params"
+  },
+  {
+   "id": "quickstart-limit-query",
+   "page": "quickstart.mdx",
+   "introduced": "672defc",
+   "buggy": "5323f42",
+   "fixed": "ca89d16",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "code": "undocumented_param",
+   "where": "query:limit",
+   "source": "https://github.com/supermemoryai/supermemory/commit/ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "quote": "Search examples passed `searchMode`/`limit` as query params"
+  },
+  {
+   "id": "rules-tasktype-query",
+   "page": "concepts/rules.mdx",
+   "introduced": "672defc",
+   "buggy": "5323f42",
+   "fixed": "ca89d16",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "code": "undocumented_param",
+   "where": "query:taskType",
+   "source": "https://github.com/supermemoryai/supermemory/commit/ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "quote": "ingest examples passed `dreaming`/`taskType` the same way. v5 rejects every query param on these routes with `400`."
+  },
+  {
+   "id": "rules-searchmode-query",
+   "page": "concepts/rules.mdx",
+   "introduced": "672defc",
+   "buggy": "5323f42",
+   "fixed": "ca89d16",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "code": "undocumented_param",
+   "where": "query:searchMode",
+   "source": "https://github.com/supermemoryai/supermemory/commit/ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "quote": "Search examples passed `searchMode`/`limit` as query params"
+  },
+  {
+   "id": "super-rag-tasktype-query",
+   "page": "concepts/super-rag.mdx",
+   "introduced": "672defc",
+   "buggy": "5323f42",
+   "fixed": "ca89d16",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "code": "undocumented_param",
+   "where": "query:taskType",
+   "source": "https://github.com/supermemoryai/supermemory/commit/ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "quote": "ingest examples passed `dreaming`/`taskType` the same way. v5 rejects every query param on these routes with `400`."
+  },
+  {
+   "id": "search-searchmode-query",
+   "page": "recall/search.mdx",
+   "introduced": "672defc",
+   "buggy": "5323f42",
+   "fixed": "ca89d16",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "code": "undocumented_param",
+   "where": "query:searchMode",
+   "source": "https://github.com/supermemoryai/supermemory/commit/ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "quote": "Search examples passed `searchMode`/`limit` as query params"
+  },
+  {
+   "id": "search-limit-query",
+   "page": "recall/search.mdx",
+   "introduced": "672defc",
+   "buggy": "5323f42",
+   "fixed": "ca89d16",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/search",
+   "code": "undocumented_param",
+   "where": "query:limit",
+   "source": "https://github.com/supermemoryai/supermemory/commit/ca89d161cc6c1953ac51a3dfe2365b962aa33c10",
+   "quote": "Search examples passed `searchMode`/`limit` as query params"
+  },
+  {
+   "id": "how-it-works-dreaming-query",
+   "page": "concepts/how-it-works.mdx",
+   "introduced": "672defc",
+   "buggy": "8452a00",
+   "fixed": "4347970",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "code": "undocumented_param",
+   "where": "query:dreaming",
+   "source": "https://github.com/supermemoryai/supermemory/commit/4347970d160b70a41dac9f0222cc3ce5a7ac1b3e",
+   "quote": "Query params return `400`. `dreaming`, `fileType` and `mimeType` were documented as query params; they are JSON body or multipart form fields."
+  },
+  {
+   "id": "memory-operations-dreaming-query",
+   "page": "recall/memory-operations.mdx",
+   "introduced": "672defc",
+   "buggy": "8452a00",
+   "fixed": "4347970",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "code": "undocumented_param",
+   "where": "query:dreaming",
+   "source": "https://github.com/supermemoryai/supermemory/commit/4347970d160b70a41dac9f0222cc3ce5a7ac1b3e",
+   "quote": "Query params return `400`. `dreaming`, `fileType` and `mimeType` were documented as query params; they are JSON body or multipart form fields."
+  },
+  {
+   "id": "ingest-reference-dreaming-query",
+   "page": "v5/api-reference/ingest.mdx",
+   "introduced": "672defc",
+   "buggy": "8452a00",
+   "fixed": "4347970",
+   "method": "POST",
+   "operation": "v5:POST /ns/{namespace}/document",
+   "code": "undocumented_param",
+   "where": "query:dreaming",
+   "source": "https://github.com/supermemoryai/supermemory/commit/4347970d160b70a41dac9f0222cc3ce5a7ac1b3e",
+   "quote": "Query params return `400`. `dreaming`, `fileType` and `mimeType` were documented as query params; they are JSON body or multipart form fields."
+  },
+  {
+   "id": "namespace-move-body",
+   "page": "concepts/container-tags.mdx",
+   "introduced": "672defc",
+   "buggy": "4347970",
+   "fixed": "2197c04",
+   "method": "DELETE",
+   "operation": "v5:DELETE /ns/{namespace}",
+   "code": "unexpected_body",
+   "where": "body",
+   "source": "https://github.com/supermemoryai/supermemory/commit/2197c04ac12184d56e172f6441f89c12d6bc17c7",
+   "quote": "It sent `moveTo` in a JSON body on `DELETE /ns/{namespace}`. The route only reads `moveTo` from the query string and ignores the body, so following the docs permanently deleted the namespace."
+  }
+ ],
+ "excluded": [
+  {
+   "commit": "23983bf",
+   "page": "overview/analytics.mdx",
+   "change": "period=1h replaced by period=24h; statusCode filter dropped",
+   "reason": "the analytics operations are in neither spec, so the spec cannot judge them"
+  },
+  {
+   "commit": "0f2b24b",
+   "page": "authentication.mdx",
+   "change": "/v3/auth/scoped-key moved to /auth/scoped-key",
+   "reason": "the scoped-key operations are in neither spec"
+  },
+  {
+   "commit": "0f2b24b",
+   "page": "connectors/onedrive.mdx",
+   "change": "config.syncScope added to the create body",
+   "reason": "an optional field was added; the message names no contract problem"
+  },
+  {
+   "commit": "2a546ff",
+   "page": "connectors/troubleshooting.mdx",
+   "change": "filter field source replaced by type",
+   "reason": "a metadata value, not a contract the spec states; the message does not name it"
+  },
+  {
+   "commit": "672defc",
+   "page": "(50 pages)",
+   "change": "124 HTTP calls moved from v3/v4 routes to v5 routes",
+   "reason": "a version migration; the message names SDK field renames, not wrong HTTP calls"
+  },
+  {
+   "commit": "069b8c3",
+   "page": "recall/memory-operations.mdx",
+   "change": "forget-matching examples now pass ids from the preview",
+   "reason": "documents a new option; the old calls were not described as wrong"
+  },
+  {
+   "commit": "4d6fd37",
+   "page": "memory-router/usage.mdx and 2 more",
+   "change": "model names in memory-router proxy calls",
+   "reason": "proxy URLs to another provider, not operations of the spec"
+  }
+ ]
+}
