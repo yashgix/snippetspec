@@ -165,13 +165,18 @@ How to read it:
 - **Recall on the hand-broken cases is high, but it is the same kind of test as the seeded drift.** One change to one
   field is easy to see for a checker that knows the spec. It shows the checker works on a second API, not that it finds
   real mistakes in the wild. No real, later-fixed Meilisearch docs bugs were collected in this milestone.
-- **Many clean samples are flagged, and in the groups I read the flags are the spec disagreeing with docs that work.** Meilisearch's
-  spec is generated from code and is stricter or different from the API in repeating ways: it lists many fields,
-  query parameters and request bodies as required that the samples (and the API) leave out, names some fields in
-  snake case where the samples use camel case, gives a plain-string body a `text/plain` type, lists ranking rules
-  capitalised, and expects repeated query parameters where the samples use comma lists. The checker is following the
-  spec as written, and nothing was tuned on this data. For a docs team the lesson is that a spec like this would make
-  the checker noisy until its required lists are fixed. I did not confirm any of this against a live server.
+- **Many clean samples are flagged. In the flags I sampled, the cause is a spec-versus-doc disagreement, runtime not
+  confirmed.** Meilisearch's spec is generated from code and differs from the samples in repeating ways: it lists many
+  fields, query parameters and request bodies as required that the samples leave out, names some fields in snake case
+  where the samples use camel case, gives a plain-string body a `text/plain` type, lists ranking rules capitalised,
+  and expects repeated query parameters where the samples use comma lists. The checker applies the spec as written.
+  I did not run any sample against a Meilisearch server, so I cannot say which side is right. A spec like this would
+  make the checker noisy until its required lists are fixed.
+- **The parser changed after the first hold-out run, and again after an independent review.** One fix (a trailing
+  backslash at the end of a block) came from reading the first hold-out output. The review fixes (explicit
+  Content-Type, comments and strings in JavaScript, every URL in a curl command, requests and httpx body and query
+  rules) came from reading the code, not the hold-out. The 24 cases stayed frozen, the checker was not tuned to
+  flag more or fewer samples, and the review changes did not move the hold-out counts above.
 - **What it did find that is real.** Two samples have an unclosed quote in their curl command, so no shell can run them
   (`code_samples_get_all_tasks_paginating_1.mdx` and `_2`). The scan reports these as unreadable commands rather than
   skipping them silently. One sample posts to `documents/delete-batch`, which the spec does not list (the checker reads the last segment as a document id and reports a method mismatch).
@@ -193,13 +198,18 @@ other half — that changes which should not break an example produce no finding
 
 ## Data and licenses
 
-The pinned data under `data/` is never modified, moved or republished by this repo:
+The pinned data under `data/` is never modified by this repo. Two files are not republished:
 
 - `data/docs/` — the docs pages at a pinned commit of the docs repository, MIT licensed (see `data/docs/LICENSE`).
 - `data/history/` — earlier versions of a few of those pages, same license, used only for the ledger replay.
 - `data/openapi/v4.json` and `data/openapi/v5.json` — the two public specs the docs reference. They state no
-  license, so they are used for analysis only: code, docs and tests may name their paths, fields and counts, but
-  nothing here reproduces them.
+  license, so they are not redistributed: they are left out of the public copy of this repository, and
+  `python tools/fetch_data.py` downloads them again and checks them against `data/MANIFEST.json`. Until you do that,
+  the experiment and the tests that need them cannot run. The live specs may have changed since the pinned fetch, in
+  which case the check reports a mismatch instead of hiding it. Code, docs and tests may name their paths, fields and
+  counts.
+- `data/holdout/` — Meilisearch's spec and docs samples, both MIT (licenses beside them), rebuilt by
+  `tools/fetch_holdout.py`.
 - `data/MANIFEST.json` — bytes and sha256 of every pinned file; `make data-check` verifies them. Credential-shaped
   placeholders in the fetched docs were replaced on the same line, so line numbers match upstream.
 

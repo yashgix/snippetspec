@@ -19,6 +19,23 @@
 - **A trailing backslash at the end of a block is ignored.** Found on the hold-out (a sample ends with `\`); fixed after
   the first hold-out run, with a regression test. This changed one count (an unreadable command became a call).
 
+## Changes after an independent review (parser, not tuned on the hold-out)
+- An explicit `Content-Type` (curl `-H` or `--json`, fetch `headers`, requests/httpx `headers=`) is kept on the call and
+  must be a media type the operation declares, else `content_type` at `body:<media>`. A `+json` type counts as JSON.
+  Before, the payload's shape decided and a `text/plain` header passed.
+- fetch is found only in code: comments and string contents are blanked before the search. v1 said comments are skipped.
+- Every URL of a curl command is a call (v1: "the first one, or `--url`, is used").
+- requests and httpx: `files`, then `data`, win over `json`, which is the fallback when both are empty (v1: `json=`
+  wins). httpx `content=` wins over all. List params repeat the name, `None` is dropped by requests and empty in
+  httpx, bool text differs (`True` vs `true`). Sources are named in `docs/DESIGN.md`.
+- NOT changed: matching the concrete path before filtering by method. The review is right about OpenAPI path templating
+  but v1 and an acceptance test (`GET /items/search/` must reach `GET /items/{id}` when `/items/search` only has POST)
+  require the method to filter first. Left as it is and listed as a limit. Yash decides whether to break v1 here.
+- Effect: the v1 numbers are unchanged. On the hold-out, calls, flagged calls, unreadable commands and recall are
+  unchanged (216, 114, 2, 24 of 24). Four findings only changed text from `body:json` to `body:application/json`.
+  The hold-out cases were not edited. These parser changes came from reading the code, not from the hold-out results,
+  apart from the earlier trailing-backslash fix.
+
 ## Not done: shlex `punctuation_chars`
 Tried before deciding. It drops the newline after a trailing comment, so the next command merges into the previous
 one, and one quoting error ends the whole token stream. The small quote-aware splitter stays, with shlex splitting each
@@ -41,4 +58,4 @@ it, because the data would then no longer be a hold-out.
 
 ## Still out of scope (listed limits)
 `allOf`, `oneOf` exclusivity, and `format`, `pattern`, `minimum` and length constraints. SDK calls. A TypeScript port.
-Server base paths in the spec (`servers[].url`). Comma-separated array query values (read as one value).
+Server base paths in the spec (`servers[].url`). Concrete-path-before-method precedence (see above). Comma-separated array query values (read as one value).

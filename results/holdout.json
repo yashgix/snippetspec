@@ -648,7 +648,7 @@
    "problems": [
     [
      "content_type",
-     "body:json"
+     "body:application/json"
     ]
    ],
    "tool": "curl",
@@ -5832,7 +5832,7 @@
    "problems": [
     [
      "content_type",
-     "body:json"
+     "body:application/json"
     ]
    ],
    "tool": "curl",
@@ -5881,7 +5881,7 @@
    "problems": [
     [
      "content_type",
-     "body:json"
+     "body:application/json"
     ]
    ],
    "tool": "curl",
@@ -6063,7 +6063,7 @@
    "problems": [
     [
      "content_type",
-     "body:json"
+     "body:application/json"
     ]
    ],
    "tool": "curl",
