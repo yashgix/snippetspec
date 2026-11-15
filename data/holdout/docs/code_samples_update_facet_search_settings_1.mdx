@@ -1,0 +1,29 @@
+<CodeGroup>
+
+```bash cURL
+curl \
+  -X PUT 'MEILISEARCH_URL/indexes/INDEX_UID/settings/facet-search' \
+  -H 'Content-Type: application/json' \
+  --data-binary 'false'
+```
+
+```javascript JS
+client.index('INDEX_NAME').updateFacetSearch(false);
+```
+
+```python Python
+client.index('books').update_facet_search_settings(False)
+```
+
+```php PHP
+$client->index('INDEX_NAME')->updateFacetSearch(false);
+```
+
+```ruby Ruby
+client.index('INDEX_UID').update_facet_search_setting(false)
+```
+
+```go Go
+client.Index("books").UpdateFacetSearch(false)
+```
+</CodeGroup>

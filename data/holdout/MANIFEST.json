@@ -1,0 +1,1493 @@
+{
+ "files": {
+  "docs/LICENSE": {
+   "bytes": 1071,
+   "redactions": 0,
+   "sha256": "f38718a82ebe1e2370944154795104fec672b3f87b43888ac2280e8c63b82a77",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/LICENSE"
+  },
+  "docs/code_samples_add_movies_json_1.mdx": {
+   "bytes": 2757,
+   "redactions": 0,
+   "sha256": "26815374a47a0abba9a483d7dff7c615a6ad102df2a5c2c9f8b6f2f4f0b785b1",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_add_movies_json_1.mdx"
+  },
+  "docs/code_samples_add_or_replace_documents_1.mdx": {
+   "bytes": 4438,
+   "redactions": 0,
+   "sha256": "016a841c36fb8227e1607a2c5fa591cd8e2ba9ce68d591464bd6c57df35b87ba",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_add_or_replace_documents_1.mdx"
+  },
+  "docs/code_samples_add_or_update_documents_1.mdx": {
+   "bytes": 2219,
+   "redactions": 0,
+   "sha256": "c34889f2899cef1c5e5d99daaadf7e33966435659b245700a4cdf59265136d9b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_add_or_update_documents_1.mdx"
+  },
+  "docs/code_samples_analytics_event_bind_event_1.mdx": {
+   "bytes": 395,
+   "redactions": 0,
+   "sha256": "7c34bea1393daa229f1b88c0303f423520360f03a2a3e37b1ee1d84d6de92ecf",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_analytics_event_bind_event_1.mdx"
+  },
+  "docs/code_samples_analytics_event_bind_search_1.mdx": {
+   "bytes": 263,
+   "redactions": 0,
+   "sha256": "34e103508c93496aa8b7de8bd5dba826f378920ad806920ea2aa6f5db5fd9c9a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_analytics_event_bind_search_1.mdx"
+  },
+  "docs/code_samples_analytics_event_click_1.mdx": {
+   "bytes": 352,
+   "redactions": 0,
+   "sha256": "4b0bd13d6731729c9722bffe70a6af257a93ec2dde33c14bc750fb87b6c1ba68",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_analytics_event_click_1.mdx"
+  },
+  "docs/code_samples_analytics_event_conversion_1.mdx": {
+   "bytes": 355,
+   "redactions": 0,
+   "sha256": "78748fe75773fe62fd00df08f22e2a84ca7595c59859bac6ed2ea7dd6d4aa777",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_analytics_event_conversion_1.mdx"
+  },
+  "docs/code_samples_async_guide_canceled_by.mdx": {
+   "bytes": 237,
+   "redactions": 0,
+   "sha256": "a0f9ded9fb0aae0eb8085ff4171af1535d4be8e21c657c703ff1fab1ddde045b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_async_guide_canceled_by.mdx"
+  },
+  "docs/code_samples_async_guide_canceled_by_1.mdx": {
+   "bytes": 824,
+   "redactions": 0,
+   "sha256": "7b459c9dae4ce2a8ed2906410a569ee3339af7cb2a98db0317121cd0fac9130f",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_async_guide_canceled_by_1.mdx"
+  },
+  "docs/code_samples_async_guide_filter_by_date_1.mdx": {
+   "bytes": 1575,
+   "redactions": 0,
+   "sha256": "7248f2bda1e38f7e924ebad6c629629ff408dea580c2222e0c8581fb7e79c03f",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_async_guide_filter_by_date_1.mdx"
+  },
+  "docs/code_samples_async_guide_filter_by_ids_1.mdx": {
+   "bytes": 1031,
+   "redactions": 0,
+   "sha256": "84afab0587a8aa2cfb0eecfa1f936c2e1bc0ca5a886bbd922c04554b10a4da32",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_async_guide_filter_by_ids_1.mdx"
+  },
+  "docs/code_samples_async_guide_filter_by_index_uids_1.mdx": {
+   "bytes": 1059,
+   "redactions": 0,
+   "sha256": "46c0fb6d0f7855020d05a55eb6dd12850acfdb56ec3278d1c57df0ecf4f02d0d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_async_guide_filter_by_index_uids_1.mdx"
+  },
+  "docs/code_samples_async_guide_filter_by_statuses_1.mdx": {
+   "bytes": 1357,
+   "redactions": 0,
+   "sha256": "8833da87269e6f8f6c9cd6fd6a1a8bd964dfe8d4c65e4475e1636ee775c695a3",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_async_guide_filter_by_statuses_1.mdx"
+  },
+  "docs/code_samples_async_guide_filter_by_statuses_2.mdx": {
+   "bytes": 107,
+   "redactions": 0,
+   "sha256": "3027cfc4c74e624dc2f2a560f5e1a11ff1b07e7cda5b2ca0682d686b1d081696",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_async_guide_filter_by_statuses_2.mdx"
+  },
+  "docs/code_samples_async_guide_filter_by_types_1.mdx": {
+   "bytes": 1311,
+   "redactions": 0,
+   "sha256": "2d6af2521aae314f43ec026a420783a4a6561e5efa6837a2a63d52aeaf3df412",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_async_guide_filter_by_types_1.mdx"
+  },
+  "docs/code_samples_async_guide_multiple_filters_1.mdx": {
+   "bytes": 2439,
+   "redactions": 0,
+   "sha256": "78aa17efebb72e25ca68fa07cd91ded6538a7bd813312b0eac230c37f2edfd38",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_async_guide_multiple_filters_1.mdx"
+  },
+  "docs/code_samples_authorization_header_1.mdx": {
+   "bytes": 1481,
+   "redactions": 0,
+   "sha256": "5725597f4e6837df2acb054d306f76ed663baed9800efff36ef2643387982d13",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_authorization_header_1.mdx"
+  },
+  "docs/code_samples_basic_security_tutorial_admin_1.mdx": {
+   "bytes": 257,
+   "redactions": 0,
+   "sha256": "3c24b93d064f4c29db45de1f75a75cadde35b30d0e590f9ca0924edf06edf84b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_basic_security_tutorial_admin_1.mdx"
+  },
+  "docs/code_samples_basic_security_tutorial_listing_1.mdx": {
+   "bytes": 117,
+   "redactions": 0,
+   "sha256": "01b606b33b5ba925c3087d9c5c80a7ac658472acf2bd600539cbf3a1dab71615",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_basic_security_tutorial_listing_1.mdx"
+  },
+  "docs/code_samples_basic_security_tutorial_search_1.mdx": {
+   "bytes": 246,
+   "redactions": 0,
+   "sha256": "91e75babe62652aef9c434e222b61bf431a327d315dd5d4112e6443dd26e58c2",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_basic_security_tutorial_search_1.mdx"
+  },
+  "docs/code_samples_cancel_tasks_1.mdx": {
+   "bytes": 1146,
+   "redactions": 0,
+   "sha256": "43d4e0bc2d6bba7180e88d70876254b742a02898b19c4b6b5038219d7e31db13",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_cancel_tasks_1.mdx"
+  },
+  "docs/code_samples_create_a_key_1.mdx": {
+   "bytes": 2949,
+   "redactions": 0,
+   "sha256": "37a97a5b136342ddf874228613b14a5a4319e54d8da3765189eed290f8572e30",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_create_a_key_1.mdx"
+  },
+  "docs/code_samples_create_an_index_1.mdx": {
+   "bytes": 1083,
+   "redactions": 0,
+   "sha256": "655a0e9a293aa9a21a58d0e08297714ba735617eceef875f3529d87eec17f9b4",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_create_an_index_1.mdx"
+  },
+  "docs/code_samples_create_snapshot_1.mdx": {
+   "bytes": 537,
+   "redactions": 0,
+   "sha256": "21c706f87161223392eaa27018fa6c7b8badb37304b23bd64d168650fbf06769",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_create_snapshot_1.mdx"
+  },
+  "docs/code_samples_date_guide_filter_1.mdx": {
+   "bytes": 2434,
+   "redactions": 0,
+   "sha256": "f1acf71a0d4a64d47155c092feccb535c7e6ac1bbdad1a85c75345220d2f44c4",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_date_guide_filter_1.mdx"
+  },
+  "docs/code_samples_date_guide_filterable_attributes_1.mdx": {
+   "bytes": 1485,
+   "redactions": 0,
+   "sha256": "6482201334c39418a4d8286c059241e126c1b437bf046cb450bc608f9409bdaa",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_date_guide_filterable_attributes_1.mdx"
+  },
+  "docs/code_samples_date_guide_index_1.mdx": {
+   "bytes": 2274,
+   "redactions": 0,
+   "sha256": "76dc072fa14680fe1d9c171504efb6b95c27647c99ebf8bf7d90e31f77714b92",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_date_guide_index_1.mdx"
+  },
+  "docs/code_samples_date_guide_sort_1.mdx": {
+   "bytes": 1687,
+   "redactions": 0,
+   "sha256": "c58c1b548acf2d2bdc81a3b16a74d6aeabc484259c8a4d5c54415684c04832f9",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_date_guide_sort_1.mdx"
+  },
+  "docs/code_samples_date_guide_sortable_attributes_1.mdx": {
+   "bytes": 1521,
+   "redactions": 0,
+   "sha256": "6d3e78f590c7058d0db9828d6f7b66c4cd25c3a59d54ad94ba5022706531ad6b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_date_guide_sortable_attributes_1.mdx"
+  },
+  "docs/code_samples_delete_a_key_1.mdx": {
+   "bytes": 1150,
+   "redactions": 0,
+   "sha256": "02fddb162cec0d5f921e464d030120b6c9a53ea77e4d42d4be714ecab92584ca",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_delete_a_key_1.mdx"
+  },
+  "docs/code_samples_delete_all_documents_1.mdx": {
+   "bytes": 947,
+   "redactions": 0,
+   "sha256": "4358f248afaea63b1a8695c87b46e0172b47bc939b6ee5ee12436e351b9a102b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_delete_all_documents_1.mdx"
+  },
+  "docs/code_samples_delete_an_index_1.mdx": {
+   "bytes": 844,
+   "redactions": 0,
+   "sha256": "8bdf1f3062c7c0f76d854a272814b90a83fb7a582e51c6f4f3e896dfb0a705c8",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_delete_an_index_1.mdx"
+  },
+  "docs/code_samples_delete_documents_1.mdx": {
+   "bytes": 285,
+   "redactions": 0,
+   "sha256": "824547f26c7a56e56a9f8dea050695b3adc00a7d528c58e1084946c0625e390b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_delete_documents_1.mdx"
+  },
+  "docs/code_samples_delete_documents_by_batch_1.mdx": {
+   "bytes": 1262,
+   "redactions": 0,
+   "sha256": "a7fb238229eafe7654b5ec199c68ad09180adec0fa3965b52924d18b5f4572cb",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_delete_documents_by_batch_1.mdx"
+  },
+  "docs/code_samples_delete_documents_by_filter_1.mdx": {
+   "bytes": 1516,
+   "redactions": 0,
+   "sha256": "c0b8d87f275b5ec94a1bc6b2808dfe99080f32629b98869324c98abb2937c5e3",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_delete_documents_by_filter_1.mdx"
+  },
+  "docs/code_samples_delete_one_document_1.mdx": {
+   "bytes": 973,
+   "redactions": 0,
+   "sha256": "01051bb17fa7130c6ab16586fb1ff2e1b71789471b54b4912aa1f4c7e0f08b19",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_delete_one_document_1.mdx"
+  },
+  "docs/code_samples_delete_tasks_1.mdx": {
+   "bytes": 1141,
+   "redactions": 0,
+   "sha256": "34b9a27a14f6c5e7f9172713ad81051116a7e5c36ea454b977410c9edf7cec8c",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_delete_tasks_1.mdx"
+  },
+  "docs/code_samples_distinct_attribute_guide_1.mdx": {
+   "bytes": 1223,
+   "redactions": 0,
+   "sha256": "09d4faf5793c9837e9e5652b5e4f5fab446a1e3df1f24a0c9f9c237290a16333",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_distinct_attribute_guide_1.mdx"
+  },
+  "docs/code_samples_distinct_attribute_guide_distinct_parameter_1.mdx": {
+   "bytes": 1153,
+   "redactions": 0,
+   "sha256": "cf1684eed03b8284c90b089791b266dcb8cdee7a3b69a8a857ea6c8a3160def5",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_distinct_attribute_guide_distinct_parameter_1.mdx"
+  },
+  "docs/code_samples_distinct_attribute_guide_filterable_1.mdx": {
+   "bytes": 1343,
+   "redactions": 0,
+   "sha256": "288d28db92b7a9b83a0f81e5c4ea05c910295f79bdc335c957c9b3bd203edc32",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_distinct_attribute_guide_filterable_1.mdx"
+  },
+  "docs/code_samples_documents_guide_add_movie_1.mdx": {
+   "bytes": 402,
+   "redactions": 0,
+   "sha256": "dba3a7597a4eeb872bd54038dc833050ba505e82bc36a35a4583df28e0d2dc1d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_documents_guide_add_movie_1.mdx"
+  },
+  "docs/code_samples_experimental_delete_logs_stream_1.mdx": {
+   "bytes": 89,
+   "redactions": 0,
+   "sha256": "f0b519ef2cad043f6e37a2eba9a84d7b0ce1d490984575ba37428a26df20c69d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_experimental_delete_logs_stream_1.mdx"
+  },
+  "docs/code_samples_experimental_get_metrics_1.mdx": {
+   "bytes": 84,
+   "redactions": 0,
+   "sha256": "31ab8f1ccb331fd1a4413c69e06ca8077455482f1fc316870993d828c38f2f92",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_experimental_get_metrics_1.mdx"
+  },
+  "docs/code_samples_experimental_post_logs_stderr_1.mdx": {
+   "bytes": 218,
+   "redactions": 0,
+   "sha256": "db0f8248b4245520c029719578b70e2bf60da254078ba089f7dd45758427afcc",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_experimental_post_logs_stderr_1.mdx"
+  },
+  "docs/code_samples_experimental_post_logs_stream_1.mdx": {
+   "bytes": 212,
+   "redactions": 0,
+   "sha256": "bb7c0a496fb8a3c8ca9a41d40a2cdeb2fb69aa09521d4fa49cf918701113adbc",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_experimental_post_logs_stream_1.mdx"
+  },
+  "docs/code_samples_facet_search_1.mdx": {
+   "bytes": 1494,
+   "redactions": 0,
+   "sha256": "1bf23d4ca3c2653943ba207820a578b30c7c0caf2e1d0adaf094ef6f92918ef0",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_facet_search_1.mdx"
+  },
+  "docs/code_samples_facet_search_2.mdx": {
+   "bytes": 1529,
+   "redactions": 0,
+   "sha256": "5923d1f1642664ac24124d6ca725c8f33dce89b0d2b1fbae3a27f8a768edd3f3",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_facet_search_2.mdx"
+  },
+  "docs/code_samples_facet_search_3.mdx": {
+   "bytes": 1187,
+   "redactions": 0,
+   "sha256": "d48d82ae0ef801c58d5a7d875325619b4aa057a50b85e60d5fd1e24346105ca6",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_facet_search_3.mdx"
+  },
+  "docs/code_samples_faceted_search_1.mdx": {
+   "bytes": 1578,
+   "redactions": 0,
+   "sha256": "36d3e5d708f872e9ec8e864ad8254f1e53c6f83a7a20ea1f0a9080491ee9693d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_faceted_search_1.mdx"
+  },
+  "docs/code_samples_faceted_search_facets_1.mdx": {
+   "bytes": 376,
+   "redactions": 0,
+   "sha256": "9bdc27f73335f0f525592abb28e0fe80f404351d42f510df2e8463d9f3920f89",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_faceted_search_facets_1.mdx"
+  },
+  "docs/code_samples_faceted_search_update_settings_1.mdx": {
+   "bytes": 1454,
+   "redactions": 0,
+   "sha256": "c4d5a589a0271338ffb465ea50d7688548ec14402d40309146b4679d510a4907",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_faceted_search_update_settings_1.mdx"
+  },
+  "docs/code_samples_faceted_search_walkthrough_filter_1.mdx": {
+   "bytes": 2512,
+   "redactions": 0,
+   "sha256": "34ba1a50b89e54cd58e4a60b95d0d7bdbe93ca5a90d19597c5e30400b6dd7a2d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_faceted_search_walkthrough_filter_1.mdx"
+  },
+  "docs/code_samples_field_properties_guide_displayed_1.mdx": {
+   "bytes": 2002,
+   "redactions": 0,
+   "sha256": "1de61ba2c66950d9e6656e7a4adffb6f33a47fbb463f26cdc1f85d06ba8689cb",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_field_properties_guide_displayed_1.mdx"
+  },
+  "docs/code_samples_field_properties_guide_searchable_1.mdx": {
+   "bytes": 1786,
+   "redactions": 0,
+   "sha256": "bed28da6f121967067aa405dbe33f08b59b6f2d09375f18f8ecbd4ce78c05c8d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_field_properties_guide_searchable_1.mdx"
+  },
+  "docs/code_samples_filtering_guide_1.mdx": {
+   "bytes": 2061,
+   "redactions": 0,
+   "sha256": "ebdaf6825cc628dd4129086040edef9797f241a227920a7347029adaa4b2cc33",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_filtering_guide_1.mdx"
+  },
+  "docs/code_samples_filtering_guide_2.mdx": {
+   "bytes": 2927,
+   "redactions": 0,
+   "sha256": "de7bb18a76bdd08bbf6904f16f401bf74dbc96305ab9a8a1097d4e46b4cdacd2",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_filtering_guide_2.mdx"
+  },
+  "docs/code_samples_filtering_guide_3.mdx": {
+   "bytes": 2653,
+   "redactions": 0,
+   "sha256": "3eca342e7fd460d8795e3af2d9f9be0e406cda82a7170c14b13f6919c8ce0195",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_filtering_guide_3.mdx"
+  },
+  "docs/code_samples_filtering_guide_nested_1.mdx": {
+   "bytes": 2081,
+   "redactions": 0,
+   "sha256": "df434489e6193fc34a0669b50ffec7b2cd155c4f5864bc1d3c7ca6a5e2a9637a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_filtering_guide_nested_1.mdx"
+  },
+  "docs/code_samples_filtering_update_settings_1.mdx": {
+   "bytes": 1504,
+   "redactions": 0,
+   "sha256": "081097a2a37202a33a7ae92d9dc13dc505cfb1c3f4387240cbda346c73f3998e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_filtering_update_settings_1.mdx"
+  },
+  "docs/code_samples_geosearch_guide_filter_settings_1.mdx": {
+   "bytes": 1460,
+   "redactions": 0,
+   "sha256": "f31025b710f2c659879d45298f82c8b888af0e9fde1dcbe324bb3da5dcad9677",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_geosearch_guide_filter_settings_1.mdx"
+  },
+  "docs/code_samples_geosearch_guide_filter_usage_1.mdx": {
+   "bytes": 2015,
+   "redactions": 0,
+   "sha256": "ac35959e39eeb62534b42e677dd9c9ccc6fc1ee9989a220d16ffde12a7c388c8",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_geosearch_guide_filter_usage_1.mdx"
+  },
+  "docs/code_samples_geosearch_guide_filter_usage_2.mdx": {
+   "bytes": 2314,
+   "redactions": 0,
+   "sha256": "e315d0d1ecd19b050a8e4fc7baa0a90fbfe45d974719731f096c787f09df003f",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_geosearch_guide_filter_usage_2.mdx"
+  },
+  "docs/code_samples_geosearch_guide_filter_usage_3.mdx": {
+   "bytes": 2255,
+   "redactions": 0,
+   "sha256": "a942c033fd9b2bef0ef75501e3d0b9638edfc45d71869c52f72aab5bb9c171ad",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_geosearch_guide_filter_usage_3.mdx"
+  },
+  "docs/code_samples_geosearch_guide_sort_settings_1.mdx": {
+   "bytes": 1362,
+   "redactions": 0,
+   "sha256": "26b2b09af6047b6650b313dd1498014c22370cd5d5bed7aee5e296b5b09fe84a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_geosearch_guide_sort_settings_1.mdx"
+  },
+  "docs/code_samples_geosearch_guide_sort_usage_1.mdx": {
+   "bytes": 1942,
+   "redactions": 0,
+   "sha256": "99b75da2fee4ef249dc044e64017425d0d4d1e5d080f079dae55187590da3ff1",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_geosearch_guide_sort_usage_1.mdx"
+  },
+  "docs/code_samples_geosearch_guide_sort_usage_2.mdx": {
+   "bytes": 2216,
+   "redactions": 0,
+   "sha256": "773a5859e49e6b7c4719545822d9ce002bc1f70a8b31143f06982f6344954e44",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_geosearch_guide_sort_usage_2.mdx"
+  },
+  "docs/code_samples_get_all_batches_1.mdx": {
+   "bytes": 257,
+   "redactions": 0,
+   "sha256": "f12d2027cc8446eaf5aeea45028c93adb503aa5ee474649c6405cbf181db26fb",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_all_batches_1.mdx"
+  },
+  "docs/code_samples_get_all_keys_1.mdx": {
+   "bytes": 986,
+   "redactions": 0,
+   "sha256": "5d7a604ef40da45e652acdaf7e5d1b50ea5f718fff5f35cb94760fb479ec7d88",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_all_keys_1.mdx"
+  },
+  "docs/code_samples_get_all_tasks_1.mdx": {
+   "bytes": 705,
+   "redactions": 0,
+   "sha256": "981eeb920793bed1e28f19e412631f1f5d417bd959aface7f49551af1ffd795a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_all_tasks_1.mdx"
+  },
+  "docs/code_samples_get_all_tasks_paginating_1.mdx": {
+   "bytes": 1174,
+   "redactions": 0,
+   "sha256": "132b97c2a4dfd83994a7323ed93419046c06ee7ae4dbc1d8b4b62760cfb8dbe5",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_all_tasks_paginating_1.mdx"
+  },
+  "docs/code_samples_get_all_tasks_paginating_2.mdx": {
+   "bytes": 1158,
+   "redactions": 0,
+   "sha256": "495e091bd305b35799165354f98ae6079ca013e384f1b188308245530b4adbd4",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_all_tasks_paginating_2.mdx"
+  },
+  "docs/code_samples_get_batch_1.mdx": {
+   "bytes": 297,
+   "redactions": 0,
+   "sha256": "5797117e39c1490bdd18975c34ccb4ec616285b4734cadc5c53b45542c1cd387",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_batch_1.mdx"
+  },
+  "docs/code_samples_get_dictionary_1.mdx": {
+   "bytes": 742,
+   "redactions": 0,
+   "sha256": "105b942299d0e0fd22c3c0e5a91eccdbdced3f419d784052a430f2330ae87e16",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_dictionary_1.mdx"
+  },
+  "docs/code_samples_get_displayed_attributes_1.mdx": {
+   "bytes": 1059,
+   "redactions": 0,
+   "sha256": "45394180d729682025048fa18cc2bd248ace07c06901ce2c9de0dd135b7ddd8c",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_displayed_attributes_1.mdx"
+  },
+  "docs/code_samples_get_distinct_attribute_1.mdx": {
+   "bytes": 1035,
+   "redactions": 0,
+   "sha256": "c82ceb8a15549e4cbf4e540bb1e62aee7fe6532ff35a929778de9b662dc69702",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_distinct_attribute_1.mdx"
+  },
+  "docs/code_samples_get_documents_1.mdx": {
+   "bytes": 1727,
+   "redactions": 0,
+   "sha256": "4b762662b12fdd21b78a015995bf09ef44a1fae24aac2075ba9c11435733069e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_documents_1.mdx"
+  },
+  "docs/code_samples_get_documents_post_1.mdx": {
+   "bytes": 3065,
+   "redactions": 0,
+   "sha256": "b269d9c1ae4a59dba92c2360300a90de2601b2510fc2dda24da60aeb440b73e1",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_documents_post_1.mdx"
+  },
+  "docs/code_samples_get_embedders_1.mdx": {
+   "bytes": 169,
+   "redactions": 0,
+   "sha256": "0905b1ce8086532fdea771595fa949aa49395ff9c850788184d29ff055590b58",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_embedders_1.mdx"
+  },
+  "docs/code_samples_get_experimental_features_1.mdx": {
+   "bytes": 382,
+   "redactions": 0,
+   "sha256": "23f18c46381df683594fd079b7468bf5a20e975b949d4d8415bb417a7217e4da",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_experimental_features_1.mdx"
+  },
+  "docs/code_samples_get_facet_search_settings_1.mdx": {
+   "bytes": 437,
+   "redactions": 0,
+   "sha256": "e196dfa3c2d0f1f18fd3a194b4d8ccde774b17061127ca17f49df1e67909bec3",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_facet_search_settings_1.mdx"
+  },
+  "docs/code_samples_get_faceting_settings_1.mdx": {
+   "bytes": 697,
+   "redactions": 0,
+   "sha256": "a9b9a5515e61b7d7d946485519042b5a7b5fbb7db4a0ccddde34111e27088ab4",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_faceting_settings_1.mdx"
+  },
+  "docs/code_samples_get_filterable_attributes_1.mdx": {
+   "bytes": 1082,
+   "redactions": 0,
+   "sha256": "b1f62f46480ab6d69fbb52c78c8663de7463092bc01c5ffe33f01013928d2062",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_filterable_attributes_1.mdx"
+  },
+  "docs/code_samples_get_health_1.mdx": {
+   "bytes": 713,
+   "redactions": 0,
+   "sha256": "02b5d165e4dd58cbe9822ddbf5dcefc15525d4b44e543dc509b5648371fb3ce4",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_health_1.mdx"
+  },
+  "docs/code_samples_get_index_stats_1.mdx": {
+   "bytes": 830,
+   "redactions": 0,
+   "sha256": "f289b3fb29364ada3838eead75cd22c0fe77b82e974616569f80c269cbaec426",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_index_stats_1.mdx"
+  },
+  "docs/code_samples_get_indexes_stats_1.mdx": {
+   "bytes": 659,
+   "redactions": 0,
+   "sha256": "b630bb5cc1ebdcee3787af10a59b69aaf9d0c95161695ad36bf3eaec786c000c",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_indexes_stats_1.mdx"
+  },
+  "docs/code_samples_get_localized_attribute_settings_1.mdx": {
+   "bytes": 714,
+   "redactions": 0,
+   "sha256": "24c182dcdbfe6e96ef636bae88907846206effa5d61bec83c91833ce69cfca7b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_localized_attribute_settings_1.mdx"
+  },
+  "docs/code_samples_get_network_1.mdx": {
+   "bytes": 84,
+   "redactions": 0,
+   "sha256": "3539d047c40404d8a1d520b491dca68c52c5403fb2fd375aca42ea68df3538db",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_network_1.mdx"
+  },
+  "docs/code_samples_get_non_separator_tokens_1.mdx": {
+   "bytes": 904,
+   "redactions": 0,
+   "sha256": "47f6941d8fc263d21ce1e56072882e4573f332a510a255c9179500b151be4c22",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_non_separator_tokens_1.mdx"
+  },
+  "docs/code_samples_get_one_document_1.mdx": {
+   "bytes": 1664,
+   "redactions": 0,
+   "sha256": "6b7ee6b3a251737f0d37150a8fbdb3fcd1b4e7cb45cd3ab126c8dcb6c4b3c3f8",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_one_document_1.mdx"
+  },
+  "docs/code_samples_get_one_index_1.mdx": {
+   "bytes": 775,
+   "redactions": 0,
+   "sha256": "feeb215ec8fc7d0cef79801602ebddcd80e733a1eb7be244735e28c4402d0703",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_one_index_1.mdx"
+  },
+  "docs/code_samples_get_one_key_1.mdx": {
+   "bytes": 1127,
+   "redactions": 0,
+   "sha256": "0c42c3bc3a0f321287e6dffc05e5b3ba0a0082e7ce6a733d1f10bb4b695d5768",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_one_key_1.mdx"
+  },
+  "docs/code_samples_get_pagination_settings_1.mdx": {
+   "bytes": 713,
+   "redactions": 0,
+   "sha256": "614fe0b5efdef01a613b82db23d61a79d915a89b79f0739f0f3778efda57d67b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_pagination_settings_1.mdx"
+  },
+  "docs/code_samples_get_prefix_search_settings_1.mdx": {
+   "bytes": 426,
+   "redactions": 0,
+   "sha256": "f8eb6e2b29685498446abd26cd92a1362adfeef2d6dcc42b4cb2164f6d30318a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_prefix_search_settings_1.mdx"
+  },
+  "docs/code_samples_get_proximity_precision_settings_1.mdx": {
+   "bytes": 822,
+   "redactions": 0,
+   "sha256": "0837674516769e1a3bafb0e95d08c066b21312d58169cb8f53ae185d6a06bf6a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_proximity_precision_settings_1.mdx"
+  },
+  "docs/code_samples_get_ranking_rules_1.mdx": {
+   "bytes": 957,
+   "redactions": 0,
+   "sha256": "0eba6536e6a4225300612d1c7263f3e6bff10a9d6df9bdbbbea598df094216f3",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_ranking_rules_1.mdx"
+  },
+  "docs/code_samples_get_search_cutoff_1.mdx": {
+   "bytes": 811,
+   "redactions": 0,
+   "sha256": "58597a9e9a8c69467358399c6dfb41c3d55d06b911fe2427ffad5a40bee56a53",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_search_cutoff_1.mdx"
+  },
+  "docs/code_samples_get_searchable_attributes_1.mdx": {
+   "bytes": 1069,
+   "redactions": 0,
+   "sha256": "abccf29b08e556ee0a844f26fbaa10fa990ffaf84f1b5dcb51f99eb11e2e065e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_searchable_attributes_1.mdx"
+  },
+  "docs/code_samples_get_separator_tokens_1.mdx": {
+   "bytes": 867,
+   "redactions": 0,
+   "sha256": "c71ea3ca9583cb94f8fa1ed8e8f2fe8b8fd8da6077fe67df74b4feec58cc6e14",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_separator_tokens_1.mdx"
+  },
+  "docs/code_samples_get_settings_1.mdx": {
+   "bytes": 874,
+   "redactions": 0,
+   "sha256": "66976c8a8404850a591c5606f39d939fb3f3e3005181c11f19e9764516329f08",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_settings_1.mdx"
+  },
+  "docs/code_samples_get_similar_get_1.mdx": {
+   "bytes": 148,
+   "redactions": 0,
+   "sha256": "7423be404f1dec8176ca888d7cc17756897c1e4e408db65972f89d9848e3b6f0",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_similar_get_1.mdx"
+  },
+  "docs/code_samples_get_similar_post_1.mdx": {
+   "bytes": 1182,
+   "redactions": 0,
+   "sha256": "ecaa957aecdb5e7181bc410ec6c14377cacea7bf20e2a94308a46f47a4e64b49",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_similar_post_1.mdx"
+  },
+  "docs/code_samples_get_sortable_attributes_1.mdx": {
+   "bytes": 1037,
+   "redactions": 0,
+   "sha256": "81c0f65eb3242f025222a99b41a223d009eb8488e51c556f738e45935c94f53e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_sortable_attributes_1.mdx"
+  },
+  "docs/code_samples_get_stop_words_1.mdx": {
+   "bytes": 915,
+   "redactions": 0,
+   "sha256": "3c58dc11a87df1ef87d9395f5b9839dfd7970d2998553a127a6f6ad831c9bbb5",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_stop_words_1.mdx"
+  },
+  "docs/code_samples_get_synonyms_1.mdx": {
+   "bytes": 913,
+   "redactions": 0,
+   "sha256": "7c2c9aa7c336d13abbc4d009493e7ce37f38aede16d86522897dedb399e387be",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_synonyms_1.mdx"
+  },
+  "docs/code_samples_get_task_1.mdx": {
+   "bytes": 701,
+   "redactions": 0,
+   "sha256": "84c2264fccd94034fbc11afcc0e53f117e4761abd2b93b5dee0542545d51974a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_task_1.mdx"
+  },
+  "docs/code_samples_get_typo_tolerance_1.mdx": {
+   "bytes": 744,
+   "redactions": 0,
+   "sha256": "6f7bb9d7936a07b84554cd836db4bab800e7a4ea31e81fb9201a087be043bd42",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_typo_tolerance_1.mdx"
+  },
+  "docs/code_samples_get_version_1.mdx": {
+   "bytes": 676,
+   "redactions": 0,
+   "sha256": "4a954c8c5ce226a0b264019a0895afea003e761cdf200cc22e069d69ffc95859",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_get_version_1.mdx"
+  },
+  "docs/code_samples_getting_started_add_documents.mdx": {
+   "bytes": 7083,
+   "redactions": 0,
+   "sha256": "4d1829e6dfa6b16e4c1abff3e789b37e2937a374266cc4ea4140e9b25ba0f573",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_add_documents.mdx"
+  },
+  "docs/code_samples_getting_started_add_documents_md.mdx": {
+   "bytes": 7176,
+   "redactions": 0,
+   "sha256": "4de08d2cdfbad7bf866896238bf560f9623a82543d698bad27bf6062323a98ba",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_add_documents_md.mdx"
+  },
+  "docs/code_samples_getting_started_add_meteorites.mdx": {
+   "bytes": 2882,
+   "redactions": 0,
+   "sha256": "63c1c9e0b64267ebc8849f6da5454952afad8956a6310fae9c8dfe7be20b13a5",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_add_meteorites.mdx"
+  },
+  "docs/code_samples_getting_started_check_task_status.mdx": {
+   "bytes": 716,
+   "redactions": 0,
+   "sha256": "e633921db06aac7a540130c007a54b0d0e8433bdb238cbed2a7db7ce190fc883",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_check_task_status.mdx"
+  },
+  "docs/code_samples_getting_started_communicating_with_a_protected_instance.mdx": {
+   "bytes": 380,
+   "redactions": 0,
+   "sha256": "690177f05b03a4f181083aabd0fc66740a73b39a10e05ffd550bdee70fa07174",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_communicating_with_a_protected_instance.mdx"
+  },
+  "docs/code_samples_getting_started_configure_settings.mdx": {
+   "bytes": 2421,
+   "redactions": 0,
+   "sha256": "25a559324046da6cc8aef8ba60bd6a1d49cb185648182df8677e6fe57f58244e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_configure_settings.mdx"
+  },
+  "docs/code_samples_getting_started_faceting.mdx": {
+   "bytes": 1993,
+   "redactions": 0,
+   "sha256": "a924796c12e0844ff61cfc4e64962b80d6378e7e39c4d137a1577502540efe8e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_faceting.mdx"
+  },
+  "docs/code_samples_getting_started_filtering.mdx": {
+   "bytes": 1620,
+   "redactions": 0,
+   "sha256": "bd9243fe836326bc5139899237722a581e98e67f9390aeae4afcc3bec312b92a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_filtering.mdx"
+  },
+  "docs/code_samples_getting_started_front_end_integration_md.mdx": {
+   "bytes": 8038,
+   "redactions": 0,
+   "sha256": "33144ee6ef7c5929aff5e30982d9da35fd4ca675980209057b2a24375bdd4371",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_front_end_integration_md.mdx"
+  },
+  "docs/code_samples_getting_started_geo_point.mdx": {
+   "bytes": 1913,
+   "redactions": 0,
+   "sha256": "4bc6e5cd3dfb9bf678a905bd1d2365e61b20fbe5f8177faaaa0076512b1bb229",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_geo_point.mdx"
+  },
+  "docs/code_samples_getting_started_geo_radius.mdx": {
+   "bytes": 1969,
+   "redactions": 0,
+   "sha256": "93e94a3cd59dcefa1a6b16c0cfc8d9b165aea6d33ee155a60d9a97ff379f4125",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_geo_radius.mdx"
+  },
+  "docs/code_samples_getting_started_pagination.mdx": {
+   "bytes": 1318,
+   "redactions": 0,
+   "sha256": "a3e0bef0e0cf306a65ccf410ba0df661e5cb1b5b67b080c8711028e66badf290",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_pagination.mdx"
+  },
+  "docs/code_samples_getting_started_search.mdx": {
+   "bytes": 1847,
+   "redactions": 0,
+   "sha256": "0d9536ed4361e66d04f39da1a6147e15ed1949494f0f0e4e489c4454cd057549",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_search.mdx"
+  },
+  "docs/code_samples_getting_started_search_md.mdx": {
+   "bytes": 2373,
+   "redactions": 0,
+   "sha256": "59e0ba231cc5e64127f4c53b10a5073718c045a58f5712a6dd0840357ed301a4",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_search_md.mdx"
+  },
+  "docs/code_samples_getting_started_sorting.mdx": {
+   "bytes": 2004,
+   "redactions": 0,
+   "sha256": "5a52bfe3a48f4fba69da2b535587ec16ad8c872102d7832b659f15f6f054effa",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_sorting.mdx"
+  },
+  "docs/code_samples_getting_started_synonyms.mdx": {
+   "bytes": 2082,
+   "redactions": 0,
+   "sha256": "9bacb5cab81c336e3ae8d65f20d76b5323d949f06c04f7872228992079e1b92d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_synonyms.mdx"
+  },
+  "docs/code_samples_getting_started_typo_tolerance.mdx": {
+   "bytes": 1969,
+   "redactions": 0,
+   "sha256": "a9fdd1ed63e44ec308f265c5eb511c80ae03a57f7a51165330681f864185ea4e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_typo_tolerance.mdx"
+  },
+  "docs/code_samples_getting_started_update_displayed_attributes.mdx": {
+   "bytes": 1784,
+   "redactions": 0,
+   "sha256": "6b7714f98fc389a573a974fabd84a42688ca01dfcf0a03d902457361bd4d6f4c",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_update_displayed_attributes.mdx"
+  },
+  "docs/code_samples_getting_started_update_ranking_rules.mdx": {
+   "bytes": 2492,
+   "redactions": 0,
+   "sha256": "ff15201cc2dd902d03e6cd4188e7021065bb8db2c4316938e55c2dd07b5b8a15",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_update_ranking_rules.mdx"
+  },
+  "docs/code_samples_getting_started_update_searchable_attributes.mdx": {
+   "bytes": 1424,
+   "redactions": 0,
+   "sha256": "cf844569148d3ef6119b441ed0a4a815b3725684580690d634dbf9b4f77d60c1",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_update_searchable_attributes.mdx"
+  },
+  "docs/code_samples_getting_started_update_stop_words.mdx": {
+   "bytes": 1240,
+   "redactions": 0,
+   "sha256": "1fd19a1627b81b41d246cb5a9c39c6e4346d50be02b54d733d156f1ad28b9f8d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_getting_started_update_stop_words.mdx"
+  },
+  "docs/code_samples_index_settings_tutorial_api_get_setting_1.mdx": {
+   "bytes": 126,
+   "redactions": 0,
+   "sha256": "518d6db411a1f5df6d2373097054bd6bc5fa50f5e9824c24e67ff9b1f28a3d93",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_index_settings_tutorial_api_get_setting_1.mdx"
+  },
+  "docs/code_samples_index_settings_tutorial_api_put_setting_1.mdx": {
+   "bytes": 220,
+   "redactions": 0,
+   "sha256": "00b53ca6cc02f151786510cfc5313e60294a3f15ef42892191606a48966db883",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_index_settings_tutorial_api_put_setting_1.mdx"
+  },
+  "docs/code_samples_index_settings_tutorial_api_task_1.mdx": {
+   "bytes": 91,
+   "redactions": 0,
+   "sha256": "179751bbf782de518c26d744452659eca1c0727639e3db1d6f467880ffbb5c16",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_index_settings_tutorial_api_task_1.mdx"
+  },
+  "docs/code_samples_landing_getting_started.mdx": {
+   "bytes": 1021,
+   "redactions": 0,
+   "sha256": "121545e414f980589da4c3a382183a3ee71faa2dd6af63d7356272af15b0cc5b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_landing_getting_started.mdx"
+  },
+  "docs/code_samples_landing_getting_started_1.mdx": {
+   "bytes": 6519,
+   "redactions": 0,
+   "sha256": "5270192016b8e075a0e4fbec39f8e97630b4a0b062f02f692686b4f58dc7415f",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_landing_getting_started_1.mdx"
+  },
+  "docs/code_samples_list_all_indexes_1.mdx": {
+   "bytes": 946,
+   "redactions": 0,
+   "sha256": "b51ea445ccee7cc311c74747cd32189652137daa58bae3cc8146e86ebbc62bed",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_list_all_indexes_1.mdx"
+  },
+  "docs/code_samples_multi_search_1.mdx": {
+   "bytes": 3492,
+   "redactions": 0,
+   "sha256": "837ecad88c37192065106745f8bb6e6d39700265593b5bd545ff38b1790c5b25",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_multi_search_1.mdx"
+  },
+  "docs/code_samples_multi_search_federated_1.mdx": {
+   "bytes": 1058,
+   "redactions": 0,
+   "sha256": "ad8c104593273fe3f6eec57a184d20005b73176bf0907506f9843c2ebec68d2e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_multi_search_federated_1.mdx"
+  },
+  "docs/code_samples_multi_search_remote_federated_1.mdx": {
+   "bytes": 478,
+   "redactions": 0,
+   "sha256": "c159f4ea81109965d0eecf855b0a1b318b45060f6cab529d89efb6105ecf8b13",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_multi_search_remote_federated_1.mdx"
+  },
+  "docs/code_samples_negative_search_1.mdx": {
+   "bytes": 302,
+   "redactions": 0,
+   "sha256": "9d864f1661a8f5f255a67d3abcb1a3ebf1ee879bf3dbf957222be7f03403ed64",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_negative_search_1.mdx"
+  },
+  "docs/code_samples_negative_search_2.mdx": {
+   "bytes": 315,
+   "redactions": 0,
+   "sha256": "0b60be9b1af4bfe71ae60032b980946938d7c51ac245928cf337c464f9767c64",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_negative_search_2.mdx"
+  },
+  "docs/code_samples_phrase_search_1.mdx": {
+   "bytes": 1418,
+   "redactions": 0,
+   "sha256": "9fc050855000ea92c1e80f70376c70da6d30c15615a67fa9cfbbcc7c687f3e5a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_phrase_search_1.mdx"
+  },
+  "docs/code_samples_post_dump_1.mdx": {
+   "bytes": 679,
+   "redactions": 0,
+   "sha256": "09b35eb21fd9fe49126f3e9659c21a330599fc276c62d13349a572d98bf0cba4",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_post_dump_1.mdx"
+  },
+  "docs/code_samples_primary_field_guide_add_document_primary_key.mdx": {
+   "bytes": 3481,
+   "redactions": 0,
+   "sha256": "1bd0eaaa8f1b6f3e7b13447d8874e51a2b05f26db04bf4a19bb5094e237866c8",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_primary_field_guide_add_document_primary_key.mdx"
+  },
+  "docs/code_samples_primary_field_guide_create_index_primary_key.mdx": {
+   "bytes": 1227,
+   "redactions": 0,
+   "sha256": "697d4d321bd1afed383ce496b1b1f3c3fcbffa842e3003acb6d856c6961743e5",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_primary_field_guide_create_index_primary_key.mdx"
+  },
+  "docs/code_samples_primary_field_guide_update_document_primary_key.mdx": {
+   "bytes": 1072,
+   "redactions": 0,
+   "sha256": "fa7ff24fbfed02c68346c6c3a764e3f26fd00529e342449f452d6e742fec2493",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_primary_field_guide_update_document_primary_key.mdx"
+  },
+  "docs/code_samples_related_results_embedder_1.mdx": {
+   "bytes": 565,
+   "redactions": 0,
+   "sha256": "70b782b7e4c771a606747246bacf40717007cb6126fa4ab39adbc8e3e300bcb2",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_related_results_embedder_1.mdx"
+  },
+  "docs/code_samples_related_results_search_1.mdx": {
+   "bytes": 294,
+   "redactions": 0,
+   "sha256": "7e1d4107750a88655be59643d7f5a14ef484309cb572fd0c27ebdc1a8067bfd9",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_related_results_search_1.mdx"
+  },
+  "docs/code_samples_related_results_similar_1.mdx": {
+   "bytes": 267,
+   "redactions": 0,
+   "sha256": "f997e1da601bf23bfc1731bb9844d844eeea7458106450ebe6afc208d54a1ed4",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_related_results_similar_1.mdx"
+  },
+  "docs/code_samples_reset_dictionary_1.mdx": {
+   "bytes": 745,
+   "redactions": 0,
+   "sha256": "87dbe1a06c2bcd5f6bee35720a97edc4da244a824038661467cbd6a67009ff78",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_dictionary_1.mdx"
+  },
+  "docs/code_samples_reset_displayed_attributes_1.mdx": {
+   "bytes": 1033,
+   "redactions": 0,
+   "sha256": "7bce7012cf1c15d2edaa92b12b8775fa932c367651fa5a0a29c338ef670be97f",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_displayed_attributes_1.mdx"
+  },
+  "docs/code_samples_reset_distinct_attribute_1.mdx": {
+   "bytes": 1018,
+   "redactions": 0,
+   "sha256": "da35a280d2d1fd41510ebcd9199709fc02d64fa817f55904431b08a93a4f13da",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_distinct_attribute_1.mdx"
+  },
+  "docs/code_samples_reset_embedders_1.mdx": {
+   "bytes": 178,
+   "redactions": 0,
+   "sha256": "4d90153e8c136c4b06a3d0b224a14ebbb9c17b6b67f1ece1a521ffe3d3370c7b",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_embedders_1.mdx"
+  },
+  "docs/code_samples_reset_facet_search_settings_1.mdx": {
+   "bytes": 454,
+   "redactions": 0,
+   "sha256": "b940951f96fc20643982f1c829a88a8b072bed6c5b811ff25c1edfc65bae3c3c",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_facet_search_settings_1.mdx"
+  },
+  "docs/code_samples_reset_faceting_settings_1.mdx": {
+   "bytes": 703,
+   "redactions": 0,
+   "sha256": "243e3b99b8140038446d9bfd0a0bb6fc54c4306c658c349b65ab5a811c511550",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_faceting_settings_1.mdx"
+  },
+  "docs/code_samples_reset_filterable_attributes_1.mdx": {
+   "bytes": 1074,
+   "redactions": 0,
+   "sha256": "f130ce5611596bf006b7f72901384150046e7db7ead5216de398f6f12943b9a6",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_filterable_attributes_1.mdx"
+  },
+  "docs/code_samples_reset_localized_attribute_settings_1.mdx": {
+   "bytes": 695,
+   "redactions": 0,
+   "sha256": "d6a7c06d14d1a1d08f0d10936e58a18b368479e88ac63b36afe036e3eb45d9be",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_localized_attribute_settings_1.mdx"
+  },
+  "docs/code_samples_reset_non_separator_tokens_1.mdx": {
+   "bytes": 931,
+   "redactions": 0,
+   "sha256": "455d10273506d3cf8f4f4779f3f6a01b05dfeb0e2aa5e9460fed16950723cca1",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_non_separator_tokens_1.mdx"
+  },
+  "docs/code_samples_reset_pagination_settings_1.mdx": {
+   "bytes": 723,
+   "redactions": 0,
+   "sha256": "fc9c17c6f330c6f825aeea58fc5f56e8d272c3937c111a8ece32ae6efbcef12e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_pagination_settings_1.mdx"
+  },
+  "docs/code_samples_reset_prefix_search_settings_1.mdx": {
+   "bytes": 443,
+   "redactions": 0,
+   "sha256": "8186149c959ad4e890851d545feed180e7a12ba73e0e187a76bbe61b6b0103dd",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_prefix_search_settings_1.mdx"
+  },
+  "docs/code_samples_reset_proximity_precision_settings_1.mdx": {
+   "bytes": 824,
+   "redactions": 0,
+   "sha256": "5fa06da67b8af0a6e1e04779aad3451f6ac8d4546add83b95919dd5fd19643ae",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_proximity_precision_settings_1.mdx"
+  },
+  "docs/code_samples_reset_ranking_rules_1.mdx": {
+   "bytes": 956,
+   "redactions": 0,
+   "sha256": "87f26d02c8aacbae15cccf8050907624c51f59bd97b6e83cbf073543d9b9f8ec",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_ranking_rules_1.mdx"
+  },
+  "docs/code_samples_reset_search_cutoff_1.mdx": {
+   "bytes": 796,
+   "redactions": 0,
+   "sha256": "75d1dbf76ee29d4e602130bc209fa4c48451fb5178c672ccf32385a75729a524",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_search_cutoff_1.mdx"
+  },
+  "docs/code_samples_reset_searchable_attributes_1.mdx": {
+   "bytes": 1044,
+   "redactions": 0,
+   "sha256": "98ad5d292aa1772c7501e6e2eef42c2cee2587cd8fefc357638ac9c49d41a59f",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_searchable_attributes_1.mdx"
+  },
+  "docs/code_samples_reset_separator_tokens_1.mdx": {
+   "bytes": 894,
+   "redactions": 0,
+   "sha256": "3775980b28239eef7a565f7d74c82c99ace3289b5515ef2af4431dd4c59faced",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_separator_tokens_1.mdx"
+  },
+  "docs/code_samples_reset_settings_1.mdx": {
+   "bytes": 891,
+   "redactions": 0,
+   "sha256": "a4302a6b549f89612d68a419463ea75c0ddd4ffb70c21e1a3de004bd693f711d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_settings_1.mdx"
+  },
+  "docs/code_samples_reset_sortable_attributes_1.mdx": {
+   "bytes": 1009,
+   "redactions": 0,
+   "sha256": "37bdcc5f6df301fe0d516bc64705caed485b2f5e20ddb7d16cc7b6d92a979c38",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_sortable_attributes_1.mdx"
+  },
+  "docs/code_samples_reset_stop_words_1.mdx": {
+   "bytes": 923,
+   "redactions": 0,
+   "sha256": "789bbb47ad59966f41921b581fe4272a4cd819380df7299d216333359b442628",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_stop_words_1.mdx"
+  },
+  "docs/code_samples_reset_synonyms_1.mdx": {
+   "bytes": 908,
+   "redactions": 0,
+   "sha256": "4ee4ecee3415084ff43400551a94e0c6e70efbef55b0594fa481748ad6f93a29",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_synonyms_1.mdx"
+  },
+  "docs/code_samples_reset_typo_tolerance_1.mdx": {
+   "bytes": 746,
+   "redactions": 0,
+   "sha256": "b4fd5479e1e07ec9c79056c79afa0dbba64ca04856257c89e8390420290de8e7",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_reset_typo_tolerance_1.mdx"
+  },
+  "docs/code_samples_search_get_1.mdx": {
+   "bytes": 263,
+   "redactions": 0,
+   "sha256": "81daa2b1306585ee03b2ec82851c59b8413aff6eca88861b0af1fc94a2fad3bd",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_get_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_attributes_to_search_on_1.mdx": {
+   "bytes": 1877,
+   "redactions": 0,
+   "sha256": "952f8d891caf460a89a61e368e6f9d10853e6c9bdf7e2138d739dc7b334c1598",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_attributes_to_search_on_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_crop_1.mdx": {
+   "bytes": 2227,
+   "redactions": 0,
+   "sha256": "74d3e2f05058dea8a6bd990746fb9eec98dad0d04554946f558ab1410e2df460",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_crop_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_crop_marker_1.mdx": {
+   "bytes": 2332,
+   "redactions": 0,
+   "sha256": "f63e190f5bbacaf332545e31f1180c71788d7dbfdfabc219f0cf1661858a33fe",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_crop_marker_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_facet_stats_1.mdx": {
+   "bytes": 1500,
+   "redactions": 0,
+   "sha256": "ce921379e38106f4275cc34182940b00c89aa607b6e23da819cad251c475b8d7",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_facet_stats_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_highlight_1.mdx": {
+   "bytes": 2054,
+   "redactions": 0,
+   "sha256": "3b578f4f7e5ab90cbed489f48089fbadb435d8c23d581a7336b04beaba331e98",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_highlight_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_highlight_tag_1.mdx": {
+   "bytes": 3113,
+   "redactions": 0,
+   "sha256": "413d3827731824a8629251989fde08fdfd80b107978d624e9551716880e92eae",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_highlight_tag_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_hitsperpage_1.mdx": {
+   "bytes": 1507,
+   "redactions": 0,
+   "sha256": "a06eb5cdbaaec249b02d01b9564e4bd8b10eda7cab08d478abc5c32a7259a47e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_hitsperpage_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_hybrid_1.mdx": {
+   "bytes": 590,
+   "redactions": 0,
+   "sha256": "f0ef9cd19743a9f2b8fdd13d1798f6de41d206d8dc9fb0ccb064a63b55a6c689",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_hybrid_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_limit_1.mdx": {
+   "bytes": 1541,
+   "redactions": 0,
+   "sha256": "9e29246c8ee8e73ae130651242a8b8bb415fc1cba456916064aedb35cd892803",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_limit_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_matching_strategy_1.mdx": {
+   "bytes": 1421,
+   "redactions": 0,
+   "sha256": "78efa1b49733af6b70ebfb9f7826ba4ed8380c4cf7f11cff20c9ca962036acb8",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_matching_strategy_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_matching_strategy_2.mdx": {
+   "bytes": 1411,
+   "redactions": 0,
+   "sha256": "51c698b8b80cca2e679b93c6c43e8e53a0ff9f4ec7e395fbe274a5d42609a033",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_matching_strategy_2.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_matching_strategy_3.mdx": {
+   "bytes": 1148,
+   "redactions": 0,
+   "sha256": "a20e6782db2ead6652e891ad7ac18bc4dd7a6e4f004c82ce15f9961aa9261f75",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_matching_strategy_3.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_offset_1.mdx": {
+   "bytes": 1552,
+   "redactions": 0,
+   "sha256": "947b236c11681d70727753d9fdf24c01d9cc7ca937a161a6034c9aad30dfa7fd",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_offset_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_page_1.mdx": {
+   "bytes": 1417,
+   "redactions": 0,
+   "sha256": "6c6f3e7f598035738f435bf23f9100a35c286fc0db3e42e43bf09a54cc7f94ab",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_page_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_query_1.mdx": {
+   "bytes": 1140,
+   "redactions": 0,
+   "sha256": "ed33ad214d58ee740949eb2664409059cc7597bd4aaa2c4c858154850fd067e3",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_query_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_retrieve_1.mdx": {
+   "bytes": 1934,
+   "redactions": 0,
+   "sha256": "1cca4b364089b16009e5b0af81e25e64fc6c1511d0733ce622fb7054773cc12a",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_retrieve_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_show_matches_position_1.mdx": {
+   "bytes": 2014,
+   "redactions": 0,
+   "sha256": "b289f0887e55436fa692afba7d61819c4b0b93c637be87738e854964f09a3790",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_show_matches_position_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_show_ranking_score_1.mdx": {
+   "bytes": 1679,
+   "redactions": 0,
+   "sha256": "cb62b2c1083bdaba1457bccb0df7ca438bcc1d827737eed36d6cdb0201a86902",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_show_ranking_score_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_show_ranking_score_details_1.mdx": {
+   "bytes": 1487,
+   "redactions": 0,
+   "sha256": "63152e593e87c98d0462acb44305246a302a29f931be36eefd0464fd62035755",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_show_ranking_score_details_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_sort_1.mdx": {
+   "bytes": 1747,
+   "redactions": 0,
+   "sha256": "e8d605fdd0621552c24af9022e740c37932457d7a2319172f6f0318da761d7b3",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_sort_1.mdx"
+  },
+  "docs/code_samples_search_parameter_guide_vector_1.mdx": {
+   "bytes": 247,
+   "redactions": 0,
+   "sha256": "ca26ca190729e8b8c116ee4eb21fb849febd2e52ef97e62690e3145eef8229d8",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_guide_vector_1.mdx"
+  },
+  "docs/code_samples_search_parameter_reference_distinct_1.mdx": {
+   "bytes": 1237,
+   "redactions": 0,
+   "sha256": "06443b74ee904cff698933781a75b8fe84a66a04a1f812cb5886f43b73feae3f",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_reference_distinct_1.mdx"
+  },
+  "docs/code_samples_search_parameter_reference_locales_1.mdx": {
+   "bytes": 1100,
+   "redactions": 0,
+   "sha256": "1d0cd04a1cda6608e71fb8887375f896ea25d3a656762d1b6fb8e8804ac62948",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_reference_locales_1.mdx"
+  },
+  "docs/code_samples_search_parameter_reference_ranking_score_threshold_1.mdx": {
+   "bytes": 1064,
+   "redactions": 0,
+   "sha256": "37ad90051b18b32a607f60ed05bf2e3e21a46644a181e9ced0625681e7eacf04",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_reference_ranking_score_threshold_1.mdx"
+  },
+  "docs/code_samples_search_parameter_reference_retrieve_vectors_1.mdx": {
+   "bytes": 591,
+   "redactions": 0,
+   "sha256": "36e76efa68d4a32d11e66779c6d30461f823051333632c713aa227184ddcd90d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_parameter_reference_retrieve_vectors_1.mdx"
+  },
+  "docs/code_samples_search_post_1.mdx": {
+   "bytes": 1266,
+   "redactions": 0,
+   "sha256": "1eb9fad190d3b324fabd7ccb18c15757e25cd0c084028b160de406b2656aa063",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_search_post_1.mdx"
+  },
+  "docs/code_samples_security_guide_create_key_1.mdx": {
+   "bytes": 3703,
+   "redactions": 0,
+   "sha256": "93055f60876aa3ad932b7c66513e8c03c3c837b2885c5c7508c8b03289872a5c",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_security_guide_create_key_1.mdx"
+  },
+  "docs/code_samples_security_guide_delete_key_1.mdx": {
+   "bytes": 1899,
+   "redactions": 0,
+   "sha256": "623e9ecf157fa485ab4ac6fe24c6be4112b8e8d0bccae6b5cd7981af02bc9471",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_security_guide_delete_key_1.mdx"
+  },
+  "docs/code_samples_security_guide_list_keys_1.mdx": {
+   "bytes": 1487,
+   "redactions": 0,
+   "sha256": "54f1110e34f8a05b32c2078dbd1c67046b979be34f98a439acbc111d059068c5",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_security_guide_list_keys_1.mdx"
+  },
+  "docs/code_samples_security_guide_search_key_1.mdx": {
+   "bytes": 1882,
+   "redactions": 0,
+   "sha256": "38c90fb325605da3fc61920aa693b9350e950c6dd6c49d102aa6e3f159ce04b5",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_security_guide_search_key_1.mdx"
+  },
+  "docs/code_samples_security_guide_update_key_1.mdx": {
+   "bytes": 2527,
+   "redactions": 0,
+   "sha256": "7dacc544acccbf2f0668be3ae26a77b425cee91c6c3533ff383ab42deaa815ec",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_security_guide_update_key_1.mdx"
+  },
+  "docs/code_samples_sorting_guide_sort_nested_1.mdx": {
+   "bytes": 1845,
+   "redactions": 0,
+   "sha256": "d7e464aca33e181eed14cbeca046b848df92b140684b6e5f23765f539e55da1c",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_sorting_guide_sort_nested_1.mdx"
+  },
+  "docs/code_samples_sorting_guide_sort_parameter_1.mdx": {
+   "bytes": 1723,
+   "redactions": 0,
+   "sha256": "a75cc2dd69c54a4e69798a84b4a3bffbee08e28d3a7c9e5a7163f7c75a879fe7",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_sorting_guide_sort_parameter_1.mdx"
+  },
+  "docs/code_samples_sorting_guide_sort_parameter_2.mdx": {
+   "bytes": 1646,
+   "redactions": 0,
+   "sha256": "8a9e972b4676aec951b88507d4bc2ee8b0089413181af3588d6804060bcdd89e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_sorting_guide_sort_parameter_2.mdx"
+  },
+  "docs/code_samples_sorting_guide_update_ranking_rules_1.mdx": {
+   "bytes": 2082,
+   "redactions": 0,
+   "sha256": "41ba6010a2067cebc9ae3d5fad740b2d4271a1a7bc2e4ac59f1481273caf9563",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_sorting_guide_update_ranking_rules_1.mdx"
+  },
+  "docs/code_samples_sorting_guide_update_sortable_attributes_1.mdx": {
+   "bytes": 1474,
+   "redactions": 0,
+   "sha256": "968488b65d9973c6deadf7b60e430fc242cdecfedf10d3b4224d92b6c76ac865",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_sorting_guide_update_sortable_attributes_1.mdx"
+  },
+  "docs/code_samples_swap_indexes_1.mdx": {
+   "bytes": 1778,
+   "redactions": 0,
+   "sha256": "645565e2fa1584af81dcfecaf78e047ede527955b8514f409f225080d65b8883",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_swap_indexes_1.mdx"
+  },
+  "docs/code_samples_synonyms_guide_1.mdx": {
+   "bytes": 2065,
+   "redactions": 0,
+   "sha256": "9f1efad8fe60c3150ffc995c31a0227292985bdf656b0479a70ad474ccfe34bc",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_synonyms_guide_1.mdx"
+  },
+  "docs/code_samples_tenant_token_guide_generate_sdk_1.mdx": {
+   "bytes": 3210,
+   "redactions": 0,
+   "sha256": "30810942baf6e8d37feeae8a6b0e2a3b56500d58e06a908b08e3f22d6910cca7",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_tenant_token_guide_generate_sdk_1.mdx"
+  },
+  "docs/code_samples_tenant_token_guide_search_no_sdk_1.mdx": {
+   "bytes": 160,
+   "redactions": 0,
+   "sha256": "dbcf0216cc4386b4401f56a239c301280244ebc0746e1767b08bf70f0026dcc1",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_tenant_token_guide_search_no_sdk_1.mdx"
+  },
+  "docs/code_samples_tenant_token_guide_search_sdk_1.mdx": {
+   "bytes": 1491,
+   "redactions": 0,
+   "sha256": "f6a34b634c4c98e444e33d9a5992ffe0c78cb806e443aa14ae5c9da2d615d990",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_tenant_token_guide_search_sdk_1.mdx"
+  },
+  "docs/code_samples_typo_tolerance_guide_1.mdx": {
+   "bytes": 1379,
+   "redactions": 0,
+   "sha256": "7cfeb3abb1e22b8f413bdfc574d8c1cb370e6d8be2abedd3bb2c9e20abc54614",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_typo_tolerance_guide_1.mdx"
+  },
+  "docs/code_samples_typo_tolerance_guide_2.mdx": {
+   "bytes": 1689,
+   "redactions": 0,
+   "sha256": "6a9e3d84ddd54dc051687a71970e696c6537c5a510362470e61c6ad86493c10d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_typo_tolerance_guide_2.mdx"
+  },
+  "docs/code_samples_typo_tolerance_guide_3.mdx": {
+   "bytes": 1687,
+   "redactions": 0,
+   "sha256": "6205f0a37bb4276d3782f74205e7a436c049b26612c2ba392fef7c6dda6d361e",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_typo_tolerance_guide_3.mdx"
+  },
+  "docs/code_samples_typo_tolerance_guide_4.mdx": {
+   "bytes": 2237,
+   "redactions": 0,
+   "sha256": "cf1f1644dcbc54e0e009b4c703e1cce44ace0fb22288f315e2ba0b00883e3604",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_typo_tolerance_guide_4.mdx"
+  },
+  "docs/code_samples_typo_tolerance_guide_5.mdx": {
+   "bytes": 404,
+   "redactions": 0,
+   "sha256": "097864e0b36099124b8d1acd2a383f157c452b4435aa468ab4666817fcbadf83",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_typo_tolerance_guide_5.mdx"
+  },
+  "docs/code_samples_update_a_key_1.mdx": {
+   "bytes": 2719,
+   "redactions": 0,
+   "sha256": "24c1ad95b1c1258e7cea48173b1b1207e9df210679c79ecfc11b2d8cfa4d5a13",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_a_key_1.mdx"
+  },
+  "docs/code_samples_update_an_index_1.mdx": {
+   "bytes": 1077,
+   "redactions": 0,
+   "sha256": "2f3543c2101ce1cb76015b49a45a25b896cd66f5d6a798e7ef077ad9774d7b0d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_an_index_1.mdx"
+  },
+  "docs/code_samples_update_dictionary_1.mdx": {
+   "bytes": 1143,
+   "redactions": 0,
+   "sha256": "7ce8d84bcddb54629c1d614d28a8cf8b373bd229f2968036699819f78191a86d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_dictionary_1.mdx"
+  },
+  "docs/code_samples_update_displayed_attributes_1.mdx": {
+   "bytes": 1917,
+   "redactions": 0,
+   "sha256": "af98bd4cebc148067586f0cb99b4b990c516570ed82cf75e72374240b38db410",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_displayed_attributes_1.mdx"
+  },
+  "docs/code_samples_update_distinct_attribute_1.mdx": {
+   "bytes": 1164,
+   "redactions": 0,
+   "sha256": "c327e5a6d38a87d4a67ede8dc72a3a2af930a8c263aad2a82e68522fc85d2960",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_distinct_attribute_1.mdx"
+  },
+  "docs/code_samples_update_embedders_1.mdx": {
+   "bytes": 1331,
+   "redactions": 0,
+   "sha256": "a799780227b3adbac54da522e33df0adf05d228abf6a9e749a5b3e990b82f411",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_embedders_1.mdx"
+  },
+  "docs/code_samples_update_experimental_features_1.mdx": {
+   "bytes": 543,
+   "redactions": 0,
+   "sha256": "966d8b1406b804869a219c75000bff4301cdf6dbf0562dfb1411e8754b6a92cf",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_experimental_features_1.mdx"
+  },
+  "docs/code_samples_update_facet_search_settings_1.mdx": {
+   "bytes": 549,
+   "redactions": 0,
+   "sha256": "612caf76bfa543a9c6328f1d0fbc71b60d96bb548829a1867a871d8ce73fe80d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_facet_search_settings_1.mdx"
+  },
+  "docs/code_samples_update_faceting_settings_1.mdx": {
+   "bytes": 2235,
+   "redactions": 0,
+   "sha256": "7354cba674ae37a1b9b45de060a99d5e7194962eeff3ce96d3797ea1fb2a78d3",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_faceting_settings_1.mdx"
+  },
+  "docs/code_samples_update_filterable_attributes_1.mdx": {
+   "bytes": 2219,
+   "redactions": 0,
+   "sha256": "b58e1490646e547f51a5f66abd8cf4f1af3e9b0691dff9caa3080cff407e21ac",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_filterable_attributes_1.mdx"
+  },
+  "docs/code_samples_update_localized_attribute_settings_1.mdx": {
+   "bytes": 1498,
+   "redactions": 0,
+   "sha256": "321c9e810c039651a8968fb5ad4f5f3a8f5aa7342b5394ad55adc780daeabd32",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_localized_attribute_settings_1.mdx"
+  },
+  "docs/code_samples_update_network_1.mdx": {
+   "bytes": 425,
+   "redactions": 0,
+   "sha256": "4a3fb4cce0f7fbab99b70f3918c1872839d52742aa5ee0e08c87ed03c4bf0e90",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_network_1.mdx"
+  },
+  "docs/code_samples_update_non_separator_tokens_1.mdx": {
+   "bytes": 1215,
+   "redactions": 0,
+   "sha256": "ba40bab0f05021e2ed9a69e351c1bef69653d75bf76e27f4ae5ceefef4d84e51",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_non_separator_tokens_1.mdx"
+  },
+  "docs/code_samples_update_pagination_settings_1.mdx": {
+   "bytes": 1265,
+   "redactions": 0,
+   "sha256": "5122c31f1eb535872cb8660500be61727c0445fac111403d0d27ca8bfd3691c5",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_pagination_settings_1.mdx"
+  },
+  "docs/code_samples_update_prefix_search_settings_1.mdx": {
+   "bytes": 579,
+   "redactions": 0,
+   "sha256": "838aa70c517972d490378b528f74c1b51b3c3f5d2ce73b0c83824bdc6b16dace",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_prefix_search_settings_1.mdx"
+  },
+  "docs/code_samples_update_proximity_precision_settings_1.mdx": {
+   "bytes": 1042,
+   "redactions": 0,
+   "sha256": "8d834eb350d8cd0a9bc08b97dbe78bf8907814bae6d54b81f78fe7c35454cbe7",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_proximity_precision_settings_1.mdx"
+  },
+  "docs/code_samples_update_ranking_rules_1.mdx": {
+   "bytes": 2571,
+   "redactions": 0,
+   "sha256": "86af8a86096d060aad10327e08f0a0463d77931c0ef83f73755caaa43f6c4b51",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_ranking_rules_1.mdx"
+  },
+  "docs/code_samples_update_search_cutoff_1.mdx": {
+   "bytes": 899,
+   "redactions": 0,
+   "sha256": "9a6286ff9b921ffebfc41d844aaca7cbc8e00c72faad6b5815ec4f0999ccef8d",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_search_cutoff_1.mdx"
+  },
+  "docs/code_samples_update_searchable_attributes_1.mdx": {
+   "bytes": 1727,
+   "redactions": 0,
+   "sha256": "b9cfaf6e69a6d76cd76645394c28c840c61d1a6580951ba9a2e345f7eb4d4259",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_searchable_attributes_1.mdx"
+  },
+  "docs/code_samples_update_separator_tokens_1.mdx": {
+   "bytes": 1255,
+   "redactions": 0,
+   "sha256": "bd45f821167afeda5bc0f44464d94e2eda1326787a4c02934152084660250734",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_separator_tokens_1.mdx"
+  },
+  "docs/code_samples_update_settings_1.mdx": {
+   "bytes": 10870,
+   "redactions": 0,
+   "sha256": "f9077c7b0c65f290ee6d3d8c40ebe444bdc2e07be38d86ee6bf7dbecad499470",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_settings_1.mdx"
+  },
+  "docs/code_samples_update_sortable_attributes_1.mdx": {
+   "bytes": 1452,
+   "redactions": 0,
+   "sha256": "2ce78218e9272b194312e73b1d2456ec9160dac2756e1d9ca3ba9d5c4e9ca8fc",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_sortable_attributes_1.mdx"
+  },
+  "docs/code_samples_update_stop_words_1.mdx": {
+   "bytes": 1334,
+   "redactions": 0,
+   "sha256": "44738a60106313707c429415e6da0d3dd0ca3cfc4ad41cde91f86d342cc37ff0",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_stop_words_1.mdx"
+  },
+  "docs/code_samples_update_synonyms_1.mdx": {
+   "bytes": 2712,
+   "redactions": 0,
+   "sha256": "139951105b5bdf7d96e209e26880e5fdc3b08c027f346eb9d5d5218a86f113bf",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_synonyms_1.mdx"
+  },
+  "docs/code_samples_update_typo_tolerance_1.mdx": {
+   "bytes": 2510,
+   "redactions": 0,
+   "sha256": "c2b5e0b4b5fcec37c23032db827134e76c0d3fa070db182ee3cbc536c60488df",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_update_typo_tolerance_1.mdx"
+  },
+  "docs/code_samples_updating_guide_check_version_new_authorization_header.mdx": {
+   "bytes": 133,
+   "redactions": 0,
+   "sha256": "7d8928b61e45567292f56b515a90a98b30a5b4cfeeab2aad3afb54d8bae78609",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_updating_guide_check_version_new_authorization_header.mdx"
+  },
+  "docs/code_samples_updating_guide_check_version_old_authorization_header.mdx": {
+   "bytes": 128,
+   "redactions": 0,
+   "sha256": "4e6a1159b01bf3ed58dcac5ae4f7a5761e373c5e9d2268c6b49962c2d2661f7f",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_updating_guide_check_version_old_authorization_header.mdx"
+  },
+  "docs/code_samples_updating_guide_create_dump.mdx": {
+   "bytes": 183,
+   "redactions": 0,
+   "sha256": "1e6212e55b67da07106b781d7a4618e5d9a491d439ffc45afc7262a99187a405",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_updating_guide_create_dump.mdx"
+  },
+  "docs/code_samples_updating_guide_get_displayed_attributes_old_authorization_header.mdx": {
+   "bytes": 241,
+   "redactions": 0,
+   "sha256": "3ea1e6a52f0d4743ac2da5b43cb9bb60bcae9fa187dc90b1ddd801c1b2adb368",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_updating_guide_get_displayed_attributes_old_authorization_header.mdx"
+  },
+  "docs/code_samples_updating_guide_reset_displayed_attributes_old_authorization_header.mdx": {
+   "bytes": 173,
+   "redactions": 0,
+   "sha256": "d5740e3d5a0c6e6b33f82e8b411c74ecad188485eb8fdb2ee3929e35e1e0acc7",
+   "url": "https://raw.githubusercontent.com/meilisearch/documentation/0d5f1df19e581c57981b37e3e7333080ac5ede0f/snippets/samples/code_samples_updating_guide_reset_displayed_attributes_old_authorization_header.mdx"
+  },
+  "spec/LICENSE": {
+   "bytes": 1071,
+   "redactions": 0,
+   "sha256": "3496e9534ef63a0c99b349f384508227aaac05056603081d879277e89b5ed155",
+   "url": "https://raw.githubusercontent.com/meilisearch/open-api/0b0b0fdbb9d5821ec018a3db2777986a231eec37/LICENSE"
+  },
+  "spec/openapi.json": {
+   "bytes": 431476,
+   "redactions": 0,
+   "sha256": "83cbd10cea1ca75590dc31f1d2e40ef2b636297d47b39c9aefd813e41454cfd1",
+   "url": "https://raw.githubusercontent.com/meilisearch/open-api/0b0b0fdbb9d5821ec018a3db2777986a231eec37/open-api.json"
+  }
+ },
+ "note": "Both repositories are MIT licensed (see spec/LICENSE and docs/LICENSE). Pinned to commits from June 2025."
+}

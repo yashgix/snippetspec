@@ -1,0 +1,27 @@
+<CodeGroup>
+
+```bash cURL
+curl \
+  -X GET 'MEILISEARCH_URL/indexes/INDEX_UID/settings/prefix-search'
+```
+
+```javascript JS
+client.index('INDEX_NAME').getPrefixSearch();
+```
+
+```python Python
+client.index('books').get_prefix_search()
+```
+
+```php PHP
+$client->index('INDEX_NAME')->getPrefixSearch();
+```
+
+```ruby Ruby
+client.index('INDEX_UID').prefix_search
+```
+
+```go Go
+client.Index("books").GetPrefixSearch()
+```
+</CodeGroup>
