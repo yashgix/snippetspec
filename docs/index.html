@@ -47,13 +47,15 @@ th, td { text-align: left; padding: 0.5rem 0.8rem; border-bottom: 1px solid var(
 th { background: var(--band); color: var(--muted); font-weight: 500; font-size: 0.8125rem; }
 tr:last-child td { border-bottom: 0; }
 .note { background: var(--warn-soft); border-radius: 12px; padding: 1rem 1.2rem; }
-.diagram { overflow-x: auto; }
-svg text { font-family: ui-monospace, Menlo, monospace; font-size: 13px; fill: #16202e; }
-svg .box { fill: #e6edfd; stroke: #1d4ed8; }
-svg .out { fill: #fdf1e4; stroke: #b45309; }
-svg .arrow { stroke: #556070; fill: none; marker-end: url(#a); }
+.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; }
+.step { position: relative; background: var(--soft); border: 1px solid var(--accent); border-radius: 8px; padding: 0.7rem 0.8rem; display: flex; flex-direction: column; font-size: 0.9rem; }
+.step.out { background: var(--warn-soft); border-color: var(--warn); }
+.step span { color: var(--muted); font-size: 0.8125rem; }
+.step + .step::before { content: "\2192"; position: absolute; left: -1.15rem; top: 50%; transform: translateY(-50%); color: var(--muted); }
 @media (max-width: 760px) {
   .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flow { grid-template-columns: minmax(0, 1fr); gap: 1.3rem; }
+  .step + .step::before { content: "\2193"; left: 1rem; top: -1.25rem; transform: none; }
   .bar { grid-template-columns: 7rem minmax(0, 1fr) 4.5rem; }
 }
 </style>
@@ -81,19 +83,13 @@ svg .arrow { stroke: #556070; fill: none; marker-end: url(#a); }
   <p>Read MDX pages, find each HTTP call in curl commands, JavaScript <code>fetch</code> and Python
   <code>requests</code>/<code>httpx</code> code, match it to an operation by method and path template, then check what the
   example sends. Each call gets one verdict.</p>
-  <div class="diagram"><svg viewBox="0 0 760 230" width="760" role="img" aria-label="Pipeline from MDX pages to verdicts" style="min-width:640px;max-width:100%">
-    <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#556070"/></marker></defs>
-    <rect class="box" x="10" y="20" width="150" height="50" rx="8"/><text x="85" y="42" text-anchor="middle">MDX pages</text><text x="85" y="58" text-anchor="middle">code blocks</text>
-    <rect class="box" x="210" y="20" width="150" height="50" rx="8"/><text x="285" y="42" text-anchor="middle">calls found</text><text x="285" y="58" text-anchor="middle">method URL body</text>
-    <rect class="box" x="410" y="20" width="150" height="50" rx="8"/><text x="485" y="42" text-anchor="middle">operation match</text><text x="485" y="58" text-anchor="middle">method + template</text>
-    <rect class="out" x="610" y="20" width="140" height="50" rx="8"/><text x="680" y="42" text-anchor="middle">verdict</text><text x="680" y="58" text-anchor="middle">3 verdicts</text>
-    <path class="arrow" d="M160 45H206"/><path class="arrow" d="M360 45H406"/><path class="arrow" d="M560 45H606"/>
-    <rect class="box" x="410" y="140" width="150" height="50" rx="8"/><text x="485" y="162" text-anchor="middle">OpenAPI spec</text><text x="485" y="178" text-anchor="middle">pinned, sha256</text>
-    <path class="arrow" d="M485 140V74"/>
-    <text x="10" y="105">checked per call: path values, query params,</text>
-    <text x="10" y="123">body fields, types, enums, content type</text>
-    <text x="10" y="215">Exit status 1 when any call mismatches, so a docs build can gate on it.</text>
-  </svg></div>
+  <div class="flow" role="img" aria-label="Pipeline from MDX pages to verdicts">
+    <div class="step"><b>MDX pages</b><span>code blocks</span></div>
+    <div class="step"><b>Calls found</b><span>method, URL, body</span></div>
+    <div class="step"><b>Operation match</b><span>method and path template</span></div>
+    <div class="step out"><b>Verdict</b><span>ok, partial, mismatch</span></div>
+  </div>
+  <p class="small muted">Matching reads the pinned OpenAPI spec (sha256 checked). Each call is checked for path values, query parameters, body field names, required fields, types, enum values and content type. Exit status is 1 when any call mismatches, so a docs build can gate on it.</p>
   <ul>
     <li><code>ok</code>: everything the checker can see agrees with the spec.</li>
     <li><code>partial</code>: nothing contradicts the spec, but part of the call could not be read. Not a pass.</li>
