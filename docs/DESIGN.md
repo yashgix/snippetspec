@@ -229,9 +229,9 @@ block from `results/metrics.json`. Rendering fails loudly unless each marker app
 silently half-rewritten README is worse than a failed build. No number is ever typed by hand into the README, which
 is the reason the block exists at all.
 
-## Plugging into Margin's ingest (a hypothesis)
+## Plugging into a docs build (a hypothesis)
 
-Margin's code-example extractor emits records with a language, the source and some options, and deliberately does
+Margin's public code-example extractor emits records with a language, the source and some options, and deliberately does
 not emit `runnable`, because an author's claim would be unvalidated. What this tool produces maps onto that
 record directly: for each extracted example, the calls it found, their page and line, tool, method and URL, the
 matched spec operation, a verdict, and the problems as code-and-location pairs.

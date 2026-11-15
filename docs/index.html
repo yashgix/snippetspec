@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>snippetcheck</title>
+<meta name="description" content="Checks curl, fetch and Python HTTP examples in API documentation against the OpenAPI spec, offline.">
+<style>
+:root { color-scheme: light; --paper: #fff; --band: #f3f5f9; --ink: #16202e; --muted: #556070; --line: #dde3ec;
+  --accent: #1d4ed8; --soft: #e6edfd; --warn: #b45309; --warn-soft: #fdf1e4; --code: #eef1f6;
+  --sans: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1.0625rem/1.65 var(--sans); }
+.wrap { padding-inline: 16px; }
+.col { max-width: 760px; margin-inline: auto; }
+.wide { max-width: 980px; margin-inline: auto; }
+a { color: var(--accent); text-underline-offset: 3px; }
+h1, h2, h3 { line-height: 1.2; margin: 0; text-wrap: balance; }
+h1 { font-family: var(--mono); font-size: clamp(2.2rem, 6vw, 3.2rem); letter-spacing: -0.03em; }
+h2 { font-size: 1.6rem; letter-spacing: -0.015em; }
+h3 { font-size: 1.05rem; }
+p, ul { margin: 0; }
+ul { padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+code { font-family: var(--mono); font-size: 0.88em; background: var(--code); padding: 0.08em 0.35em; border-radius: 4px; overflow-wrap: anywhere; }
+.stack { display: flex; flex-direction: column; gap: 1.1rem; }
+.muted { color: var(--muted); }
+.small { font-size: 0.8125rem; }
+section { padding-block: 2.5rem; border-top: 1px solid var(--line); }
+header { padding-block: 3rem 2rem; background: var(--band); }
+.lede { font-size: 1.25rem; color: var(--muted); line-height: 1.5; }
+.eyebrow { font-family: var(--mono); font-size: 0.8125rem; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+pre { margin: 0; background: var(--band); border: 1px solid var(--line); border-radius: 8px; padding: 0.9rem 1rem; overflow-x: auto; font: 0.82rem/1.55 var(--mono); }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+.tile { border: 1px solid var(--line); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; gap: 0.2rem; }
+.tile b { font: 600 1.6rem var(--mono); font-variant-numeric: tabular-nums; color: var(--accent); }
+.tile.warn b { color: var(--warn); }
+.bars { display: flex; flex-direction: column; gap: 0.5rem; }
+.bar { display: grid; grid-template-columns: 11rem minmax(0, 1fr) 6rem; gap: 0.75rem; align-items: center; }
+.bar .n { font: 0.8125rem var(--mono); overflow-wrap: anywhere; }
+.bar .v { font-size: 0.8125rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.track { height: 20px; background: var(--code); border-radius: 4px; overflow: hidden; }
+.fill { height: 100%; background: var(--accent); }
+.fill.warn { background: var(--warn); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--band); color: var(--muted); font-weight: 500; font-size: 0.8125rem; }
+tr:last-child td { border-bottom: 0; }
+.note { background: var(--warn-soft); border-radius: 12px; padding: 1rem 1.2rem; }
+.diagram { overflow-x: auto; }
+svg text { font-family: ui-monospace, Menlo, monospace; font-size: 13px; fill: #16202e; }
+svg .box { fill: #e6edfd; stroke: #1d4ed8; }
+svg .out { fill: #fdf1e4; stroke: #b45309; }
+svg .arrow { stroke: #556070; fill: none; marker-end: url(#a); }
+@media (max-width: 760px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bar { grid-template-columns: 7rem minmax(0, 1fr) 4.5rem; }
+}
+</style>
+</head>
+<body>
+<header class="wrap"><div class="col stack">
+  <p class="eyebrow">API docs &middot; OpenAPI &middot; offline</p>
+  <h1>snippetcheck</h1>
+  <p class="lede">Checks the curl, fetch and Python HTTP examples in API documentation against the OpenAPI spec. No API calls, no model.</p>
+  <p class="small muted"><a href="https://github.com/yashgix/snippetcheck">github.com/yashgix/snippetcheck</a> &middot; MIT &middot; built with Arcturus (Claude Code builders, Codex review), reviewed and verified by hand</p>
+</div></header>
+
+<main>
+<section class="wrap"><div class="col stack">
+  <h2>The problem</h2>
+  <p>Docs examples drift from the API they describe. In Supermemory's docs history, one commit says the old docs
+  "described a route that has never existed", and a docs PR reports that a namespace-move example sent <code>moveTo</code>
+  in a body the route ignores, "so following the docs permanently deleted the namespace".</p>
+  <p>The question: from the published spec alone, can every HTTP call in a docs site be checked automatically, and would
+  that have caught the drift bugs the docs team later fixed?</p>
+</div></section>
+
+<section class="wrap"><div class="col stack">
+  <h2>Approach</h2>
+  <p>Read MDX pages, find each HTTP call in curl commands, JavaScript <code>fetch</code> and Python
+  <code>requests</code>/<code>httpx</code> code, match it to an operation by method and path template, then check what the
+  example sends. Each call gets one verdict.</p>
+  <div class="diagram"><svg viewBox="0 0 760 230" width="760" role="img" aria-label="Pipeline from MDX pages to verdicts" style="min-width:640px;max-width:100%">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#556070"/></marker></defs>
+    <rect class="box" x="10" y="20" width="150" height="50" rx="8"/><text x="85" y="42" text-anchor="middle">MDX pages</text><text x="85" y="58" text-anchor="middle">code blocks</text>
+    <rect class="box" x="210" y="20" width="150" height="50" rx="8"/><text x="285" y="42" text-anchor="middle">calls found</text><text x="285" y="58" text-anchor="middle">method URL body</text>
+    <rect class="box" x="410" y="20" width="150" height="50" rx="8"/><text x="485" y="42" text-anchor="middle">operation match</text><text x="485" y="58" text-anchor="middle">method + template</text>
+    <rect class="out" x="610" y="20" width="140" height="50" rx="8"/><text x="680" y="42" text-anchor="middle">verdict</text><text x="680" y="58" text-anchor="middle">3 verdicts</text>
+    <path class="arrow" d="M160 45H206"/><path class="arrow" d="M360 45H406"/><path class="arrow" d="M560 45H606"/>
+    <rect class="box" x="410" y="140" width="150" height="50" rx="8"/><text x="485" y="162" text-anchor="middle">OpenAPI spec</text><text x="485" y="178" text-anchor="middle">pinned, sha256</text>
+    <path class="arrow" d="M485 140V74"/>
+    <text x="10" y="105">checked per call: path values, query params,</text>
+    <text x="10" y="123">body fields, types, enums, content type</text>
+    <text x="10" y="215">Exit status 1 when any call mismatches, so a docs build can gate on it.</text>
+  </svg></div>
+  <ul>
+    <li><code>ok</code>: everything the checker can see agrees with the spec.</li>
+    <li><code>partial</code>: nothing contradicts the spec, but part of the call could not be read. Not a pass.</li>
+    <li><code>mismatch</code>: at least one problem, such as an unknown path, a missing or undocumented field, or a wrong type.</li>
+  </ul>
+</div></section>
+
+<section class="wrap"><div class="wide stack">
+  <h2>Results on Supermemory's docs</h2>
+  <p class="small muted">Every number below is filled in from <code>results/metrics.json</code> and <code>results/holdout.json</code> by <code>tools/build_page.py</code>.</p>
+  <div class="tiles">
+    <div class="tile"><b>147</b><span>pages scanned, 1018 code examples</span></div>
+    <div class="tile"><b>148</b><span>HTTP calls found, 124 ok, 24 mismatch</span></div>
+    <div class="tile"><b>10 of 11</b><span>findings are endpoints the specs do not describe (1 unconfirmed)</span></div>
+    <div class="tile"><b>15 of 15</b><span>real docs fixes flagged before, clean after</span></div>
+  </div>
+  <h3>Seeded drift: the spec is changed one thing at a time</h3>
+  <div class="bars"><div class="bar"><span class="n">remove_operation</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">124 of 124</span></div><div class="bar"><span class="n">rename_field</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">80 of 80</span></div><div class="bar"><span class="n">add_required</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">45 of 45</span></div><div class="bar"><span class="n">rename_param</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">34 of 34</span></div><div class="bar"><span class="n">drop_enum_value</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">25 of 25</span></div><div class="bar"><span class="n">add_optional (neutral)</span><span class="track"><span class="fill warn" style="display:block;width:0.0%"></span></span><span class="v">0 flagged of 57</span></div><div class="bar"><span class="n">add_enum_value (neutral)</span><span class="track"><span class="fill warn" style="display:block;width:0.0%"></span></span><span class="v">0 flagged of 42</span></div></div>
+  <p class="small muted">Neutral changes (an optional field or enum value added) flagged 0 of 99.
+  Breaking changes caught: 308 of 308.</p>
+  <div class="note"><b>How much this proves.</b> The mutations are derived from what each example sends, so catching
+  all of them is close to a property of the construction. It shows sensitivity, not discovery. Also, 12 of
+  the 15 ledger cases are one bug class (options sent as query parameters), so the ledger shows the
+  problems are real and catchable, not how often the checker is right.</div>
+</div></section>
+
+<section class="wrap"><div class="wide stack">
+  <h2>Second API: Meilisearch, a hold-out</h2>
+  <p>Meilisearch's published spec and 245 docs samples (both MIT) were pinned, and 24 hand-broken
+  cases were written from the spec and frozen before the checker ran on them (<code>study/holdout_cases.sha256</code>).</p>
+  <div class="tiles">
+    <div class="tile"><b>24 of 24</b><span>hand-broken cases caught</span></div>
+    <div class="tile warn"><b>114 of 216</b><span>working samples flagged</span></div>
+    <div class="tile"><b>2</b><span>unreadable curl commands (unclosed quote)</span></div>
+    <div class="tile"><b>1</b><span>partial verdict</span></div>
+  </div>
+  <h3>Recall by kind of change</h3>
+  <div class="bars"><div class="bar"><span class="n">body-field</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">5 of 5</span></div><div class="bar"><span class="n">body-type</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">4 of 4</span></div><div class="bar"><span class="n">method</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">3 of 3</span></div><div class="bar"><span class="n">placement</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">2 of 2</span></div><div class="bar"><span class="n">query</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">5 of 5</span></div><div class="bar"><span class="n">route</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">5 of 5</span></div></div>
+  <h3>Why so many clean samples are flagged</h3>
+  <div class="bars"><div class="bar"><span class="n">missing_field</span><span class="track"><span class="fill warn" style="display:block;width:100.0%"></span></span><span class="v">64 calls</span></div><div class="bar"><span class="n">missing_body</span><span class="track"><span class="fill warn" style="display:block;width:35.9%"></span></span><span class="v">23 calls</span></div><div class="bar"><span class="n">undocumented_field</span><span class="track"><span class="fill warn" style="display:block;width:28.1%"></span></span><span class="v">18 calls</span></div><div class="bar"><span class="n">missing_param</span><span class="track"><span class="fill warn" style="display:block;width:20.3%"></span></span><span class="v">13 calls</span></div><div class="bar"><span class="n">type</span><span class="track"><span class="fill warn" style="display:block;width:7.8%"></span></span><span class="v">5 calls</span></div><div class="bar"><span class="n">content_type</span><span class="track"><span class="fill warn" style="display:block;width:6.2%"></span></span><span class="v">4 calls</span></div><div class="bar"><span class="n">enum</span><span class="track"><span class="fill warn" style="display:block;width:6.2%"></span></span><span class="v">4 calls</span></div><div class="bar"><span class="n">method_not_allowed</span><span class="track"><span class="fill warn" style="display:block;width:1.6%"></span></span><span class="v">1 calls</span></div><div class="bar"><span class="n">unexpected_body</span><span class="track"><span class="fill warn" style="display:block;width:1.6%"></span></span><span class="v">1 calls</span></div></div>
+  <div class="note"><b>Runtime not confirmed.</b> In the flags sampled, the cause is the generated spec disagreeing with
+  its own docs: many fields listed as required that the samples omit, snake case against camel case, a
+  <code>text/plain</code> body type, capitalised enums, repeated query parameters against comma lists. The checker
+  applies the spec as written. No sample was run against a server, so which side is right is unknown. Recall on the
+  hand-broken cases is the same easy kind of test as the seeded drift.</div>
+</div></section>
+
+<section class="wrap"><div class="col stack">
+  <h2>What v2 changed and why</h2>
+  <p>The build from the written spec (v1) first failed some of the 38 acceptance tests and passes all of them after fixes. After that:</p>
+  <ul>
+    <li>A quoting error now skips only the bad command, and unreadable commands are reported, not dropped.</li>
+    <li>A trailing backslash at the end of a block is ignored. This came from reading the first hold-out output.</li>
+    <li>After an independent code review: explicit <code>Content-Type</code> is checked, <code>fetch</code> is found only in
+    code (not comments or strings), every URL of a curl command is a call, and requests/httpx follow their own body and
+    query rules.</li>
+  </ul>
+  <p>The parser changed after the first hold-out run and after review. The 24 cases stayed frozen, nothing was tuned to
+  flag more or fewer samples, and the review changes did not move the hold-out counts. Details are in <code>SPEC-v2.md</code>.</p>
+</div></section>
+
+<section class="wrap"><div class="col stack">
+  <h2>Limitations</h2>
+  <ul>
+    <li>SDK examples are not checked, and they are the largest share of code blocks.</li>
+    <li>A URL that is not a literal (a variable, a relative path) is not seen, so it is neither checked nor counted.</li>
+    <li>Only the spec is checked. A spec-gap finding means the docs show an endpoint the spec lacks, not that it is dead.
+    A clean result does not mean the example works.</li>
+    <li>When a concrete path exists without the call's method, the checker falls back to a templated path (for example
+    <code>GET /items/search</code> reaches <code>GET /items/{id}</code>). OpenAPI's rule would report a method mismatch.
+    It follows the v1 spec and is left as it is.</li>
+    <li>No real, later-fixed docs bugs were collected for the second API.</li>
+    <li>Ledger cases are replayed against today's spec, not the spec of their day.</li>
+  </ul>
+</div></section>
+
+<section class="wrap"><div class="col stack">
+  <h2>Reproduce</h2>
+  <pre>git clone https://github.com/yashgix/snippetcheck &amp;&amp; cd snippetcheck
+python3 tools/fetch_data.py      # Supermemory's two specs state no license, so they are fetched, not shipped
+make test experiment holdout     # Python 3.14, no packages</pre>
+  <p>Supermemory docs and Meilisearch's spec and docs are MIT and kept with their license files. The code is MIT.</p>
+</div></section>
+</main>
+<footer class="wrap"><div class="col small muted" style="padding-block:1.5rem 3rem">snippetcheck &middot; page generated by <code>tools/build_page.py</code></div></footer>
+</body>
+</html>

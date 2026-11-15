@@ -1,26 +1,37 @@
 # snippetcheck
 
-Checks every HTTP call in a docs site's code examples against the site's OpenAPI spec: offline, with no API calls
-and no model.
+Checks the curl, JavaScript `fetch` and Python `requests`/`httpx` examples in API documentation against the OpenAPI
+spec. Offline, with no API calls and no model.
 
-It reads MDX pages the way Margin's extractor groups them, finds the curl commands, JavaScript `fetch` calls and
-Python `requests`/`httpx` calls inside each code example, matches each call to a spec operation by method and path
-template, and then checks what the example actually sends: path values, query parameters, and the request body's
-field names, required fields, types and enum values. Every call gets a verdict with the exact problems behind it,
-in a shape that can sit next to a docs code example record and gate a docs build: `python -m snippetcheck` exits
-non-zero as soon as one example contradicts the spec.
+Write-up with a diagram and charts: https://yashgix.github.io/snippetcheck/
+
+It reads MDX pages, finds each HTTP call inside the code examples, matches it to a spec operation by method and path
+template, and then checks what the example sends: path values, query parameters, and the request body's field names,
+required fields, types and enum values. Every call gets a verdict with the exact problems behind it, and
+`python -m snippetcheck` exits non-zero as soon as one example contradicts the spec, so it can gate a docs build.
+
+Main result, with its qualifier: on Supermemory's docs it flags all 15 real docs fixes from their history at the
+buggy commit and none at the fixed one, and today's docs hold 11 findings, 10 of them endpoints the pinned specs do not
+describe. That is a sensitivity check on bugs found while building the tool, not an accuracy estimate. On a second
+API (Meilisearch) it caught all 24 hand-broken examples, but 114 of 216 untouched working examples are flagged because
+the spec is stricter than its own docs (runtime not confirmed).
+
+```text
+$ python -m snippetcheck data/docs/authentication.mdx
+data/docs/authentication.mdx:69 #0 POST /auth/scoped-key mismatch unknown_path /auth/scoped-key
+data/docs/authentication.mdx:114 #0 DELETE /auth/scoped-key/KEY_ID mismatch unknown_path /auth/scoped-key/KEY_ID
+3 calls: 1 ok, 0 partial, 2 mismatch
+```
 
 ## Why this exists
 
-Margin's public code-example extractor (https://github.com/maniculehq/margin/blob/main/src/ingest/code-examples.ts) says `runnable` is "deliberately NOT emitted (it would be an unvalidated author claim)".
-
-Supermemory's own docs history shows a failure of this shape, in its own words: one commit (short sha `1af9dbc`)
-says the old docs "described a route that has never existed", and a docs PR (#1811) reports that a namespace-move
-example sent `moveTo` in a body the route ignores, "so following the docs permanently deleted the namespace".
-
-So: from the published spec alone, can every HTTP call in a docs site be checked automatically, and would that have
-caught the drift bugs the docs team later fixed? This milestone answers with three measurements, and it states its
-limits rather than modelling them away.
+Docs examples drift from the API they describe. Supermemory's docs history shows it in its own words: one commit
+(short sha `1af9dbc`) says the old docs "described a route that has never existed", and a docs PR (#1811) reports that
+a namespace-move example sent `moveTo` in a body the route ignores, "so following the docs permanently deleted the
+namespace". The question here: from the published spec alone, can every HTTP call in a docs site be checked
+automatically, and would that have caught the drift bugs the docs team later fixed? The extractor groups code blocks
+the way Margin's does (https://github.com/maniculehq/margin/blob/main/src/ingest/code-examples.ts), so its output can
+sit next to a docs code-example record.
 
 ## What it measures
 
@@ -29,7 +40,7 @@ limits rather than modelling them away.
 2. **Ledger replay.** Real fix commits from the docs repo: each case must be flagged at the buggy version and clean
    at the fixed version (`study/ledger.json`, replayed from `data/history/`).
 3. **Seeded drift.** The spec is changed one thing at a time (an operation removed, a field or parameter renamed, a
-   field made required, an enum value dropped) and each real clean example is re-checked; neutral changes (an
+   field made required, an enum value dropped) and each real clean example is re-checked. Neutral changes (an
    optional field added, an enum value added) must flag nothing.
 
 ## Results
@@ -58,14 +69,15 @@ limits rather than modelling them away.
 <!-- /snippetcheck:results -->
 
 That table is generated: `experiment.py` writes `results/metrics.json`, then `demo.py --readme README.md` replaces
-the block between the two markers. No result number in this file is typed by hand.
+the block between the two markers. The tables are generated. The numbers in the summary at the top are copied from them.
 
 ## Running it
 
-The Makefile calls the system `python3`. Run it inside the `ml-py314` environment (Python 3.14), or with any
-Python 3.14 interpreter on `PATH`.
+Needs Python 3.14 and no packages (`ruff` for `make lint`). The Makefile calls `python3`. The two Supermemory specs
+are not in the repository (see Data and licenses), so fetch them once first:
 
 ```bash
+python3 tools/fetch_data.py   # rebuilds data/openapi/ and checks every pinned file against data/MANIFEST.json
 make holdout      # python3 -m snippetcheck.holdout, writes results/holdout.json
 make test         # own tests (tests/) and v1 acceptance tests (tests/acceptance/)
 make lint         # ruff check + format check
@@ -73,6 +85,7 @@ make data-check   # sha256 of every pinned file against data/MANIFEST.json
 make experiment   # python3 experiment.py --out results/metrics.json
 make readme       # python3 demo.py --readme README.md --out README.md
 make check        # python3 -m snippetcheck over data/docs
+python3 tools/build_page.py   # rebuilds docs/index.html from results/
 ```
 
 Directly:
@@ -118,14 +131,18 @@ one. `operation` may be `null`, which is how the cases about a route that never 
 ## Limits, stated plainly
 
 - **SDK examples are not checked.** `client.documents.add(...)`, `withSupermemory(...)` and friends are the largest
-  share of the docs' code blocks; mapping SDK methods to operations is out of scope for this milestone.
+  share of the docs' code blocks. Mapping SDK methods to operations is out of scope for this milestone.
 - **Only found calls are counted.** A URL that is not a literal (`${BASE}/search`, a `baseUrl` variable, a relative
   `fetch('/search')`) is not a call the checker sees, so it is neither checked nor counted in the totals.
 - **Only the spec's contract is checked.** Nothing here calls the API, so a spec-gap finding means the docs present
-  an endpoint the pinned specs do not describe; it does not mean the endpoint is dead or wrong. A clean result does
+  an endpoint the pinned specs do not describe. It does not mean the endpoint is dead or wrong. A clean result does
   not mean the example would work — only that it does not contradict the spec.
 - **Value semantics are out of reach.** A filter expression passed as a JSON string, a nested object whose shape the
   spec leaves open, an SDK call's options: all invisible or unchecked here.
+- **Method-filtered path matching.** When a concrete path exists without the call's method (for example
+  `/items/search` only has POST and the call is `GET /items/search`), the checker falls back to a templated path
+  (`/items/{id}`). OpenAPI's matching rule would match the concrete path first and report a method mismatch. The
+  fallback comes from the v1 spec and an acceptance test, and is left as it is. It can hide a wrong-method call.
 - **The ledger is replayed against today's spec**, not the spec of each case's own day (one spec snapshot per
   version is pinned).
 
@@ -183,7 +200,7 @@ How to read it:
 
 ### Honesty about the numbers
 
-The ledger cases were found while exploring the docs history with an early version of this checker; the selection
+The ledger cases were found while exploring the docs history with an early version of this checker. The selection
 rule was written down afterwards. The cases come from a handful of fix commits, most of them bugs introduced by one
 migration commit and of one kind (options sent as query parameters instead of a JSON body). So the ledger's recall
 shows that these problems are real and catchable — it is not an accuracy or recall estimate for the checker.
@@ -198,20 +215,20 @@ other half — that changes which should not break an example produce no finding
 
 ## Data and licenses
 
-The pinned data under `data/` is never modified by this repo. Two files are not republished:
+The code is MIT (`LICENSE`). The pinned data under `data/` is never modified by this repo.
 
-- `data/docs/` — the docs pages at a pinned commit of the docs repository, MIT licensed (see `data/docs/LICENSE`).
-- `data/history/` — earlier versions of a few of those pages, same license, used only for the ledger replay.
-- `data/openapi/v4.json` and `data/openapi/v5.json` — the two public specs the docs reference. They state no
-  license, so they are not redistributed: they are left out of the public copy of this repository, and
-  `python tools/fetch_data.py` downloads them again and checks them against `data/MANIFEST.json`. Until you do that,
-  the experiment and the tests that need them cannot run. The live specs may have changed since the pinned fetch, in
-  which case the check reports a mismatch instead of hiding it. Code, docs and tests may name their paths, fields and
-  counts.
-- `data/holdout/` — Meilisearch's spec and docs samples, both MIT (licenses beside them), rebuilt by
-  `tools/fetch_holdout.py`.
-- `data/MANIFEST.json` — bytes and sha256 of every pinned file; `make data-check` verifies them. Credential-shaped
+- `data/docs/` and `data/history/` — Supermemory's docs pages at a pinned commit, and earlier versions of ten of them
+  for the ledger replay. MIT, copyright supermemory (`data/docs/LICENSE`).
+- `data/holdout/` — Meilisearch's OpenAPI spec and docs code samples, both MIT, with their license files beside them
+  (`data/holdout/spec/LICENSE`, `data/holdout/docs/LICENSE`). Rebuilt by `tools/fetch_holdout.py`.
+- `data/openapi/v4.json` and `data/openapi/v5.json` — Supermemory's two public API specs. They state no license, so
+  they are not in this repository or its history. `python3 tools/fetch_data.py` downloads them and checks sha256 against
+  `data/MANIFEST.json`. The live specs may change, in which case the check reports a mismatch instead of hiding it.
+  Until you fetch them, the experiment and the tests that need them cannot run.
+- `data/MANIFEST.json` — bytes and sha256 of every pinned file. `make data-check` verifies them. Credential-shaped
   placeholders in the fetched docs were replaced on the same line, so line numbers match upstream.
 
-No network access, no model calls and no randomness anywhere in the tests or the experiment, so the whole thing
-runs in seconds and gives the same answer twice.
+No network access, no model calls and no randomness anywhere in the tests or the experiment (only the fetch scripts
+use the network), so the whole thing runs in seconds and gives the same answer twice.
+
+Built with Arcturus (Claude Code builders, Codex review). Reviewed and verified by hand.

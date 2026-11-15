@@ -1,6 +1,6 @@
-# SPEC v2: what changed after the v1 build, and why
+# Spec v2: what changed after the v1 build, and why
 
-`SPEC.md` (v1) is unchanged. The 38 v1 acceptance tests in `tests/acceptance/` still run and pass.
+The v1 specification (not published here) is unchanged. The 38 v1 acceptance tests in `tests/acceptance/` still run and pass.
 
 ## Fixes that bring the build to v1
 - Double quotes are tracked when a shell block is split into commands (v1 text: "quoted newlines stay inside a word").
@@ -30,7 +30,7 @@
   httpx, bool text differs (`True` vs `true`). Sources are named in `docs/DESIGN.md`.
 - NOT changed: matching the concrete path before filtering by method. The review is right about OpenAPI path templating
   but v1 and an acceptance test (`GET /items/search/` must reach `GET /items/{id}` when `/items/search` only has POST)
-  require the method to filter first. Left as it is and listed as a limit. Yash decides whether to break v1 here.
+  require the method to filter first. Left as it is and listed as a limit.
 - Effect: the v1 numbers are unchanged. On the hold-out, calls, flagged calls, unreadable commands and recall are
   unchanged (216, 114, 2, 24 of 24). Four findings only changed text from `body:json` to `body:application/json`.
   The hold-out cases were not edited. These parser changes came from reading the code, not from the hold-out results,
