@@ -11,6 +11,7 @@ jobs:
         with:
           python-version: "3.14"
       - run: pip install ruff
+      - run: python tools/fetch_data.py
       - run: make lint
       - run: make test
       - run: make data-check
