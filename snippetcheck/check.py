@@ -10,8 +10,8 @@ from snippetcheck.jsread import UNKNOWN
 from snippetcheck.spec import Operation, body_schemas, deref, match, params, segments
 
 PLACEHOLDER_CHARACTERS = frozenset("${}<>")
-INTEGER = re.compile(r"-?[0-9]+")
-NUMBER = re.compile(r"-?[0-9]+(?:[.][0-9]+)?")
+INTEGER = re.compile(r"-?\d+")
+NUMBER = re.compile(r"-?\d+(?:\.\d+)?")
 JSON = "application/json"
 FORM_TYPES = ("multipart/form-data", "application/x-www-form-urlencoded")
 
@@ -253,7 +253,7 @@ def _body_problems(spec: dict, operation: Operation, call: Call) -> list[tuple[s
     if call.body_kind == "form":
         return _form_problems(schema, call.body)
     if call.body_kind == "json":
-        return validate(spec, schema, call.body)
+        return validate(spec, schema, call.body, "body")
     return []
 
 
@@ -276,7 +276,7 @@ def _media_type(schemas: dict, kind: str) -> tuple[str | None, tuple[str, str] |
 
 
 def _form_problems(schema: object, body: object) -> list[tuple[str, str]]:
-    """Missing required and undocumented field names of a form body; values are not checked."""
+    """Missing required and undocumented field names of a form body; its values are not checked."""
     if not isinstance(schema, dict) or not isinstance(schema.get("properties"), dict):
         return []
     if not isinstance(body, dict):
@@ -286,9 +286,9 @@ def _form_problems(schema: object, body: object) -> list[tuple[str, str]]:
     problems = []
     for name in required if isinstance(required, list) else []:
         if name not in body:
-            problems.append(("missing_field", f"$.{name}"))
+            problems.append(("missing_field", f"body.{name}"))
     additional = schema.get("additionalProperties")
     for name in body:
         if name not in properties and additional is not True and not isinstance(additional, dict):
-            problems.append(("undocumented_field", f"$.{name}"))
+            problems.append(("undocumented_field", f"body.{name}"))
     return problems
