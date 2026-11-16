@@ -14,8 +14,8 @@ Main result, with its qualifier: on Supermemory's docs it flags all 15 real docs
 buggy commit and none at the fixed one, and today's docs hold 11 findings, 10 of them endpoints the pinned specs do not
 describe. That is a sensitivity check on bugs found while building the tool, not an accuracy estimate. On a second
 API (Meilisearch) it caught all 24 hand-broken examples, but 114 of 216 untouched published examples (53%) are
-flagged, in the flags sampled because the spec is stricter than its own docs (runtime not confirmed). If those docs
-are right, that is a 53% false-positive rate on that spec.
+flagged. In the flags sampled, the cause is that the spec is stricter than its own docs (runtime not confirmed). If
+those docs are right, that is a 53% false-positive rate on that spec.
 
 ```text
 $ python -m snippetcheck data/docs/authentication.mdx
