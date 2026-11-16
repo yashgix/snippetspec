@@ -5,7 +5,7 @@ spec. Offline, with no API calls and no model.
 
 Write-up with a diagram and charts: https://yashgix.github.io/snippetspec/
 
-Renamed from `snippetcheck` on 16 Nov 2026. Frozen specs and git tags keep the old name.
+Renamed from `snippetcheck` on 16 Nov 2026. Frozen files and git tags keep the old name.
 
 It reads MDX pages, finds each HTTP call inside the code examples, matches it to a spec operation by method and path
 template, and then checks what the example sends: path values, query parameters, and the request body's field names,
