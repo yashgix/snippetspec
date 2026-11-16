@@ -13,8 +13,9 @@ required fields, types and enum values. Every call gets a verdict with the exact
 Main result, with its qualifier: on Supermemory's docs it flags all 15 real docs fixes from their history at the
 buggy commit and none at the fixed one, and today's docs hold 11 findings, 10 of them endpoints the pinned specs do not
 describe. That is a sensitivity check on bugs found while building the tool, not an accuracy estimate. On a second
-API (Meilisearch) it caught all 24 hand-broken examples, but 114 of 216 untouched working examples are flagged because
-the spec is stricter than its own docs (runtime not confirmed).
+API (Meilisearch) it caught all 24 hand-broken examples, but 114 of 216 untouched published examples (53%) are
+flagged, in the flags sampled because the spec is stricter than its own docs (runtime not confirmed). If those docs
+are right, that is a 53% false-positive rate on that spec.
 
 ```text
 $ python -m snippetcheck data/docs/authentication.mdx
@@ -189,6 +190,9 @@ How to read it:
   and expects repeated query parameters where the samples use comma lists. The checker applies the spec as written.
   I did not run any sample against a Meilisearch server, so I cannot say which side is right. A spec like this would
   make the checker noisy until its required lists are fixed.
+- **The false-positive rate on this spec is high.** If the published samples are right, 114 of 216 (53%) are false
+  alarms. None of the 114 is confirmed either way. `docs/MISMATCH-SPLIT.md` is a post-hoc split of the flagged calls
+  on both APIs, kept apart from the method.
 - **The parser changed after the first hold-out run, and again after an independent review.** One fix (a trailing
   backslash at the end of a block) came from reading the first hold-out output. The review fixes (explicit
   Content-Type, comments and strings in JavaScript, every URL in a curl command, requests and httpx body and query

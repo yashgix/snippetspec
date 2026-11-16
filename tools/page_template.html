@@ -122,7 +122,7 @@ tr:last-child td { border-bottom: 0; }
   cases were written from the spec and frozen before the checker ran on them (<code>study/holdout_cases.sha256</code>).</p>
   <div class="tiles">
     <div class="tile"><b>{{h_caught}} of {{h_cases}}</b><span>hand-broken cases caught</span></div>
-    <div class="tile warn"><b>{{h_mismatch}} of {{h_calls}}</b><span>working samples flagged</span></div>
+    <div class="tile warn"><b>{{h_mismatch}} of {{h_calls}}</b><span>published samples flagged ({{h_mismatch_pct}}%)</span></div>
     <div class="tile"><b>{{h_unparsed}}</b><span>unreadable curl commands (unclosed quote)</span></div>
     <div class="tile"><b>{{h_partial}}</b><span>partial verdict</span></div>
   </div>
@@ -135,6 +135,11 @@ tr:last-child td { border-bottom: 0; }
   <code>text/plain</code> body type, capitalised enums, repeated query parameters against comma lists. The checker
   applies the spec as written. No sample was run against a server, so which side is right is unknown. Recall on the
   hand-broken cases is the same easy kind of test as the seeded drift.</div>
+  <div class="note"><b>False-positive rate.</b> If the published samples are right, {{h_mismatch_pct}}% of them
+  ({{h_mismatch}} of {{h_calls}}) are false alarms on this spec. That is too noisy to gate a docs build on this spec
+  as it stands. On Supermemory, hand triage found {{triage_false_positive}} of {{findings}} findings false, but none was
+  a confirmed snippet bug either: {{triage_spec_gap}} are endpoints the specs do not describe. The post-hoc split is in
+  <code>docs/MISMATCH-SPLIT.md</code>.</div>
 </div></section>
 
 <section class="wrap"><div class="col stack">
@@ -160,7 +165,7 @@ tr:last-child td { border-bottom: 0; }
     A clean result does not mean the example works.</li>
     <li>When a concrete path exists without the call's method, the checker falls back to a templated path (for example
     <code>GET /items/search</code> reaches <code>GET /items/{id}</code>). OpenAPI's rule would report a method mismatch.
-    It follows the v1 spec and is left as it is.</li>
+    It follows the v1 spec and is left as it is. It can hide a wrong-method call.</li>
     <li>No real, later-fixed docs bugs were collected for the second API.</li>
     <li>Ledger cases are replayed against today's spec, not the spec of their day.</li>
   </ul>

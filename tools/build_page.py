@@ -70,6 +70,7 @@ def values(metrics, holdout, ledger):
         "h_caught": holdout["caught"],
         "h_calls": holdout["calls"],
         "h_mismatch": holdout["calls_mismatch"],
+        "h_mismatch_pct": round(100 * holdout["calls_mismatch"] / holdout["calls"]),
         "h_partial": holdout["calls_partial"],
         "h_unparsed": holdout["unparsed_commands"],
     }
