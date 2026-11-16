@@ -5,14 +5,14 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from snippetcheck.data import ROOT, load_json
-from snippetcheck.metrics import findings
+from snippetspec.data import ROOT, load_json
+from snippetspec.metrics import findings
 
 RESULTS = ROOT / "results"
-START = "<!-- snippetcheck:results -->"
-END = "<!-- /snippetcheck:results -->"
-HOLDOUT_START = "<!-- snippetcheck:holdout -->"
-HOLDOUT_END = "<!-- /snippetcheck:holdout -->"
+START = "<!-- snippetspec:results -->"
+END = "<!-- /snippetspec:results -->"
+HOLDOUT_START = "<!-- snippetspec:holdout -->"
+HOLDOUT_END = "<!-- /snippetspec:holdout -->"
 HOLDOUT_COLUMNS = ("pages", "calls", "calls_mismatch", "unparsed_commands", "cases", "caught")
 COLUMNS = (
     "pages",
@@ -46,7 +46,7 @@ def table(metrics: dict) -> str:
 def _replace_block(text: str, start_marker: str, end_marker: str, body: str) -> str:
     """Replace the text between two markers, keeping both markers on their own lines."""
     if text.count(start_marker) != 1 or text.count(end_marker) != 1:
-        raise ValueError("README needs exactly one snippetcheck results block")
+        raise ValueError("README needs exactly one snippetspec results block")
     start = text.index(start_marker)
     end = text.index(end_marker)
     if end < start:

@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import date, datetime
 from pathlib import Path
 
-from snippetcheck.report import scan
+from snippetspec.report import scan
 
 
 def problem_ids(rows: list[dict]) -> set[tuple[str, str | None, str, str]]:

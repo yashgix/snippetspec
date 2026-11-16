@@ -8,9 +8,9 @@ import json
 from collections import Counter
 from pathlib import Path
 
-from snippetcheck.data import DATA, STUDY, load_json
-from snippetcheck.history import problem_ids
-from snippetcheck.report import scan
+from snippetspec.data import DATA, STUDY, load_json
+from snippetspec.history import problem_ids
+from snippetspec.report import scan
 
 HOLDOUT = DATA / "holdout"
 HOST = "ms.example"

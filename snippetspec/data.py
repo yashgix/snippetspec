@@ -1,4 +1,4 @@
-"""Pinned data locations and loaders used by snippetcheck."""
+"""Pinned data locations and loaders used by snippetspec."""
 
 from __future__ import annotations
 

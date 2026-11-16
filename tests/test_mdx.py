@@ -1,7 +1,7 @@
 import unittest
 from dataclasses import FrozenInstanceError
 
-from snippetcheck.mdx import Example, extract
+from snippetspec.mdx import Example, extract
 
 
 def codes(examples):

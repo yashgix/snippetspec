@@ -1,6 +1,6 @@
 import unittest
 
-from snippetcheck.report import page_calls, scan
+from snippetspec.report import page_calls, scan
 
 
 def page(code: str) -> dict[str, str]:

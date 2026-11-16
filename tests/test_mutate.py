@@ -1,8 +1,8 @@
 import unittest
 
-from snippetcheck.calls import Call
-from snippetcheck.mutate import BREAKING, NEUTRAL, apply, mutations, run
-from snippetcheck.spec import operations
+from snippetspec.calls import Call
+from snippetspec.mutate import BREAKING, NEUTRAL, apply, mutations, run
+from snippetspec.spec import operations
 
 
 def spec() -> dict:

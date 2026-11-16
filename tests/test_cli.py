@@ -5,7 +5,7 @@ import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
 
-from snippetcheck.__main__ import main
+from snippetspec.__main__ import main
 
 
 def write_page(folder: Path, name: str, url: str) -> Path:

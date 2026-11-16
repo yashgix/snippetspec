@@ -9,8 +9,8 @@ import shlex
 from dataclasses import dataclass
 from urllib.parse import parse_qsl, quote_plus, urlsplit
 
-from snippetcheck.jsread import UNKNOWN, property_source, read_object, skip, value_at
-from snippetcheck.mdx import Example
+from snippetspec.jsread import UNKNOWN, property_source, read_object, skip, value_at
+from snippetspec.mdx import Example
 
 SHELL = frozenset({"bash", "sh", "shell", "zsh", "console", "terminal"})
 JAVASCRIPT = frozenset({"javascript", "js", "jsx", "typescript", "ts", "tsx"})

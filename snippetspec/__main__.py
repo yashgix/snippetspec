@@ -8,13 +8,13 @@ import sys
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from snippetcheck.data import DATA, load_pages, load_specs
-from snippetcheck.report import scan
+from snippetspec.data import DATA, load_pages, load_specs
+from snippetspec.report import scan
 
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="snippetcheck",
+        prog="snippetspec",
         description="Check the HTTP calls in API docs code examples against the OpenAPI specs.",
     )
     parser.add_argument("pages", nargs="*", metavar="PAGE", help=".mdx page to scan")

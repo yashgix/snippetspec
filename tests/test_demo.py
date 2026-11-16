@@ -7,7 +7,7 @@ from pathlib import Path
 
 from demo import COLUMNS, HOLDOUT_COLUMNS, holdout_table, main, render, render_holdout, table
 
-PAGE = "# Title\n\n<!-- snippetcheck:results -->\nold row\n<!-- /snippetcheck:results -->\n\ntail\n"
+PAGE = "# Title\n\n<!-- snippetspec:results -->\nold row\n<!-- /snippetspec:results -->\n\ntail\n"
 
 
 def metrics() -> dict:
@@ -43,19 +43,19 @@ class HoldoutTableTest(unittest.TestCase):
         self.assertEqual(lines[-1], "| recall, route | 2 of 3 |")
 
     def test_block_is_replaced_between_its_own_markers(self):
-        page = "a\n<!-- snippetcheck:holdout -->\nstale\n<!-- /snippetcheck:holdout -->\nb\n"
+        page = "a\n<!-- snippetspec:holdout -->\nstale\n<!-- /snippetspec:holdout -->\nb\n"
         summary = dict.fromkeys(HOLDOUT_COLUMNS, 1)
         summary["by_kind"] = {}
         rendered = render_holdout(page, summary)
         self.assertNotIn("stale", rendered)
-        self.assertTrue(rendered.endswith("<!-- /snippetcheck:holdout -->\nb\n"))
+        self.assertTrue(rendered.endswith("<!-- /snippetspec:holdout -->\nb\n"))
 
 
 class RenderTest(unittest.TestCase):
     def test_block_is_replaced_and_markers_kept(self):
         rendered = render(PAGE, metrics())
-        self.assertTrue(rendered.startswith("# Title\n\n<!-- snippetcheck:results -->\n| metric | value |\n"))
-        self.assertTrue(rendered.endswith("<!-- /snippetcheck:results -->\n\ntail\n"))
+        self.assertTrue(rendered.startswith("# Title\n\n<!-- snippetspec:results -->\n| metric | value |\n"))
+        self.assertTrue(rendered.endswith("<!-- /snippetspec:results -->\n\ntail\n"))
         self.assertNotIn("old row", rendered)
 
     def test_text_outside_the_block_is_left_alone(self):
@@ -72,7 +72,7 @@ class RenderTest(unittest.TestCase):
 
     def test_end_before_start_is_rejected(self):
         with self.assertRaises(ValueError):
-            render("<!-- /snippetcheck:results -->\n<!-- snippetcheck:results -->\n", metrics())
+            render("<!-- /snippetspec:results -->\n<!-- snippetspec:results -->\n", metrics())
 
 
 class MainTest(unittest.TestCase):
@@ -87,7 +87,7 @@ class MainTest(unittest.TestCase):
             text = out.read_text(encoding="utf-8")
         self.assertEqual(code, 0)
         self.assertIn("| pages | 1 |", text)
-        self.assertIn("<!-- /snippetcheck:results -->", text)
+        self.assertIn("<!-- /snippetspec:results -->", text)
         self.assertNotIn("old row", text)
 
     def test_out_defaults_to_the_readme(self):

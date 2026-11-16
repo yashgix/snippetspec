@@ -1,8 +1,8 @@
 import hashlib
 import unittest
 
-from snippetcheck.data import STUDY, load_json
-from snippetcheck.holdout import HOLDOUT, break_page, evaluate, holdout, load_holdout
+from snippetspec.data import STUDY, load_json
+from snippetspec.holdout import HOLDOUT, break_page, evaluate, holdout, load_holdout
 
 CASES = load_json(STUDY / "holdout_cases.json")["cases"]
 PAGES, SPECS = load_holdout()

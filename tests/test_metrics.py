@@ -1,6 +1,6 @@
 import unittest
 
-from snippetcheck.metrics import CODES, findings, ratio
+from snippetspec.metrics import CODES, findings, ratio
 
 
 class FindingsTest(unittest.TestCase):

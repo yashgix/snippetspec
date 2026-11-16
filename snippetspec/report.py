@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from urllib.parse import urlsplit
 
-from snippetcheck.calls import Call, find_calls, unparsed_commands
-from snippetcheck.check import check_call
-from snippetcheck.data import HOST
-from snippetcheck.jsread import UNKNOWN
-from snippetcheck.mdx import Example, extract
-from snippetcheck.spec import operations
+from snippetspec.calls import Call, find_calls, unparsed_commands
+from snippetspec.check import check_call
+from snippetspec.data import HOST
+from snippetspec.jsread import UNKNOWN
+from snippetspec.mdx import Example, extract
+from snippetspec.spec import operations
 
 
 def _host(url: str) -> str | None:

@@ -1,9 +1,9 @@
 import unittest
 from dataclasses import FrozenInstanceError
 
-from snippetcheck.calls import Call, find_calls, unparsed_commands
-from snippetcheck.jsread import UNKNOWN
-from snippetcheck.mdx import Example
+from snippetspec.calls import Call, find_calls, unparsed_commands
+from snippetspec.jsread import UNKNOWN
+from snippetspec.mdx import Example
 
 
 def example(code, language="bash"):

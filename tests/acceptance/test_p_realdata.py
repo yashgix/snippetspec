@@ -6,12 +6,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from snippetcheck.__main__ import main as cli
-from snippetcheck.data import DATA, HOST, ROOT, SPECS, STUDY, load_json, load_pages, load_specs
-from snippetcheck.history import days_open, evaluate, problem_ids
-from snippetcheck.metrics import findings
-from snippetcheck.report import page_calls, scan
-from snippetcheck.spec import operations
+from snippetspec.__main__ import main as cli
+from snippetspec.data import DATA, HOST, ROOT, SPECS, STUDY, load_json, load_pages, load_specs
+from snippetspec.history import days_open, evaluate, problem_ids
+from snippetspec.metrics import findings
+from snippetspec.report import page_calls, scan
+from snippetspec.spec import operations
 
 FINDINGS = [
     ("DELETE", "/auth/scoped-key/KEY_ID", "unknown_path", "/auth/scoped-key/KEY_ID"),

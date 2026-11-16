@@ -3,7 +3,7 @@ import unittest
 from datetime import date, datetime
 from pathlib import Path
 
-from snippetcheck.history import days_open, evaluate, problem_ids
+from snippetspec.history import days_open, evaluate, problem_ids
 
 PAGE = "page.mdx"
 

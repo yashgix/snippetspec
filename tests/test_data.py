@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from snippetcheck.data import DATA, HOST, ROOT, SPECS, STUDY, load_json, load_pages, load_specs
+from snippetspec.data import DATA, HOST, ROOT, SPECS, STUDY, load_json, load_pages, load_specs
 
 METHODS = ("get", "post", "put", "patch", "delete")
 

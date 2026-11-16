@@ -1,10 +1,10 @@
 import unittest
 from urllib.parse import parse_qsl, urlsplit
 
-from snippetcheck.calls import Call
-from snippetcheck.check import check_call, is_placeholder, validate
-from snippetcheck.jsread import UNKNOWN
-from snippetcheck.spec import operations
+from snippetspec.calls import Call
+from snippetspec.check import check_call, is_placeholder, validate
+from snippetspec.jsread import UNKNOWN
+from snippetspec.spec import operations
 
 
 def spec(paths=None, schemas=None):

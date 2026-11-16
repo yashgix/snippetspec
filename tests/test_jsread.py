@@ -1,6 +1,6 @@
 import unittest
 
-from snippetcheck.jsread import (
+from snippetspec.jsread import (
     UNKNOWN,
     body,
     literal_at,

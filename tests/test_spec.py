@@ -1,7 +1,7 @@
 import unittest
 from dataclasses import FrozenInstanceError
 
-from snippetcheck.spec import Operation, body_schemas, deref, match, operations, params, segments
+from snippetspec.spec import Operation, body_schemas, deref, match, operations, params, segments
 
 
 def spec(paths, schemas=None):

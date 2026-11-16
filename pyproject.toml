@@ -1,5 +1,5 @@
 [project]
-name = "snippetcheck"
+name = "snippetspec"
 version = "0.1.0"
 description = "Check the HTTP calls in API docs code examples against the OpenAPI spec"
 requires-python = ">=3.14"
@@ -14,4 +14,4 @@ extend-exclude = ["data", "tests/acceptance"]
 select = ["E", "F", "W", "I", "B", "UP"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["snippetcheck"]
+known-first-party = ["snippetspec"]

@@ -1,6 +1,6 @@
 # Design notes
 
-`snippetcheck` answers one question offline: do the HTTP calls a docs site prints agree with the OpenAPI spec the
+`snippetspec` answers one question offline: do the HTTP calls a docs site prints agree with the OpenAPI spec the
 site references? This file records how it does that, and why each decision went the way it did. It is not a user
 guide; that is `README.md`.
 

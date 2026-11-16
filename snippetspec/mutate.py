@@ -5,9 +5,9 @@ from __future__ import annotations
 import copy
 from urllib.parse import unquote, urlsplit
 
-from snippetcheck.calls import Call
-from snippetcheck.check import check_call
-from snippetcheck.spec import Operation, body_schemas, deref, operations, params, segments
+from snippetspec.calls import Call
+from snippetspec.check import check_call
+from snippetspec.spec import Operation, body_schemas, deref, operations, params, segments
 
 BREAKING = {
     "remove_operation": ("unknown_path", "method_not_allowed"),

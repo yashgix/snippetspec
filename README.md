@@ -1,14 +1,16 @@
-# snippetcheck
+# snippetspec
 
 Checks the curl, JavaScript `fetch` and Python `requests`/`httpx` examples in API documentation against the OpenAPI
 spec. Offline, with no API calls and no model.
 
-Write-up with a diagram and charts: https://yashgix.github.io/snippetcheck/
+Write-up with a diagram and charts: https://yashgix.github.io/snippetspec/
+
+Renamed from `snippetcheck` on 16 Nov 2026. Frozen specs and git tags keep the old name.
 
 It reads MDX pages, finds each HTTP call inside the code examples, matches it to a spec operation by method and path
 template, and then checks what the example sends: path values, query parameters, and the request body's field names,
 required fields, types and enum values. Every call gets a verdict with the exact problems behind it, and
-`python -m snippetcheck` exits non-zero as soon as one example contradicts the spec, so it can gate a docs build.
+`python -m snippetspec` exits non-zero as soon as one example contradicts the spec, so it can gate a docs build.
 
 Main result, with its qualifier: on Supermemory's docs it flags all 15 real docs fixes from their history at the
 buggy commit and none at the fixed one, and today's docs hold 11 findings, 10 of them endpoints the pinned specs do not
@@ -18,7 +20,7 @@ flagged. In the flags sampled, the cause is that the spec is stricter than its o
 those docs are right, that is a 53% false-positive rate on that spec.
 
 ```text
-$ python -m snippetcheck data/docs/authentication.mdx
+$ python -m snippetspec data/docs/authentication.mdx
 data/docs/authentication.mdx:69 #0 POST /auth/scoped-key mismatch unknown_path /auth/scoped-key
 data/docs/authentication.mdx:114 #0 DELETE /auth/scoped-key/KEY_ID mismatch unknown_path /auth/scoped-key/KEY_ID
 3 calls: 1 ok, 0 partial, 2 mismatch
@@ -46,7 +48,7 @@ sit next to a docs code-example record.
 
 ## Results
 
-<!-- snippetcheck:results -->
+<!-- snippetspec:results -->
 | metric | value |
 |---|---|
 | pages | 147 |
@@ -67,7 +69,7 @@ sit next to a docs code-example record.
 | mutation_neutral_flagged | 0 |
 | spec_operations | 75 |
 | spec_operations_with_example | 26 |
-<!-- /snippetcheck:results -->
+<!-- /snippetspec:results -->
 
 That table is generated: `experiment.py` writes `results/metrics.json`, then `demo.py --readme README.md` replaces
 the block between the two markers. The tables are generated. The numbers in the summary at the top are copied from them.
@@ -79,22 +81,22 @@ are not in the repository (see Data and licenses), so fetch them once first:
 
 ```bash
 python3 tools/fetch_data.py   # rebuilds data/openapi/ and checks every pinned file against data/MANIFEST.json
-make holdout      # python3 -m snippetcheck.holdout, writes results/holdout.json
+make holdout      # python3 -m snippetspec.holdout, writes results/holdout.json
 make test         # own tests (tests/) and v1 acceptance tests (tests/acceptance/)
 make lint         # ruff check + format check
 make data-check   # sha256 of every pinned file against data/MANIFEST.json
 make experiment   # python3 experiment.py --out results/metrics.json
 make readme       # python3 demo.py --readme README.md --out README.md
-make check        # python3 -m snippetcheck over data/docs
+make check        # python3 -m snippetspec over data/docs
 python3 tools/build_page.py   # rebuilds docs/index.html from results/
 ```
 
 Directly:
 
 ```bash
-python -m snippetcheck                     # every page under data/docs
-python -m snippetcheck path/to/page.mdx    # just these pages
-python -m snippetcheck --docs DIR --json   # another folder, machine-readable
+python -m snippetspec                      # every page under data/docs
+python -m snippetspec path/to/page.mdx     # just these pages
+python -m snippetspec --docs DIR --json    # another folder, machine-readable
 python demo.py                             # scan size, findings, ledger results
 python demo.py --readme README.md --out OUT.md
 ```
@@ -161,7 +163,7 @@ The three measurements above all use Supermemory, the data the checker was built
    and its sha256 is pinned in `study/holdout_cases.sha256`. A case counts as caught only when the expected problem
    appears in the broken page and not in the original.
 
-<!-- snippetcheck:holdout -->
+<!-- snippetspec:holdout -->
 | hold-out metric | value |
 |---|---|
 | pages | 245 |
@@ -176,7 +178,7 @@ The three measurements above all use Supermemory, the data the checker was built
 | recall, placement | 2 of 2 |
 | recall, query | 5 of 5 |
 | recall, route | 5 of 5 |
-<!-- /snippetcheck:holdout -->
+<!-- /snippetspec:holdout -->
 
 How to read it:
 

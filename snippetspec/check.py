@@ -5,9 +5,9 @@ from __future__ import annotations
 import re
 from urllib.parse import unquote, urlsplit
 
-from snippetcheck.calls import Call
-from snippetcheck.jsread import UNKNOWN
-from snippetcheck.spec import Operation, body_schemas, deref, match, params, segments
+from snippetspec.calls import Call
+from snippetspec.jsread import UNKNOWN
+from snippetspec.spec import Operation, body_schemas, deref, match, params, segments
 
 PLACEHOLDER_CHARACTERS = frozenset("${}<>")
 INTEGER = re.compile(r"-?\d+")

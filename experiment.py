@@ -1,4 +1,4 @@
-"""Measure snippetcheck on the pinned data: today's report, the docs-fix ledger and seeded drift."""
+"""Measure snippetspec on the pinned data: today's report, the docs-fix ledger and seeded drift."""
 
 from __future__ import annotations
 
@@ -6,12 +6,12 @@ import argparse
 import json
 from pathlib import Path
 
-from snippetcheck.data import DATA, STUDY, load_json, load_pages, load_specs
-from snippetcheck.history import days_open, evaluate
-from snippetcheck.metrics import CODES, findings, ratio
-from snippetcheck.mutate import BREAKING, NEUTRAL, run
-from snippetcheck.report import page_calls, scan
-from snippetcheck.spec import operations
+from snippetspec.data import DATA, STUDY, load_json, load_pages, load_specs
+from snippetspec.history import days_open, evaluate
+from snippetspec.metrics import CODES, findings, ratio
+from snippetspec.mutate import BREAKING, NEUTRAL, run
+from snippetspec.report import page_calls, scan
+from snippetspec.spec import operations
 
 # Codes that mean no operation matched at all, so the endpoint itself is in doubt.
 MISSING_OPERATION = ("unknown_path", "method_not_allowed")
@@ -159,7 +159,7 @@ def _write(path: Path, value: dict) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     """Measure, then write the metrics to --out and their details beside it."""
-    parser = argparse.ArgumentParser(prog="experiment.py", description="Measure snippetcheck on the pinned data.")
+    parser = argparse.ArgumentParser(prog="experiment.py", description="Measure snippetspec on the pinned data.")
     parser.add_argument("--out", type=Path, default=Path("results/metrics.json"), metavar="PATH")
     args = parser.parse_args(argv)
     metrics, details = experiment()

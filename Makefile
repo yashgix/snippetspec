@@ -15,10 +15,10 @@ experiment:
 	python3 experiment.py --out results/metrics.json
 
 holdout:
-	python3 -m snippetcheck.holdout --out results/holdout.json
+	python3 -m snippetspec.holdout --out results/holdout.json
 
 readme:
 	python3 demo.py --readme README.md --out README.md
 
 check:
-	python3 -m snippetcheck
+	python3 -m snippetspec

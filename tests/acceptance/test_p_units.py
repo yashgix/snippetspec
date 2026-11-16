@@ -4,15 +4,15 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from snippetcheck.__main__ import main as cli
-from snippetcheck.calls import find_calls
-from snippetcheck.check import check_call, validate
-from snippetcheck.data import ROOT
-from snippetcheck.jsread import UNKNOWN
-from snippetcheck.mdx import extract
-from snippetcheck.mutate import apply, mutations, run
-from snippetcheck.report import scan
-from snippetcheck.spec import deref, match, operations
+from snippetspec.__main__ import main as cli
+from snippetspec.calls import find_calls
+from snippetspec.check import check_call, validate
+from snippetspec.data import ROOT
+from snippetspec.jsread import UNKNOWN
+from snippetspec.mdx import extract
+from snippetspec.mutate import apply, mutations, run
+from snippetspec.report import scan
+from snippetspec.spec import deref, match, operations
 
 DEMO = None
 
@@ -479,17 +479,17 @@ class Outputs(unittest.TestCase):
             )
         }
         metrics["ledger_recall"] = 0.5
-        out = render("# R\n<!-- snippetcheck:results -->\nold\n<!-- /snippetcheck:results -->\ntail\n", metrics)
+        out = render("# R\n<!-- snippetspec:results -->\nold\n<!-- /snippetspec:results -->\ntail\n", metrics)
         lines = out.splitlines()
-        self.assertEqual(lines[:4], ["# R", "<!-- snippetcheck:results -->", "| metric | value |", "|---|---|"])
+        self.assertEqual(lines[:4], ["# R", "<!-- snippetspec:results -->", "| metric | value |", "|---|---|"])
         self.assertEqual(lines[4], "| pages | 1 |")
         self.assertEqual(lines[15], "| ledger_recall | 0.5 |")
-        self.assertEqual(lines[-2:], ["<!-- /snippetcheck:results -->", "tail"])
+        self.assertEqual(lines[-2:], ["<!-- /snippetspec:results -->", "tail"])
         self.assertEqual(len(lines), 24)
         for bad in (
             "no markers",
-            "<!-- /snippetcheck:results --><!-- snippetcheck:results -->",
-            "<!-- snippetcheck:results --><!-- snippetcheck:results --><!-- /snippetcheck:results -->",
+            "<!-- /snippetspec:results --><!-- snippetspec:results -->",
+            "<!-- snippetspec:results --><!-- snippetspec:results --><!-- /snippetspec:results -->",
         ):
             with self.assertRaises(ValueError):
                 render(bad, metrics)

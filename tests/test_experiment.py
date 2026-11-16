@@ -4,8 +4,8 @@ import unittest
 from pathlib import Path
 
 from experiment import experiment, main
-from snippetcheck.metrics import CODES
-from snippetcheck.mutate import BREAKING
+from snippetspec.metrics import CODES
+from snippetspec.mutate import BREAKING
 
 METRICS, DETAILS = experiment()
 
