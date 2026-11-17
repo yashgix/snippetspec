@@ -117,21 +117,21 @@ footer { padding-block: 1.5rem 3rem; border-top: 1px solid var(--line); }
   checker is right. The seeded-drift test (in Technical details) shows sensitivity, not discovery.</div>
   <h3>Meilisearch, a second API held out</h3>
   <div class="tiles">
-    <div class="tile"><b>24 of 24</b><span>hand-broken cases caught</span></div>
+    <div class="tile"><b>24 of 24</b><span>deliberately broken cases caught</span></div>
     <div class="tile warn"><b>114 of 216</b><span>published samples flagged (53%)</span></div>
     <div class="tile"><b>2</b><span>unreadable curl commands (unclosed quote)</span></div>
     <div class="tile"><b>1</b><span>partial verdict</span></div>
   </div>
   <h3>Why so many clean samples are flagged</h3>
   <div class="bars"><div class="bar"><span class="n">missing_field</span><span class="track"><span class="fill warn" style="display:block;width:100.0%"></span></span><span class="v">64 calls</span></div><div class="bar"><span class="n">missing_body</span><span class="track"><span class="fill warn" style="display:block;width:35.9%"></span></span><span class="v">23 calls</span></div><div class="bar"><span class="n">undocumented_field</span><span class="track"><span class="fill warn" style="display:block;width:28.1%"></span></span><span class="v">18 calls</span></div><div class="bar"><span class="n">missing_param</span><span class="track"><span class="fill warn" style="display:block;width:20.3%"></span></span><span class="v">13 calls</span></div><div class="bar"><span class="n">type</span><span class="track"><span class="fill warn" style="display:block;width:7.8%"></span></span><span class="v">5 calls</span></div><div class="bar"><span class="n">content_type</span><span class="track"><span class="fill warn" style="display:block;width:6.2%"></span></span><span class="v">4 calls</span></div><div class="bar"><span class="n">enum</span><span class="track"><span class="fill warn" style="display:block;width:6.2%"></span></span><span class="v">4 calls</span></div><div class="bar"><span class="n">method_not_allowed</span><span class="track"><span class="fill warn" style="display:block;width:1.6%"></span></span><span class="v">1 calls</span></div><div class="bar"><span class="n">unexpected_body</span><span class="track"><span class="fill warn" style="display:block;width:1.6%"></span></span><span class="v">1 calls</span></div></div>
-  <div class="note"><b>Runtime not confirmed.</b> In the flags sampled, the cause is the generated spec disagreeing with
+  <div class="note"><b>Runtime not confirmed.</b> In the flags that were read (how many was not recorded), the cause is the generated spec disagreeing with
   its own docs: many fields listed as required that the samples omit, snake case against camel case, a
   <code>text/plain</code> body type, capitalised enums, repeated query parameters against comma lists. The checker
   applies the spec as written. No sample was run against a server, so which side is right is unknown. Recall on the
-  hand-broken cases is the same easy kind of test as the seeded drift.</div>
+  deliberately broken cases is the same easy kind of test as the seeded drift.</div>
   <div class="note"><b>False-positive rate.</b> If the published samples are right, 53% of them
   (114 of 216) are false alarms on this spec. That is too noisy to gate a docs build on this spec
-  as it stands. On Supermemory, hand triage found 0 of 11 findings false, but none was
+  as it stands. On Supermemory, triage found 0 of 11 findings false, but none was
   a confirmed snippet bug either: 10 are endpoints the specs do not describe. The post-hoc split is in
   <code>docs/MISMATCH-SPLIT.md</code>.</div>
 </div></section>
@@ -163,7 +163,7 @@ footer { padding-block: 1.5rem 3rem; border-top: 1px solid var(--line); }
     A clean result does not mean the example works.</li>
     <li>When a concrete path exists without the call's method, the checker falls back to a templated path (for example
     <code>GET /items/search</code> reaches <code>GET /items/{id}</code>). OpenAPI's rule would report a method mismatch.
-    It follows the v1 spec and is left as it is. It can hide a wrong-method call.</li>
+    It is kept for the v1 acceptance tests. It can hide a wrong-method call.</li>
     <li>No real, later-fixed docs bugs were collected for the second API.</li>
     <li>Ledger cases are replayed against today's spec, not the spec of their day.</li>
   </ul>
@@ -194,24 +194,24 @@ footer { padding-block: 1.5rem 3rem; border-top: 1px solid var(--line); }
 
 <section class="wrap"><div class="wide stack">
   <h2>Meilisearch hold-out</h2>
-  <p>Meilisearch's published spec and 245 docs samples (both MIT) were pinned, and 24 hand-broken
-  cases were written from the spec and frozen before the checker ran on them (<code>study/holdout_cases.sha256</code>).</p>
+  <p>Meilisearch's published spec and 245 docs samples (both MIT) were pinned, and 24 deliberately
+  broken cases were written from the spec and frozen before the checker ran on them (<code>study/holdout_cases.sha256</code>).</p>
   <h3>Recall by kind of change</h3>
   <div class="bars"><div class="bar"><span class="n">body-field</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">5 of 5</span></div><div class="bar"><span class="n">body-type</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">4 of 4</span></div><div class="bar"><span class="n">method</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">3 of 3</span></div><div class="bar"><span class="n">placement</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">2 of 2</span></div><div class="bar"><span class="n">query</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">5 of 5</span></div><div class="bar"><span class="n">route</span><span class="track"><span class="fill" style="display:block;width:100.0%"></span></span><span class="v">5 of 5</span></div></div>
 </div></section>
 
 <section class="wrap"><div class="col stack">
   <h2>What v2 changed and why</h2>
-  <p>Version 1 was written to a spec with 38 acceptance tests and passes all of them after fixes. After that:</p>
+  <p>The checker passes all 38 v1 acceptance tests. Changes made since v1:</p>
   <ul>
     <li>A quoting error now skips only the bad command, and unreadable commands are reported, not dropped.</li>
     <li>A trailing backslash at the end of a block is ignored. This came from reading the first hold-out output.</li>
-    <li>After a code review: explicit <code>Content-Type</code> is checked, <code>fetch</code> is found only in
+    <li>From a later pass over the parser code: explicit <code>Content-Type</code> is checked, <code>fetch</code> is found only in
     code (not comments or strings), every URL of a curl command is a call, and requests/httpx follow their own body and
     query rules.</li>
   </ul>
-  <p>The parser changed after the first hold-out run and after review. The 24 cases stayed frozen, nothing was tuned to
-  flag more or fewer samples, and the review changes did not move the hold-out counts. Details are in <code>SPEC-v2.md</code>.</p>
+  <p>The parser changed after the first hold-out run and again in that later pass. The 24 cases stayed frozen, nothing was tuned to
+  flag more or fewer samples, and the later changes did not move the hold-out counts. Details are in <code>SPEC-v2.md</code>.</p>
 </div></section>
 
 <section class="wrap"><div class="col stack">

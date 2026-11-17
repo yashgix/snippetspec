@@ -13,9 +13,10 @@ required fields, types and enum values. Every call gets a verdict with the exact
 Main result, with its qualifier: on Supermemory's docs it flags all 15 real docs fixes from their history at the
 buggy commit and none at the fixed one, and today's docs hold 11 findings, 10 of them endpoints the pinned specs do not
 describe. That is a sensitivity check on bugs found while building the tool, not an accuracy estimate. On a second
-API (Meilisearch) it caught all 24 hand-broken examples, but 114 of 216 untouched published examples (53%) are
-flagged. In the flags sampled, the cause is that the spec is stricter than its own docs (runtime not confirmed). If
-those docs are right, that is a 53% false-positive rate on that spec.
+API (Meilisearch) it caught all 24 deliberately broken examples, but 114 of 216 untouched published examples (53%) are
+flagged. 82 of those 114 only report something the spec requires and the sample leaves out. In the flags that were
+read (how many was not recorded), the cause is that the spec is stricter than its own docs (runtime not confirmed).
+If those docs are right, that is a 53% false-positive rate on that spec.
 
 ```text
 $ python -m snippetspec data/docs/authentication.mdx
@@ -37,7 +38,7 @@ sit next to a docs code-example record.
 ## What it measures
 
 1. **Today's report.** Every call to the pinned docs' API host, checked against the pinned v4 and v5 specs, with
-   each finding hand-triaged as a spec gap, unconfirmed, or false positive (`study/triage.json`).
+   each finding triaged as a spec gap, unconfirmed, or false positive (`study/triage.json`).
 2. **Ledger replay.** Real fix commits from the docs repo: each case must be flagged at the buggy version and clean
    at the fixed version (`study/ledger.json`, replayed from `data/history/`).
 3. **Seeded drift.** The spec is changed one thing at a time (an operation removed, a field or parameter renamed, a
@@ -144,7 +145,7 @@ one. `operation` may be `null`, which is how the cases about a route that never 
 - **Method-filtered path matching.** When a concrete path exists without the call's method (for example
   `/items/search` only has POST and the call is `GET /items/search`), the checker falls back to a templated path
   (`/items/{id}`). OpenAPI's matching rule would match the concrete path first and report a method mismatch. The
-  fallback comes from the v1 spec and an acceptance test, and is left as it is. It can hide a wrong-method call.
+  fallback is kept for the v1 acceptance tests (`tests/acceptance/`). It can hide a wrong-method call.
 - **The ledger is replayed against today's spec**, not the spec of each case's own day (one spec snapshot per
   version is pinned).
 
@@ -156,11 +157,11 @@ The three measurements above all use Supermemory, the data the checker was built
 `make holdout` runs two measurements and writes `results/holdout.json`:
 
 1. **Clean docs.** Every curl sample as published, with the docs' `MEILISEARCH_URL` placeholder given a host.
-2. **Hand-broken examples.** 24 cases in `study/holdout_cases.json`, each one documented change to one real sample
-   (a misspelled route, a wrong method, a renamed field, a number written as a word, a body on a route that takes
-   none). The list and its expected problems were written from the spec before the checker was run on any of them,
-   and its sha256 is pinned in `study/holdout_cases.sha256`. A case counts as caught only when the expected problem
-   appears in the broken page and not in the original.
+2. **Deliberately broken examples.** 24 cases in `study/holdout_cases.json`, each one documented change to one real
+   sample (a misspelled route, a wrong method, a renamed field, a number written as a word, a body on a route that takes
+   none). The list and its expected problems were written from the spec before the checker was run on any of them, and
+   its sha256 is pinned in `study/holdout_cases.sha256`. A case counts as caught only when the expected problem appears
+   in the broken page and not in the original.
 
 <!-- snippetspec:holdout -->
 | hold-out metric | value |
@@ -181,24 +182,25 @@ The three measurements above all use Supermemory, the data the checker was built
 
 How to read it:
 
-- **Recall on the hand-broken cases is high, but it is the same kind of test as the seeded drift.** One change to one
-  field is easy to see for a checker that knows the spec. It shows the checker works on a second API, not that it finds
-  real mistakes in the wild. No real, later-fixed Meilisearch docs bugs were collected.
-- **Many clean samples are flagged. In the flags I sampled, the cause is a spec-versus-doc disagreement, runtime not
-  confirmed.** Meilisearch's spec is generated from code and differs from the samples in repeating ways: it lists many
-  fields, query parameters and request bodies as required that the samples leave out, names some fields in snake case
-  where the samples use camel case, gives a plain-string body a `text/plain` type, lists ranking rules capitalised,
-  and expects repeated query parameters where the samples use comma lists. The checker applies the spec as written.
-  I did not run any sample against a Meilisearch server, so I cannot say which side is right. A spec like this would
-  make the checker noisy until its required lists are fixed.
+- **Recall on the deliberately broken cases is high, but it is the same kind of test as the seeded drift.** One change
+  to one field is easy to see for a checker that knows the spec. It shows the checker works on a second API, not that it
+  finds real mistakes in the wild. No real, later-fixed Meilisearch docs bugs were collected.
+- **Many clean samples are flagged. In the flags that were read, the cause is a spec-versus-doc disagreement, runtime
+  not confirmed.** Meilisearch's spec is generated from code and differs from the samples in repeating ways: it lists
+  many fields, query parameters and request bodies as required that the samples leave out, names some fields in snake
+  case where the samples use camel case, gives a plain-string body a `text/plain` type, lists ranking rules capitalised,
+  and expects repeated query parameters where the samples use comma lists. The checker applies the spec as written. How
+  many flags were read was not recorded. Across all 114, 82 have only "missing" problems (`docs/MISMATCH-SPLIT.md`). No
+  sample was run against a Meilisearch server, so which side is right is not known. A spec like this would make the
+  checker noisy until its required lists are fixed.
 - **The false-positive rate on this spec is high.** If the published samples are right, 114 of 216 (53%) are false
   alarms. None of the 114 is confirmed either way. `docs/MISMATCH-SPLIT.md` is a post-hoc split of the flagged calls
   on both APIs, kept apart from the method.
-- **The parser changed after the first hold-out run, and again after a code review.** One fix (a trailing
-  backslash at the end of a block) came from reading the first hold-out output. The review fixes (explicit
+- **The parser changed after the first hold-out run, and again in a later pass over the parser code.** One fix (a
+  trailing backslash at the end of a block) came from reading the first hold-out output. The later fixes (explicit
   Content-Type, comments and strings in JavaScript, every URL in a curl command, requests and httpx body and query
-  rules) came from reading the code, not the hold-out. The 24 cases stayed frozen, the checker was not tuned to
-  flag more or fewer samples, and the review changes did not move the hold-out counts above.
+  rules) came from reading the code, not the hold-out. The 24 cases stayed frozen, the checker was not tuned to flag
+  more or fewer samples, and the later fixes did not move the hold-out counts above.
 - **What it did find that is real.** Two samples have an unclosed quote in their curl command, so no shell can run them
   (`code_samples_get_all_tasks_paginating_1.mdx` and `_2`). The scan reports these as unreadable commands rather than
   skipping them silently. One sample posts to `documents/delete-batch`, which the spec does not list (the checker
@@ -221,7 +223,8 @@ half: changes that should not break an example produce no finding.
 
 ## Data and licenses
 
-The code is MIT (`LICENSE`). The pinned data under `data/` is never modified by this repo.
+The code is MIT (`LICENSE`). The pinned data under `data/` is the upstream files unchanged, except for
+credential-shaped placeholders in the Supermemory docs (see `data/MANIFEST.json` below).
 
 - `data/docs/` and `data/history/`: Supermemory's docs pages at a pinned commit, and earlier versions of ten of them
   for the ledger replay. MIT, copyright supermemory (`data/docs/LICENSE`).

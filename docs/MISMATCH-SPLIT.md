@@ -13,7 +13,7 @@ Only existing fields are used: `verdict`, `method`, `operation` and `problems` i
 
 1. **Confirmed snippet error.** Outside evidence shows the snippet is wrong: a later docs fix, or a run against the
    API. A finding labelled `false_positive` would count against the checker instead.
-2. **Spec and docs disagree.** The hand triage labels the finding `spec_gap`: the docs show an endpoint the pinned
+2. **Spec and docs disagree.** The triage labels the finding `spec_gap`: the docs show an endpoint the pinned
    specs do not describe.
 3. **Unconfirmed.** Everything else.
 

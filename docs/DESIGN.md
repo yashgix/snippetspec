@@ -210,8 +210,8 @@ the 'route that never existed' cases are expressed.
 
 `evaluate` returns four booleans rather than one, because they answer different questions: was the problem already
 visible at the introduced commit, does the buggy commit show it, is it gone at the fix, and (the headline) both of
-the last two. A case that fails `cleared` is a false negative. A case that fails `detected` means the checker does
-not see the bug the docs team fixed.
+the last two. A case that fails `cleared` still flags the problem after the fix, a false positive on the fixed page. A
+case that fails `detected` is a false negative: the checker does not see the bug the docs team fixed.
 
 `days_open` is computed from commit dates rather than hand-written, so the exposure it reports can be recomputed
 from `study/ledger.json` alone.
