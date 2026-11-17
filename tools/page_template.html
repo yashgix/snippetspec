@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>snippetspec</title>
-<meta name="description" content="Checks curl, fetch and Python HTTP examples in API documentation against the OpenAPI spec, offline.">
+<meta name="description" content="Checks the API calls in documentation code examples against the OpenAPI spec. Run on 23 public API docs sites: {{s_calls}} calls checked, {{s_found}} inconsistencies confirmed by hand.">
 <style>
 :root { color-scheme: light; --paper: #fff; --band: #f3f5f9; --ink: #16202e; --muted: #556070; --line: #dde3ec;
   --accent: #1d4ed8; --soft: #e6edfd; --warn: #b45309; --warn-soft: #fdf1e4; --code: #eef1f6;
@@ -41,6 +41,35 @@ pre { margin: 0; background: var(--band); border: 1px solid var(--line); border-
 .track { height: 20px; background: var(--code); border-radius: 4px; overflow: hidden; }
 .fill { height: 100%; background: var(--accent); }
 .fill.warn { background: var(--warn); }
+.story { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.9rem; }
+.story li { border: 1px solid var(--line); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.story li b { font-family: var(--mono); font-size: 0.8125rem; color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase; }
+.story li.now { border-color: var(--accent); background: var(--soft); }
+.finding { margin: 0; border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.finding figcaption { font-size: 0.9rem; }
+.compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+.side { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+.side span { font-size: 0.8125rem; font-weight: 600; }
+.side.bad span { color: var(--warn); }
+.side.bad pre { background: var(--warn-soft); border-color: #f1d3b3; }
+.side.good span { color: var(--accent); }
+.side.good pre { background: var(--soft); border-color: #c7d6fa; }
+.funnel { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; }
+.legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; font-size: 0.8125rem; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 0.35rem; vertical-align: -1px; }
+.sites { display: flex; flex-direction: column; gap: 0.35rem; }
+.srow { display: grid; grid-template-columns: 12rem minmax(0, 1fr) 11rem; gap: 0.75rem; align-items: center; }
+.srow .n { font: 0.8125rem var(--mono); overflow-wrap: anywhere; }
+.srow .v { font-size: 0.8125rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.segs { display: flex; height: 14px; }
+.seg { display: block; height: 100%; }
+.seg.ok, .legend .ok, .fill.confirmed { background: var(--accent); }
+.seg.partial, .legend .partial { background: #93a4bd; }
+.seg.gap, .legend .gap { background: #d5dce6; }
+.seg.field, .legend .field { background: var(--warn); }
+.fill.checked { background: #93a4bd; }
+.fill.spec, .fill.tool { background: #d5dce6; }
+.fill.open { background: repeating-linear-gradient(135deg, #d5dce6 0 4px, #f3f5f9 4px 8px); }
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
 table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
 th, td { text-align: left; padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
@@ -72,6 +101,9 @@ footer { padding-block: 1.5rem 3rem; border-top: 1px solid var(--line); }
   .step + .step::before { content: "\2193"; left: 1rem; top: -1.25rem; transform: none; }
   .bar { grid-template-columns: minmax(0, 1fr) 4.5rem; gap: 0.2rem 0.75rem; }
   .bar .n { grid-column: 1 / -1; }
+  .story, .compare, .funnel { grid-template-columns: minmax(0, 1fr); }
+  .funnel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .srow { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
 }
 </style>
 </head>
@@ -88,24 +120,65 @@ footer { padding-block: 1.5rem 3rem; border-top: 1px solid var(--line); }
 
 <main id="overview" role="tabpanel" aria-labelledby="tab-overview">
 <header class="wrap"><div class="col stack">
-  <p class="eyebrow">API docs &middot; OpenAPI &middot; offline</p>
+  <p class="eyebrow">API docs &middot; OpenAPI &middot; Python and TypeScript</p>
   <h1>snippetspec</h1>
-  <p class="lede">Checks the curl, fetch and Python HTTP examples in API documentation against the OpenAPI spec. No API calls, no model.</p>
+  <p class="lede">Checks the API calls in documentation code examples against the API's own OpenAPI spec, with no API
+  calls and no model. I ran it on 23 public API docs sites: {{s_calls}} calls checked, and {{s_found}} examples on
+  {{s_companies}} products that disagree with the API, each checked by hand.</p>
   <p class="small muted"><a href="https://github.com/yashgix/snippetspec">github.com/yashgix/snippetspec</a> &middot; MIT</p>
 </div></header>
 
-<section class="wrap"><div class="col stack">
-  <h2>The problem</h2>
-  <p>Docs examples drift from the API they describe. In Supermemory's docs history, one commit says the old docs
-  "described a route that has never existed", and a docs PR reports that a namespace-move example sent <code>moveTo</code>
-  in a body the route ignores, "so following the docs permanently deleted the namespace".</p>
-  <p>The question: from the published spec alone, can every HTTP call in a docs site be checked automatically, and would
-  that have caught the drift bugs the docs team later fixed?</p>
+<section class="wrap"><div class="wide stack">
+  <h2>How it got here</h2>
+  <ol class="story">
+    <li><b>1 &middot; First version</b><span>Built and tested on one docs site, Supermemory's. It flagged
+    {{ledger_caught}} of {{ledger_cases}} past docs fixes, but those were found while building it. On a held-out API,
+    Meilisearch, it flagged {{h_mismatch_pct}}% of untouched examples. It worked, it was noisy, and it confirmed no new bug.</span></li>
+    <li><b>2 &middot; Built on it</b><span>A TypeScript version that reads docs pages the way
+    <a href="https://github.com/maniculehq/margin">Margin</a> does. It matches the Python verdicts exactly on the test data and on a docs site neither was built on. Four
+    fixes for spec shapes that real sites use: base paths, shared parameters, <code>allOf</code>, and several specs per site.</span></li>
+    <li class="now"><b>3 &middot; Ran it on 23 sites</b><span>{{s_calls}} API calls in public docs, compared with
+    each site's own spec. {{s_found}} examples on {{s_companies}} products send something the API does not take,
+    confirmed against the server code or spec.</span></li>
+  </ol>
 </div></section>
 
 <section class="wrap"><div class="wide stack">
-  <h2>Results</h2>
-  <p class="small muted">Tile and chart numbers come from <code>results/metrics.json</code> and <code>results/holdout.json</code>.</p>
+  <h2>What it found</h2>
+  <p>Two of the {{s_found}}, side by side. Each links to the docs line and to the code or spec it was checked against,
+  at a pinned commit. These are inconsistencies in the text. No call was run against the live APIs.</p>
+  {{featured}}
+  <h3>All {{s_found}}</h3>
+  {{findings_table}}
+</div></section>
+
+<section class="wrap"><div class="wide stack">
+  <h2>Across 23 sites</h2>
+  <div class="funnel">
+    <div class="tile"><b>{{f_candidates}}</b><span>developer docs sites tried</span></div>
+    <div class="tile"><b>{{f_llms_txt}}</b><span>publish an <code>llms.txt</code> index</span></div>
+    <div class="tile"><b>{{f_spec_listed}}</b><span>list an OpenAPI spec in it</span></div>
+    <div class="tile"><b>{{f_spec_usable}}</b><span>of those specs download and parse</span></div>
+    <div class="tile"><b>{{f_analyzed}}</b><span>have code examples calling that API</span></div>
+  </div>
+  <div class="legend"><span><i class="ok"></i>matches the spec</span><span><i class="partial"></i>partly readable</span>
+  <span><i class="gap"></i>endpoint not in the spec</span><span><i class="field"></i>field-level disagreement</span></div>
+  <div class="sites">{{site_rows}}</div>
+  <p class="small muted">{{s_calls}} calls: {{s_ok}} match, {{s_partial}} partly readable, {{s_endpoint_not_in_spec}}
+  call an endpoint the spec does not list, {{s_field_level}} disagree on a field, on {{s_field_sites}} sites. Data:
+  <code>study/survey.json</code>.</p>
+  <h3>What the {{s_field_level}} field-level flags turned out to be</h3>
+  <div class="bars">{{review_bars}}</div>
+  <div class="note"><b>Only the first row is a claim about the docs.</b> A flag means the docs and the spec disagree,
+  and often the spec is the one behind (a new engine name, a newer request mode) or stricter than the server. The
+  first-pass labels came from a language model (DeepSeek) and were spot-checked, not verified one by one. Every flag
+  it called a docs error was checked by hand: {{s_found}} held up and 4 could not be confirmed.</div>
+</div></section>
+
+<section class="wrap"><div class="wide stack">
+  <h2>The first version's results</h2>
+  <p>As published before the survey. The numbers are unchanged by the later fixes. Tile and chart numbers come from
+  <code>results/metrics.json</code> and <code>results/holdout.json</code>.</p>
   <h3>Supermemory's docs</h3>
   <div class="tiles">
     <div class="tile"><b>{{pages}}</b><span>pages scanned, {{examples}} code examples</span></div>
@@ -158,14 +231,14 @@ footer { padding-block: 1.5rem 3rem; border-top: 1px solid var(--line); }
 <section class="wrap"><div class="col stack">
   <h2>Limitations</h2>
   <ul>
+    <li>A mismatch means the docs and the spec disagree. It does not say which one is wrong, and no example was run
+    against a live API.</li>
+    <li>The survey read each site's <code>llms-full.txt</code> export, not its MDX source. The export renders some
+    components as Markdown, so a few examples may be missed or read differently.</li>
     <li>SDK examples are not checked, and they are the largest share of code blocks.</li>
     <li>A URL that is not a literal (a variable, a relative path) is not seen, so it is neither checked nor counted.</li>
-    <li>Only the spec is checked. A spec-gap finding means the docs show an endpoint the spec lacks, not that it is dead.
-    A clean result does not mean the example works.</li>
     <li>When a concrete path exists without the call's method, the checker falls back to a templated path (for example
-    <code>GET /items/search</code> reaches <code>GET /items/{id}</code>). OpenAPI's rule would report a method mismatch.
-    It is kept for the v1 acceptance tests. It can hide a wrong-method call.</li>
-    <li>No real, later-fixed docs bugs were collected for the second API.</li>
+    <code>GET /items/search</code> reaches <code>GET /items/{id}</code>). It can hide a wrong-method call.</li>
     <li>Ledger cases are replayed against today's spec, not the spec of their day.</li>
   </ul>
   <p><button class="btn" type="button" data-view="details">Technical details →</button></p>
@@ -177,6 +250,34 @@ footer { padding-block: 1.5rem 3rem; border-top: 1px solid var(--line); }
   <p class="eyebrow">Technical details</p>
   <h1 style="font-size:clamp(1.8rem,4.4vw,2.5rem)">Method, results and data</h1>
 </div></header>
+
+<section class="wrap"><div class="col stack">
+  <h2>The 23-site survey</h2>
+  <ul>
+    <li>Sites: {{f_candidates}} developer-tool docs hosts. {{f_llms_txt}} serve <code>llms.txt</code>, {{f_spec_listed}}
+    list an OpenAPI spec under "OpenAPI Specs", {{f_spec_usable}} of those specs download and parse as JSON, and
+    {{f_analyzed}} sites have code examples calling a host in their spec.</li>
+    <li>Pages come from each site's <code>llms-full.txt</code>, split on its <code>Source:</code> lines. Specs were
+    fetched on {{s_date}}. Every call to a spec server host was checked with the same checker as above.</li>
+    <li>Field-level flags were labelled first by DeepSeek (well under one dollar), then every "docs error" label was
+    read by hand against the docs source and, where public, the server code. Findings link to pinned commits.</li>
+    <li>The survey turned up four checker gaps, fixed in both languages: a server URL path in front of spec paths,
+    parameters shared on the path or given by <code>$ref</code>, <code>allOf</code> schemas, and judging a call by the
+    spec it fits best when a site has several (a legacy and a current one). The study results above did not change.</li>
+  </ul>
+</div></section>
+
+<section class="wrap"><div class="col stack">
+  <h2>TypeScript version</h2>
+  <p><code>ts/</code> reads code examples with <code>remark</code> and <code>remark-mdx</code> using Margin's rules, and its
+  extractor is vendored unchanged under Apache-2.0 with a test that both agree on every Supermemory page. Parity tests
+  compare whole scans with fixtures written by the Python version (148 Supermemory and 216 Meilisearch calls), and both
+  versions agree exactly on Skyvern's 41 MDX pages, which neither was built on. On the survey's rendered
+  <code>llms-full.txt</code> text they differ on 13 sites, because the TypeScript version parses Markdown and MDX
+  properly and the Python one scans lines. Problems can be returned as
+  <code>{ path, message, line }</code> records, the shape Margin's ingest validation reports. It is a library and CLI,
+  not a Margin plugin.</p>
+</div></section>
 
 <section class="wrap"><div class="col stack">
   <h2>What is checked</h2>
@@ -219,7 +320,8 @@ footer { padding-block: 1.5rem 3rem; border-top: 1px solid var(--line); }
   <h2>Reproduce</h2>
   <pre>git clone https://github.com/yashgix/snippetspec &amp;&amp; cd snippetspec
 python3 tools/fetch_data.py      # Supermemory's two specs state no license, so they are fetched, not shipped
-make test experiment holdout     # Python 3.14, no packages</pre>
+make test experiment holdout     # Python 3.14, no packages
+cd ts &amp;&amp; npm ci &amp;&amp; npm test       # TypeScript version, Node 22</pre>
   <p>Supermemory docs and Meilisearch's spec and docs are MIT and kept with their license files. The code is MIT.</p>
   <p><button class="btn" type="button" data-view="overview">← Overview</button></p>
 </div></section>

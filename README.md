@@ -10,8 +10,17 @@ template, and then checks what the example sends: path values, query parameters,
 required fields, types and enum values. Every call gets a verdict with the exact problems behind it, and
 `python -m snippetspec` exits non-zero as soon as one example contradicts the spec, so it can gate a docs build.
 
-Main result, with its qualifier: on Supermemory's docs it flags all 15 real docs fixes from their history at the
-buggy commit and none at the fixed one, and today's docs hold 11 findings, 10 of them endpoints the pinned specs do not
+Survey of 23 public API docs sites (17 Nov 2026): 1,554 API calls in code examples, compared with each site's own
+OpenAPI spec. 6 examples on 2 products send something the API does not take, each checked by hand against the docs
+source and the server code or spec: Turso (a `"type:"` key with a stray colon, on 2 pages) and Helicone (3 examples
+whose field names differ from the open-source server handlers, such as `sort_by` where the handler reads `sort`, and
+1 that sends no body where the handler takes one).
+No example was run against a live API. Of the 116 field-level flags, 51 got a first-pass label (from a language model,
+not verified one by one) of the spec being behind or stricter than the docs, 16 of a checker limitation, and 39 are
+not yet reviewed. Per-site counts and every finding with pinned links are in `study/survey.json`.
+
+The first version's result, with its qualifier: on Supermemory's docs it flags all 15 real docs fixes from their
+history at the buggy commit and none at the fixed one, and today's docs hold 11 findings, 10 of them endpoints the pinned specs do not
 describe. That is a sensitivity check on bugs found while building the tool, not an accuracy estimate. On a second
 API (Meilisearch) it caught all 24 deliberately broken examples, but 114 of 216 untouched published examples (53%) are
 flagged. 82 of those 114 only report something the spec requires and the sample leaves out. In the flags that were

@@ -1,0 +1,310 @@
+{
+ "date": "2026-11-17",
+ "funnel": {
+  "candidates": 149,
+  "llms_txt": 128,
+  "spec_listed": 49,
+  "spec_usable": 29,
+  "analyzed": 23
+ },
+ "totals": {
+  "calls": 1554,
+  "ok": 1172,
+  "partial": 81,
+  "endpoint_not_in_spec": 185,
+  "field_level": 116
+ },
+ "field_level_review": [
+  {
+   "label": "Confirmed docs inconsistency, checked by hand",
+   "count": 6,
+   "kind": "confirmed"
+  },
+  {
+   "label": "Looked like a docs error, not confirmed by hand",
+   "count": 4,
+   "kind": "checked"
+  },
+  {
+   "label": "Spec behind or stricter than the docs (first-pass label)",
+   "count": 51,
+   "kind": "spec"
+  },
+  {
+   "label": "Checker limitation (first-pass label)",
+   "count": 16,
+   "kind": "tool"
+  },
+  {
+   "label": "Not reviewed (new after the checker fixes)",
+   "count": 39,
+   "kind": "open"
+  }
+ ],
+ "sites": [
+  {
+   "site": "docs.perplexity.ai",
+   "calls": 201,
+   "ok": 186,
+   "partial": 8,
+   "endpoint_not_in_spec": 0,
+   "field_level": 7
+  },
+  {
+   "site": "docs.firecrawl.dev",
+   "calls": 200,
+   "ok": 144,
+   "partial": 3,
+   "endpoint_not_in_spec": 0,
+   "field_level": 53
+  },
+  {
+   "site": "docs.reducto.ai",
+   "calls": 138,
+   "ok": 107,
+   "partial": 14,
+   "endpoint_not_in_spec": 12,
+   "field_level": 5
+  },
+  {
+   "site": "loops.so/docs",
+   "calls": 119,
+   "ok": 81,
+   "partial": 30,
+   "endpoint_not_in_spec": 2,
+   "field_level": 6
+  },
+  {
+   "site": "docs.heygen.com",
+   "calls": 116,
+   "ok": 98,
+   "partial": 4,
+   "endpoint_not_in_spec": 4,
+   "field_level": 10
+  },
+  {
+   "site": "docs.exa.ai",
+   "calls": 102,
+   "ok": 85,
+   "partial": 0,
+   "endpoint_not_in_spec": 17,
+   "field_level": 0
+  },
+  {
+   "site": "docs.deepinfra.com",
+   "calls": 97,
+   "ok": 30,
+   "partial": 1,
+   "endpoint_not_in_spec": 61,
+   "field_level": 5
+  },
+  {
+   "site": "docs.helicone.ai",
+   "calls": 92,
+   "ok": 66,
+   "partial": 12,
+   "endpoint_not_in_spec": 10,
+   "field_level": 4
+  },
+  {
+   "site": "docs.parallel.ai",
+   "calls": 91,
+   "ok": 77,
+   "partial": 5,
+   "endpoint_not_in_spec": 6,
+   "field_level": 3
+  },
+  {
+   "site": "documentation.datalab.to",
+   "calls": 81,
+   "ok": 73,
+   "partial": 1,
+   "endpoint_not_in_spec": 0,
+   "field_level": 7
+  },
+  {
+   "site": "docs.turso.tech",
+   "calls": 78,
+   "ok": 74,
+   "partial": 0,
+   "endpoint_not_in_spec": 0,
+   "field_level": 4
+  },
+  {
+   "site": "docs.daily.co",
+   "calls": 74,
+   "ok": 65,
+   "partial": 1,
+   "endpoint_not_in_spec": 2,
+   "field_level": 6
+  },
+  {
+   "site": "docs.fireworks.ai",
+   "calls": 65,
+   "ok": 1,
+   "partial": 0,
+   "endpoint_not_in_spec": 64,
+   "field_level": 0
+  },
+  {
+   "site": "docs.browser-use.com",
+   "calls": 61,
+   "ok": 56,
+   "partial": 0,
+   "endpoint_not_in_spec": 4,
+   "field_level": 1
+  },
+  {
+   "site": "docs.tavily.com",
+   "calls": 8,
+   "ok": 8,
+   "partial": 0,
+   "endpoint_not_in_spec": 0,
+   "field_level": 0
+  },
+  {
+   "site": "docs.kernel.sh",
+   "calls": 6,
+   "ok": 6,
+   "partial": 0,
+   "endpoint_not_in_spec": 0,
+   "field_level": 0
+  },
+  {
+   "site": "docs.baseten.co",
+   "calls": 5,
+   "ok": 4,
+   "partial": 0,
+   "endpoint_not_in_spec": 1,
+   "field_level": 0
+  },
+  {
+   "site": "docs.trychroma.com",
+   "calls": 5,
+   "ok": 1,
+   "partial": 1,
+   "endpoint_not_in_spec": 0,
+   "field_level": 3
+  },
+  {
+   "site": "docs.codegen.com",
+   "calls": 4,
+   "ok": 3,
+   "partial": 0,
+   "endpoint_not_in_spec": 0,
+   "field_level": 1
+  },
+  {
+   "site": "docs.nebius.com",
+   "calls": 4,
+   "ok": 3,
+   "partial": 0,
+   "endpoint_not_in_spec": 0,
+   "field_level": 1
+  },
+  {
+   "site": "mintlify.com/docs",
+   "calls": 4,
+   "ok": 3,
+   "partial": 1,
+   "endpoint_not_in_spec": 0,
+   "field_level": 0
+  },
+  {
+   "site": "docs.galileo.ai",
+   "calls": 2,
+   "ok": 1,
+   "partial": 0,
+   "endpoint_not_in_spec": 1,
+   "field_level": 0
+  },
+  {
+   "site": "docs.together.ai",
+   "calls": 1,
+   "ok": 0,
+   "partial": 0,
+   "endpoint_not_in_spec": 1,
+   "field_level": 0
+  }
+ ],
+ "findings": [
+  {
+   "company": "Turso",
+   "page": "features/branching",
+   "docs_url": "https://docs.turso.tech/features/branching",
+   "source": "https://github.com/tursodatabase/turso-docs/blob/672aff28f871d1b2d73c9af99909a035cba91948/features/branching.mdx#L34",
+   "call": "POST /v1/organizations/{organizationSlug}/databases",
+   "docs_send": "\"seed\": {\n  \"type:\": \"database\",\n  \"name\": \"my-existing-database\"\n}",
+   "api_expects": "\"seed\": {\n  \"type\": \"database\",\n  \"name\": \"my-existing-database\"\n}",
+   "what": "The key has a stray colon, so the seed is sent without a type.",
+   "evidence": "https://github.com/tursodatabase/turso-docs/blob/672aff28f871d1b2d73c9af99909a035cba91948/api-reference/openapi.json#L3052-L3057",
+   "evidence_label": "seed.type in Turso's OpenAPI spec (its server code is not public)",
+   "verified": "Docs text against the published spec. Runtime behaviour not tested."
+  },
+  {
+   "company": "Turso",
+   "page": "features/point-in-time-recovery",
+   "docs_url": "https://docs.turso.tech/features/point-in-time-recovery",
+   "source": "https://github.com/tursodatabase/turso-docs/blob/672aff28f871d1b2d73c9af99909a035cba91948/features/point-in-time-recovery.mdx#L44",
+   "call": "POST /v1/organizations/{organizationSlug}/databases",
+   "docs_send": "\"type:\": \"database\"",
+   "api_expects": "\"type\": \"database\"",
+   "what": "The same stray colon on a second page.",
+   "evidence": "https://github.com/tursodatabase/turso-docs/blob/672aff28f871d1b2d73c9af99909a035cba91948/api-reference/openapi.json#L3052-L3057",
+   "evidence_label": "seed.type in Turso's OpenAPI spec (its server code is not public)",
+   "verified": "Docs text against the published spec. Runtime behaviour not tested."
+  },
+  {
+   "company": "Helicone",
+   "page": "guides/cookbooks/replay-session",
+   "docs_url": "https://docs.helicone.ai/guides/cookbooks/replay-session",
+   "source": "https://github.com/Helicone/helicone/blob/5a21c3a1be183c684b49136eb5abc5e95ed6ba26/docs/guides/cookbooks/replay-session.mdx#L174",
+   "call": "POST /v1/request/query",
+   "docs_send": "\"sort_by\": {\n  \"key\": \"request_created_at\",\n  \"direction\": \"asc\"\n}",
+   "api_expects": "\"sort\": { ... }",
+   "what": "The request body names the sort field sort_by. The handler's body type only has sort.",
+   "evidence": "https://github.com/Helicone/helicone/blob/5a21c3a1be183c684b49136eb5abc5e95ed6ba26/valhalla/jawn/src/controllers/public/requestController.ts#L57-L61",
+   "evidence_label": "RequestQueryParams in Helicone's server",
+   "verified": "Against Helicone's open-source server code. Runtime behaviour not tested."
+  },
+  {
+   "company": "Helicone",
+   "page": "features/advanced-usage/custom-properties",
+   "docs_url": "https://docs.helicone.ai/features/advanced-usage/custom-properties",
+   "source": "https://github.com/Helicone/helicone/blob/5a21c3a1be183c684b49136eb5abc5e95ed6ba26/docs/features/advanced-usage/custom-properties.mdx#L291-L300",
+   "call": "PUT /v1/request/{requestId}/property",
+   "docs_send": "{ \"Environment\": \"production\",\n  \"PostProcessed\": \"true\" }",
+   "api_expects": "{ \"key\": \"...\", \"value\": \"...\" }",
+   "what": "The example sends the properties as their own fields. The handler takes one key and one value.",
+   "evidence": "https://github.com/Helicone/helicone/blob/5a21c3a1be183c684b49136eb5abc5e95ed6ba26/valhalla/jawn/src/controllers/public/requestController.ts#L237-L240",
+   "evidence_label": "PUT /{requestId}/property handler",
+   "verified": "Against Helicone's open-source server code. Runtime behaviour not tested."
+  },
+  {
+   "company": "Helicone",
+   "page": "features/datasets",
+   "docs_url": "https://docs.helicone.ai/features/datasets",
+   "source": "https://github.com/Helicone/helicone/blob/5a21c3a1be183c684b49136eb5abc5e95ed6ba26/docs/features/datasets.mdx#L73-L82",
+   "call": "POST /v1/helicone-dataset",
+   "docs_send": "{ name: 'Customer Support Examples',\n  description: '...' }",
+   "api_expects": "{ datasetName: string,\n  requestIds: string[] }",
+   "what": "The example sends name and description. The handler reads datasetName and requestIds.",
+   "evidence": "https://github.com/Helicone/helicone/blob/5a21c3a1be183c684b49136eb5abc5e95ed6ba26/valhalla/jawn/src/controllers/public/heliconeDatasetController.ts#L38-L41",
+   "evidence_label": "NewHeliconeDatasetParams",
+   "verified": "Against Helicone's open-source server code. Runtime behaviour not tested."
+  },
+  {
+   "company": "Helicone",
+   "page": "features/datasets",
+   "docs_url": "https://docs.helicone.ai/features/datasets",
+   "source": "https://github.com/Helicone/helicone/blob/5a21c3a1be183c684b49136eb5abc5e95ed6ba26/docs/features/datasets.mdx#L88-L93",
+   "call": "POST /v1/helicone-dataset/{datasetId}/request/{requestId}",
+   "docs_send": "(no body)",
+   "api_expects": "{ requestBody: Json,\n  responseBody: Json }",
+   "what": "The example adds a request to a dataset with no body. The handler's body has two fields.",
+   "evidence": "https://github.com/Helicone/helicone/blob/5a21c3a1be183c684b49136eb5abc5e95ed6ba26/valhalla/jawn/src/controllers/public/heliconeDatasetController.ts#L165-L171",
+   "evidence_label": "POST /{datasetId}/request/{requestId} handler",
+   "verified": "Against Helicone's open-source server code. Runtime behaviour not tested."
+  }
+ ]
+}
