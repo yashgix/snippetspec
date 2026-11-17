@@ -2,7 +2,7 @@
 
 `snippetspec` answers one question offline: do the HTTP calls a docs site prints agree with the OpenAPI spec the
 site references? This file records how it does that, and why each decision went the way it did. It is not a user
-guide; that is `README.md`.
+guide (that is `README.md`).
 
 ## The pipeline
 
@@ -14,7 +14,7 @@ Call + ops      --check.check_call> {operation, problems}
 pages + specs   --report.scan-----> rows with verdict and problems
 ```
 
-Each stage hands the next a plain, frozen value; nothing downstream re-parses text. That keeps the parsers boring
+Each stage hands the next a plain, frozen value, and nothing downstream re-parses text. That keeps the parsers boring
 and the checks testable in isolation: `tests/test_calls.py` never needs a spec, `tests/test_check.py` never needs
 MDX.
 
@@ -30,10 +30,10 @@ because three properties matter more than completeness:
 - **Fence length is respected.** An opening fence of four backticks contains three-backtick lines, so examples that
   embed examples survive.
 
-`language` is the info string's first word, defaulting to `text`; `meta` is the rest; `title` follows Margin's
+`language` is the info string's first word, defaulting to `text`, `meta` is the rest, and `title` follows Margin's
 precedence (double-quoted, single-quoted, bare). `group` numbers the outermost alternatives container
 (`CodeBlockTabs`, `Tabs`, `CodeGroup`, `CodeTabs`, `ViewGroup`), so blocks that are alternatives to each other can be
-recognised later — the hook a validated flag would need. Self-closing tags do not open a container and a stray
+recognised later. That is the hook a validated flag would need. Self-closing tags do not open a container and a stray
 closing tag is ignored, because real docs contain both.
 
 ## Calls (`calls.py`, `jsread.py`)
@@ -57,7 +57,7 @@ value.
 ### Shell
 
 curl blocks are split with `shlex` (posix, comments) after unquoted separators are turned into command breaks,
-because one block often holds several commands; backslash-newline is joined first, since that is the formatting the
+because one block often holds several commands. Backslash-newline is joined first, since that is the formatting the
 docs actually use.
 
 Option handling is a table, not a grammar: long options with an argument, a set of short letters that take one, and
@@ -67,7 +67,7 @@ nothing, so an option the parser has never heard of cannot swallow the URL.
 Semantics worth naming:
 
 - Data parts are joined with `&` before parsing, because that is how curl concatenates several `-d` values.
-- `-G` moves the data into the query string, after the pairs already in the URL — the order curl sends.
+- `-G` moves the data into the query string, after the pairs already in the URL, which is the order curl sends.
 - JSON is detected three ways (`--json`, a JSON content type, data starting with `{` or `[`), and a parse failure
   becomes `unparsed` rather than an error: an example with a typo in its JSON is a call we cannot check, not a
   crash.
@@ -83,8 +83,8 @@ unambiguously sends a request with no other context.
 
 The arguments are read by a small recursive-descent reader (`jsread.py`) instead of a JavaScript parser, because the
 input is snippets rather than programs: strings (escapes and template substitutions), numbers (underscores, hex,
-binary, octal, exponents), `true`/`false`/`null`, arrays and objects. Anything else — a variable, a call, an
-arithmetic expression, an object with a spread — is UNKNOWN. A literal followed by more expression (`'a' + b`) is
+binary, octal, exponents), `true`/`false`/`null`, arrays and objects. Anything else (a variable, a call, an
+arithmetic expression, an object with a spread) is UNKNOWN. A literal followed by more expression (`'a' + b`) is
 UNKNOWN too: it is not the value it looks like. Comments are skipped everywhere, because fragments carry them.
 
 Keeping property spans as well as values is what makes `JSON.stringify(...)` readable: the option's raw text is
@@ -94,11 +94,14 @@ would be indistinguishable from `body: payload`.
 ### Python
 
 Python examples are parsed with `ast`, not regexes: it is in the standard library, it is exact, and it gives line
-and column for source ordering. Only `requests` and `httpx` by name are accepted — `session.get(...)` is a different
-conversation and guessing is not the job.
+and column for source ordering. Only `requests` and `httpx` by name are accepted. `session.get(...)` is skipped rather
+than guessed at.
 
 `params={...}` with a dict literal adds query pairs (`{?}` when a value is not a literal), which is how most of
-these examples write query parameters. `files=` and then `data=` win over `json=`, which is used only when both are empty, as in requests (`PreparedRequest.prepare_body`) and httpx (`encode_request`); httpx's `content=` wins over all. List values repeat the parameter name. A `None` value is dropped by requests and sent empty by httpx, and a `True` is `True` in requests and `true` in httpx.
+these examples write query parameters. `files=` and then `data=` win over `json=`, which is used only when both are
+empty, as in requests (`PreparedRequest.prepare_body`) and httpx (`encode_request`). httpx's `content=` wins over
+all. List values repeat the parameter name. A `None` value is dropped by requests and sent empty by httpx, and a
+`True` is `True` in requests and `true` in httpx.
 
 F-string URLs keep their placeholders as `{source}` via `ast.unparse`, so `/documents/{doc_id}` matches the template
 `/documents/{id}`. That is also why placeholders are later allowed to satisfy any schema.
@@ -108,10 +111,10 @@ F-string URLs keep their placeholders as `{source}` via `ast.unparse`, so `/docu
 Matching is by segment count and per-segment equality, with `{name}` fitting any single segment. That is
 intentionally simpler than OpenAPI's own path matching, which has no tie-break rules worth implementing here: when
 several templates fit, the one with the most literal segments wins (`/a/special` over `/a/{id}`), and ties go to the
-earliest operation in file order. Deterministic beats clever — the report has to be byte-identical between runs.
+earliest operation in file order. Deterministic beats clever, because the report has to be byte-identical between runs.
 
 Failures are distinguished because they mean different things to a reader: `unknown_path` ('this endpoint is not in
-the spec at all') versus `method_not_allowed` ('the path exists; this verb does not'). The latter lists the methods
+the spec at all') versus `method_not_allowed` ('the path exists, this verb does not'). The latter lists the methods
 the spec does declare, sorted, so the finding is actionable.
 
 `deref` follows local refs only, capped at twelve hops, and lets the ref node's sibling keys win. That is JSON
@@ -120,7 +123,7 @@ the ref itself rather than raising.
 
 ## Checks (`check.py`)
 
-The order of problems is fixed — path, then query, then body — and inside each, declaration order for missing things
+The order of problems is fixed (path, then query, then body), and inside each, declaration order for missing things
 and source order for sent things. A reviewer reading a finding list should see the same order every run.
 
 `validate` implements the subset of JSON Schema the specs use: `type` (including lists of types), `enum`, `const`,
@@ -129,20 +132,20 @@ and source order for sent things. A reviewer reading a finding list should see t
 - **A type mismatch ends the walk** at that node. Reporting a missing field inside a value that is not even an
   object is noise.
 - **Choices pick the fewest problems among branches whose type fits**, earliest on ties. Any branch that is
-  problem-free accepts the value; if no branch fits the type, the answer is a single `type` problem rather than a
+  problem-free accepts the value. If no branch fits the type, the answer is a single `type` problem rather than a
   dump of every branch's complaints.
 
 `additionalProperties` absent means 'not documented', which the checker treats as undocumented rather than allowed.
-That is the strict reading, and it is what makes a renamed field visible; a spec that means 'anything goes' says
+That is the strict reading, and it is what makes a renamed field visible. A spec that means 'anything goes' says
 `additionalProperties: true` and is respected.
 
 Parameters are text, never JSON: `?limit=5` carries `5`, and `integer` means 'fully matches `-?\d+`'. `const`/`enum`
 are compared as text (`true`, `false`, `null`, else `str`), so a boolean enum works. An array-typed parameter checks
-its item schema against the single text value — the specs' way of documenting repeated query parameters.
+its item schema against the single text value, which is the specs' way of documenting repeated query parameters.
 
 Bodies:
 
-- No body when the spec marks the body required is `missing_body`; no body otherwise is silence.
+- No body when the spec marks the body required is `missing_body`. No body otherwise is silence.
 - A body where the operation declares none is `unexpected_body`, except an empty JSON object, which several real
   list endpoints document as 'no filters'. Treating that as an error would flag correct examples.
 - Content type is checked before shape: a JSON body sent to a form-only operation is a `content_type` problem, not
@@ -152,18 +155,18 @@ Bodies:
 
 ### Placeholders
 
-A placeholder is UNKNOWN, or a string containing any of `$`, `{`, `}`, `<`, `>`; it satisfies every schema. This is
+A placeholder is UNKNOWN, or a string containing any of `$`, `{`, `}`, `<`, `>`. It satisfies every schema. This is
 the most consequential permissive decision in the tool, and it is deliberate: docs write `${BASE_URL}`, `{docId}`,
-`<your-key>` and similar, and flagging those would bury the real findings. The cost is stated in the README — such
+`<your-key>` and similar, and flagging those would bury the real findings. The cost is stated in the README: such
 values are not checked at all.
 
 ## Verdicts (`report.py`)
 
 Three verdicts, with the mapping kept in one place:
 
-- any problem gives `mismatch`;
-- no problem but an `unparsed` body, or a JSON body containing UNKNOWN at any depth, gives `partial`;
-- otherwise `ok`.
+- any problem gives `mismatch`
+- no problem but an `unparsed` body, or a JSON body containing UNKNOWN at any depth, gives `partial`
+- otherwise `ok`
 
 `partial` exists because a silent `ok` on an example whose body was a variable would overstate coverage. Splitting
 it out of `mismatch` matters as much: the checker's own limitation should not be reported as the docs' bug.
@@ -193,21 +196,21 @@ Two implementation details make the results mean something:
    and the experiment would measure something else entirely.
 2. **Mutations are derived from the call.** A `rename_field` exists only for a key the example actually sends, and a
    `drop_enum_value` only for a value the example actually uses. That makes the breaking set a fair test of
-   sensitivity — and it is also why the README says it measures sensitivity, not discovery.
+   sensitivity, and it is also why the README says it measures sensitivity, not discovery.
 
 Neutral mutations exist to catch the opposite failure: a checker that flags everything would score perfectly on
 breaking mutations and be useless in practice.
 
 ## Ledger replay (`history.py`)
 
-A ledger case is a single problem identity — `(method, operation, code, where)` — checked at three commits. The
+A ledger case is a single problem identity, `(method, operation, code, where)`, checked at three commits. The
 identity is intentionally narrow: it asks whether that exact problem is present, not whether the page is clean, so
 unrelated findings on the same page neither create nor hide a case. `operation` may be null, which is exactly how
 the 'route that never existed' cases are expressed.
 
 `evaluate` returns four booleans rather than one, because they answer different questions: was the problem already
-visible at the introduced commit, does the buggy commit show it, is it gone at the fix, and — the headline — both of
-the last two. A case that fails `cleared` is a false negative; a case that fails `detected` means the checker does
+visible at the introduced commit, does the buggy commit show it, is it gone at the fix, and (the headline) both of
+the last two. A case that fails `cleared` is a false negative. A case that fails `detected` means the checker does
 not see the bug the docs team fixed.
 
 `days_open` is computed from commit dates rather than hand-written, so the exposure it reports can be recomputed
@@ -224,10 +227,10 @@ two runs over the same pinned data are byte-identical and a diff under `results/
 through one helper (six places, `0.0` for an empty denominator) so the file does not change shape when a set is
 empty.
 
-`demo.py` owns presentation only: it prints the report from `results/details.json`, or rewrites the README's results
-block from `results/metrics.json`. Rendering fails loudly unless each marker appears exactly once and in order — a
-silently half-rewritten README is worse than a failed build. No number is ever typed by hand into the README, which
-is the reason the block exists at all.
+`demo.py` owns presentation only: it prints the report from `results/details.json`, or rewrites the README's two results
+blocks from `results/metrics.json` and `results/holdout.json`. Rendering fails loudly unless each marker appears
+exactly once and in order, because a silently half-rewritten README is worse than a failed build. No number is ever
+typed by hand into the README, which is the reason the blocks exist at all.
 
 ## Plugging into a docs build (a hypothesis)
 
@@ -246,12 +249,12 @@ This is a hypothesis about how such a pipeline could use the tool, not a descrip
 ## What is deliberately not done
 
 - **No network.** Not for the spec, not for the API, not for a model. Everything is a pure function of files.
-- **No SDK mapping.** `client.documents.batchAdd(...)` has its HTTP shape in another package; mapping it here would
+- **No SDK mapping.** `client.documents.batchAdd(...)` has its HTTP shape in another package, and mapping it here would
   need that package's source, not just the spec.
 - **No response checking.** The examples show responses too, but the specs' response schemas are looser than the
-  code the docs print, so checking them in this milestone would produce more noise than signal.
+  code the docs print, so checking them here would produce more noise than signal.
 - **No heuristics for non-literal URLs.** Resolving `${BASE}` would need conventions the docs do not state
   consistently, and a wrong guess would be reported as the docs' fault.
 - **No attempt at JSON Schema completeness.** Ref resolution, choices, enums, constants, required fields,
-  additional properties, items and types cover what the two pinned specs actually use; everything else is ignored
+  additional properties, items and types cover what the two pinned specs actually use. Everything else is ignored
   rather than half-implemented.

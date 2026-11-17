@@ -5,8 +5,6 @@ spec. Offline, with no API calls and no model.
 
 Write-up with a diagram and charts: https://yashgix.github.io/snippetspec/
 
-Renamed from `snippetcheck` on 16 Nov 2026. Frozen files and git tags keep the old name.
-
 It reads MDX pages, finds each HTTP call inside the code examples, matches it to a spec operation by method and path
 template, and then checks what the example sends: path values, query parameters, and the request body's field names,
 required fields, types and enum values. Every call gets a verdict with the exact problems behind it, and
@@ -71,8 +69,9 @@ sit next to a docs code-example record.
 | spec_operations_with_example | 26 |
 <!-- /snippetspec:results -->
 
-That table is generated: `experiment.py` writes `results/metrics.json`, then `demo.py --readme README.md` replaces
-the block between the two markers. The tables are generated. The numbers in the summary at the top are copied from them.
+This table and the hold-out table below are generated: `experiment.py` writes `results/metrics.json`, `make holdout`
+writes `results/holdout.json`, then `demo.py --readme README.md` replaces the block between each pair of markers.
+The numbers in the summary at the top are copied from them.
 
 ## Running it
 
@@ -107,12 +106,12 @@ when anything mismatches, so docs CI can gate on it.
 
 ## What the three verdicts mean
 
-- `ok` — the call matches an operation and everything the checker can see agrees with the spec.
-- `partial` — nothing contradicts the spec, but part of the call could not be read: an unparsed body, or a body
+- `ok`: the call matches an operation and everything the checker can see agrees with the spec.
+- `partial`: nothing contradicts the spec, but part of the call could not be read: an unparsed body, or a body
   holding a value that is not a literal (a variable, a call). Partial is not a pass.
-- `mismatch` — at least one problem: an unknown path, a method the path does not allow, an undocumented or missing
-  query parameter, an enum or type violation, an undocumented or missing body field, an unexpected or missing body,
-  or a body sent as the wrong content type.
+- `mismatch`: at least one problem. A problem is an unknown path, a method the path does not allow, an undocumented
+  or missing query parameter, an enum or type violation, an undocumented or missing body field, an unexpected or
+  missing body, or a body sent as the wrong content type.
 
 Values that stand for something the spec cannot know are placeholders (`${BASE}`, `{docId}`, `<id>`, `$ID`, or a
 non-literal expression) and match every schema. That is deliberately permissive: it keeps false positives down at
@@ -122,7 +121,7 @@ the cost of not checking those values at all.
 
 `study/ledger.json` records the rule under `about`. In short: a case is a docs example whose HTTP call was wrong
 before a fix commit and right after it, where the difference is the call itself (method, path, query or body) and
-the spec explains it — the buggy version contradicts the pinned spec, the fixed version agrees with it. Fixes that
+the spec explains it: the buggy version contradicts the pinned spec and the fixed version agrees with it. Fixes that
 only changed prose, and bugs that would need the live API to confirm, are excluded with their reasons. Each case
 carries `introduced`/`buggy`/`fixed` commits, the page, the expected problem `code` and `where`, and a quote from
 the commit.
@@ -134,12 +133,12 @@ one. `operation` may be `null`, which is how the cases about a route that never 
 ## Limits, stated plainly
 
 - **SDK examples are not checked.** `client.documents.add(...)`, `withSupermemory(...)` and friends are the largest
-  share of the docs' code blocks. Mapping SDK methods to operations is out of scope for this milestone.
+  share of the docs' code blocks. Mapping SDK methods to operations is out of scope for this version.
 - **Only found calls are counted.** A URL that is not a literal (`${BASE}/search`, a `baseUrl` variable, a relative
   `fetch('/search')`) is not a call the checker sees, so it is neither checked nor counted in the totals.
 - **Only the spec's contract is checked.** Nothing here calls the API, so a spec-gap finding means the docs present
   an endpoint the pinned specs do not describe. It does not mean the endpoint is dead or wrong. A clean result does
-  not mean the example would work — only that it does not contradict the spec.
+  not mean the example would work, only that it does not contradict the spec.
 - **Value semantics are out of reach.** A filter expression passed as a JSON string, a nested object whose shape the
   spec leaves open, an SDK call's options: all invisible or unchecked here.
 - **Method-filtered path matching.** When a concrete path exists without the call's method (for example
@@ -184,7 +183,7 @@ How to read it:
 
 - **Recall on the hand-broken cases is high, but it is the same kind of test as the seeded drift.** One change to one
   field is easy to see for a checker that knows the spec. It shows the checker works on a second API, not that it finds
-  real mistakes in the wild. No real, later-fixed Meilisearch docs bugs were collected in this milestone.
+  real mistakes in the wild. No real, later-fixed Meilisearch docs bugs were collected.
 - **Many clean samples are flagged. In the flags I sampled, the cause is a spec-versus-doc disagreement, runtime not
   confirmed.** Meilisearch's spec is generated from code and differs from the samples in repeating ways: it lists many
   fields, query parameters and request bodies as required that the samples leave out, names some fields in snake case
@@ -195,46 +194,45 @@ How to read it:
 - **The false-positive rate on this spec is high.** If the published samples are right, 114 of 216 (53%) are false
   alarms. None of the 114 is confirmed either way. `docs/MISMATCH-SPLIT.md` is a post-hoc split of the flagged calls
   on both APIs, kept apart from the method.
-- **The parser changed after the first hold-out run, and again after an independent review.** One fix (a trailing
+- **The parser changed after the first hold-out run, and again after a code review.** One fix (a trailing
   backslash at the end of a block) came from reading the first hold-out output. The review fixes (explicit
   Content-Type, comments and strings in JavaScript, every URL in a curl command, requests and httpx body and query
   rules) came from reading the code, not the hold-out. The 24 cases stayed frozen, the checker was not tuned to
   flag more or fewer samples, and the review changes did not move the hold-out counts above.
 - **What it did find that is real.** Two samples have an unclosed quote in their curl command, so no shell can run them
   (`code_samples_get_all_tasks_paginating_1.mdx` and `_2`). The scan reports these as unreadable commands rather than
-  skipping them silently. One sample posts to `documents/delete-batch`, which the spec does not list (the checker reads the last segment as a document id and reports a method mismatch).
+  skipping them silently. One sample posts to `documents/delete-batch`, which the spec does not list (the checker
+  reads the last segment as a document id and reports a method mismatch).
 
 ### Honesty about the numbers
 
 The ledger cases were found while exploring the docs history with an early version of this checker. The selection
 rule was written down afterwards. The cases come from a handful of fix commits, most of them bugs introduced by one
 migration commit and of one kind (options sent as query parameters instead of a JSON body). So the ledger's recall
-shows that these problems are real and catchable — it is not an accuracy or recall estimate for the checker.
+shows that these problems are real and catchable. It is not an accuracy or recall estimate for the checker.
 
 Of the 15 ledger cases, 12 are the same bug class (`undocumented_param`, options sent as query parameters, counted
 from `study/ledger.json`), so the ledger does not show breadth.
 
 The seeded-drift score is near-tautological: the mutations are derived from what each example sends, so the checker
 flagging every breaking one (and none of the neutral ones) is a property of the construction. It shows sensitivity,
-not discovery, and it is not evidence of accuracy on real mistakes. What the neutral changes add is the
-other half — that changes which should not break an example produce no finding.
+not discovery, and it is not evidence of accuracy on real mistakes. The neutral changes add the other
+half: changes that should not break an example produce no finding.
 
 ## Data and licenses
 
 The code is MIT (`LICENSE`). The pinned data under `data/` is never modified by this repo.
 
-- `data/docs/` and `data/history/` — Supermemory's docs pages at a pinned commit, and earlier versions of ten of them
+- `data/docs/` and `data/history/`: Supermemory's docs pages at a pinned commit, and earlier versions of ten of them
   for the ledger replay. MIT, copyright supermemory (`data/docs/LICENSE`).
-- `data/holdout/` — Meilisearch's OpenAPI spec and docs code samples, both MIT, with their license files beside them
+- `data/holdout/`: Meilisearch's OpenAPI spec and docs code samples, both MIT, with their license files beside them
   (`data/holdout/spec/LICENSE`, `data/holdout/docs/LICENSE`). Rebuilt by `tools/fetch_holdout.py`.
-- `data/openapi/v4.json` and `data/openapi/v5.json` — Supermemory's two public API specs. They state no license, so
+- `data/openapi/v4.json` and `data/openapi/v5.json`: Supermemory's two public API specs. They state no license, so
   they are not in this repository or its history. `python3 tools/fetch_data.py` downloads them and checks sha256 against
   `data/MANIFEST.json`. The live specs may change, in which case the check reports a mismatch instead of hiding it.
   Until you fetch them, the experiment and the tests that need them cannot run.
-- `data/MANIFEST.json` — bytes and sha256 of every pinned file. `make data-check` verifies them. Credential-shaped
+- `data/MANIFEST.json`: bytes and sha256 of every pinned file. `make data-check` verifies them. Credential-shaped
   placeholders in the fetched docs were replaced on the same line, so line numbers match upstream.
 
 No network access, no model calls and no randomness anywhere in the tests or the experiment (only the fetch scripts
 use the network), so the whole thing runs in seconds and gives the same answer twice.
-
-Built with Arcturus (Claude Code builders, Codex review). Reviewed and verified by hand.

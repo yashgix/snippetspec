@@ -15,7 +15,7 @@ from pathlib import Path
 DATA = Path(__file__).resolve().parent.parent / "data"
 MANIFEST = DATA / "MANIFEST.json"
 # Credential-shaped text (docs placeholders that assign a value to a NAME_API_KEY variable, or AWS's example
-# key id) is replaced on the same line, so no pinned file looks like a secret; same pattern as the runner's check.
+# key id) is replaced on the same line, so no pinned file looks like a secret to a key scanner.
 SECRET = re.compile(
     r"sk-[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{30,}|xox[abpr]-[A-Za-z0-9-]{10,}|AKIA[0-9A-Z]{16}"
     r"|-----BEGIN [A-Z ]*PRIVATE KEY-----|[A-Z0-9_]*(?:TOKEN|SECRET|API_KEY|PASSWORD)=[^\s\"']{8,}"

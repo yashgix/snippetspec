@@ -52,7 +52,21 @@ tr:last-child td { border-bottom: 0; }
 .step.out { background: var(--warn-soft); border-color: var(--warn); }
 .step span { color: var(--muted); font-size: 0.8125rem; }
 .step + .step::before { content: "\2192"; position: absolute; left: -1.15rem; top: 50%; transform: translateY(-50%); color: var(--muted); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.topbar { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.6rem; }
+.brand { font-family: var(--mono); }
+.tabs { display: flex; gap: 0.25rem; margin-left: auto; }
+.tabs button { font: inherit; font-size: 0.8125rem; font-weight: 500; border: 0; background: transparent; color: var(--muted); padding: 0.4rem 0.8rem; border-radius: 999px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--soft); color: var(--accent); }
+.gh { font-size: 0.8125rem; font-weight: 600; text-decoration: none; white-space: nowrap; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 0.3rem 0.8rem; }
+.gh:hover { background: var(--soft); }
+.btn { display: inline-flex; align-items: center; gap: 0.4rem; font: inherit; font-weight: 500; padding: 0.55rem 1rem; border-radius: 999px; border: 1px solid var(--accent); color: var(--accent); background: var(--paper); cursor: pointer; }
+footer { padding-block: 1.5rem 3rem; border-top: 1px solid var(--line); }
 @media (max-width: 760px) {
+  .brand { display: none; }
+  .tabs button { padding: 0.4rem 0.55rem; }
+  .gh { padding: 0.3rem 0.6rem; }
   .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .flow { grid-template-columns: minmax(0, 1fr); gap: 1.3rem; }
   .step + .step::before { content: "\2193"; left: 1rem; top: -1.25rem; transform: none; }
@@ -61,14 +75,24 @@ tr:last-child td { border-bottom: 0; }
 </style>
 </head>
 <body>
+
+<div class="topbar wrap"><div class="wide topbar-in">
+  <span class="brand">snippetspec</span>
+  <div class="tabs" role="tablist" aria-label="View">
+    <button role="tab" id="tab-overview" aria-controls="overview" aria-selected="true" data-view="overview">Overview</button>
+    <button role="tab" id="tab-details" aria-controls="details" aria-selected="false" data-view="details">Technical details</button>
+  </div>
+  <a class="gh" href="https://github.com/yashgix/snippetspec" target="_blank" rel="noopener">GitHub ↗</a>
+</div></div>
+
+<main id="overview" role="tabpanel" aria-labelledby="tab-overview">
 <header class="wrap"><div class="col stack">
   <p class="eyebrow">API docs &middot; OpenAPI &middot; offline</p>
   <h1>snippetspec</h1>
   <p class="lede">Checks the curl, fetch and Python HTTP examples in API documentation against the OpenAPI spec. No API calls, no model.</p>
-  <p class="small muted"><a href="https://github.com/yashgix/snippetspec">github.com/yashgix/snippetspec</a> &middot; MIT &middot; built with Arcturus (Claude Code builders, Codex review), reviewed and verified by hand</p>
+  <p class="small muted"><a href="https://github.com/yashgix/snippetspec">github.com/yashgix/snippetspec</a> &middot; MIT</p>
 </div></header>
 
-<main>
 <section class="wrap"><div class="col stack">
   <h2>The problem</h2>
   <p>Docs examples drift from the API they describe. In Supermemory's docs history, one commit says the old docs
@@ -78,56 +102,26 @@ tr:last-child td { border-bottom: 0; }
   that have caught the drift bugs the docs team later fixed?</p>
 </div></section>
 
-<section class="wrap"><div class="col stack">
-  <h2>Approach</h2>
-  <p>Read MDX pages, find each HTTP call in curl commands, JavaScript <code>fetch</code> and Python
-  <code>requests</code>/<code>httpx</code> code, match it to an operation by method and path template, then check what the
-  example sends. Each call gets one verdict.</p>
-  <div class="flow" role="img" aria-label="Pipeline from MDX pages to verdicts">
-    <div class="step"><b>MDX pages</b><span>code blocks</span></div>
-    <div class="step"><b>Calls found</b><span>method, URL, body</span></div>
-    <div class="step"><b>Operation match</b><span>method and path template</span></div>
-    <div class="step out"><b>Verdict</b><span>ok, partial, mismatch</span></div>
-  </div>
-  <p class="small muted">Matching reads the pinned OpenAPI spec (sha256 checked). Each call is checked for path values, query parameters, body field names, required fields, types, enum values and content type. Exit status is 1 when any call mismatches, so a docs build can gate on it.</p>
-  <ul>
-    <li><code>ok</code>: everything the checker can see agrees with the spec.</li>
-    <li><code>partial</code>: nothing contradicts the spec, but part of the call could not be read. Not a pass.</li>
-    <li><code>mismatch</code>: at least one problem, such as an unknown path, a missing or undocumented field, or a wrong type.</li>
-  </ul>
-</div></section>
-
 <section class="wrap"><div class="wide stack">
-  <h2>Results on Supermemory's docs</h2>
-  <p class="small muted">Every number below is filled in from <code>results/metrics.json</code> and <code>results/holdout.json</code> by <code>tools/build_page.py</code>.</p>
+  <h2>Results</h2>
+  <p class="small muted">Tile and chart numbers come from <code>results/metrics.json</code> and <code>results/holdout.json</code>.</p>
+  <h3>Supermemory's docs</h3>
   <div class="tiles">
     <div class="tile"><b>{{pages}}</b><span>pages scanned, {{examples}} code examples</span></div>
     <div class="tile"><b>{{calls}}</b><span>HTTP calls found, {{calls_ok}} ok, {{calls_mismatch}} mismatch</span></div>
     <div class="tile"><b>{{triage_spec_gap}} of {{findings}}</b><span>findings are endpoints the specs do not describe ({{triage_unconfirmed}} unconfirmed)</span></div>
     <div class="tile"><b>{{ledger_caught}} of {{ledger_cases}}</b><span>real docs fixes flagged before, clean after</span></div>
   </div>
-  <h3>Seeded drift: the spec is changed one thing at a time</h3>
-  <div class="bars">{{mutation_bars}}</div>
-  <p class="small muted">Neutral changes (an optional field or enum value added) flagged {{mutation_neutral_flagged}} of {{mutation_neutral_cases}}.
-  Breaking changes caught: {{mutation_breaking_caught}} of {{mutation_breaking_cases}}.</p>
-  <div class="note"><b>How much this proves.</b> The mutations are derived from what each example sends, so catching
-  all of them is close to a property of the construction. It shows sensitivity, not discovery. Also, {{ledger_same}} of
-  the {{ledger_cases}} ledger cases are one bug class (options sent as query parameters), so the ledger shows the
-  problems are real and catchable, not how often the checker is right.</div>
-</div></section>
-
-<section class="wrap"><div class="wide stack">
-  <h2>Second API: Meilisearch, a hold-out</h2>
-  <p>Meilisearch's published spec and {{h_pages}} docs samples (both MIT) were pinned, and {{h_cases}} hand-broken
-  cases were written from the spec and frozen before the checker ran on them (<code>study/holdout_cases.sha256</code>).</p>
+  <div class="note"><b>How much this proves.</b> {{ledger_same}} of the {{ledger_cases}} ledger cases are one bug class
+  (options sent as query parameters), so the ledger shows the problems are real and catchable, not how often the
+  checker is right. The seeded-drift test (in Technical details) shows sensitivity, not discovery.</div>
+  <h3>Meilisearch, a second API held out</h3>
   <div class="tiles">
     <div class="tile"><b>{{h_caught}} of {{h_cases}}</b><span>hand-broken cases caught</span></div>
     <div class="tile warn"><b>{{h_mismatch}} of {{h_calls}}</b><span>published samples flagged ({{h_mismatch_pct}}%)</span></div>
     <div class="tile"><b>{{h_unparsed}}</b><span>unreadable curl commands (unclosed quote)</span></div>
     <div class="tile"><b>{{h_partial}}</b><span>partial verdict</span></div>
   </div>
-  <h3>Recall by kind of change</h3>
-  <div class="bars">{{recall_bars}}</div>
   <h3>Why so many clean samples are flagged</h3>
   <div class="bars">{{code_bars}}</div>
   <div class="note"><b>Runtime not confirmed.</b> In the flags sampled, the cause is the generated spec disagreeing with
@@ -143,17 +137,21 @@ tr:last-child td { border-bottom: 0; }
 </div></section>
 
 <section class="wrap"><div class="col stack">
-  <h2>What v2 changed and why</h2>
-  <p>The build from the written spec (v1) first failed some of the 38 acceptance tests and passes all of them after fixes. After that:</p>
+  <h2>How it works</h2>
+  <p>Read MDX pages, find each HTTP call in curl commands, JavaScript <code>fetch</code> and Python
+  <code>requests</code>/<code>httpx</code> code, match it to an operation by method and path template, then check what the
+  example sends. Each call gets one verdict.</p>
+  <div class="flow" role="img" aria-label="Pipeline from MDX pages to verdicts">
+    <div class="step"><b>MDX pages</b><span>code blocks</span></div>
+    <div class="step"><b>Calls found</b><span>method, URL, body</span></div>
+    <div class="step"><b>Operation match</b><span>method and path template</span></div>
+    <div class="step out"><b>Verdict</b><span>ok, partial, mismatch</span></div>
+  </div>
   <ul>
-    <li>A quoting error now skips only the bad command, and unreadable commands are reported, not dropped.</li>
-    <li>A trailing backslash at the end of a block is ignored. This came from reading the first hold-out output.</li>
-    <li>After an independent code review: explicit <code>Content-Type</code> is checked, <code>fetch</code> is found only in
-    code (not comments or strings), every URL of a curl command is a call, and requests/httpx follow their own body and
-    query rules.</li>
+    <li><code>ok</code>: everything the checker can see agrees with the spec.</li>
+    <li><code>partial</code>: nothing contradicts the spec, but part of the call could not be read. Not a pass.</li>
+    <li><code>mismatch</code>: at least one problem, such as an unknown path, a missing or undocumented field, or a wrong type.</li>
   </ul>
-  <p>The parser changed after the first hold-out run and after review. The 24 cases stayed frozen, nothing was tuned to
-  flag more or fewer samples, and the review changes did not move the hold-out counts. Details are in <code>SPEC-v2.md</code>.</p>
 </div></section>
 
 <section class="wrap"><div class="col stack">
@@ -169,6 +167,51 @@ tr:last-child td { border-bottom: 0; }
     <li>No real, later-fixed docs bugs were collected for the second API.</li>
     <li>Ledger cases are replayed against today's spec, not the spec of their day.</li>
   </ul>
+  <p><button class="btn" type="button" data-view="details">Technical details →</button></p>
+</div></section>
+</main>
+
+<main id="details" role="tabpanel" aria-labelledby="tab-details" hidden>
+<header class="wrap"><div class="col stack">
+  <p class="eyebrow">Technical details</p>
+  <h1 style="font-size:clamp(1.8rem,4.4vw,2.5rem)">Method, results and data</h1>
+</div></header>
+
+<section class="wrap"><div class="col stack">
+  <h2>What is checked</h2>
+  <p>Matching reads the pinned OpenAPI spec (sha256 checked). Each call is checked for path values, query parameters, body field names, required fields, types, enum values and content type. Exit status is 1 when any call mismatches, so a docs build can gate on it.</p>
+</div></section>
+
+<section class="wrap"><div class="wide stack">
+  <h2>Seeded drift on Supermemory's specs</h2>
+  <p>The spec is changed one thing at a time and each real clean example is re-checked.</p>
+  <div class="bars">{{mutation_bars}}</div>
+  <p class="small muted">Neutral changes (an optional field or enum value added) flagged {{mutation_neutral_flagged}} of {{mutation_neutral_cases}}.
+  Breaking changes caught: {{mutation_breaking_caught}} of {{mutation_breaking_cases}}.</p>
+  <div class="note"><b>How much this proves.</b> The mutations are derived from what each example sends, so catching
+  all of them is close to a property of the construction. It shows sensitivity, not discovery.</div>
+</div></section>
+
+<section class="wrap"><div class="wide stack">
+  <h2>Meilisearch hold-out</h2>
+  <p>Meilisearch's published spec and {{h_pages}} docs samples (both MIT) were pinned, and {{h_cases}} hand-broken
+  cases were written from the spec and frozen before the checker ran on them (<code>study/holdout_cases.sha256</code>).</p>
+  <h3>Recall by kind of change</h3>
+  <div class="bars">{{recall_bars}}</div>
+</div></section>
+
+<section class="wrap"><div class="col stack">
+  <h2>What v2 changed and why</h2>
+  <p>Version 1 was written to a spec with 38 acceptance tests and passes all of them after fixes. After that:</p>
+  <ul>
+    <li>A quoting error now skips only the bad command, and unreadable commands are reported, not dropped.</li>
+    <li>A trailing backslash at the end of a block is ignored. This came from reading the first hold-out output.</li>
+    <li>After a code review: explicit <code>Content-Type</code> is checked, <code>fetch</code> is found only in
+    code (not comments or strings), every URL of a curl command is a call, and requests/httpx follow their own body and
+    query rules.</li>
+  </ul>
+  <p>The parser changed after the first hold-out run and after review. The 24 cases stayed frozen, nothing was tuned to
+  flag more or fewer samples, and the review changes did not move the hold-out counts. Details are in <code>SPEC-v2.md</code>.</p>
 </div></section>
 
 <section class="wrap"><div class="col stack">
@@ -177,8 +220,28 @@ tr:last-child td { border-bottom: 0; }
 python3 tools/fetch_data.py      # Supermemory's two specs state no license, so they are fetched, not shipped
 make test experiment holdout     # Python 3.14, no packages</pre>
   <p>Supermemory docs and Meilisearch's spec and docs are MIT and kept with their license files. The code is MIT.</p>
+  <p><button class="btn" type="button" data-view="overview">← Overview</button></p>
 </div></section>
 </main>
-<footer class="wrap"><div class="col small muted" style="padding-block:1.5rem 3rem">snippetspec &middot; page generated by <code>tools/build_page.py</code></div></footer>
+
+<footer class="wrap"><div class="wide small muted">snippetspec · Yash Gupta · <a href="https://github.com/yashgix/snippetspec">github.com/yashgix/snippetspec</a></div></footer>
+
+<script>
+const views = ["overview", "details"];
+function show(v) {
+  if (!views.includes(v)) v = "overview";
+  for (const x of views) {
+    document.getElementById(x).hidden = x !== v;
+    document.getElementById("tab-" + x).setAttribute("aria-selected", String(x === v));
+  }
+}
+document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => {
+  history.replaceState(null, "", "#" + b.dataset.view);
+  show(b.dataset.view);
+  window.scrollTo(0, 0);
+}));
+addEventListener("hashchange", () => show(location.hash.slice(1)));
+show(location.hash.slice(1));
+</script>
 </body>
 </html>
