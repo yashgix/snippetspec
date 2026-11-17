@@ -7,7 +7,7 @@ from urllib.parse import unquote, urlsplit
 
 from snippetspec.calls import Call
 from snippetspec.check import check_call
-from snippetspec.spec import Operation, body_schemas, deref, operations, params, segments
+from snippetspec.spec import Operation, base_path, body_schemas, deref, operations, params, segments
 
 BREAKING = {
     "remove_operation": ("unknown_path", "method_not_allowed"),
@@ -89,7 +89,7 @@ def _url_segments(url: str) -> list[str]:
 def _drop_enum_mutations(spec: dict, operation: Operation, call: Call, bodies: list[dict]) -> list[str]:
     """The drop_enum_value mutations for the values a call sends."""
     found = []
-    path_parameters = params(operation, "path")
+    path_parameters = params(spec, operation, "path")
     template = segments(operation.template)
     actual = _url_segments(call.url)
     for index, segment in enumerate(template):
@@ -99,7 +99,7 @@ def _drop_enum_mutations(spec: dict, operation: Operation, call: Call, bodies: l
         enum = _enum_of(spec, path_parameters[name].get("schema"))
         if enum is not None and len(enum) >= 2 and _in_enum(actual[index], enum):
             found.append(f"drop_enum_value:path:{name}={actual[index]}")
-    query_parameters = params(operation, "query")
+    query_parameters = params(spec, operation, "query")
     for name, value in call.query:
         parameter = query_parameters.get(name)
         if parameter is None:
@@ -120,7 +120,7 @@ def _drop_enum_mutations(spec: dict, operation: Operation, call: Call, bodies: l
 def _has_enum(spec: dict, operation: Operation, bodies: list[dict]) -> bool:
     """Whether a path or query parameter or body property declares an enum."""
     for where in ("path", "query"):
-        for parameter in params(operation, where).values():
+        for parameter in params(spec, operation, where).values():
             if _enum_of(spec, parameter.get("schema")) is not None:
                 return True
     for body in bodies:
@@ -143,7 +143,7 @@ def mutations(spec: dict, operation: Operation, call: Call) -> list[str]:
     if body and bodies:
         found.append("add_required")
     found.extend(_drop_enum_mutations(spec, operation, call, bodies))
-    declared = params(operation, "query")
+    declared = params(spec, operation, "query")
     seen: set[str] = set()
     for name, _value in call.query:
         if name in declared and name not in seen:
@@ -161,7 +161,7 @@ def _path_item(spec: dict, operation: Operation) -> dict | None:
     paths = spec.get("paths")
     if not isinstance(paths, dict):
         return None
-    item = paths.get(operation.template)
+    item = paths.get(operation.template.removeprefix(base_path(spec)))
     return item if isinstance(item, dict) else None
 
 

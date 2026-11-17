@@ -236,20 +236,20 @@ class ParamsTest(unittest.TestCase):
         self.operation = Operation("v5", "GET", "/ns/{namespace}/list", {"parameters": parameters})
 
     def test_query_parameters_by_name(self):
-        found = params(self.operation, "query")
+        found = params({}, self.operation, "query")
         self.assertEqual(list(found), ["page"])
         self.assertEqual(found["page"]["schema"], {"type": "integer"})
 
     def test_path_parameters(self):
-        found = params(self.operation, "path")
+        found = params({}, self.operation, "path")
         self.assertEqual(list(found), ["namespace"])
         self.assertTrue(found["namespace"]["required"])
 
     def test_a_where_without_parameters(self):
-        self.assertEqual(params(self.operation, "cookie"), {})
+        self.assertEqual(params({}, self.operation, "cookie"), {})
 
     def test_operation_without_parameters(self):
-        self.assertEqual(params(operation(), "query"), {})
+        self.assertEqual(params({}, operation(), "query"), {})
 
 
 if __name__ == "__main__":

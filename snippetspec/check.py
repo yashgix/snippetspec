@@ -7,7 +7,7 @@ from urllib.parse import unquote, urlsplit
 
 from snippetspec.calls import Call
 from snippetspec.jsread import UNKNOWN
-from snippetspec.spec import Operation, body_schemas, deref, match, params, segments
+from snippetspec.spec import Operation, body_schemas, candidates, deref, merge_all_of, params, segments
 
 PLACEHOLDER_CHARACTERS = frozenset("${}<>")
 INTEGER = re.compile(r"-?\d+")
@@ -19,23 +19,30 @@ FORM_TYPES = ("multipart/form-data", "application/x-www-form-urlencoded")
 def check_call(specs: dict, ops: list[Operation], call: Call) -> dict:
     """The operation a call reaches, named "spec:METHOD /template", and every problem with it."""
     path = _path_of(call.url)
-    operation, problem = match(ops, call.method, path)
-    if operation is None:
+    found, problem = candidates(ops, call.method, path)
+    if not found:
         return {"operation": None, "problems": [problem]}
-    spec = specs[operation.spec]
-    problems = [
+    # Several specs can declare the same route (e.g. a legacy and a current one); judge the call by its best fit.
+    results = [_operation_problems(specs[operation.spec], operation, path, call) for operation in found]
+    best = min(range(len(found)), key=lambda index: len(results[index]))
+    operation = found[best]
+    return {"operation": f"{operation.spec}:{operation.name}", "problems": results[best]}
+
+
+def _operation_problems(spec: dict, operation: Operation, path: str, call: Call) -> list[tuple[str, str]]:
+    """Path, query and body problems of a call against one operation."""
+    return [
         *_path_problems(spec, operation, path),
         *_query_problems(spec, operation, call.query),
         *_body_problems(spec, operation, call),
     ]
-    return {"operation": f"{operation.spec}:{operation.name}", "problems": problems}
 
 
 def validate(spec: dict, schema: object, value: object, where: str = "$") -> list[tuple[str, str]]:
     """Every problem a JSON value has with a schema, each as a (code, where) pair."""
     if is_placeholder(value):
         return []
-    resolved = deref(spec, schema)
+    resolved = merge_all_of(spec, deref(spec, schema))
     if not isinstance(resolved, dict):
         return []
     branches = _branches(resolved)
@@ -153,7 +160,7 @@ def _object_problems(spec: dict, schema: dict, value: dict, where: str) -> list[
 
 def _path_problems(spec: dict, operation: Operation, path: str) -> list[tuple[str, str]]:
     """Problems with the URL-decoded value of each declared path parameter."""
-    declared = params(operation, "path")
+    declared = params(spec, operation, "path")
     problems = []
     for template, actual in zip(segments(operation.template), segments(path), strict=False):
         name = _parameter_name(template)
@@ -173,7 +180,7 @@ def _parameter_name(segment: str) -> str | None:
 
 def _query_problems(spec: dict, operation: Operation, query: tuple) -> list[tuple[str, str]]:
     """Missing required parameters first, then each sent pair in order."""
-    declared = params(operation, "query")
+    declared = params(spec, operation, "query")
     sent = {name for name, _value in query}
     problems = []
     for name, parameter in declared.items():
@@ -192,7 +199,7 @@ def _parameter_problems(spec: dict, schema: object, value: str, where: str) -> l
     """Problems with a parameter's text value, which is never parsed as JSON."""
     if is_placeholder(value):
         return []
-    resolved = deref(spec, schema)
+    resolved = merge_all_of(spec, deref(spec, schema))
     if not isinstance(resolved, dict):
         return []
     branches = _branches(resolved)
@@ -249,7 +256,7 @@ def _body_problems(spec: dict, operation: Operation, call: Call) -> list[tuple[s
     media, missing = _media_type(schemas, call.body_kind, call.media)
     if media is None:
         return [missing]
-    schema = deref(spec, schemas[media])
+    schema = merge_all_of(spec, deref(spec, schemas[media]))
     if media in FORM_TYPES:
         return _form_problems(schema, call.body)
     if media == JSON and call.body_kind == "json":

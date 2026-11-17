@@ -486,3 +486,41 @@ class ParameterTextTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SpecShapeTest(unittest.TestCase):
+    def test_server_path_is_put_in_front_of_spec_paths(self):
+        specs = {"v": {"servers": [{"url": "https://api.supermemory.ai/v2"}], "paths": {"/x": {"get": {}}}}}
+        self.assertEqual(check(specs, url="https://api.supermemory.ai/v2/x")["problems"], [])
+        self.assertEqual(check(specs, url="https://api.supermemory.ai/x")["problems"], [("unknown_path", "/x")])
+
+    def test_parameters_by_ref_and_on_the_path_item_count(self):
+        limit = {"name": "limit", "in": "query", "schema": {"type": "integer"}}
+        paths = {"/x": {"parameters": [{"$ref": "#/components/parameters/Limit"}], "get": {}}}
+        specs = {"v": {"paths": paths, "components": {"parameters": {"Limit": limit}}}}
+        self.assertEqual(check(specs, url="https://api.supermemory.ai/x?limit=5")["problems"], [])
+        wrong = check(specs, url="https://api.supermemory.ai/x?limit=a")["problems"]
+        self.assertEqual(wrong, [("type", "query:limit")])
+
+    def test_all_of_parts_are_merged(self):
+        schemas = {
+            "Base": {"type": "object", "required": ["model"], "properties": {"model": {"type": "string"}}},
+            "Chat": {"allOf": [{"$ref": "#/components/schemas/Base"}, {"properties": {"messages": {"type": "array"}}}]},
+        }
+        body = {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/Chat"}}}}
+        specs = {"v": spec({"/x": {"post": {"requestBody": body}}}, schemas)}
+        sent = {"model": "m", "messages": []}
+        self.assertEqual(check(specs, "POST", body_kind="json", body=sent)["problems"], [])
+        missing = check(specs, "POST", body_kind="json", body={"messages": []})["problems"]
+        self.assertEqual(missing, [("missing_field", "$.model")])
+
+    def test_a_call_is_judged_by_the_spec_it_fits_best(self):
+        def schema(field):
+            return {"type": "object", "required": [field], "properties": {field: {"type": "string"}}}
+
+        def route(field):
+            return {"/x": {"post": {"requestBody": {"content": {"application/json": {"schema": schema(field)}}}}}}
+
+        specs = {"legacy": spec(route("document_url")), "current": spec(route("input"))}
+        result = check(specs, "POST", body_kind="json", body={"input": "a"})
+        self.assertEqual(result, {"operation": "current:POST /x", "problems": []})
