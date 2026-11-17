@@ -1,0 +1,35 @@
+{
+  "name": "snippetspec",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Checks the HTTP calls in API docs code examples against the OpenAPI spec, reading examples the way Margin does.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "snippetspec": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "format:check": "biome format ."
+  },
+  "dependencies": {
+    "remark": "15.0.1",
+    "remark-gfm": "4.0.1",
+    "remark-mdx": "3.1.1",
+    "typescript": "6.0.3",
+    "unist-util-visit": "5.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.5",
+    "@types/mdast": "4.0.4",
+    "@types/node": "22.20.5",
+    "vitest": "5.1.0"
+  }
+}

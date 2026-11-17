@@ -1,0 +1,4556 @@
+[
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/sink",
+      "query": [],
+      "body_kind": "json",
+      "body": {},
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /sink",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/uploads",
+      "query": [],
+      "body_kind": "form",
+      "body": {
+        "file": {
+          "$unknown": true
+        }
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /uploads",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/uploads",
+      "query": [],
+      "body_kind": "form",
+      "body": {
+        "note": "x"
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /uploads",
+      "problems": [["missing_field", "$.file"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/uploads",
+      "query": [],
+      "body_kind": "form",
+      "body": {
+        "file": "x",
+        "extra": "y"
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /uploads",
+      "problems": [["undocumented_field", "$.extra"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/sink",
+      "query": [],
+      "body_kind": "form",
+      "body": {
+        "a": "1"
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /sink",
+      "problems": [["unexpected_body", "body"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/items",
+      "query": [],
+      "body_kind": "form",
+      "body": {
+        "name": "x"
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /items",
+      "problems": [["content_type", "body:form"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/items",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "size": 3
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /items",
+      "problems": [["missing_field", "$.name"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/sink",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "a": 1
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /sink",
+      "problems": [["unexpected_body", "body"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/uploads",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "file": "x"
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /uploads",
+      "problems": [["content_type", "body:json"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/items",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "name": "x",
+        "size": "big"
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /items",
+      "problems": [["type", "$.size"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/items",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /items",
+      "problems": [["missing_body", "body"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/uploads",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /uploads",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/uploads",
+      "query": [],
+      "body_kind": "unparsed",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /uploads",
+      "problems": [["content_type", "body:json"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/items",
+      "query": [],
+      "body_kind": "unparsed",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:POST /items",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "PATCH",
+      "url": "https://api.supermemory.ai/plain",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": null,
+      "problems": [["method_not_allowed", "GET"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/plain",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /plain",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items?limit=x",
+      "query": [["limit", "x"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items",
+      "problems": [["type", "query:limit"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/nope",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": null,
+      "problems": [["unknown_path", "/nope"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/items",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "size": 1
+      },
+      "media": "application/json"
+    },
+    "result": {
+      "operation": "v5:POST /items",
+      "problems": [["missing_field", "$.name"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/items",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "name": "n"
+      },
+      "media": "text/plain"
+    },
+    "result": {
+      "operation": "v5:POST /items",
+      "problems": [["content_type", "body:text/plain"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/items",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "name": "n"
+      },
+      "media": "application/vnd.x+json"
+    },
+    "result": {
+      "operation": "v5:POST /items",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "enum": ["all"]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=all",
+      "query": [["v", "all"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "enum": ["all"]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=z",
+      "query": [["v", "z"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": [["type", "query:v"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=12",
+      "query": [["v", "12"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=abc",
+      "query": [["v", "abc"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": [["type", "query:v"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": "array"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=abc",
+      "query": [["v", "abc"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=true",
+      "query": [["v", "true"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=yes",
+      "query": [["v", "yes"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": [["type", "query:v"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "const": 2
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=2",
+      "query": [["v", "2"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "const": 2
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=3",
+      "query": [["v", "3"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": [["enum", "query:v"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": "number"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=1.5",
+      "query": [["v", "1.5"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": "number"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=1e5",
+      "query": [["v", "1e5"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": [["type", "query:v"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "$ref": "#/components/schemas/Count"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {
+            "Count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=abc",
+      "query": [["v", "abc"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": [["type", "query:v"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=${N}",
+      "query": [["v", "${N}"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": ["integer", "boolean"]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=true",
+      "query": [["v", "true"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "v",
+                  "in": "query",
+                  "schema": {
+                    "type": ["integer", "boolean"]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?v=z",
+      "query": [["v", "z"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x",
+      "problems": [["type", "query:v"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items/abc",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items/{id}",
+      "problems": [["type", "path:id"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items/%37",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items/{id}",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items/7",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items/{id}",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items/{itemId}",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items/{id}",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/x/{id}": {
+            "get": {}
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x/abc",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /x/{id}",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items?limit=1&mode=medium",
+      "query": [["limit", "1"], ["mode", "medium"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items",
+      "problems": [["enum", "query:mode"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items",
+      "problems": [["missing_param", "query:limit"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items?extra=1",
+      "query": [["extra", "1"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items",
+      "problems": [["missing_param", "query:limit"], ["undocumented_param", "query:extra"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items",
+      "query": [["limit", "5"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items?limit=many",
+      "query": [["limit", "many"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items",
+      "problems": [["type", "query:limit"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items/abc?limit=1",
+      "query": [["limit", "1"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items/{id}",
+      "problems": [["type", "path:id"], ["undocumented_param", "query:limit"]]
+    }
+  },
+  {
+    "specs": {
+      "v5": {
+        "paths": {
+          "/items": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "limit",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "name": "mode",
+                  "in": "query",
+                  "schema": {
+                    "enum": ["fast", "slow"]
+                  }
+                }
+              ]
+            },
+            "post": {
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/items/{id}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ]
+            }
+          },
+          "/uploads": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["file"],
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/plain": {
+            "get": {}
+          },
+          "/sink": {
+            "post": {}
+          }
+        },
+        "components": {
+          "schemas": {
+            "Item": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/items?limit=1&extra=2",
+      "query": [["limit", "1"], ["extra", "2"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v5:GET /items",
+      "problems": [["undocumented_param", "query:extra"]]
+    }
+  },
+  {
+    "specs": {
+      "legacy": {
+        "paths": {
+          "/x": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["document_url"],
+                      "properties": {
+                        "document_url": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      },
+      "current": {
+        "paths": {
+          "/x": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "required": ["input"],
+                      "properties": {
+                        "input": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {}
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/x",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "input": "a"
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "current:POST /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v": {
+        "paths": {
+          "/x": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Chat"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {
+            "Base": {
+              "type": "object",
+              "required": ["model"],
+              "properties": {
+                "model": {
+                  "type": "string"
+                }
+              }
+            },
+            "Chat": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Base"
+                },
+                {
+                  "properties": {
+                    "messages": {
+                      "type": "array"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/x",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "model": "m",
+        "messages": []
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v:POST /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v": {
+        "paths": {
+          "/x": {
+            "post": {
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Chat"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {
+            "Base": {
+              "type": "object",
+              "required": ["model"],
+              "properties": {
+                "model": {
+                  "type": "string"
+                }
+              }
+            },
+            "Chat": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Base"
+                },
+                {
+                  "properties": {
+                    "messages": {
+                      "type": "array"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "POST",
+      "url": "https://api.supermemory.ai/x",
+      "query": [],
+      "body_kind": "json",
+      "body": {
+        "messages": []
+      },
+      "media": null
+    },
+    "result": {
+      "operation": "v:POST /x",
+      "problems": [["missing_field", "$.model"]]
+    }
+  },
+  {
+    "specs": {
+      "v": {
+        "paths": {
+          "/x": {
+            "parameters": [
+              {
+                "$ref": "#/components/parameters/Limit"
+              }
+            ],
+            "get": {}
+          }
+        },
+        "components": {
+          "parameters": {
+            "Limit": {
+              "name": "limit",
+              "in": "query",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?limit=5",
+      "query": [["limit", "5"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v:GET /x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v": {
+        "paths": {
+          "/x": {
+            "parameters": [
+              {
+                "$ref": "#/components/parameters/Limit"
+              }
+            ],
+            "get": {}
+          }
+        },
+        "components": {
+          "parameters": {
+            "Limit": {
+              "name": "limit",
+              "in": "query",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x?limit=a",
+      "query": [["limit", "a"]],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v:GET /x",
+      "problems": [["type", "query:limit"]]
+    }
+  },
+  {
+    "specs": {
+      "v": {
+        "servers": [
+          {
+            "url": "https://api.supermemory.ai/v2"
+          }
+        ],
+        "paths": {
+          "/x": {
+            "get": {}
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/v2/x",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": "v:GET /v2/x",
+      "problems": []
+    }
+  },
+  {
+    "specs": {
+      "v": {
+        "servers": [
+          {
+            "url": "https://api.supermemory.ai/v2"
+          }
+        ],
+        "paths": {
+          "/x": {
+            "get": {}
+          }
+        }
+      }
+    },
+    "call": {
+      "tool": "curl",
+      "method": "GET",
+      "url": "https://api.supermemory.ai/x",
+      "query": [],
+      "body_kind": "none",
+      "body": null,
+      "media": null
+    },
+    "result": {
+      "operation": null,
+      "problems": [["unknown_path", "/x"]]
+    }
+  }
+]

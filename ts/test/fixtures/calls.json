@@ -1,0 +1,1596 @@
+[
+  {
+    "code": "curl -s -X POST",
+    "language": "bash",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://api.supermemory.ai/a https://api.supermemory.ai/b",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      },
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/b",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl --url https://api.supermemory.ai/a https://api.supermemory.ai/b",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      },
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/b",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -X POST https://x.test/a https://x.test/b -d '{\"k\": 1}'",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x.test/a",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "k": 1
+        },
+        "media": null
+      },
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x.test/b",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "k": 1
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\")",
+    "language": "javascript",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\")",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\")",
+    "language": "jsx",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\")",
+    "language": "typescript",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\")",
+    "language": "ts",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\")",
+    "language": "tsx",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a",
+    "language": "Bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a",
+    "language": "json",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "fetch('https://x/a')",
+    "language": "text",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get('https://x/a')",
+    "language": "yaml",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(\"https://x/a\")",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(\"https://x/a\")",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a",
+    "language": "sh",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a",
+    "language": "shell",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a",
+    "language": "zsh",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a",
+    "language": "console",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a",
+    "language": "terminal",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -X POST https://api.supermemory.ai/v3/x -d \"{\\\"a\\\":\n \\\"b\\\"}\"",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/x",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "a": "b"
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl \"https://api.supermemory.ai/v3/search?q=a&limit=3\"",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/search?q=a&limit=3",
+        "query": [["q", "a"], ["limit", "3"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "// fetch(\"https://api.supermemory.ai/nope\")\n/* fetch(\"https://api.supermemory.ai/nope\") */",
+    "language": "js",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "const a = 'fetch(\"https://api.supermemory.ai/nope\")'; const b = `fetch(\"https://api.supermemory.ai/nope\")`; const c = \"fetch('https://api.supermemory.ai/nope')\";",
+    "language": "js",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "// fetch(\"x\")\nconst s = \"// not a comment\";\n/* c */ fetch(\"https://api.supermemory.ai/nope\")",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/nope",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "const s = 'it\\'s fetch(\"https://api.supermemory.ai/nope\")';",
+    "language": "js",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "fetch('https://api.supermemory.ai/e', { method: 'PUT', body: JSON.stringify({ ...rest, a: 1 }) })",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "PUT",
+        "url": "https://api.supermemory.ai/e",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "$unknown": true
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\", {method: \"POST\", body: payload})",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "unparsed",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\", {method: verb})",
+    "language": "js",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\", options)",
+    "language": "js",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(baseUrl)",
+    "language": "js",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\", {method: \"DELETE\", body: null})",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "DELETE",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "prefetch(\"https://x/a\"); client.fetch(\"https://x/b\"); fetch(\"https://x/c\")",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://x/c",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://api.supermemory.ai/ns/user/search\", {method: \"POST\", body: JSON.stringify({query: \"hi\"})})",
+    "language": "typescript",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/ns/user/search",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "query": "hi"
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://api.supermemory.ai/v3/search\")",
+    "language": "javascript",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/search",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\", {method: \"POST\", body: '{\"a\": 1}'})",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "a": 1
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(\"https://x/a\", {body: \"hello\"})",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "unparsed",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch(`https://api.supermemory.ai/v3/documents/${docId}`)",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/documents/{docId}",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -X POST https://x.test/a -H 'content-type: Text/Plain; charset=utf-8' -d '{}'",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x.test/a",
+        "query": [],
+        "body_kind": "json",
+        "body": {},
+        "media": "text/plain"
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x.test/a --json '{}'",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x.test/a",
+        "query": [],
+        "body_kind": "json",
+        "body": {},
+        "media": "application/json"
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x.test/a -d '{}'",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x.test/a",
+        "query": [],
+        "body_kind": "json",
+        "body": {},
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "fetch('https://x.test/a', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: '{}' })",
+    "language": "js",
+    "calls": [
+      {
+        "tool": "fetch",
+        "method": "POST",
+        "url": "https://x.test/a",
+        "query": [],
+        "body_kind": "json",
+        "body": {},
+        "media": "text/plain"
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get('https://api.supermemory.ai/v3/documents', params={'on': True})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [["on", "True"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "httpx.get('https://api.supermemory.ai/v3/documents', params={'on': True})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [["on", "true"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.post('https://api.supermemory.ai/v3/documents', data={'bad': 'x'}, json={'content': 'hi'})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "form",
+        "body": {
+          "bad": "x"
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.post('https://api.supermemory.ai/v3/documents', files={'f': f}, json={})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "form",
+        "body": {
+          "f": {
+            "$unknown": true
+          }
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "httpx.post('https://api.supermemory.ai/v3/documents', data={}, json={'content': 'hi'})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "content": "hi"
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.post('https://api.supermemory.ai/v3/documents', headers={'Content-Type': 'text/plain'}, data='x')",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "unparsed",
+        "body": null,
+        "media": "text/plain"
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "httpx.post('https://api.supermemory.ai/v3/documents', content=b'x', json={'a': 1})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "unparsed",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.post('https://api.supermemory.ai/v3/documents', content=b'x', json={'a': 1})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "a": 1
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get('https://api.supermemory.ai/v3/documents', params={'ids': [1, 2], 'q': 'a'})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [["ids", "1"], ["ids", "2"], ["q", "a"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get('https://api.supermemory.ai/v3/documents', params={'a': None, 'b': 1})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [["b", "1"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "httpx.get('https://api.supermemory.ai/v3/documents', params={'a': None, 'b': 1})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [["a", ""], ["b", "1"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.post('https://api.supermemory.ai/v3/documents', data='{}')",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "unparsed",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(\"https://x/b\")\nrequests.get(\"https://x/a\")",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://x/b",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      },
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.post(\"https://x/a\", data={\"a\": \"1\"})",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "form",
+        "body": {
+          "a": "1"
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.post(\"https://x/a\", data=body)",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "unparsed",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.delete(f\"https://api.supermemory.ai/v3/documents/{doc_id}\")",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "DELETE",
+        "url": "https://api.supermemory.ai/v3/documents/{doc_id}",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "httpx.post(\"https://x/a\", files={\"file\": handle})",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "form",
+        "body": {
+          "file": {
+            "$unknown": true
+          }
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(\"https://api.supermemory.ai/v3/documents/list\", params={\"page\": 1})",
+    "language": "python",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/documents/list",
+        "query": [["page", "1"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.post(\"https://api.supermemory.ai/v3/documents\", json={\"content\": \"hi\"})",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "content": "hi"
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.post(\"https://x/a\", json=payload)",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "$unknown": true
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(url=\"https://x/a\")",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.delete(\"https://x/a\")",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "DELETE",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "session.get(\"https://x/a\")",
+    "language": "py",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "requests.head(\"https://x/a\")",
+    "language": "py",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(\"localhost:6767/x\")",
+    "language": "py",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(base_url + \"/x\")",
+    "language": "py",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(\"https://x/a?page=2\", params={\"limit\": 5})",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://x/a?page=2",
+        "query": [["page", "2"], ["limit", "5"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(\"https://x/a\", params={\"q\": query})",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [["q", "{?}"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.request(\"PATCH\", \"https://api.supermemory.ai/v3/documents/doc_1\", json={\"a\": 1})",
+    "language": "py",
+    "calls": [
+      {
+        "tool": "requests",
+        "method": "PATCH",
+        "url": "https://api.supermemory.ai/v3/documents/doc_1",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "a": 1
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "requests.get(",
+    "language": "py",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "curl -X POST https://api.supermemory.ai/v3/x -d $'{\"a\": \"b\\\\nc\", \"q\": \"it\\'s\"}'",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/x",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "a": "b\nc",
+          "q": "it's"
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -G https://api.supermemory.ai/v3/x --data-urlencode 'q=a b&c' --data-urlencode limit=3",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/x",
+        "query": [["q", "a b&c"], ["limit", "3"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://api.supermemory.ai/a 'oops\ncurl https://api.supermemory.ai/b",
+    "language": "bash",
+    "calls": [],
+    "unparsed": ["curl https://api.supermemory.ai/a 'oops\ncurl https://api.supermemory.ai/b"]
+  },
+  {
+    "code": "curl https://api.supermemory.ai/a\ncurl https://api.supermemory.ai/b 'oops",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": ["curl https://api.supermemory.ai/b 'oops"]
+  },
+  {
+    "code": "curl https://api.supermemory.ai/v3/x --data-urlencode 'q=a b'",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/x",
+        "query": [],
+        "body_kind": "form",
+        "body": {
+          "q": "a b"
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://api.supermemory.ai/v3/x \\\n  -H 'A: b' \\",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/x",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://api.supermemory.ai/a \\\n  -H 'Accept: application/json'",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl --help",
+    "language": "bash",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "curl -d '{\"a\": 1}' https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "a": 1
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -d '[1, 2]' https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "json",
+        "body": [1, 2],
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "$ curl -s https://api.supermemory.ai/v3/health",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/health",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -d @payload.json https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "unparsed",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -F 'file=@report.pdf' https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "form",
+        "body": {
+          "file": {
+            "$unknown": true
+          }
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -G -d 'q=hi' 'https://x/a?page=2'",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a?page=2",
+        "query": [["page", "2"], ["q", "hi"]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -I https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "HEAD",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -H 'content-type: application/json' -d 'a=1' https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "unparsed",
+        "body": null,
+        "media": "application/json"
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -H 'Content-Type: application/json' -d '{\"a\": 1}' https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "json",
+        "body": {
+          "a": 1
+        },
+        "media": "application/json"
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl --request PUT https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "PUT",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl --request=PATCH https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "PATCH",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -H 'Accept: application/json' https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl ftp://x/a",
+    "language": "bash",
+    "calls": [],
+    "unparsed": []
+  },
+  {
+    "code": "echo hi\ncurl https://api.supermemory.ai/a\nls -l",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -d 'a=1&b=two' https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "form",
+        "body": {
+          "a": "1",
+          "b": "two"
+        },
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a 'unterminated",
+    "language": "bash",
+    "calls": [],
+    "unparsed": ["curl https://x/a 'unterminated"]
+  },
+  {
+    "code": "curl -X DELETE https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "DELETE",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://x/a; curl https://x/b && curl https://x/c",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      },
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/b",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      },
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/c",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -X PUT https://x/a",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "PUT",
+        "url": "https://x/a",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl -sSL -XPOST https://api.supermemory.ai/v3/documents",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "POST",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl https://api.supermemory.ai/v3/documents",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl --url https://api.supermemory.ai/v3/documents",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://api.supermemory.ai/v3/documents",
+        "query": [],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  },
+  {
+    "code": "curl 'https://x/a?page=1&q='",
+    "language": "bash",
+    "calls": [
+      {
+        "tool": "curl",
+        "method": "GET",
+        "url": "https://x/a?page=1&q=",
+        "query": [["page", "1"], ["q", ""]],
+        "body_kind": "none",
+        "body": null,
+        "media": null
+      }
+    ],
+    "unparsed": []
+  }
+]

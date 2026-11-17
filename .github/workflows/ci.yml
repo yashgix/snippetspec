@@ -17,3 +17,26 @@ jobs:
       - run: make data-check
       - run: make experiment
       - run: make holdout
+  typescript:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ts/package-lock.json
+      - run: python tools/fetch_data.py
+        working-directory: .
+      - run: npm ci --ignore-scripts
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build

@@ -105,6 +105,30 @@ Output is one line per call that is not ok, `page:line #index METHOD /path verdi
 `code where` pairs joined by `; `, then a summary line of `N calls: A ok, B partial, C mismatch`. Exit status is 1
 when anything mismatches, so docs CI can gate on it.
 
+## TypeScript version
+
+`ts/` is the same checker in TypeScript, for docs pipelines that run on Node. It reads code examples the way
+[Margin](https://github.com/maniculehq/margin) does: `remark` with `remark-mdx`, the same tab and code-group
+containers and the same title rule. Margin's extractor is vendored unchanged in `ts/vendor/margin/` (Apache-2.0)
+and a test checks that every Supermemory page gives the same examples, plus each block's line. Problems can be
+returned as `{ path, message, line }` records, the shape Margin's ingest validation reports.
+
+```bash
+cd ts && npm ci
+npm test            # parity with the Python results, reader and checker cases
+npm run typecheck && npm run lint && npm run format:check && npm run build
+node dist/cli.js --docs DIR --spec openapi.json --host api.example.com   # --spec repeats, --json for the full scan
+```
+
+The parity tests compare whole scans with fixtures written by the Python version (`ts/test/generate-fixtures.py`):
+148 Supermemory calls and 216 Meilisearch calls give the same pages, lines, operations, verdicts and problems. Two
+known differences sit outside those inputs. Invalid MDX is an error in TypeScript, where Python's line scanner reads
+it anyway. JavaScript numbers do not keep Python's distinction between `3` and `3.0`.
+
+Both versions handle these spec shapes: a server URL with a path (`https://api.example.com/v2`), parameters shared
+on the path item or given as `$ref`, `allOf` schemas, and several specs declaring the same route, where a call is
+judged by the spec it fits best (a legacy and a current API, for example).
+
 ## What the three verdicts mean
 
 - `ok`: the call matches an operation and everything the checker can see agrees with the spec.

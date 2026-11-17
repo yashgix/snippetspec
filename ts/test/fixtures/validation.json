@@ -1,0 +1,647 @@
+[
+  {
+    "spec": {},
+    "schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "value": 3,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "value": "x",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        }
+      ],
+      "oneOf": [
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "value": "x",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        }
+      ],
+      "oneOf": [
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "value": 1,
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "value": [],
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {
+      "components": {
+        "schemas": {
+          "Text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "schema": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Text"
+        }
+      ]
+    },
+    "value": "x",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {
+      "components": {
+        "schemas": {
+          "Text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "schema": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Text"
+        }
+      ]
+    },
+    "value": 1,
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": ["a", "b"],
+          "properties": {}
+        },
+        {
+          "type": "object",
+          "required": ["a"],
+          "properties": {}
+        }
+      ]
+    },
+    "value": {},
+    "where": "$",
+    "result": [["missing_field", "$.a"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "oneOf": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "value": "x",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "oneOf": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "value": 1,
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": ["a"],
+          "properties": {}
+        },
+        {
+          "type": "object",
+          "required": ["b"],
+          "properties": {}
+        }
+      ]
+    },
+    "value": {},
+    "where": "$",
+    "result": [["missing_field", "$.a"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "const": 3
+    },
+    "value": 3,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "const": 3
+    },
+    "value": 4,
+    "where": "$",
+    "result": [["enum", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "enum": ["a", "b"]
+    },
+    "value": "a",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "enum": ["a", "b"]
+    },
+    "value": "c",
+    "where": "$",
+    "result": [["enum", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "enum": ["on"]
+        }
+      }
+    },
+    "value": {
+      "state": "off"
+    },
+    "where": "$",
+    "result": [["enum", "$.state"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "a": {
+          "type": "string"
+        }
+      }
+    },
+    "value": {
+      "a": "x",
+      "b": 1
+    },
+    "where": "$",
+    "result": [["undocumented_field", "$.b"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true
+    },
+    "value": {
+      "c": 2
+    },
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "value": [1, "x"],
+    "where": "$",
+    "result": [["type", "$[1]"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object"
+    },
+    "value": {
+      "anything": 1
+    },
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object",
+      "required": ["a", "b"],
+      "properties": {
+        "a": {
+          "type": "string"
+        },
+        "b": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "value": {},
+    "where": "$",
+    "result": [["missing_field", "$.a"], ["missing_field", "$.b"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "value": {
+      "rows": [
+        {
+          "id": 1
+        }
+      ]
+    },
+    "where": "$",
+    "result": [["type", "$.rows[0].id"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object",
+      "required": ["a", "b"],
+      "properties": {
+        "a": {
+          "type": "string"
+        },
+        "b": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "value": {
+      "b": "no",
+      "a": 1
+    },
+    "where": "$",
+    "result": [["type", "$.b"], ["type", "$.a"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object",
+      "required": ["a", "b"],
+      "properties": {
+        "a": {
+          "type": "string"
+        },
+        "b": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "value": {
+      "a": "x",
+      "b": 1,
+      "c": 2
+    },
+    "where": "$",
+    "result": [["undocumented_field", "$.c"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object",
+      "required": ["content"],
+      "properties": {
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "value": {
+      "content": "${CONTENT}"
+    },
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "integer"
+    },
+    "value": "$ID",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "integer"
+    },
+    "value": "{id}",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "integer"
+    },
+    "value": "<id>",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "integer"
+    },
+    "value": "a>b",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "integer"
+    },
+    "value": {
+      "$unknown": true
+    },
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "array"
+    },
+    "value": [1],
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "array"
+    },
+    "value": {},
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object"
+    },
+    "value": {},
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object"
+    },
+    "value": [],
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "boolean"
+    },
+    "value": true,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "boolean"
+    },
+    "value": "true",
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "integer"
+    },
+    "value": 3,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "integer"
+    },
+    "value": true,
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {},
+    "value": 1,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {},
+    "value": null,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "null"
+    },
+    "value": null,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "null"
+    },
+    "value": 0,
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "number"
+    },
+    "value": 1,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "number"
+    },
+    "value": 1.5,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "number"
+    },
+    "value": false,
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "string"
+    },
+    "value": "a",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "string"
+    },
+    "value": 1,
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": ["string", "null"]
+    },
+    "value": null,
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": ["string", "null"]
+    },
+    "value": "x",
+    "where": "$",
+    "result": []
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": ["string", "null"]
+    },
+    "value": 1,
+    "where": "$",
+    "result": [["type", "$"]]
+  },
+  {
+    "spec": {},
+    "schema": {
+      "type": "object",
+      "required": ["a"],
+      "properties": {
+        "a": {
+          "type": "string"
+        }
+      }
+    },
+    "value": [],
+    "where": "$",
+    "result": [["type", "$"]]
+  }
+]
